@@ -1,6 +1,6 @@
 [project]
 name = "griddy"
-version = "0.10.1"
+version = "0.10.2"
 description = "SDK for football data sources."
 readme = "README.md"
 authors = [
@@ -8,8 +8,9 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "beautifulsoup4>=4.14.3",
     "httpx>=0.28.1",
-    "playwright>=1.58.0",
+    "playwright==1.58.0",
     "pydantic>=2.12.5",
     "python-dateutil>=2.9.0.post0",
     "pyyaml>=6.0.3",

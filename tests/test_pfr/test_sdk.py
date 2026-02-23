@@ -60,9 +60,13 @@ class TestGriddyPFRInit:
         pfr = GriddyPFR(pfr_auth={"refreshToken": "abc"})
         assert pfr.sdk_configuration.security is None
 
-    def test_empty_sub_sdk_map(self):
+    def test_sub_sdk_map_contains_schedule(self):
         pfr = GriddyPFR()
-        assert pfr._sub_sdk_map == {}
+        assert "schedule" in pfr._sub_sdk_map
+        assert pfr._sub_sdk_map["schedule"] == (
+            "griddy.pfr.endpoints.schedule",
+            "Schedule",
+        )
 
 
 @pytest.mark.unit

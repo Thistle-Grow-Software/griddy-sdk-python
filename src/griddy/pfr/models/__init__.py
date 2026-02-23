@@ -4,14 +4,22 @@ from typing import TYPE_CHECKING
 from griddy.core._import import dynamic_import
 
 if TYPE_CHECKING:
+    from griddy.pfr.models.entities.schedule_game import (
+        ScheduleGame,
+        ScheduleGameTypedDict,
+    )
     from griddy.pfr.models.entities.security import Security, SecurityTypedDict
 
 __all__ = [
+    "ScheduleGame",
+    "ScheduleGameTypedDict",
     "Security",
     "SecurityTypedDict",
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "ScheduleGame": ".entities.schedule_game",
+    "ScheduleGameTypedDict": ".entities.schedule_game",
     "Security": ".entities.security",
     "SecurityTypedDict": ".entities.security",
 }

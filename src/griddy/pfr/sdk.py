@@ -6,11 +6,11 @@ Pro Football Reference data.
 Example:
     >>> from griddy.pfr import GriddyPFR
     >>> pfr = GriddyPFR()
-    >>> # Future: pfr.players.get_player_stats(...)
+    >>> games = pfr.schedule.get_season_schedule(season=2015)
 """
 
 import weakref
-from typing import Dict, Optional, cast
+from typing import TYPE_CHECKING, Dict, Optional, cast
 
 import httpx
 
@@ -25,6 +25,10 @@ from .sdkconfiguration import SDKConfiguration
 from .types import UNSET, OptionalNullable
 from .utils import Logger, RetryConfig
 
+if TYPE_CHECKING:
+    from .endpoints.game_details import GameDetails
+    from .endpoints.schedule import Schedule
+
 
 class GriddyPFR(LazySubSDKMixin, BaseSDK):
     """Main client for accessing Pro Football Reference data.
@@ -34,12 +38,16 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     Example:
         >>> from griddy.pfr import GriddyPFR
         >>> pfr = GriddyPFR()
-        >>> # Use as context manager
-        >>> with GriddyPFR() as pfr:
-        ...     pass  # Future endpoint access
+        >>> games = pfr.schedule.get_season_schedule(season=2015)
     """
 
-    _sub_sdk_map = {}
+    game_details: "GameDetails"
+    schedule: "Schedule"
+
+    _sub_sdk_map = {
+        "game_details": ("griddy.pfr.endpoints.game_details", "GameDetails"),
+        "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
+    }
 
     def __init__(
         self,
