@@ -6,6 +6,7 @@ from unittest.mock import patch
 import pytest
 
 from griddy.pfr import GriddyPFR
+from griddy.pfr.models import GameDetails
 from griddy.pfr.utils.parsers import PFRParser
 
 FIXTURE_PATH = Path(__file__).resolve().parents[2] / "PFR_boxscore_201509100nwe.htm"
@@ -246,7 +247,7 @@ class TestParseGameDetailsPlayerOffense:
 
 @pytest.mark.unit
 class TestGameDetailsEndpoint:
-    def test_get_game_details_returns_dict(self, boxscore_html: str):
+    def test_get_game_details_returns_model(self, boxscore_html: str):
         pfr = GriddyPFR()
         with patch.object(
             pfr.games.browserless,
@@ -259,10 +260,10 @@ class TestGameDetailsEndpoint:
         call_args = mock_fetch.call_args
         assert "201509100nwe" in call_args[0][0]
         assert call_args[1]["wait_for_element"] == "#scoring"
-        assert isinstance(result, dict)
-        assert "scorebox" in result
-        assert "scoring" in result
-        assert "player_offense" in result
+        assert isinstance(result, GameDetails)
+        assert result.scorebox is not None
+        assert len(result.scoring) > 0
+        assert len(result.player_offense) > 0
 
     def test_url_construction(self, boxscore_html: str):
         pfr = GriddyPFR()
