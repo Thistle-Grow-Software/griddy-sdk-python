@@ -6,6 +6,7 @@ from unittest.mock import patch
 import pytest
 
 from griddy.pfr import GriddyPFR
+from griddy.pfr.models.entities.schedule_game import ScheduleGame
 
 FIXTURE_PATH = Path(__file__).resolve().parents[2] / "pfr_2015_sked.html"
 
@@ -21,7 +22,7 @@ class TestScheduleEndpoint:
     def test_get_season_schedule_returns_games(self, schedule_html: str):
         pfr = GriddyPFR()
         with patch(
-            "griddy.pfr.endpoints.schedule.fetch_page_html",
+            "griddy.pfr.basesdk.fetch_page_html",
             return_value=schedule_html,
         ) as mock_fetch:
             games = pfr.schedule.get_season_schedule(season=2015)
@@ -32,24 +33,25 @@ class TestScheduleEndpoint:
         assert call_args[1]["wait_for_selector"] == "table#games"
         assert isinstance(games, list)
         assert len(games) == 267
+        assert isinstance(games[0], ScheduleGame)
 
     def test_get_season_schedule_first_game(self, schedule_html: str):
         pfr = GriddyPFR()
         with patch(
-            "griddy.pfr.endpoints.schedule.fetch_page_html",
+            "griddy.pfr.basesdk.fetch_page_html",
             return_value=schedule_html,
         ):
             games = pfr.schedule.get_season_schedule(season=2015)
 
         first = games[0]
-        assert first["week_num"] == "1"
-        assert first["winner"] == "New England Patriots"
-        assert first["pts_win"] == 28
+        assert first.week_num == "1"
+        assert first.winner == "New England Patriots"
+        assert first.pts_win == 28
 
     def test_get_season_schedule_url_construction(self, schedule_html: str):
         pfr = GriddyPFR()
         with patch(
-            "griddy.pfr.endpoints.schedule.fetch_page_html",
+            "griddy.pfr.basesdk.fetch_page_html",
             return_value=schedule_html,
         ) as mock_fetch:
             pfr.schedule.get_season_schedule(season=2024)

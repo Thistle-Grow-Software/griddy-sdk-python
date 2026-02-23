@@ -4,17 +4,38 @@ Provides ``get_season_schedule()`` to fetch and parse the PFR season
 schedule page (``/years/{season}/games.htm``).
 """
 
-from typing import Any, Dict, List
+from typing import List, Optional
 
-from ..basesdk import BaseSDK
-from ..utils.browserless import fetch_page_html
-from ..utils.parsers import parse_schedule_table
+from ..basesdk import BaseSDK, EndpointConfig
+from ..models.entities.schedule_game import ScheduleGame
+from ..utils.parsers import PFRParser
 
 
 class Schedule(BaseSDK):
     """Sub-SDK for PFR season schedule data."""
 
-    def get_season_schedule(self, *, season: int) -> List[Dict[str, Any]]:
+    def _get_season_schedule_config(
+        self,
+        *,
+        season: int,
+        timeout_ms: Optional[int] = None,
+    ) -> EndpointConfig:
+        return EndpointConfig(
+            path_template="/years/{season}/games.htm",
+            operation_id="getSeasonSchedule",
+            wait_for_selector="table#games",
+            parser=PFRParser().parse_schedule_table,
+            response_type=ScheduleGame,
+            path_params={"season": season},
+            timeout_ms=timeout_ms,
+        )
+
+    def get_season_schedule(
+        self,
+        *,
+        season: int,
+        timeout_ms: Optional[int] = None,
+    ) -> List[ScheduleGame]:
         """Fetch and parse the season schedule from Pro Football Reference.
 
         Scrapes ``https://www.pro-football-reference.com/years/{season}/games.htm``
@@ -23,13 +44,10 @@ class Schedule(BaseSDK):
 
         Args:
             season: The NFL season year (e.g. 2015, 2024).
+            timeout_ms: Optional timeout in milliseconds for the page selector.
 
         Returns:
-            A list of dicts, one per game. Each dict contains fields like
-            ``week_num``, ``game_date``, ``winner``, ``loser``, ``pts_win``,
-            ``pts_lose``, etc.
+            A list of ``ScheduleGame`` models, one per game.
         """
-        base_url, _ = self.sdk_configuration.get_server_details()
-        url = f"{base_url}/years/{season}/games.htm"
-        html = fetch_page_html(url, wait_for_selector="table#games")
-        return parse_schedule_table(html)
+        config = self._get_season_schedule_config(season=season, timeout_ms=timeout_ms)
+        return self._execute_endpoint(config)
