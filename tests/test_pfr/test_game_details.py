@@ -249,11 +249,11 @@ class TestGameDetailsEndpoint:
     def test_get_game_details_returns_dict(self, boxscore_html: str):
         pfr = GriddyPFR()
         with patch.object(
-            pfr.game_details.browserless,
+            pfr.games.browserless,
             "get_page_content",
             return_value=boxscore_html,
         ) as mock_fetch:
-            result = pfr.game_details.get_game_details(game_id="201509100nwe")
+            result = pfr.games.get_game_details(game_id="201509100nwe")
 
         mock_fetch.assert_called_once()
         call_args = mock_fetch.call_args
@@ -267,11 +267,11 @@ class TestGameDetailsEndpoint:
     def test_url_construction(self, boxscore_html: str):
         pfr = GriddyPFR()
         with patch.object(
-            pfr.game_details.browserless,
+            pfr.games.browserless,
             "get_page_content",
             return_value=boxscore_html,
         ) as mock_fetch:
-            pfr.game_details.get_game_details(game_id="202402110kan")
+            pfr.games.get_game_details(game_id="202402110kan")
 
         url = mock_fetch.call_args[0][0]
         assert (
@@ -280,9 +280,9 @@ class TestGameDetailsEndpoint:
 
     def test_lazy_loading(self):
         pfr = GriddyPFR()
-        assert "game_details" in pfr._sub_sdk_map
-        assert pfr.game_details is not None
-        assert pfr.game_details is pfr.game_details
+        assert "games" in pfr._sub_sdk_map
+        assert pfr.games is not None
+        assert pfr.games is pfr.games
 
 
 @pytest.mark.unit

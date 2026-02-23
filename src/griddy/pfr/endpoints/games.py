@@ -10,7 +10,7 @@ from ..basesdk import BaseSDK, EndpointConfig
 from ..utils.parsers import PFRParser
 
 
-class GameDetails(BaseSDK):
+class Games(BaseSDK):
     """Sub-SDK for PFR boxscore / game detail data."""
 
     def _get_game_details_config(
