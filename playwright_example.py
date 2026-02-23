@@ -31,6 +31,7 @@ from playwright.sync_api import sync_playwright
 BROWSERLESS_TOKEN = os.environ.get("BROWSERLESS_API_KEY", "")
 BROWSERLESS_HOST = "production-sfo.browserless.io"
 TARGET_URL = "https://www.pro-football-reference.com/years/2015/games.htm"
+# https://www.pro-football-reference.com/boxscores/201509100nwe.htm
 OUTPUT_FILE = "pfr_2015_sked.html"
 
 APPROACH = os.environ.get("BROWSERLESS_APPROACH", "unblock")

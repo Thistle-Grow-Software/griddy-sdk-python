@@ -14,7 +14,7 @@ class EndpointConfig:
     path_template: str
     operation_id: str
     wait_for_element: str
-    parser: Callable[[str], List[Any]]
+    parser: Callable[[str], Any]
     response_type: Type
     path_params: Dict[str, Any] = field(default_factory=dict)
     timeout_ms: Optional[int] = None
@@ -43,7 +43,7 @@ class BaseSDK(CoreBaseSDK):
     def _security_env_mapping(self) -> Optional[Dict[str, str]]:
         return {"pfr_auth": "GRIDDY_PFR_AUTH"}
 
-    def _execute_endpoint(self, config: EndpointConfig) -> List[Any]:
+    def _execute_endpoint(self, config: EndpointConfig) -> Any:
         """Execute a PFR scraping endpoint using its configuration.
 
         Resolves the base URL, templates path params, fetches HTML via
