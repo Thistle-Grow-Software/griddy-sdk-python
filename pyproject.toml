@@ -1,6 +1,6 @@
 [project]
 name = "griddy"
-version = "0.10.2"
+version = "0.10.3"
 description = "SDK for football data sources."
 readme = "README.md"
 authors = [
