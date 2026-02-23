@@ -26,7 +26,7 @@ from .types import UNSET, OptionalNullable
 from .utils import Logger, RetryConfig
 
 if TYPE_CHECKING:
-    from .endpoints.game_details import GameDetails
+    from .endpoints.games import Games
     from .endpoints.schedule import Schedule
 
 
@@ -41,11 +41,11 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
         >>> games = pfr.schedule.get_season_schedule(season=2015)
     """
 
-    game_details: "GameDetails"
+    games: "Games"
     schedule: "Schedule"
 
     _sub_sdk_map = {
-        "game_details": ("griddy.pfr.endpoints.game_details", "GameDetails"),
+        "games": ("griddy.pfr.endpoints.games", "Games"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
     }
 
