@@ -21,8 +21,9 @@ def schedule_html() -> str:
 class TestScheduleEndpoint:
     def test_get_season_schedule_returns_games(self, schedule_html: str):
         pfr = GriddyPFR()
-        with patch(
-            "griddy.pfr.basesdk.fetch_page_html",
+        with patch.object(
+            pfr.schedule.browserless,
+            "get_page_content",
             return_value=schedule_html,
         ) as mock_fetch:
             games = pfr.schedule.get_season_schedule(season=2015)
@@ -30,15 +31,16 @@ class TestScheduleEndpoint:
         mock_fetch.assert_called_once()
         call_args = mock_fetch.call_args
         assert "2015" in call_args[0][0]
-        assert call_args[1]["wait_for_selector"] == "table#games"
+        assert call_args[1]["wait_for_element"] == "#games"
         assert isinstance(games, list)
         assert len(games) == 267
         assert isinstance(games[0], ScheduleGame)
 
     def test_get_season_schedule_first_game(self, schedule_html: str):
         pfr = GriddyPFR()
-        with patch(
-            "griddy.pfr.basesdk.fetch_page_html",
+        with patch.object(
+            pfr.schedule.browserless,
+            "get_page_content",
             return_value=schedule_html,
         ):
             games = pfr.schedule.get_season_schedule(season=2015)
@@ -50,8 +52,9 @@ class TestScheduleEndpoint:
 
     def test_get_season_schedule_url_construction(self, schedule_html: str):
         pfr = GriddyPFR()
-        with patch(
-            "griddy.pfr.basesdk.fetch_page_html",
+        with patch.object(
+            pfr.schedule.browserless,
+            "get_page_content",
             return_value=schedule_html,
         ) as mock_fetch:
             pfr.schedule.get_season_schedule(season=2024)

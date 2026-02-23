@@ -23,7 +23,7 @@ class Schedule(BaseSDK):
         return EndpointConfig(
             path_template="/years/{season}/games.htm",
             operation_id="getSeasonSchedule",
-            wait_for_selector="table#games",
+            wait_for_element="#games",
             parser=PFRParser().parse_schedule_table,
             response_type=ScheduleGame,
             path_params={"season": season},

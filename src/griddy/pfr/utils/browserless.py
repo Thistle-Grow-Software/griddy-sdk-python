@@ -9,89 +9,55 @@ Requires:
     - playwright and requests packages
 """
 
-import os
-from typing import Optional
-
 import requests
 from playwright.sync_api import sync_playwright
 
-BROWSERLESS_HOST = "production-sfo.browserless.io"
+from griddy.settings import BROWSERLESS_HOST, BROWSERLESS_TOKEN
 
 
 class BrowserlessError(Exception):
     """Raised when a Browserless API call or browser interaction fails."""
 
 
-def fetch_page_html(
-    url: str,
-    *,
-    wait_for_selector: str = "table",
-    timeout_ms: int = 15_000,
-) -> str:
-    """Fetch a page's HTML via Browserless unblock API + Playwright.
+class Browserless:
+    def __init__(self, default_timeout_ms: int = 60000):
+        self.host = BROWSERLESS_HOST
+        self.token = BROWSERLESS_TOKEN
+        self.data: dict | None = None
+        self.timeout = default_timeout_ms
 
-    Calls the Browserless /chromium/unblock endpoint with a residential proxy
-    to bypass bot detection, then connects Playwright over CDP to extract the
-    fully-rendered page HTML.
+    def fetch_data(self, url: str):
+        unblock_url = f"https://{BROWSERLESS_HOST}/chromium/unblock"
+        query_params = {
+            "token": BROWSERLESS_TOKEN,
+            "proxy": "residential",
+            "timeout": 60_000,
+        }
+        payload = {
+            "url": url,
+            "browserWSEndpoint": True,
+            "cookies": True,
+            "content": False,
+            "screenshot": False,
+            "ttl": 30_000,
+        }
 
-    Args:
-        url: The full URL to fetch.
-        wait_for_selector: CSS selector to wait for before extracting HTML.
-        timeout_ms: Milliseconds to wait for the selector.
-
-    Returns:
-        The page's outer HTML as a string.
-
-    Raises:
-        BrowserlessError: If the API key is missing, the API call fails,
-            or the page cannot be loaded.
-    """
-    token = os.environ.get("BROWSERLESS_API_KEY", "")
-    if not token:
-        raise BrowserlessError("BROWSERLESS_API_KEY environment variable is not set.")
-
-    unblock_url = f"https://{BROWSERLESS_HOST}/chromium/unblock"
-    query_params = {
-        "token": token,
-        "proxy": "residential",
-        "timeout": 60_000,
-    }
-    payload = {
-        "url": url,
-        "browserWSEndpoint": True,
-        "cookies": True,
-        "content": False,
-        "screenshot": False,
-        "ttl": 30_000,
-    }
-
-    try:
-        resp = requests.post(
-            unblock_url,
-            json=payload,
-            params=query_params,
-            headers={"Content-Type": "application/json"},
-        )
-        resp.raise_for_status()
-    except requests.RequestException as exc:
-        raise BrowserlessError(
-            f"Browserless /chromium/unblock request failed: {exc}"
-        ) from exc
-
-    data = resp.json()
-    ws_endpoint = data.get("browserWSEndpoint")
-    if not ws_endpoint:
-        raise BrowserlessError("Browserless response missing browserWSEndpoint.")
-    cookies = data.get("cookies", [])
-
-    with sync_playwright() as pw:
         try:
-            browser = pw.chromium.connect_over_cdp(ws_endpoint)
-        except Exception as exc:
+            resp = requests.post(
+                unblock_url,
+                json=payload,
+                params=query_params,
+                headers={"Content-Type": "application/json"},
+            )
+            resp.raise_for_status()
+        except requests.RequestException as exc:
             raise BrowserlessError(
-                f"Failed to connect Playwright via CDP: {exc}"
+                f"Browserless /chromium/unblock request failed: {exc}"
             ) from exc
 
+        return resp.json()
+
+    def _handle_page_navigation(self, browser, url: str, cookies: dict, element: str):
         # The unblock API already navigated to the URL in the first page.
         page = None
         for ctx in browser.contexts:
@@ -107,10 +73,47 @@ def fetch_page_html(
             page = context.new_page()
             if cookies:
                 context.add_cookies(cookies)
-            page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+            page.goto(url, wait_until="domcontentloaded", timeout=self.timeout)
 
-        page.wait_for_selector(wait_for_selector, timeout=timeout_ms)
-        html = page.content()
-        browser.close()
+        page.locator(element).wait_for(timeout=self.timeout)
 
-    return html
+        return page.content()
+
+    def get_page_content(self, url: str, wait_for_element: str):
+        """Fetch a page's HTML via Browserless unblock API + Playwright.
+
+        Calls the Browserless /chromium/unblock endpoint with a residential proxy
+        to bypass bot detection, then connects Playwright over CDP to extract the
+        fully-rendered page HTML.
+
+        Args:
+            url: The full URL to fetch.
+            wait_for_element: HTML Element id to wait for before extracting HTML.
+            timeout_ms: Milliseconds to wait for the selector.
+
+        Returns:
+            The page's outer HTML as a string.
+
+        Raises:
+            BrowserlessError: If the API key is missing, the API call fails,
+                or the page cannot be loaded.
+        """
+        browserless_data = self.fetch_data(url=url)
+
+        ws_endpoint = browserless_data.get("browserWSEndpoint")
+        cookies = browserless_data.get("cookies", [])
+
+        with sync_playwright() as pw:
+            try:
+                browser = pw.chromium.connect_over_cdp(ws_endpoint)
+            except Exception as exc:
+                raise BrowserlessError(
+                    f"Failed to connect Playwright via CDP: {exc}"
+                ) from exc
+
+            html = self._handle_page_navigation(
+                browser=browser, url=url, cookies=cookies, element=wait_for_element
+            )
+            browser.close()
+
+        return html

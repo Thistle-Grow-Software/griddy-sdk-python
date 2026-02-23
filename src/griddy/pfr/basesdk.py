@@ -4,7 +4,7 @@ from typing import Any, Callable, Dict, List, Optional, Type
 from griddy.core.basesdk import BaseSDK as CoreBaseSDK
 
 from . import errors, models
-from .utils.browserless import fetch_page_html
+from .utils.browserless import Browserless
 
 
 @dataclass
@@ -13,7 +13,7 @@ class EndpointConfig:
 
     path_template: str
     operation_id: str
-    wait_for_selector: str
+    wait_for_element: str
     parser: Callable[[str], List[Any]]
     response_type: Type
     path_params: Dict[str, Any] = field(default_factory=dict)
@@ -22,6 +22,10 @@ class EndpointConfig:
 
 class BaseSDK(CoreBaseSDK):
     """PFR-specific BaseSDK with PFR error classes and security model."""
+
+    def __init__(self, sdk_config: Any, parent_ref: Optional[object] = None):
+        super().__init__(sdk_config=sdk_config, parent_ref=parent_ref)
+        self.browserless = Browserless()
 
     @property
     def _default_error_cls(self) -> Type[Exception]:
@@ -49,11 +53,9 @@ class BaseSDK(CoreBaseSDK):
         path = config.path_template.format(**config.path_params)
         url = f"{base_url}{path}"
 
-        timeout = config.timeout_ms or 15_000
-        html = fetch_page_html(
+        html = self.browserless.get_page_content(
             url,
-            wait_for_selector=config.wait_for_selector,
-            timeout_ms=timeout,
+            wait_for_element=config.wait_for_element,
         )
 
         return config.parser(html)

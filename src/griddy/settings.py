@@ -1,5 +1,8 @@
 import os
 
+BROWSERLESS_HOST = os.getenv("BROWSERLESS_HOST")
+BROWSERLESS_TOKEN = os.getenv("BROWSERLESS_TOKEN")
+
 NFL = {
     "api_key": os.getenv("NFL_API_KEY"),
     "sdk_build": os.getenv("NFL_SDK_BUILD", "15170"),
