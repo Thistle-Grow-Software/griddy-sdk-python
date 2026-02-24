@@ -1,6 +1,6 @@
 """Safe type conversion and text cleaning utilities."""
 
-from typing import Any
+from typing import Any, Iterable
 
 
 def clean_text(text: str | None) -> str | None:
@@ -22,6 +22,24 @@ def clean_text(text: str | None) -> str | None:
         return None
 
     return cleaned
+
+
+def multi_replace(
+    text: str, chars: Iterable, replace: str = "", dedupe: bool = True
+) -> str:
+    for c in chars:
+        text = text.replace(c, replace)
+
+    if dedupe:
+        while f"{replace}{replace}" in text:
+            text = text.replace(f"{replace}{replace}", replace)
+
+    return text
+
+
+def snakify(text: str) -> str:
+    text = multi_replace(text=text, chars=[" "], replace="_", dedupe=True)
+    return text.lower()
 
 
 def safe_int(value: Any) -> int | None:

@@ -1,10 +1,14 @@
 import json
 
-from griddy.pfr import GriddyPFR
+from griddy.core.utils.serializers import DateTimeEncoder
+from griddy.pfr.parsers.player_profile import PlayerProfileParser
 
-game_id = "201509100nwe"
-pfr = GriddyPFR()
-game_details = pfr.games.get_game_details(game_id=game_id)
+with open("data/pfr_examples/BradTo00_QB.htm", "r") as infile:
+    html = infile.read()
 
-with open("pfr_game_dtls.json", "w") as outfile:
-    json.dump(game_details, outfile, indent=4)
+
+parser = PlayerProfileParser()
+player_data = parser.parse(html=html)
+
+with open("tom_brady.json", "w") as outfile:
+    json.dump(player_data, outfile, indent=4, cls=DateTimeEncoder)

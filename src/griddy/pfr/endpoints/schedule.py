@@ -6,9 +6,10 @@ schedule page (``/years/{season}/games.htm``).
 
 from typing import List, Optional
 
+from griddy.pfr.parsers import ScheduleParser
+
 from ..basesdk import BaseSDK, EndpointConfig
 from ..models.entities.schedule_game import ScheduleGame
-from ..utils.parsers import ScheduleParser
 
 
 class Schedule(BaseSDK):

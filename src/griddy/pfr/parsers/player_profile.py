@@ -1,15 +1,18 @@
 import re
-from datetime import datetime
+from collections import defaultdict
+from datetime import date, datetime
+from typing import Mapping
 
 from bs4 import BeautifulSoup
-from bs4.element import Tag
+from bs4.element import ResultSet, Tag
 
-from griddy.core.utils.converters import safe_numberify
+from griddy.core.utils.converters import multi_replace, safe_numberify, snakify
 
 
 class PlayerProfileParser:
     def __init__(self):
         self.soup: BeautifulSoup | None = None
+        self.player_data: dict | None = None
 
     def _extract_names(self, name_tag: Tag) -> dict:
         full_name, nicknames = (
@@ -204,8 +207,170 @@ class PlayerProfileParser:
         values = [safe_numberify(value=v) for v in values]
         return dict(zip(summary_headers, values))
 
-    def parse(self, html: str):
-        self.soup = BeautifulSoup(html)
+    def _extract_overheader_indices(self, thead: Tag):
+        ovr_hdr_indices = {}
+
+        overheader_cells = thead.find_all("th", class_="over_header")
+        cur_index = 0
+        for cell in overheader_cells:
+            if "header_empty" in cell.attrs.get("data-stat", "").lower():
+                hdr_value = "general"
+            else:
+                hdr_value = cell["data-stat"].lower()
+
+            colspan = int(cell["colspan"])
+            for idx in range(cur_index, cur_index + colspan):
+                ovr_hdr_indices[idx] = hdr_value
+
+        return ovr_hdr_indices
+
+    def _group_by_over_header(self, stats: Mapping, over_header_indices: Mapping):
+        grouped_stats = defaultdict(dict)
+
+        for idx, key_value in enumerate(stats.items()):
+            ovr_hdr = over_header_indices.get(idx)
+            if not ovr_hdr:
+                # Sometimes (for Awards columns) there is a blank over_header without "header_empty" in the data-stat attr.
+                # For now, we will simply store these under "general" as well.
+                ovr_hdr = over_header_indices[0]
+            stat_key, value = key_value
+            grouped_stats[ovr_hdr][stat_key] = value
+
+        return grouped_stats
+
+    def _parse_stats_table(self, table: Tag) -> list[dict]:
+        over_header_indices = None
+        if table.find(class_="over_header"):
+            over_header_indices = self._extract_overheader_indices(
+                thead=table.find("thead")
+            )
+
+        # prev_th = None
+        # for th in table.find("thead").find_all("th"):
+        #     if "data-stat" not in th.attrs:
+        #         print(table["id"])
+        #         print(prev_th.prettify())
+        #     prev_th = th
+
+        column_headers = [
+            th["data-stat"]
+            for th in table.find("thead").find_all("th")
+            if "over_header" not in th.get("class", "") and "data-stat" in th.attrs
+        ]
+        season_rows = table.find("tbody").find_all("tr")
+
+        seasons = []
+
+        for row in season_rows:
+            # PFR puts the season in a th tag instead of td for some reason
+            try:
+                year = safe_numberify(
+                    row.find(attrs={"data-stat": ["year_id", "year"]}).get_text(
+                        strip=True
+                    )
+                )
+            except AttributeError as e:
+                print(row.prettify())
+                raise e
+            values = [
+                safe_numberify(td.get_text(strip=True)) for td in row.find_all("td")
+            ]
+            values = [year, *values]
+            season_stats = dict(zip(column_headers, values))
+
+            if over_header_indices:
+                season_stats = self._group_by_over_header(
+                    stats=season_stats, over_header_indices=over_header_indices
+                )
+
+            seasons.append(season_stats)
+
+        return seasons
+
+    def _extract_all_stats(self, stats_tables: ResultSet) -> Mapping:
+        stats = defaultdict(dict)
+
+        for table in stats_tables:
+            tbl_name = table["id"]
+            if tbl_name.lower() == "sim_scores":
+                continue
+            parsed = self._parse_stats_table(table=table)
+
+            if "post" in tbl_name:
+                stats["post_season"][tbl_name.replace("_post", "")] = parsed
+            else:
+                stats["regular_season"][tbl_name] = parsed
+
+        return stats
+
+    def _parse_transactions(self, tag: Tag) -> list[Mapping]:
+        date_format_string = "%B %d, %Y"
+        transactions = []
+
+        transaction_strings = [
+            li.get_text() for li in tag.find_all("li") if ":" in li.get_text()
+        ]
+
+        for ts in transaction_strings:
+            date_string, description = ts.split(":")
+            transactions.append(
+                {
+                    "date": date.strptime(date_string, date_format_string),
+                    "description": description,
+                }
+            )
+
+        return transactions
+
+    def _parse_bottom_nav(self, tag: Tag) -> Mapping:
+        player_links = defaultdict(dict)
+
+        children = tag.find_all(recursive=False)
+
+        overview, general, labels_and_links = children[0], children[1], children[2:]
+
+        player_links["overview"] = {"href": overview.find("a")["href"]}
+
+        for li in general.find_all("li"):
+            as_key = multi_replace(
+                text=li.get_text(), chars=[" ", "&", "-"], replace="_", dedupe=True
+            ).lower()
+            anchor = li.find("a")
+            href = anchor["href"]
+            player_links["general"][as_key] = href
+
+        current_label = None
+        for child in labels_and_links:
+            if "listhead" in child["class"]:
+                current_label = snakify(child.get_text())
+                continue
+            elif child.name != "ul":
+                # TODO: Add logging
+                continue
+            links_for_label = {}
+            # Can only be here if child is a ul tag
+            for li in child.find_all("li"):
+                key = snakify(li.get_text())
+                href = li.find("a")["href"]
+                links_for_label[key] = href
+            player_links[current_label] = links_for_label
+
+        return player_links
+
+    def _parse_leader_boards(self, tag: Tag) -> Mapping:
+        leader_boards = {}
+
+        board_divs = tag.find_all(class_="data_grid_box")
+
+        for div in board_divs:
+            key = div["id"].replace("leaderboard_", "")
+            leader_boards[key] = [td.get_text() for td in div.find_all("td")]
+
+        return leader_boards
+
+    def parse(self, html: str) -> Mapping:
+        cleaned_html = re.sub(r"<!--(.*?)-->", r"\1", html, flags=re.DOTALL)
+        self.soup = BeautifulSoup(cleaned_html, features="html.parser")
         bio = self._parse_meta_panel(panel=self.soup.find(id="meta"))
         jersey_numbers = self._parse_jersey_numbers(
             tag=self.soup.find(class_="uni_holder")
@@ -213,3 +378,25 @@ class PlayerProfileParser:
         summary_stats = self._parse_stats_summary(
             tag=self.soup.find(class_="stats_pullout")
         )
+
+        stats_tables = self.soup.find_all("table", class_="stats_table")
+        full_stats = self._extract_all_stats(stats_tables=stats_tables)
+
+        transactions_div = self.soup.find(id="div_transactions")
+        transactions = self._parse_transactions(tag=transactions_div)
+
+        bottom_nav_div = self.soup.find(id="bottom_nav_container")
+        player_links = self._parse_bottom_nav(tag=bottom_nav_div)
+
+        leaderboard_div = self.soup.find(id="div_leaderboard")
+        leader_boards = self._parse_leader_boards(tag=leaderboard_div)
+
+        return {
+            "bio": bio,
+            "jersey_numbers": jersey_numbers,
+            "summary_stats": summary_stats,
+            "statistics": full_stats,
+            "transactions": transactions,
+            "links": player_links,
+            "leader_boards": leader_boards,
+        }

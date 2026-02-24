@@ -7,7 +7,7 @@ import pytest
 
 from griddy.pfr import GriddyPFR
 from griddy.pfr.models import GameDetails
-from griddy.pfr.utils.parsers import GameDetailsParser
+from griddy.pfr.parsers import GameDetailsParser
 
 FIXTURE_PATH = Path(__file__).resolve().parents[2] / "PFR_boxscore_201509100nwe.htm"
 

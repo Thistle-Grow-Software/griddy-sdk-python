@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 from griddy.pfr.models.entities.schedule_game import ScheduleGame
-from griddy.pfr.utils.parsers import ScheduleParser
+from griddy.pfr.parsers import ScheduleParser
 
 # Path to the saved HTML fixture at the repo root.
 FIXTURE_PATH = Path(__file__).resolve().parents[2] / "pfr_2015_sked.html"

@@ -6,9 +6,10 @@ Provides ``get_game_details()`` to fetch and parse a PFR boxscore page
 
 from typing import Optional
 
+from griddy.pfr.parsers import GameDetailsParser
+
 from ..basesdk import BaseSDK, EndpointConfig
 from ..models import GameDetails
-from ..utils.parsers import GameDetailsParser
 
 
 class Games(BaseSDK):
