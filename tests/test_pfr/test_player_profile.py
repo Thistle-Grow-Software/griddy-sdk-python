@@ -426,6 +426,84 @@ class TestJsonSerialization:
 
 
 # ---------------------------------------------------------------------------
+# Pydantic model validation
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+class TestPydanticModelValidation:
+    """Verify parsed data validates into Pydantic models."""
+
+    @pytest.mark.parametrize(
+        "filename",
+        sorted(p.name for p in FIXTURE_DIR.glob("*.htm")),
+    )
+    def test_all_fixtures_validate(self, parser, filename):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        html = (FIXTURE_DIR / filename).read_text()
+        result = parser.parse(html)
+        profile = PlayerProfile.model_validate(result)
+        assert profile.bio.names.first_name
+
+    def test_brady_model_fields(self, brady_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(brady_data)
+        assert profile.bio.names.pretty_name == "Tom Brady"
+        assert profile.bio.position == "QB"
+        assert profile.bio.throws == "Right"
+        assert profile.bio.height == 76
+        assert profile.bio.birth_date.year == 1977
+        assert profile.bio.birth_place.city == "San Mateo"
+        assert profile.bio.college == "Michigan"
+        assert profile.bio.draft is not None
+        assert profile.bio.draft.team == "New England Patriots"
+        assert profile.bio.draft.rd_and_ovr.round == 6
+        assert profile.bio.draft.rd_and_ovr.overall == 199
+        assert profile.bio.draft.year == 2000
+        assert len(profile.jersey_numbers) == 2
+        assert profile.jersey_numbers[0].number == "12"
+        assert profile.summary_stats["G"] == 335
+        assert "passing" in profile.statistics.regular_season
+        assert len(profile.transactions) > 0
+        assert len(profile.links) > 0
+        assert len(profile.leader_boards) > 0
+
+    def test_undrafted_player_draft_is_none(self, boswell_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(boswell_data)
+        assert profile.bio.draft is None
+
+    def test_no_throws_field(self, jones_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(jones_data)
+        assert profile.bio.throws is None
+
+    def test_empty_transactions(self, jones_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(jones_data)
+        assert profile.transactions == []
+
+    def test_empty_leader_boards(self, jones_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(jones_data)
+        assert profile.leader_boards == {}
+
+    def test_model_serialization_round_trip(self, brady_data):
+        from griddy.pfr.models.entities.player_profile import PlayerProfile
+
+        profile = PlayerProfile.model_validate(brady_data)
+        dumped = profile.model_dump()
+        assert dumped["bio"]["names"]["pretty_name"] == "Tom Brady"
+        assert dumped["bio"]["draft"]["team"] == "New England Patriots"
+
+
+# ---------------------------------------------------------------------------
 # Edge cases
 # ---------------------------------------------------------------------------
 
