@@ -4,9 +4,10 @@ Provides ``get_game_details()`` to fetch and parse a PFR boxscore page
 (``/boxscores/{game_id}.htm``) and return all game-specific data as JSON.
 """
 
-from typing import Any, Dict, Optional
+from typing import Optional
 
 from ..basesdk import BaseSDK, EndpointConfig
+from ..models import GameDetails
 from ..utils.parsers import PFRParser
 
 
@@ -24,7 +25,7 @@ class Games(BaseSDK):
             operation_id="getGameDetails",
             wait_for_element="#scoring",
             parser=PFRParser().parse_game_details,
-            response_type=dict,
+            response_type=GameDetails,
             path_params={"game_id": game_id},
             timeout_ms=timeout_ms,
         )
@@ -34,7 +35,7 @@ class Games(BaseSDK):
         *,
         game_id: str,
         timeout_ms: Optional[int] = None,
-    ) -> Dict[str, Any]:
+    ) -> GameDetails:
         """Fetch and parse a boxscore page from Pro Football Reference.
 
         Scrapes
@@ -49,8 +50,10 @@ class Games(BaseSDK):
                 selector.
 
         Returns:
-            A dict containing all extracted game data (scorebox, linescore,
-            scoring plays, team stats, player stats, drives, etc.).
+            A :class:`~griddy.pfr.models.GameDetails` instance containing
+            all extracted game data (scorebox, linescore, scoring plays,
+            team stats, player stats, drives, etc.).
         """
         config = self._get_game_details_config(game_id=game_id, timeout_ms=timeout_ms)
-        return self._execute_endpoint(config)
+        data = self._execute_endpoint(config)
+        return GameDetails.model_validate(data)
