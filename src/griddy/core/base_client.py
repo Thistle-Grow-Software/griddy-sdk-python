@@ -22,8 +22,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from .base_utils import retry_on_rate_limit
 from .exceptions import APIError, AuthenticationError, NotFoundError, RateLimitError
+from .utils.retries import retry_on_rate_limit
 
 
 class BaseClient:

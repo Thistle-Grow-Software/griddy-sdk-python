@@ -1,5 +1,5 @@
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def parse_datetime(datetime_string: str) -> datetime:
@@ -19,3 +19,42 @@ def parse_datetime(datetime_string: str) -> datetime:
         datetime_string = datetime_string[:-1] + "+00:00"
 
     return datetime.fromisoformat(datetime_string)
+
+
+def parse_date(date_str: str | None) -> datetime | None:
+    """
+    Parse date string into datetime object.
+
+    Args:
+        date_str: Date string in various formats
+
+    Returns:
+        Parsed datetime object or None
+    """
+    if not date_str:
+        return None
+
+    # Common date formats to try
+    formats = [
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%dT%H:%M:%SZ",
+        "%Y-%m-%dT%H:%M:%S.%f",
+        "%Y-%m-%dT%H:%M:%S.%fZ",
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d",
+        "%m/%d/%Y",
+        "%m/%d/%Y %H:%M:%S",
+    ]
+
+    for fmt in formats:
+        try:
+            dt = datetime.strptime(date_str, fmt)
+            # Add timezone info if not present
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt
+        except ValueError:
+            continue
+
+    # If no format matches, return None
+    return None

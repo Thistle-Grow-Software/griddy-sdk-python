@@ -7,18 +7,16 @@ from pathlib import Path
 
 import pytest
 
-from griddy.core.base_utils import (
+from griddy.core.utils.converters import clean_text, safe_float, safe_int
+from griddy.core.utils.cookies import (
     Cookie,
-    build_url,
-    clean_text,
     cookies_to_dict,
     cookies_to_header,
     extract_cookies_for_url,
     parse_cookies_txt,
-    parse_date,
-    safe_float,
-    safe_int,
 )
+from griddy.core.utils.datetimes import parse_date
+from griddy.core.utils.url import build_url
 
 
 @pytest.mark.unit

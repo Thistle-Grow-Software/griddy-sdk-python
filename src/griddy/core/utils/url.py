@@ -152,3 +152,32 @@ def remove_suffix(input_string, suffix):
     if suffix and input_string.endswith(suffix):
         return input_string[: -len(suffix)]
     return input_string
+
+
+def build_url(base_url: str, path: str, params: dict[str, any] | None = None) -> str:
+    """
+    Build URL from base URL, path, and parameters.
+
+    Args:
+        base_url: Base URL
+        path: URL path
+        params: Query parameters
+
+    Returns:
+        Complete URL
+    """
+    # Ensure base_url doesn't end with slash and path starts without slash
+    base_url = base_url.rstrip("/")
+    path = path.lstrip("/")
+
+    url = f"{base_url}/{path}" if path else base_url
+
+    if params:
+        # Filter out None values
+        filtered_params = {k: v for k, v in params.items() if v is not None}
+        if filtered_params:
+            from urllib.parse import urlencode
+
+            url += f"?{urlencode(filtered_params)}"
+
+    return url

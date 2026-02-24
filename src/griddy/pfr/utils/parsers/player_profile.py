@@ -4,6 +4,8 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
+from griddy.core.utils.converters import safe_numberify
+
 
 class PlayerProfileParser:
     def __init__(self):
@@ -145,6 +147,69 @@ class PlayerProfileParser:
         )
         return {"photo_url": photo_url, **self._extract_bio_info(div=meta_info_div)}
 
+    def _parse_bling(self, tag: Tag) -> list[str]:
+        return [element.get_text(strip=True) for element in tag.find_all("li")]
+
+    def _extract_team_and_years_jersey_num(self, text: str) -> dict:
+        first_digit_idx = -1
+        for idx, char in enumerate(text):
+            if char.isdigit():
+                first_digit_idx = idx
+                break
+
+        team = text[:first_digit_idx].strip()
+
+        years = text[first_digit_idx:]
+        if "-" in years:
+            start_year, end_year = [int(y) for y in years.split("-")]
+        else:
+            start_year = end_year = int(years)
+
+        return {"team": team, "start_year": start_year, "end_year": end_year}
+
+    def _parse_jersey_numbers(self, tag: Tag) -> list[dict]:
+        number_info = []
+        number_elements = tag.find_all("a")
+
+        for element in number_elements:
+            team_and_years = element["data-tip"]
+            # Ideally we could make this an int, but Jim Otto wearing #00 ruins that
+            number_text = element.find("text").get_text(strip=True)
+            number_info.append(
+                {
+                    "number": number_text,
+                    **self._extract_team_and_years_jersey_num(text=team_and_years),
+                }
+            )
+
+        return number_info
+
+    def _parse_stats_summary(self, tag: Tag) -> dict:
+        # noinspection PyTypeChecker
+        summary_headers = [
+            element.get_text(strip=True)
+            for element in tag.find_all(
+                "strong",
+                string=lambda t: t and t.strip().lower() not in ["summary", "career"],
+            )
+        ]
+        # noinspection PyTypeChecker
+        values = [
+            element.get_text(strip=True)
+            for element in tag.find_all(
+                "p",
+                string=lambda t: t and t.strip().lower() not in ["summary", "career"],
+            )
+        ]
+        values = [safe_numberify(value=v) for v in values]
+        return dict(zip(summary_headers, values))
+
     def parse(self, html: str):
         self.soup = BeautifulSoup(html)
         bio = self._parse_meta_panel(panel=self.soup.find(id="meta"))
+        jersey_numbers = self._parse_jersey_numbers(
+            tag=self.soup.find(class_="uni_holder")
+        )
+        summary_stats = self._parse_stats_summary(
+            tag=self.soup.find(class_="stats_pullout")
+        )
