@@ -36,7 +36,7 @@ class PlayerProfileParser:
                 name.strip()
                 for name in nicknames_str.replace("(", "")
                 .replace(")", "")
-                .replace("or", ",")
+                .replace(" or ", ",")
                 .split(",")
             ]
         else:
