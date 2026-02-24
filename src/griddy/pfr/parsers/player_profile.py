@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from bs4.element import ResultSet, Tag
 
 from griddy.core.utils.converters import multi_replace, safe_numberify, snakify
+from griddy.pfr.models.entities.player_profile import PlayerProfile
 
 
 class PlayerProfileParser:
@@ -384,7 +385,7 @@ class PlayerProfileParser:
 
         return leader_boards
 
-    def parse(self, html: str) -> Mapping:
+    def parse(self, html: str) -> PlayerProfile:
         cleaned_html = re.sub(r"<!--(.*?)-->", r"\1", html, flags=re.DOTALL)
         self.soup = BeautifulSoup(cleaned_html, features="html.parser")
         bio = self._parse_meta_panel(panel=self.soup.find(id="meta"))
@@ -413,12 +414,14 @@ class PlayerProfileParser:
             self._parse_leader_boards(tag=leaderboard_div) if leaderboard_div else {}
         )
 
-        return {
-            "bio": bio,
-            "jersey_numbers": jersey_numbers,
-            "summary_stats": summary_stats,
-            "statistics": full_stats,
-            "transactions": transactions,
-            "links": player_links,
-            "leader_boards": leader_boards,
-        }
+        return PlayerProfile.model_validate(
+            {
+                "bio": bio,
+                "jersey_numbers": jersey_numbers,
+                "summary_stats": summary_stats,
+                "statistics": full_stats,
+                "transactions": transactions,
+                "links": player_links,
+                "leader_boards": leader_boards,
+            }
+        )
