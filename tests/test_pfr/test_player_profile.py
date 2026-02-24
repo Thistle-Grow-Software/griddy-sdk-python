@@ -2,9 +2,11 @@
 
 import json
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 
+from griddy.pfr import GriddyPFR
 from griddy.pfr.models.entities.player_profile import PlayerProfile
 from griddy.pfr.parsers.player_profile import PlayerProfileParser
 
@@ -423,6 +425,63 @@ class TestJsonSerialization:
         dumped = brady_data.model_dump()
         assert dumped["bio"]["names"]["pretty_name"] == "Tom Brady"
         assert dumped["bio"]["draft"]["team"] == "New England Patriots"
+
+
+# ---------------------------------------------------------------------------
+# Players endpoint
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+class TestPlayersEndpoint:
+    def test_get_player_profile_returns_model(self):
+        html = (FIXTURE_DIR / "BradTo00_QB.htm").read_text()
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.players.browserless,
+            "get_page_content",
+            return_value=html,
+        ) as mock_fetch:
+            result = pfr.players.get_player_profile(player_id="BradTo00")
+
+        mock_fetch.assert_called_once()
+        call_args = mock_fetch.call_args
+        assert "BradTo00" in call_args[0][0]
+        assert call_args[1]["wait_for_element"] == "#meta"
+        assert isinstance(result, PlayerProfile)
+        assert result.bio.names.pretty_name == "Tom Brady"
+
+    def test_url_construction(self):
+        html = (FIXTURE_DIR / "BradTo00_QB.htm").read_text()
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.players.browserless,
+            "get_page_content",
+            return_value=html,
+        ) as mock_fetch:
+            pfr.players.get_player_profile(player_id="BradTo00")
+
+        url = mock_fetch.call_args[0][0]
+        assert url == "https://www.pro-football-reference.com/players/B/BradTo00.htm"
+
+    def test_url_construction_different_letter(self):
+        html = (FIXTURE_DIR / "WarnFr00_LB.htm").read_text()
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.players.browserless,
+            "get_page_content",
+            return_value=html,
+        ) as mock_fetch:
+            pfr.players.get_player_profile(player_id="WarnFr00")
+
+        url = mock_fetch.call_args[0][0]
+        assert url == "https://www.pro-football-reference.com/players/W/WarnFr00.htm"
+
+    def test_lazy_loading(self):
+        pfr = GriddyPFR()
+        assert "players" in pfr._sub_sdk_map
+        assert pfr.players is not None
+        assert pfr.players is pfr.players
 
 
 # ---------------------------------------------------------------------------
