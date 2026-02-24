@@ -12,10 +12,10 @@ from griddy.core.utils.converters import multi_replace, safe_numberify, snakify
 class PlayerProfileParser:
     def __init__(self):
         self.soup: BeautifulSoup | None = None
-        self.player_data: dict | None = None
 
     def _extract_names(self, name_tag: Tag) -> dict:
-        full_name, nicknames = (
+
+        full_name, *nicknames = (
             name_tag.get_text(strip=True).replace("\xa0", "").splitlines()
         )
 
@@ -30,13 +30,16 @@ class PlayerProfileParser:
         middle_name = " ".join(full_name_parts[1:-1])
         last_name = full_name_parts[-1]
 
-        nicknames_list = [
-            name.strip()
-            for name in nicknames.replace("(", "")
-            .replace(")", "")
-            .replace("or", ",")
-            .split(",")
-        ]
+        if nicknames:
+            nicknames_list = [
+                name.strip()
+                for name in nicknames.replace("(", "")
+                .replace(")", "")
+                .replace("or", ",")
+                .split(",")
+            ]
+        else:
+            nicknames_list = []
 
         return {
             "first_name": first_name,
@@ -133,13 +136,28 @@ class PlayerProfileParser:
         names = self._extract_names(name_tag=p_tags[0])
         names["pretty_name"] = pretty_name
 
-        return {
+        position_info = self._extract_pos(pos_tag=p_tags[1])
+        hgt_wgt_info = self._extract_height_weight(tag=p_tags[2])
+
+        if "team" in p_tags[3].get_text().lower():
+            birth_idx = 4
+            pre_nfl_idx = 5
+        else:
+            birth_idx = 3
+            pre_nfl_idx = 4
+
+        birth_info = self._extract_birth_info(tag=p_tags[birth_idx])
+        pre_nfl_info = self._extract_pre_nfl(tag=p_tags[pre_nfl_idx])
+
+        ret_data = {
             "names": names,
-            **self._extract_pos(pos_tag=p_tags[1]),
-            **self._extract_height_weight(tag=p_tags[2]),
-            **self._extract_birth_info(tag=p_tags[3]),
-            **self._extract_pre_nfl(tag=p_tags[4]),
+            **position_info,
+            **hgt_wgt_info,
+            **birth_info,
+            **pre_nfl_info,
         }
+
+        return ret_data
 
     def _parse_meta_panel(self, panel: Tag) -> dict:
         img_tag = panel.find("img")
