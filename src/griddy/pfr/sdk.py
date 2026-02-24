@@ -27,6 +27,7 @@ from .utils import Logger, RetryConfig
 
 if TYPE_CHECKING:
     from .endpoints.games import Games
+    from .endpoints.players import Players
     from .endpoints.schedule import Schedule
 
 
@@ -42,10 +43,12 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     """
 
     games: "Games"
+    players: "Players"
     schedule: "Schedule"
 
     _sub_sdk_map = {
         "games": ("griddy.pfr.endpoints.games", "Games"),
+        "players": ("griddy.pfr.endpoints.players", "Players"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
     }
 

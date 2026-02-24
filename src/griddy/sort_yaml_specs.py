@@ -2,7 +2,7 @@ import os
 import sys
 from pathlib import Path
 
-from core.utils import YAMLConsolidator
+from griddy.core.utils.yaml_consolidator import YAMLConsolidator
 
 _, *args = sys.argv
 

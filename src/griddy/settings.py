@@ -1,7 +1,10 @@
 import os
+from pathlib import Path
 
 BROWSERLESS_HOST = os.getenv("BROWSERLESS_HOST")
 BROWSERLESS_TOKEN = os.getenv("BROWSERLESS_TOKEN")
+
+FIXTURE_DIR = Path(__file__).resolve().parents[2] / "tests" / "fixtures"
 
 NFL = {
     "api_key": os.getenv("NFL_API_KEY"),

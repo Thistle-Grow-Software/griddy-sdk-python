@@ -1,0 +1,1490 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/WarnFr00_2025.jpg",
+        "names": {
+            "first_name": "Federico",
+            "middle_name": "Anthony",
+            "last_name": "Warner",
+            "suffix": "",
+            "nicknames": [],
+            "pretty_name": "Fred Warner"
+        },
+        "position": "ILB",
+        "height": 75,
+        "weight": "230lb",
+        "birth_date": "1996-11-19T00:00:00",
+        "birth_place": {
+            "city": "San Marcos",
+            "state": "CA"
+        },
+        "college": "BYU",
+        "high_school": "Mission Hills (CA)",
+        "draft": {
+            "team": "San Francisco 49Ers",
+            "rd_and_ovr": {
+                "round": 3,
+                "overall": 70
+            },
+            "year": 2018
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "48",
+            "team": "San Francisco 49ers",
+            "start_year": 2018,
+            "end_year": 2018
+        },
+        {
+            "number": "54",
+            "team": "San Francisco 49ers",
+            "start_year": 2019,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 6,
+        "AV": 121,
+        "Sk": 3,
+        "Solo": 93,
+        "FF": 0.0
+    },
+    "statistics": {
+        "regular_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 6,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 124,
+                        "tackles_solo": 85,
+                        "tackles_assists": 39,
+                        "tackles_loss": 3,
+                        "qb_hits": 2,
+                        "safety_md": 0,
+                        "av": 7,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 1,
+                        "def_int_yds": 46,
+                        "def_int_td": 1,
+                        "def_int_long": 46,
+                        "pass_defended": 9,
+                        "fumbles_forced": 3,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 3.0,
+                        "tackles_combined": 118,
+                        "tackles_solo": 89,
+                        "tackles_assists": 29,
+                        "tackles_loss": 7,
+                        "qb_hits": 5,
+                        "safety_md": 0,
+                        "av": 9,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 2,
+                        "def_int_yds": 3,
+                        "def_int_td": 0,
+                        "def_int_long": 3,
+                        "pass_defended": 6,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 2,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.0,
+                        "tackles_combined": 125,
+                        "tackles_solo": 79,
+                        "tackles_assists": 46,
+                        "tackles_loss": 5,
+                        "qb_hits": 7,
+                        "safety_md": 0,
+                        "av": 19,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 4,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 3,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.5,
+                        "tackles_combined": 137,
+                        "tackles_solo": 79,
+                        "tackles_assists": 58,
+                        "tackles_loss": 7,
+                        "qb_hits": 3,
+                        "safety_md": 0,
+                        "av": 8,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 1,
+                        "def_int_yds": 20,
+                        "def_int_td": 0,
+                        "def_int_long": 20,
+                        "pass_defended": 10,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 2.0,
+                        "tackles_combined": 130,
+                        "tackles_solo": 79,
+                        "tackles_assists": 51,
+                        "tackles_loss": 3,
+                        "qb_hits": 6,
+                        "safety_md": 0,
+                        "av": 17,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "def_int": 4,
+                        "def_int_yds": 66,
+                        "def_int_td": 0,
+                        "def_int_long": 32,
+                        "pass_defended": 11,
+                        "fumbles_forced": 4,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 2.5,
+                        "tackles_combined": 132,
+                        "tackles_solo": 82,
+                        "tackles_assists": 50,
+                        "tackles_loss": 6,
+                        "qb_hits": 5,
+                        "safety_md": 0,
+                        "av": 17,
+                        "awards": "PB,AP-1,AP DPoY-6"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 2,
+                        "def_int_yds": 70,
+                        "def_int_td": 1,
+                        "def_int_long": 45,
+                        "pass_defended": 7,
+                        "fumbles_forced": 4,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.0,
+                        "tackles_combined": 131,
+                        "tackles_solo": 76,
+                        "tackles_assists": 55,
+                        "tackles_loss": 5,
+                        "qb_hits": 2,
+                        "safety_md": 0,
+                        "av": 13,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 2,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 51,
+                        "tackles_solo": 28,
+                        "tackles_assists": 23,
+                        "tackles_loss": 2,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "av": 3,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 6,
+                        "games_started": 6
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 10.6,
+                        "def_yds_per_target": 6.3,
+                        "def_cmp_td": 3,
+                        "def_pass_rating": 91.8,
+                        "def_tgt_yds_per_att": 5.1,
+                        "def_air_yds": 171,
+                        "def_yac": 304,
+                        "blitzes": 51,
+                        "qb_hurry": 2,
+                        "qb_knockdown": 2,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 4,
+                        "tackles_combined": 124,
+                        "tackles_missed": 13,
+                        "tackles_missed_pct": 9.5,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 75,
+                        "def_cmp": 45,
+                        "def_cmp_pct": 60.0,
+                        "def_cmp_yds": 475
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 9.3,
+                        "def_yds_per_target": 6.1,
+                        "def_cmp_td": 2,
+                        "def_pass_rating": 86.2,
+                        "def_tgt_yds_per_att": 3.7,
+                        "def_air_yds": 158,
+                        "def_yac": 296,
+                        "blitzes": 35,
+                        "qb_hurry": 3,
+                        "qb_knockdown": 1,
+                        "def_batted_passes": 2,
+                        "sacks": 3.0,
+                        "pressures": 7,
+                        "tackles_combined": 118,
+                        "tackles_missed": 17,
+                        "tackles_missed_pct": 12.6,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 1,
+                        "def_targets": 74,
+                        "def_cmp": 49,
+                        "def_cmp_pct": 66.2,
+                        "def_cmp_yds": 454
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 7.1,
+                        "def_yds_per_target": 4.4,
+                        "def_cmp_td": 2,
+                        "def_pass_rating": 69.7,
+                        "def_tgt_yds_per_att": 4.2,
+                        "def_air_yds": 80,
+                        "def_yac": 190,
+                        "blitzes": 76,
+                        "qb_hurry": 9,
+                        "qb_knockdown": 6,
+                        "def_batted_passes": 1,
+                        "sacks": 1.0,
+                        "pressures": 16,
+                        "tackles_combined": 125,
+                        "tackles_missed": 7,
+                        "tackles_missed_pct": 5.3,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 2,
+                        "def_targets": 61,
+                        "def_cmp": 38,
+                        "def_cmp_pct": 62.3,
+                        "def_cmp_yds": 270
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 8.9,
+                        "def_yds_per_target": 7.0,
+                        "def_cmp_td": 3,
+                        "def_pass_rating": 112.3,
+                        "def_tgt_yds_per_att": 3.2,
+                        "def_air_yds": 135,
+                        "def_yac": 293,
+                        "blitzes": 26,
+                        "qb_hurry": 1,
+                        "qb_knockdown": 2,
+                        "def_batted_passes": 0,
+                        "sacks": 0.5,
+                        "pressures": 4,
+                        "tackles_combined": 137,
+                        "tackles_missed": 11,
+                        "tackles_missed_pct": 7.4,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 61,
+                        "def_cmp": 48,
+                        "def_cmp_pct": 78.7,
+                        "def_cmp_yds": 428
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 10.4,
+                        "def_yds_per_target": 6.4,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 74.3,
+                        "def_tgt_yds_per_att": 4.3,
+                        "def_air_yds": 142,
+                        "def_yac": 296,
+                        "blitzes": 35,
+                        "qb_hurry": 2,
+                        "qb_knockdown": 3,
+                        "def_batted_passes": 0,
+                        "sacks": 2.0,
+                        "pressures": 8,
+                        "tackles_combined": 130,
+                        "tackles_missed": 8,
+                        "tackles_missed_pct": 5.8,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 1,
+                        "def_targets": 68,
+                        "def_cmp": 42,
+                        "def_cmp_pct": 61.8,
+                        "def_cmp_yds": 438
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 10.0,
+                        "def_yds_per_target": 7.4,
+                        "def_cmp_td": 1,
+                        "def_pass_rating": 76.6,
+                        "def_tgt_yds_per_att": 4.9,
+                        "def_air_yds": 203,
+                        "def_yac": 357,
+                        "blitzes": 43,
+                        "qb_hurry": 1,
+                        "qb_knockdown": 4,
+                        "def_batted_passes": 3,
+                        "sacks": 2.5,
+                        "pressures": 8,
+                        "tackles_combined": 132,
+                        "tackles_missed": 14,
+                        "tackles_missed_pct": 9.6,
+                        "awards": "PB,AP-1,AP DPoY-6"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 4,
+                        "def_targets": 76,
+                        "def_cmp": 56,
+                        "def_cmp_pct": 73.7,
+                        "def_cmp_yds": 560
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 8.5,
+                        "def_yds_per_target": 6.7,
+                        "def_cmp_td": 3,
+                        "def_pass_rating": 97.5,
+                        "def_tgt_yds_per_att": 4.3,
+                        "def_air_yds": 147,
+                        "def_yac": 242,
+                        "blitzes": 32,
+                        "qb_hurry": 3,
+                        "qb_knockdown": 1,
+                        "def_batted_passes": 0,
+                        "sacks": 1.0,
+                        "pressures": 5,
+                        "tackles_combined": 131,
+                        "tackles_missed": 17,
+                        "tackles_missed_pct": 11.5,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 2,
+                        "def_targets": 58,
+                        "def_cmp": 46,
+                        "def_cmp_pct": 79.3,
+                        "def_cmp_yds": 389
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 9.5,
+                        "def_yds_per_target": 5.5,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 72.9,
+                        "def_tgt_yds_per_att": 5.5,
+                        "def_air_yds": 64,
+                        "def_yac": 78,
+                        "blitzes": 5,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 1,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 51,
+                        "tackles_missed": 2,
+                        "tackles_missed_pct": 3.8,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "games": 6
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 6,
+                        "def_int": 0,
+                        "def_targets": 26,
+                        "def_cmp": 15,
+                        "def_cmp_pct": 57.7,
+                        "def_cmp_yds": 142
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 1,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 16,
+                        "games_started": 16,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": "",
+                        "age": "",
+                        "punt_ret_td": "",
+                        "kick_ret_td": "",
+                        "fumbles_rec_td": "",
+                        "def_int_td": "",
+                        "other_td": "",
+                        "total_td": "",
+                        "two_pt_md": "",
+                        "def_two_pt": "",
+                        "xpm": "",
+                        "xpa": "",
+                        "fgm": "",
+                        "fga": "",
+                        "safety_md": "",
+                        "scoring": "",
+                        "points_per_g": "",
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": "",
+                        "games_started": "",
+                        "rush_td": "",
+                        "rec_td": ""
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 1,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": "PB,AP-1"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 17,
+                        "games_started": 17,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 48,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 1060,
+                        "def_pct": "99%",
+                        "special_teams": 111,
+                        "st_pct": "24%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 54,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 985,
+                        "def_pct": "96%",
+                        "special_teams": 27,
+                        "st_pct": "6%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2020*+",
+                        "age": 24,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 54,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 971,
+                        "def_pct": "94%",
+                        "special_teams": 19,
+                        "st_pct": "4%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 54,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 978,
+                        "def_pct": "96%",
+                        "special_teams": 17,
+                        "st_pct": "4%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2022*+",
+                        "age": 26,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 54,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 1026,
+                        "def_pct": "96%",
+                        "special_teams": 62,
+                        "st_pct": "14%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2023*+",
+                        "age": 27,
+                        "team": "SFO",
+                        "pos": "LB",
+                        "uniform_number": 54,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 982,
+                        "def_pct": "90%",
+                        "special_teams": 65,
+                        "st_pct": "15%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*+",
+                        "age": 28,
+                        "team": "SFO",
+                        "pos": "MLB",
+                        "uniform_number": 54,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 998,
+                        "def_pct": "94%",
+                        "special_teams": 81,
+                        "st_pct": "18%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team": "SFO",
+                        "pos": "LB/MIKE",
+                        "uniform_number": 54,
+                        "g": 6,
+                        "gs": 6,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 330,
+                        "def_pct": "87%",
+                        "special_teams": 30,
+                        "st_pct": "19%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2022,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "MLB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "LB",
+                    "voters": "Sporting News"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2018,
+                    "pos": "OLB",
+                    "height": 75,
+                    "weight": 236,
+                    "forty_yd": 4.64,
+                    "bench_reps": 21,
+                    "broad_jump": 119,
+                    "shuttle": 4.28,
+                    "cone": 6.9,
+                    "vertical": 38.5
+                }
+            ]
+        },
+        "post_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 1,
+                        "def_int_yds": 3,
+                        "def_int_td": 0,
+                        "def_int_long": 3,
+                        "pass_defended": 2,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 20,
+                        "tackles_solo": 11,
+                        "tackles_assists": 9,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 3,
+                        "games_started": 3
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 21,
+                        "tackles_solo": 13,
+                        "tackles_assists": 8,
+                        "tackles_loss": 3,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 3,
+                        "games_started": 3
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "def_int": 1,
+                        "def_int_yds": 16,
+                        "def_int_td": 0,
+                        "def_int_long": 16,
+                        "pass_defended": 1,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 23,
+                        "tackles_solo": 16,
+                        "tackles_assists": 7,
+                        "tackles_loss": 2,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 3,
+                        "games_started": 3
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "SFO",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 33,
+                        "tackles_solo": 24,
+                        "tackles_assists": 9,
+                        "tackles_loss": 2,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 3,
+                        "games_started": 3
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 7.0,
+                        "def_yds_per_target": 5.3,
+                        "def_cmp_td": 1,
+                        "def_pass_rating": 79.5,
+                        "def_tgt_yds_per_att": 7.8,
+                        "def_air_yds": 48,
+                        "def_yac": 15,
+                        "blitzes": 6,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 20,
+                        "tackles_missed": 2,
+                        "tackles_missed_pct": 9.1,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 3
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 3,
+                        "def_int": 1,
+                        "def_targets": 12,
+                        "def_cmp": 9,
+                        "def_cmp_pct": 75.0,
+                        "def_cmp_yds": 63
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": "",
+                        "def_cmp_td": "",
+                        "def_pass_rating": "",
+                        "def_tgt_yds_per_att": "",
+                        "def_air_yds": "",
+                        "def_yac": "",
+                        "blitzes": "",
+                        "qb_hurry": "",
+                        "qb_knockdown": "",
+                        "def_batted_passes": "",
+                        "sacks": "",
+                        "pressures": "",
+                        "tackles_combined": "",
+                        "tackles_missed": "",
+                        "tackles_missed_pct": "",
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": ""
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": "",
+                        "def_int": "",
+                        "def_targets": "",
+                        "def_cmp": "",
+                        "def_cmp_pct": "",
+                        "def_cmp_yds": ""
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 5.7,
+                        "def_yds_per_target": 4.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 77.1,
+                        "def_tgt_yds_per_att": 2.5,
+                        "def_air_yds": -11,
+                        "def_yac": 51,
+                        "blitzes": 7,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 21,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 4.5,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 3
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 3,
+                        "def_int": 0,
+                        "def_targets": 10,
+                        "def_cmp": 7,
+                        "def_cmp_pct": 70.0,
+                        "def_cmp_yds": 40
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 6.3,
+                        "def_yds_per_target": 4.2,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 40.3,
+                        "def_tgt_yds_per_att": 6.7,
+                        "def_air_yds": 10,
+                        "def_yac": 40,
+                        "blitzes": 1,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 23,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 4.2,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "MLB",
+                        "games": 3
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 3,
+                        "def_int": 1,
+                        "def_targets": 12,
+                        "def_cmp": 8,
+                        "def_cmp_pct": 66.7,
+                        "def_cmp_yds": 50
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "SFO",
+                        "def_yds_per_cmp": 8.9,
+                        "def_yds_per_target": 6.2,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 85.6,
+                        "def_tgt_yds_per_att": 5.3,
+                        "def_air_yds": 49,
+                        "def_yac": 112,
+                        "blitzes": 3,
+                        "qb_hurry": 1,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 1,
+                        "tackles_combined": 33,
+                        "tackles_missed": 4,
+                        "tackles_missed_pct": 10.8,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LB",
+                        "games": 3
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 3,
+                        "def_int": 0,
+                        "def_targets": 26,
+                        "def_cmp": 18,
+                        "def_cmp_pct": 69.2,
+                        "def_cmp_yds": 161
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [],
+    "links": {
+        "overview": {
+            "href": "/players/W/WarnFr00.htm"
+        },
+        "general": {
+            "touchdowns": "/players/W/WarnFr00/touchdowns/",
+            "penalties": "/players/W/WarnFr00/penalties"
+        },
+        "game_logs": {
+            "career": "/players/W/WarnFr00/gamelog/",
+            "playoffs": "/players/W/WarnFr00/gamelog/post/",
+            "2018": "/players/W/WarnFr00/gamelog/2018/",
+            "2019": "/players/W/WarnFr00/gamelog/2019/",
+            "2020": "/players/W/WarnFr00/gamelog/2020/",
+            "2021": "/players/W/WarnFr00/gamelog/2021/",
+            "2022": "/players/W/WarnFr00/gamelog/2022/",
+            "2023": "/players/W/WarnFr00/gamelog/2023/",
+            "2024": "/players/W/WarnFr00/gamelog/2024/",
+            "2025": "/players/W/WarnFr00/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=WarnFr00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/W/WarnFr00/gamelog/advanced/",
+            "2018": "/players/W/WarnFr00/gamelog/2018/advanced/",
+            "2019": "/players/W/WarnFr00/gamelog/2019/advanced/",
+            "2020": "/players/W/WarnFr00/gamelog/2020/advanced/",
+            "2021": "/players/W/WarnFr00/gamelog/2021/advanced/",
+            "2022": "/players/W/WarnFr00/gamelog/2022/advanced/",
+            "2023": "/players/W/WarnFr00/gamelog/2023/advanced/",
+            "2024": "/players/W/WarnFr00/gamelog/2024/advanced/",
+            "2025": "/players/W/WarnFr00/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/W/WarnFr00/splits/",
+            "2018": "/players/W/WarnFr00/splits/2018/",
+            "2019": "/players/W/WarnFr00/splits/2019/",
+            "2020": "/players/W/WarnFr00/splits/2020/",
+            "2021": "/players/W/WarnFr00/splits/2021/",
+            "2022": "/players/W/WarnFr00/splits/2022/",
+            "2023": "/players/W/WarnFr00/splits/2023/",
+            "2024": "/players/W/WarnFr00/splits/2024/",
+            "2025": "/players/W/WarnFr00/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=WarnFr00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "more_fred_warner_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/fred-warner-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2020 NFL Top 100 (#70)",
+            "2021 NFL Top 100 (#21)",
+            "2022 NFL Top 100 (#47)",
+            "2023 NFL Top 100 (#15)",
+            "2024 NFL Top 100 (#11)",
+            "2025 NFL Top 100 (#16)"
+        ],
+        "apdpoy_shares": [
+            "2023 AP Def. PoY .03 (6)",
+            "Career AP Def. PoY .03 (164)"
+        ],
+        "pro_bowls": [
+            "2020\n",
+            "2022\n",
+            "2023\n",
+            "2024\n"
+        ],
+        "all_pro": [
+            "2020\n",
+            "2022\n",
+            "2023\n",
+            "2024\n"
+        ],
+        "potw": [
+            "2025 - Week 2 NFC Defensive\n",
+            "2023 - Week 5 NFC Defensive\n",
+            "2020 - Week 16 NFC Defensive\n",
+            "2019 - Week 12 NFC Defensive\n"
+        ],
+        "potm": [
+            "2019 November - NFC Defensive\n"
+        ],
+        "av": [
+            "2020 NFL 19 (2)",
+            "2022 NFL 17 (7)"
+        ],
+        "non_offense_td": [
+            "2024 NFL 1 (7)"
+        ],
+        "def_int": [
+            "2023 NFL 4 (7)"
+        ],
+        "def_int_yds": [
+            "Active 205 (28)"
+        ],
+        "def_int_td": [
+            "2019 NFL 1 (4)",
+            "2024 NFL 1 (2)",
+            "Active 2 (14)"
+        ],
+        "tackles_solo": [
+            "2019 NFL 89 (6)",
+            "Active 597 (12)",
+            "Career 597 (121)"
+        ],
+        "tackles_combined": [
+            "2020 NFL 125 (10)",
+            "Active 948 (12)",
+            "Career 948 (113)"
+        ],
+        "fumbles_forced": [
+            "2023 NFL 4 (5)",
+            "2024 NFL 4 (4)",
+            "Active 17 (12)",
+            "Career 17 (151)"
+        ]
+    }
+}

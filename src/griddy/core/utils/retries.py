@@ -1,9 +1,47 @@
 import asyncio
 import random
 import time
-from typing import List
+from functools import wraps
+from typing import Callable, List, TypeVar
 
 import httpx
+
+T = TypeVar("T")
+
+
+def retry_on_rate_limit(max_retries: int = 3, backoff_factor: float = 1.0) -> Callable:
+    """
+    Decorator to retry function calls on rate limit errors.
+
+    Args:
+        max_retries: Maximum number of retry attempts
+        backoff_factor: Factor for exponential backoff
+    """
+
+    def decorator(func: Callable[..., T]) -> Callable[..., T]:
+        @wraps(func)
+        def wrapper(*args, **kwargs) -> T:
+            from griddy.core.exceptions import RateLimitError
+
+            for attempt in range(max_retries + 1):
+                try:
+                    return func(*args, **kwargs)
+                except RateLimitError as e:
+                    if attempt == max_retries:
+                        raise
+
+                    # Calculate backoff time
+                    backoff_time = backoff_factor * (2**attempt)
+                    if e.retry_after:
+                        backoff_time = max(backoff_time, e.retry_after)
+
+                    time.sleep(backoff_time)
+
+            return func(*args, **kwargs)  # This should never be reached
+
+        return wrapper
+
+    return decorator
 
 
 class BackoffStrategy:

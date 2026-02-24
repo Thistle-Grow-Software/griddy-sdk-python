@@ -1,0 +1,2515 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/BoswCh00_2024.jpg",
+        "names": {
+            "first_name": "Christopher",
+            "middle_name": "Lynn",
+            "last_name": "Boswell",
+            "suffix": "",
+            "nicknames": [
+                "The Wizard of Boz"
+            ],
+            "pretty_name": "Chris Boswell"
+        },
+        "position": "K",
+        "throws": "Right",
+        "height": 74,
+        "weight": "185lb",
+        "birth_date": "1991-03-16T00:00:00",
+        "birth_place": {
+            "city": "Fort Worth",
+            "state": "TX"
+        },
+        "college": "Rice",
+        "high_school": "Fossil Ridge (TX)",
+        "draft": {}
+    },
+    "jersey_numbers": [
+        {
+            "number": "9",
+            "team": "Pittsburgh Steelers",
+            "start_year": 2015,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 167,
+        "FGM": 4,
+        "FGA": 39,
+        "XPM": 27,
+        "XPA": 299
+    },
+    "statistics": {
+        "regular_season": {
+            "kicking": [
+                {
+                    "header_kickoffs": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 1,
+                        "fgm1": 1,
+                        "fga2": 9,
+                        "fgm2": 9,
+                        "fga3": 8,
+                        "fgm3": 8,
+                        "fga4": 12,
+                        "fgm4": 9,
+                        "fga5": 2,
+                        "fgm5": 2,
+                        "fga": 32,
+                        "fgm": 29,
+                        "fg_long": 51,
+                        "fg_pct": 90.6,
+                        "xpa": 27,
+                        "xpm": 26,
+                        "xp_pct": 96.3,
+                        "kickoff": 74,
+                        "kickoff_yds": 4680,
+                        "kickoff_tb": 26,
+                        "kickoff_tb_pct": 35.1,
+                        "kickoff_yds_avg": 63,
+                        "av": 3,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 12,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 2,
+                        "fgm2": 2,
+                        "fga3": 9,
+                        "fgm3": 8,
+                        "fga4": 12,
+                        "fgm4": 11,
+                        "fga5": 2,
+                        "fgm5": 0,
+                        "fga": 25,
+                        "fgm": 21,
+                        "fg_long": 49,
+                        "fg_pct": 84.0,
+                        "xpa": 36,
+                        "xpm": 36,
+                        "xp_pct": 100.0,
+                        "kickoff": 80,
+                        "kickoff_yds": 4953,
+                        "kickoff_tb": 49,
+                        "kickoff_tb_pct": 61.3,
+                        "kickoff_yds_avg": 62,
+                        "av": 3,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 15,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2017,
+                        "age": 26,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 10,
+                        "fgm2": 10,
+                        "fga3": 14,
+                        "fgm3": 12,
+                        "fga4": 10,
+                        "fgm4": 9,
+                        "fga5": 4,
+                        "fgm5": 4,
+                        "fga": 38,
+                        "fgm": 35,
+                        "fg_long": 53,
+                        "fg_pct": 92.1,
+                        "xpa": 39,
+                        "xpm": 37,
+                        "xp_pct": 94.9,
+                        "kickoff": 90,
+                        "kickoff_yds": 5681,
+                        "kickoff_tb": 46,
+                        "kickoff_tb_pct": 51.1,
+                        "kickoff_yds_avg": 63,
+                        "av": 5,
+                        "awards": "PB"
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2018,
+                        "age": 27,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 3,
+                        "fgm2": 3,
+                        "fga3": 6,
+                        "fgm3": 4,
+                        "fga4": 10,
+                        "fgm4": 5,
+                        "fga5": 1,
+                        "fgm5": 1,
+                        "fga": 20,
+                        "fgm": 13,
+                        "fg_long": 50,
+                        "fg_pct": 65.0,
+                        "xpa": 48,
+                        "xpm": 43,
+                        "xp_pct": 89.6,
+                        "kickoff": 81,
+                        "kickoff_yds": 5097,
+                        "kickoff_tb": 50,
+                        "kickoff_tb_pct": 61.7,
+                        "kickoff_yds_avg": 63,
+                        "av": 0,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 15,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2019,
+                        "age": 28,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 1,
+                        "fgm1": 1,
+                        "fga2": 11,
+                        "fgm2": 11,
+                        "fga3": 7,
+                        "fgm3": 7,
+                        "fga4": 10,
+                        "fgm4": 9,
+                        "fga5": 2,
+                        "fgm5": 1,
+                        "fga": 31,
+                        "fgm": 29,
+                        "fg_long": 49,
+                        "fg_pct": 93.5,
+                        "xpa": 28,
+                        "xpm": 28,
+                        "xp_pct": 100.0,
+                        "kickoff": 72,
+                        "kickoff_yds": 4552,
+                        "kickoff_tb": 31,
+                        "kickoff_tb_pct": 43.1,
+                        "kickoff_yds_avg": 63,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2020,
+                        "age": 29,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 5,
+                        "fgm2": 5,
+                        "fga3": 6,
+                        "fgm3": 6,
+                        "fga4": 8,
+                        "fgm4": 7,
+                        "fga5": 1,
+                        "fgm5": 1,
+                        "fga": 20,
+                        "fgm": 19,
+                        "fg_long": 59,
+                        "fg_pct": 95.0,
+                        "xpa": 38,
+                        "xpm": 34,
+                        "xp_pct": 89.5,
+                        "kickoff": 73,
+                        "kickoff_yds": 4622,
+                        "kickoff_tb": 44,
+                        "kickoff_tb_pct": 60.3,
+                        "kickoff_yds_avg": 63,
+                        "av": 3,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 13,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 9,
+                        "fgm2": 9,
+                        "fga3": 9,
+                        "fgm3": 8,
+                        "fga4": 13,
+                        "fgm4": 11,
+                        "fga5": 9,
+                        "fgm5": 8,
+                        "fga": 40,
+                        "fgm": 36,
+                        "fg_long": 56,
+                        "fg_pct": 90.0,
+                        "xpa": 29,
+                        "xpm": 27,
+                        "xp_pct": 93.1,
+                        "kickoff": 86,
+                        "kickoff_yds": 5464,
+                        "kickoff_tb": 40,
+                        "kickoff_tb_pct": 46.5,
+                        "kickoff_yds_avg": 64,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2022,
+                        "age": 31,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 4,
+                        "fgm2": 4,
+                        "fga3": 5,
+                        "fgm3": 4,
+                        "fga4": 10,
+                        "fgm4": 5,
+                        "fga5": 9,
+                        "fgm5": 7,
+                        "fga": 28,
+                        "fgm": 20,
+                        "fg_long": 59,
+                        "fg_pct": 71.4,
+                        "xpa": 18,
+                        "xpm": 18,
+                        "xp_pct": 100.0,
+                        "kickoff": 50,
+                        "kickoff_yds": 3073,
+                        "kickoff_tb": 21,
+                        "kickoff_tb_pct": 42.0,
+                        "kickoff_yds_avg": 62,
+                        "av": 1,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 12,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2023,
+                        "age": 32,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 9,
+                        "fgm2": 9,
+                        "fga3": 7,
+                        "fgm3": 7,
+                        "fga4": 8,
+                        "fgm4": 7,
+                        "fga5": 7,
+                        "fgm5": 6,
+                        "fga": 31,
+                        "fgm": 29,
+                        "fg_long": 57,
+                        "fg_pct": 93.5,
+                        "xpa": 28,
+                        "xpm": 27,
+                        "xp_pct": 96.4,
+                        "kickoff": 76,
+                        "kickoff_yds": 4833,
+                        "kickoff_tb": 55,
+                        "kickoff_tb_pct": 72.4,
+                        "kickoff_yds_avg": 64,
+                        "av": 4,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2024,
+                        "age": 33,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 9,
+                        "fgm2": 9,
+                        "fga3": 12,
+                        "fgm3": 12,
+                        "fga4": 8,
+                        "fgm4": 7,
+                        "fga5": 15,
+                        "fgm5": 13,
+                        "fga": 44,
+                        "fgm": 41,
+                        "fg_long": 57,
+                        "fg_pct": 93.2,
+                        "xpa": 35,
+                        "xpm": 35,
+                        "xp_pct": 100.0,
+                        "kickoff": 90,
+                        "kickoff_yds": 5713,
+                        "kickoff_tb": 49,
+                        "kickoff_tb_pct": 54.4,
+                        "kickoff_yds_avg": 64,
+                        "av": 6,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 6,
+                        "fgm2": 6,
+                        "fga3": 4,
+                        "fgm3": 2,
+                        "fga4": 11,
+                        "fgm4": 10,
+                        "fga5": 11,
+                        "fgm5": 9,
+                        "fga": 32,
+                        "fgm": 27,
+                        "fg_long": 60,
+                        "fg_pct": 84.4,
+                        "xpa": 43,
+                        "xpm": 42,
+                        "xp_pct": 97.7,
+                        "kickoff": 88,
+                        "kickoff_yds": 5210,
+                        "kickoff_tb": 7,
+                        "kickoff_tb_pct": 8.0,
+                        "kickoff_yds_avg": 59,
+                        "av": 4,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                }
+            ],
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 2,
+                        "tackles_solo": 2,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 12,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 15,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2017,
+                        "age": 26,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2018,
+                        "age": 27,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 2,
+                        "tackles_solo": 2,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 15,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2019,
+                        "age": 28,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 0,
+                        "tackles_solo": 0,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 2,
+                        "tackles_solo": 2,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                }
+            ],
+            "passing": [
+                {
+                    "year_id": 2018,
+                    "age": 27,
+                    "team_name_abbr": "PIT",
+                    "comp_name_abbr": "NFL",
+                    "pos": "K",
+                    "games": 15,
+                    "games_started": 0,
+                    "pass_cmp": 1,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 100.0,
+                    "pass_yds": 2,
+                    "pass_td": 1,
+                    "pass_td_pct": 100.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 1,
+                    "pass_long": 2,
+                    "pass_yds_per_att": 2.0,
+                    "pass_adj_yds_per_att": 22.0,
+                    "pass_yds_per_cmp": 2.0,
+                    "pass_yds_per_g": 0.1,
+                    "pass_rating": 118.7,
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 2.0,
+                    "pass_adj_net_yds_per_att": 22.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": ""
+                },
+                {
+                    "year_id": "",
+                    "age": "",
+                    "team_name_abbr": "",
+                    "comp_name_abbr": "",
+                    "pos": "",
+                    "games": "",
+                    "games_started": "",
+                    "pass_cmp": "",
+                    "pass_att": "",
+                    "pass_cmp_pct": "",
+                    "pass_yds": "",
+                    "pass_td": "",
+                    "pass_td_pct": "",
+                    "pass_int": "",
+                    "pass_int_pct": "",
+                    "pass_first_down": "",
+                    "pass_long": "",
+                    "pass_yds_per_att": "",
+                    "pass_adj_yds_per_att": "",
+                    "pass_yds_per_cmp": "",
+                    "pass_yds_per_g": "",
+                    "pass_rating": "",
+                    "pass_sacked": "",
+                    "pass_sacked_yds": "",
+                    "pass_sacked_pct": "",
+                    "pass_net_yds_per_att": "",
+                    "pass_adj_net_yds_per_att": "",
+                    "comebacks": "",
+                    "gwd": "",
+                    "awards": ""
+                },
+                {
+                    "year_id": 2021,
+                    "age": 30,
+                    "team_name_abbr": "PIT",
+                    "comp_name_abbr": "NFL",
+                    "pos": "K",
+                    "games": 17,
+                    "games_started": 0,
+                    "pass_cmp": 0,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 0.0,
+                    "pass_yds": 0,
+                    "pass_td": 0,
+                    "pass_td_pct": 0.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 0,
+                    "pass_long": "",
+                    "pass_yds_per_att": 0.0,
+                    "pass_adj_yds_per_att": 0.0,
+                    "pass_yds_per_cmp": "",
+                    "pass_yds_per_g": 0.0,
+                    "pass_rating": 39.6,
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 0.0,
+                    "pass_adj_net_yds_per_att": 0.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": ""
+                }
+            ],
+            "passing_advanced": [
+                {
+                    "header_play_action": {
+                        "year_id": 2018,
+                        "age": 27,
+                        "pass_target_yds": 2,
+                        "pass_tgt_yds_per_att": 2.0,
+                        "pass_air_yds": 2,
+                        "pass_air_yds_per_cmp": 2.0,
+                        "pass_air_yds_per_att": 2.0,
+                        "pass_yac": 0,
+                        "pass_yac_per_cmp": 0.0,
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 0,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": 0.0,
+                        "pass_poor_throws": 0,
+                        "pass_poor_throw_pct": 0.0,
+                        "pass_on_target": "",
+                        "pass_on_target_pct": "",
+                        "pocket_time": 0.0,
+                        "pass_blitzed": 0,
+                        "pass_hurried": 0,
+                        "pass_hits": 0,
+                        "pass_pressured": 0,
+                        "pass_pressured_pct": 0.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": "",
+                        "pass_rpo_yds": "",
+                        "pass_rpo_pass_att": "",
+                        "pass_rpo_pass_yds": "",
+                        "pass_rpo_rush_att": "",
+                        "pass_rpo_rush_yds": "",
+                        "pass_play_action": "",
+                        "pass_play_action_pass_yds": "",
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 15
+                    },
+                    "header_pressure": {
+                        "games_started": 0
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 1,
+                        "pass_att": 1
+                    }
+                },
+                {
+                    "header_play_action": {
+                        "year_id": "",
+                        "age": "",
+                        "pass_target_yds": "",
+                        "pass_tgt_yds_per_att": "",
+                        "pass_air_yds": "",
+                        "pass_air_yds_per_cmp": "",
+                        "pass_air_yds_per_att": "",
+                        "pass_yac": "",
+                        "pass_yac_per_cmp": "",
+                        "pass_batted_passes": "",
+                        "pass_throwaways": "",
+                        "pass_spikes": "",
+                        "pass_drops": "",
+                        "pass_drop_pct": "",
+                        "pass_poor_throws": "",
+                        "pass_poor_throw_pct": "",
+                        "pass_on_target": "",
+                        "pass_on_target_pct": "",
+                        "pocket_time": "",
+                        "pass_blitzed": "",
+                        "pass_hurried": "",
+                        "pass_hits": "",
+                        "pass_pressured": "",
+                        "pass_pressured_pct": "",
+                        "rush_scrambles": "",
+                        "pass_rpo": "",
+                        "pass_rpo_yds": "",
+                        "pass_rpo_pass_att": "",
+                        "pass_rpo_pass_yds": "",
+                        "pass_rpo_rush_att": "",
+                        "pass_rpo_rush_yds": "",
+                        "pass_play_action": "",
+                        "pass_play_action_pass_yds": "",
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": ""
+                    },
+                    "header_pressure": {
+                        "games_started": ""
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": "",
+                        "pass_att": ""
+                    }
+                },
+                {
+                    "header_play_action": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "pass_target_yds": 10,
+                        "pass_tgt_yds_per_att": 10.0,
+                        "pass_air_yds": 0,
+                        "pass_air_yds_per_cmp": "",
+                        "pass_air_yds_per_att": 0.0,
+                        "pass_yac": 0,
+                        "pass_yac_per_cmp": "",
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 0,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": 0.0,
+                        "pass_poor_throws": 1,
+                        "pass_poor_throw_pct": 100.0,
+                        "pass_on_target": 0,
+                        "pass_on_target_pct": 0.0,
+                        "pocket_time": 3.4,
+                        "pass_blitzed": 1,
+                        "pass_hurried": 0,
+                        "pass_hits": 0,
+                        "pass_pressured": 0,
+                        "pass_pressured_pct": 0.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": 0,
+                        "pass_rpo_yds": 0,
+                        "pass_rpo_pass_att": 0,
+                        "pass_rpo_pass_yds": 0,
+                        "pass_rpo_rush_att": 0,
+                        "pass_rpo_rush_yds": 0,
+                        "pass_play_action": 0,
+                        "pass_play_action_pass_yds": 0,
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17
+                    },
+                    "header_pressure": {
+                        "games_started": 0
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 0,
+                        "pass_att": 1
+                    }
+                }
+            ],
+            "punting": [
+                {
+                    "header_punt": {
+                        "year_id": 2024,
+                        "age": 33,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17,
+                        "games_started": 0,
+                        "punt": 1,
+                        "punt_yds": 43,
+                        "punt_yds_per_punt": 43.0,
+                        "punt_ret_yds_opp": 0,
+                        "punt_net_yds": 43,
+                        "punt_net_yds_per_punt": 43.0,
+                        "punt_long": 43,
+                        "punt_tb": 0,
+                        "punt_tb_pct": 0.0,
+                        "punt_in_20": 0,
+                        "punt_in_20_pct": 0.0,
+                        "punt_blocked": 0,
+                        "awards": "PB,AP-1"
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 26,
+                        "xpa": 27,
+                        "fgm": 29,
+                        "fga": 32,
+                        "safety_md": 0,
+                        "scoring": 113,
+                        "points_per_g": 9.4,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 12,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 36,
+                        "xpa": 36,
+                        "fgm": 21,
+                        "fga": 25,
+                        "safety_md": 0,
+                        "scoring": 99,
+                        "points_per_g": 6.6,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 15,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2017,
+                        "age": 26,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 37,
+                        "xpa": 39,
+                        "fgm": 35,
+                        "fga": 38,
+                        "safety_md": 0,
+                        "scoring": 142,
+                        "points_per_g": 8.9,
+                        "awards": "PB"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 16,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2018,
+                        "age": 27,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 43,
+                        "xpa": 48,
+                        "fgm": 13,
+                        "fga": 20,
+                        "safety_md": 0,
+                        "scoring": 82,
+                        "points_per_g": 5.5,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 15,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2019,
+                        "age": 28,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 28,
+                        "xpa": 28,
+                        "fgm": 29,
+                        "fga": 31,
+                        "safety_md": 0,
+                        "scoring": 115,
+                        "points_per_g": 7.2,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 16,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2020,
+                        "age": 29,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 34,
+                        "xpa": 38,
+                        "fgm": 19,
+                        "fga": 20,
+                        "safety_md": 0,
+                        "scoring": 91,
+                        "points_per_g": 7.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 13,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 27,
+                        "xpa": 29,
+                        "fgm": 36,
+                        "fga": 40,
+                        "safety_md": 0,
+                        "scoring": 135,
+                        "points_per_g": 7.9,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2022,
+                        "age": 31,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 18,
+                        "xpa": 18,
+                        "fgm": 20,
+                        "fga": 28,
+                        "safety_md": 0,
+                        "scoring": 78,
+                        "points_per_g": 6.5,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 12,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2023,
+                        "age": 32,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 27,
+                        "xpa": 28,
+                        "fgm": 29,
+                        "fga": 31,
+                        "safety_md": 0,
+                        "scoring": 114,
+                        "points_per_g": 6.7,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 33,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 35,
+                        "xpa": 35,
+                        "fgm": 41,
+                        "fga": 44,
+                        "safety_md": 0,
+                        "scoring": 158,
+                        "points_per_g": 9.3,
+                        "awards": "PB,AP-1"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 42,
+                        "xpa": 43,
+                        "fgm": 27,
+                        "fga": 32,
+                        "safety_md": 0,
+                        "scoring": 123,
+                        "points_per_g": 7.2,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 17,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 12,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 134,
+                        "st_pct": "39%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 15,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 144,
+                        "st_pct": "34%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2017*",
+                        "age": 26,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 168,
+                        "st_pct": "38%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2018,
+                        "age": 27,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 15,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 151,
+                        "st_pct": "35%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2019,
+                        "age": 28,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 132,
+                        "st_pct": "31%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2020,
+                        "age": 29,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 13,
+                        "gs": 0,
+                        "offense": 2,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 132,
+                        "st_pct": "36%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 157,
+                        "st_pct": "32%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2022,
+                        "age": 31,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 12,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 97,
+                        "st_pct": "32%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2023,
+                        "age": 32,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 136,
+                        "st_pct": "30%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*+",
+                        "age": 33,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 170,
+                        "st_pct": "37%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "team": "PIT",
+                        "pos": "K",
+                        "uniform_number": 9,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 165,
+                        "st_pct": "37%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "K",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "K",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "K",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "K",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2024,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "K",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "K",
+                    "voters": "Sporting News"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2014,
+                    "pos": "K",
+                    "height": 74,
+                    "weight": 185,
+                    "forty_yd": 4.93,
+                    "bench_reps": "",
+                    "broad_jump": "",
+                    "shuttle": "",
+                    "cone": "",
+                    "vertical": ""
+                }
+            ]
+        },
+        "post_season": {
+            "kicking": [
+                {
+                    "header_kickoffs": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 1,
+                        "fgm2": 1,
+                        "fga3": 4,
+                        "fgm3": 4,
+                        "fga4": 2,
+                        "fgm4": 2,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 7,
+                        "fgm": 7,
+                        "fg_long": 47,
+                        "fg_pct": 100.0,
+                        "xpa": 1,
+                        "xpm": 1,
+                        "xp_pct": 100.0,
+                        "kickoff": 11,
+                        "kickoff_yds": 684,
+                        "kickoff_tb": 8,
+                        "kickoff_tb_pct": 72.7,
+                        "kickoff_yds_avg": 62,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 2,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 2,
+                        "fgm2": 2,
+                        "fga3": 3,
+                        "fgm3": 3,
+                        "fga4": 3,
+                        "fgm4": 3,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 8,
+                        "fgm": 8,
+                        "fg_long": 45,
+                        "fg_pct": 100.0,
+                        "xpa": 5,
+                        "xpm": 3,
+                        "xp_pct": 60.0,
+                        "kickoff": 17,
+                        "kickoff_yds": 1007,
+                        "kickoff_tb": 6,
+                        "kickoff_tb_pct": 35.3,
+                        "kickoff_yds_avg": 59,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 3,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2017,
+                        "age": 26,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 0,
+                        "fgm": 0,
+                        "fg_long": "",
+                        "fg_pct": "",
+                        "xpa": 6,
+                        "xpm": 6,
+                        "xp_pct": 100.0,
+                        "kickoff": 7,
+                        "kickoff_yds": 367,
+                        "kickoff_tb": 3,
+                        "kickoff_tb_pct": 42.9,
+                        "kickoff_yds_avg": 52,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": "",
+                        "fgm": "",
+                        "fg_long": "",
+                        "fg_pct": "",
+                        "xpa": "",
+                        "xpm": "",
+                        "xp_pct": "",
+                        "kickoff": "",
+                        "kickoff_yds": "",
+                        "kickoff_tb": "",
+                        "kickoff_tb_pct": "",
+                        "kickoff_yds_avg": "",
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2020,
+                        "age": 29,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 1,
+                        "fgm4": 1,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 1,
+                        "fgm": 1,
+                        "fg_long": 49,
+                        "fg_pct": 100.0,
+                        "xpa": 2,
+                        "xpm": 2,
+                        "xp_pct": 100.0,
+                        "kickoff": 6,
+                        "kickoff_yds": 325,
+                        "kickoff_tb": 2,
+                        "kickoff_tb_pct": 33.3,
+                        "kickoff_yds_avg": 54,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": 0,
+                        "fgm": 0,
+                        "fg_long": "",
+                        "fg_pct": "",
+                        "xpa": 3,
+                        "xpm": 3,
+                        "xp_pct": 100.0,
+                        "kickoff": 4,
+                        "kickoff_yds": 204,
+                        "kickoff_tb": 1,
+                        "kickoff_tb_pct": 25.0,
+                        "kickoff_yds_avg": 51,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": "",
+                        "fgm": "",
+                        "fg_long": "",
+                        "fg_pct": "",
+                        "xpa": "",
+                        "xpm": "",
+                        "xp_pct": "",
+                        "kickoff": "",
+                        "kickoff_yds": "",
+                        "kickoff_tb": "",
+                        "kickoff_tb_pct": "",
+                        "kickoff_yds_avg": "",
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2023,
+                        "age": 32,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 1,
+                        "fgm4": 1,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 1,
+                        "fgm": 1,
+                        "fg_long": 40,
+                        "fg_pct": 100.0,
+                        "xpa": 2,
+                        "xpm": 2,
+                        "xp_pct": 100.0,
+                        "kickoff": 4,
+                        "kickoff_yds": 264,
+                        "kickoff_tb": 3,
+                        "kickoff_tb_pct": 75.0,
+                        "kickoff_yds_avg": 66,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2024,
+                        "age": 33,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": 0,
+                        "fgm": 0,
+                        "fg_long": "",
+                        "fg_pct": "",
+                        "xpa": 2,
+                        "xpm": 2,
+                        "xp_pct": 100.0,
+                        "kickoff": 3,
+                        "kickoff_yds": 195,
+                        "kickoff_tb": 3,
+                        "kickoff_tb_pct": 100.0,
+                        "kickoff_yds_avg": 65,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 2,
+                        "fgm3": 2,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 2,
+                        "fgm": 2,
+                        "fg_long": 35,
+                        "fg_pct": 100.0,
+                        "xpa": 0,
+                        "xpm": 0,
+                        "xp_pct": "",
+                        "kickoff": 3,
+                        "kickoff_yds": 183,
+                        "kickoff_tb": 0,
+                        "kickoff_tb_pct": 0.0,
+                        "kickoff_yds_avg": 61,
+                        "awards": ""
+                    },
+                    "block_auto_header_scoring": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2015,
+                        "age": 24,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 1,
+                        "xpa": 1,
+                        "fgm": 7,
+                        "fga": 7,
+                        "safety_md": 0,
+                        "scoring": 22,
+                        "points_per_g": 11.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 2,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2016,
+                        "age": 25,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 3,
+                        "xpa": 5,
+                        "fgm": 8,
+                        "fga": 8,
+                        "safety_md": 0,
+                        "scoring": 27,
+                        "points_per_g": 9.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 3,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2017,
+                        "age": 26,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": "",
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 6,
+                        "xpa": 6,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 6.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": "",
+                        "age": "",
+                        "punt_ret_td": "",
+                        "kick_ret_td": "",
+                        "fumbles_rec_td": "",
+                        "def_int_td": "",
+                        "other_td": "",
+                        "total_td": "",
+                        "two_pt_md": "",
+                        "def_two_pt": "",
+                        "xpm": "",
+                        "xpa": "",
+                        "fgm": "",
+                        "fga": "",
+                        "safety_md": "",
+                        "scoring": "",
+                        "points_per_g": "",
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": "",
+                        "games_started": "",
+                        "rush_td": "",
+                        "rec_td": ""
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2020,
+                        "age": 29,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": "",
+                        "xpm": 2,
+                        "xpa": 2,
+                        "fgm": 1,
+                        "fga": 1,
+                        "safety_md": 0,
+                        "scoring": 5,
+                        "points_per_g": 5.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2021,
+                        "age": 30,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 3,
+                        "xpa": 3,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 3,
+                        "points_per_g": 3.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": "",
+                        "age": "",
+                        "punt_ret_td": "",
+                        "kick_ret_td": "",
+                        "fumbles_rec_td": "",
+                        "def_int_td": "",
+                        "other_td": "",
+                        "total_td": "",
+                        "two_pt_md": "",
+                        "def_two_pt": "",
+                        "xpm": "",
+                        "xpa": "",
+                        "fgm": "",
+                        "fga": "",
+                        "safety_md": "",
+                        "scoring": "",
+                        "points_per_g": "",
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": "",
+                        "games_started": "",
+                        "rush_td": "",
+                        "rec_td": ""
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2023,
+                        "age": 32,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 2,
+                        "xpa": 2,
+                        "fgm": 1,
+                        "fga": 1,
+                        "safety_md": 0,
+                        "scoring": 5,
+                        "points_per_g": 5.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 33,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 2,
+                        "xpa": 2,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 2,
+                        "points_per_g": 2.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2025,
+                        "age": 34,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 0,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 2,
+                        "fga": 2,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 6.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "K",
+                        "games": 1,
+                        "games_started": 0,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [
+        {
+            "date": "2022-12-10",
+            "description": " The Pittsburgh Steelers activated K Chris Boswell from injured reserve. "
+        },
+        {
+            "date": "2022-12-08",
+            "description": " The Pittsburgh Steelers placed K Chris Boswell on IRD."
+        },
+        {
+            "date": "2022-11-10",
+            "description": " The Pittsburgh Steelers placed K Chris Boswell on IR."
+        },
+        {
+            "date": "2020-03-16",
+            "description": " The Pittsburgh Steelers re-signed K Chris Boswell."
+        },
+        {
+            "date": "2019-03-13",
+            "description": " The Pittsburgh Steelers re-signed K Chris Boswell."
+        },
+        {
+            "date": "2019-02-04",
+            "description": " The Pittsburgh Steelers activated K Chris Boswell."
+        },
+        {
+            "date": "2018-12-28",
+            "description": " The Pittsburgh Steelers placed K Chris Boswell on IR."
+        },
+        {
+            "date": "2018-08-24",
+            "description": " The Pittsburgh Steelers re-signed K Chris Boswell."
+        },
+        {
+            "date": "2018-04-05",
+            "description": " No Offer Sheet Executed"
+        },
+        {
+            "date": "2018-03-14",
+            "description": " K Chris Boswell contract expired."
+        },
+        {
+            "date": "2018-03-12",
+            "description": " Qualifying Offer by Old Club"
+        },
+        {
+            "date": "2017-02-03",
+            "description": " The Pittsburgh Steelers re-signed K Chris Boswell."
+        },
+        {
+            "date": "2016-12-07",
+            "description": " The Pittsburgh Steelers activated K Chris Boswell."
+        },
+        {
+            "date": "2016-12-04",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2015-10-03",
+            "description": " The Pittsburgh Steelers signed K Chris Boswell."
+        },
+        {
+            "date": "2015-09-05",
+            "description": " The New York Giants waived K Chris Boswell."
+        },
+        {
+            "date": "2015-09-02",
+            "description": " The New York Giants signed K Chris Boswell."
+        },
+        {
+            "date": "2015-08-17",
+            "description": " The New York Giants waived K Chris Boswell."
+        },
+        {
+            "date": "2015-01-07",
+            "description": " Reserve/Future"
+        },
+        {
+            "date": "2014-09-30",
+            "description": " The Houston Texans released K Chris Boswell."
+        },
+        {
+            "date": "2014-09-24",
+            "description": " The Houston Texans assigned K Chris Boswell to the practice squad."
+        },
+        {
+            "date": "2014-08-30",
+            "description": " The Houston Texans waived K Chris Boswell."
+        },
+        {
+            "date": "2014-05-16",
+            "description": " The Houston Texans signed K Chris Boswell."
+        }
+    ],
+    "links": {
+        "overview": {
+            "href": "/players/B/BoswCh00.htm"
+        },
+        "general": {
+            "passing_tds": "/players/B/BoswCh00/touchdowns/passing/",
+            "penalties": "/players/B/BoswCh00/penalties"
+        },
+        "game_logs": {
+            "career": "/players/B/BoswCh00/gamelog/",
+            "playoffs": "/players/B/BoswCh00/gamelog/post/",
+            "2015": "/players/B/BoswCh00/gamelog/2015/",
+            "2016": "/players/B/BoswCh00/gamelog/2016/",
+            "2017": "/players/B/BoswCh00/gamelog/2017/",
+            "2018": "/players/B/BoswCh00/gamelog/2018/",
+            "2019": "/players/B/BoswCh00/gamelog/2019/",
+            "2020": "/players/B/BoswCh00/gamelog/2020/",
+            "2021": "/players/B/BoswCh00/gamelog/2021/",
+            "2022": "/players/B/BoswCh00/gamelog/2022/",
+            "2023": "/players/B/BoswCh00/gamelog/2023/",
+            "2024": "/players/B/BoswCh00/gamelog/2024/",
+            "2025": "/players/B/BoswCh00/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=BoswCh00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/B/BoswCh00/gamelog/advanced/",
+            "2018": "/players/B/BoswCh00/gamelog/2018/advanced/",
+            "2019": "/players/B/BoswCh00/gamelog/2019/advanced/",
+            "2020": "/players/B/BoswCh00/gamelog/2020/advanced/",
+            "2021": "/players/B/BoswCh00/gamelog/2021/advanced/",
+            "2022": "/players/B/BoswCh00/gamelog/2022/advanced/",
+            "2023": "/players/B/BoswCh00/gamelog/2023/advanced/",
+            "2024": "/players/B/BoswCh00/gamelog/2024/advanced/",
+            "2025": "/players/B/BoswCh00/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/B/BoswCh00/splits/",
+            "2015": "/players/B/BoswCh00/splits/2015/",
+            "2016": "/players/B/BoswCh00/splits/2016/",
+            "2017": "/players/B/BoswCh00/splits/2017/",
+            "2018": "/players/B/BoswCh00/splits/2018/",
+            "2019": "/players/B/BoswCh00/splits/2019/",
+            "2020": "/players/B/BoswCh00/splits/2020/",
+            "2021": "/players/B/BoswCh00/splits/2021/",
+            "2022": "/players/B/BoswCh00/splits/2022/",
+            "2023": "/players/B/BoswCh00/splits/2023/",
+            "2024": "/players/B/BoswCh00/splits/2024/",
+            "2025": "/players/B/BoswCh00/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=BoswCh00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "passing_plays": {
+            "2018": "/players/B/BoswCh00/passing-plays/2018/",
+            "2021": "/players/B/BoswCh00/passing-plays/2021/"
+        },
+        "more_chris_boswell_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/chris-boswell-1.html"
+        }
+    },
+    "leader_boards": {
+        "pro_bowls": [
+            "2017\n",
+            "2024\n"
+        ],
+        "all_pro": [
+            "2024\n"
+        ],
+        "potw": [
+            "2025 - Week 1 AFC Special Teams\n",
+            "2024 - Week 11 AFC Special Teams\n",
+            "2024 - Week 1 AFC Special Teams\n",
+            "2017 - Week 13 AFC Special Teams\n",
+            "2015 - Week 6 AFC Special Teams\n"
+        ],
+        "potm": [
+            "2024 October - AFC Special Teams\n",
+            "2024 September - AFC Special Teams\n",
+            "2015 December - AFC Special Teams\n"
+        ],
+        "scoring": [
+            "2017 NFL 142 (4/67)",
+            "2019 NFL 115 (9)",
+            "2021 NFL 135 (6)",
+            "2024 NFL 158 (1/12)",
+            "Active 1250 (6)",
+            "Career 1250 (46)"
+        ],
+        "xpm": [
+            "2017 NFL 37 (7)",
+            "2018 NFL 43 (6)",
+            "2024 NFL 35 (10)",
+            "2025 NFL 42 (8)",
+            "Active 353 (9)",
+            "Career 353 (68)"
+        ],
+        "xpa": [
+            "2017 NFL 39 (6)",
+            "2018 NFL 48 (5)",
+            "2025 NFL 43 (9)",
+            "Active 369 (9)",
+            "Career 369 (66)"
+        ],
+        "xp_perc": [
+            "Active 95.664% (18)",
+            "Career 95.664% (148)"
+        ],
+        "fgm": [
+            "2015 NFL 29 (10)",
+            "2017 NFL 35 (5/34)",
+            "2019 NFL 29 (5)",
+            "2021 NFL 36 (2/25)",
+            "2024 NFL 41 (1/3)",
+            "Active 299 (4)",
+            "Career 299 (39)"
+        ],
+        "fga": [
+            "2015 NFL 32 (8)",
+            "2017 NFL 38 (8)",
+            "2019 NFL 31 (9)",
+            "2021 NFL 40 (2/69)",
+            "2024 NFL 44 (2/17)",
+            "Active 341 (6)",
+            "Career 341 (49)"
+        ],
+        "fg_perc": [
+            "2015 NFL 90.625% (7)",
+            "2017 NFL 92.105% (6)",
+            "2019 NFL 93.548% (3/65)",
+            "2020 NFL 95.000% (4/37)",
+            "2021 NFL 90.000% (9)",
+            "2023 NFL 93.548% (7/65)",
+            "2024 NFL 93.182% (4/79)",
+            "Active 87.683% (5)",
+            "Career 87.683% (6)"
+        ]
+    }
+}

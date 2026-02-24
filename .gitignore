@@ -209,17 +209,13 @@ data/
 *.json
 *.xml
 !examples/*.json
+!tests/fixtures/**/*.json
 
 # IDE and editor files
 *.swp
 *.swo
-*~
 .vim/
 .emacs*
-
-# OS generated files
-Thumbs.db
-.DS_Store
 
 # Project specific
 .griddy/
@@ -227,7 +223,6 @@ cache/
 temp/
 
 # Documentation build
-docs/_build/
 docs/site/
 
 

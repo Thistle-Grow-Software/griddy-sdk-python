@@ -1,10 +1,16 @@
 import json
+from pathlib import Path
 
-from griddy.pfr import GriddyPFR
+from griddy.core.utils.serializers import DateTimeEncoder
+from griddy.pfr.parsers.player_profile import PlayerProfileParser
 
-game_id = "201509100nwe"
-pfr = GriddyPFR()
-game_details = pfr.games.get_game_details(game_id=game_id)
+input_html_dir = Path("data/pfr_examples/")
 
-with open("pfr_game_dtls.json", "w") as outfile:
-    json.dump(game_details, outfile, indent=4)
+parser = PlayerProfileParser()
+for infile in input_html_dir.glob("*.htm"):
+    print(f"Working on {infile}")
+    html = infile.open().read()
+    player_data = parser.parse(html=html)
+
+    with open(f"{infile.parent}/{infile.stem}.json", "w") as outfile:
+        json.dump(player_data, outfile, indent=4, cls=DateTimeEncoder)

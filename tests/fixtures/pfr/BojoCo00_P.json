@@ -1,0 +1,1435 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/BojoCo00_2023.jpg",
+        "names": {
+            "first_name": "Corey",
+            "middle_name": "",
+            "last_name": "Bojorquez",
+            "suffix": "",
+            "nicknames": [],
+            "pretty_name": "Corey Bojorquez"
+        },
+        "position": "P",
+        "throws": "Right",
+        "height": 72,
+        "weight": "217lb",
+        "birth_date": "1996-09-13T00:00:00",
+        "birth_place": {
+            "city": "Bellflower",
+            "state": "CA"
+        },
+        "college": "Cerritos (CA),",
+        "high_school": "Mayfair (CA)",
+        "draft": {}
+    },
+    "jersey_numbers": [
+        {
+            "number": "9",
+            "team": "Buffalo Bills",
+            "start_year": 2018,
+            "end_year": 2020
+        },
+        {
+            "number": "7",
+            "team": "Green Bay Packers",
+            "start_year": 2021,
+            "end_year": 2021
+        },
+        {
+            "number": "13",
+            "team": "Cleveland Browns",
+            "start_year": 2022,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 124,
+        "Pnt": 2,
+        "Yds": 20,
+        "Lng": 91
+    },
+    "statistics": {
+        "regular_season": {
+            "punting": [
+                {
+                    "header_punt": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 8,
+                        "games_started": 0,
+                        "punt": 45,
+                        "punt_yds": 2028,
+                        "punt_yds_per_punt": 45.1,
+                        "punt_ret_yds_opp": 137,
+                        "punt_net_yds": 1811,
+                        "punt_net_yds_per_punt": 39.4,
+                        "punt_long": 60,
+                        "punt_tb": 4,
+                        "punt_tb_pct": 8.9,
+                        "punt_in_20": 22,
+                        "punt_in_20_pct": 48.9,
+                        "punt_blocked": 1,
+                        "av": 1,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 16,
+                        "games_started": 0,
+                        "punt": 79,
+                        "punt_yds": 3313,
+                        "punt_yds_per_punt": 41.9,
+                        "punt_ret_yds_opp": 157,
+                        "punt_net_yds": 3016,
+                        "punt_net_yds_per_punt": 37.7,
+                        "punt_long": 67,
+                        "punt_tb": 7,
+                        "punt_tb_pct": 8.9,
+                        "punt_in_20": 34,
+                        "punt_in_20_pct": 43.0,
+                        "punt_blocked": 1,
+                        "av": 1,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 16,
+                        "games_started": 0,
+                        "punt": 41,
+                        "punt_yds": 2082,
+                        "punt_yds_per_punt": 50.8,
+                        "punt_ret_yds_opp": 138,
+                        "punt_net_yds": 1804,
+                        "punt_net_yds_per_punt": 44.0,
+                        "punt_long": 72,
+                        "punt_tb": 7,
+                        "punt_tb_pct": 17.1,
+                        "punt_in_20": 18,
+                        "punt_in_20_pct": 43.9,
+                        "punt_blocked": 0,
+                        "av": 3,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "GNB",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 17,
+                        "games_started": 0,
+                        "punt": 53,
+                        "punt_yds": 2467,
+                        "punt_yds_per_punt": 46.5,
+                        "punt_ret_yds_opp": 268,
+                        "punt_net_yds": 2119,
+                        "punt_net_yds_per_punt": 40.0,
+                        "punt_long": 82,
+                        "punt_tb": 4,
+                        "punt_tb_pct": 7.5,
+                        "punt_in_20": 18,
+                        "punt_in_20_pct": 34.0,
+                        "punt_blocked": 0,
+                        "av": 2,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 17,
+                        "games_started": 0,
+                        "punt": 61,
+                        "punt_yds": 2959,
+                        "punt_yds_per_punt": 48.5,
+                        "punt_ret_yds_opp": 319,
+                        "punt_net_yds": 2500,
+                        "punt_net_yds_per_punt": 41.0,
+                        "punt_long": 76,
+                        "punt_tb": 7,
+                        "punt_tb_pct": 11.5,
+                        "punt_in_20": 23,
+                        "punt_in_20_pct": 37.7,
+                        "punt_blocked": 0,
+                        "av": 3,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 16,
+                        "games_started": 0,
+                        "punt": 87,
+                        "punt_yds": 4294,
+                        "punt_yds_per_punt": 49.4,
+                        "punt_ret_yds_opp": 421,
+                        "punt_net_yds": 3693,
+                        "punt_net_yds_per_punt": 42.4,
+                        "punt_long": 73,
+                        "punt_tb": 9,
+                        "punt_tb_pct": 10.3,
+                        "punt_in_20": 31,
+                        "punt_in_20_pct": 35.6,
+                        "punt_blocked": 0,
+                        "av": 3,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 17,
+                        "games_started": 0,
+                        "punt": 89,
+                        "punt_yds": 4387,
+                        "punt_yds_per_punt": 49.3,
+                        "punt_ret_yds_opp": 530,
+                        "punt_net_yds": 3717,
+                        "punt_net_yds_per_punt": 41.8,
+                        "punt_long": 84,
+                        "punt_tb": 7,
+                        "punt_tb_pct": 7.9,
+                        "punt_in_20": 36,
+                        "punt_in_20_pct": 40.4,
+                        "punt_blocked": 0,
+                        "av": 5,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 17,
+                        "games_started": 0,
+                        "punt": 91,
+                        "punt_yds": 4165,
+                        "punt_yds_per_punt": 45.8,
+                        "punt_ret_yds_opp": 522,
+                        "punt_net_yds": 3443,
+                        "punt_net_yds_per_punt": 37.0,
+                        "punt_long": 67,
+                        "punt_tb": 11,
+                        "punt_tb_pct": 12.1,
+                        "punt_in_20": 23,
+                        "punt_in_20_pct": 25.3,
+                        "punt_blocked": 2,
+                        "av": 2,
+                        "awards": ""
+                    }
+                }
+            ],
+            "kicking": [
+                {
+                    "header_kickoffs": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 0,
+                        "fgm": 0,
+                        "xpa": 0,
+                        "xpm": 0,
+                        "kickoff": 1,
+                        "kickoff_yds": 50,
+                        "kickoff_tb": 0,
+                        "kickoff_tb_pct": 0.0,
+                        "kickoff_yds_avg": 50,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": "",
+                        "fgm": "",
+                        "xpa": "",
+                        "xpm": "",
+                        "kickoff": "",
+                        "kickoff_yds": "",
+                        "kickoff_tb": "",
+                        "kickoff_tb_pct": "",
+                        "kickoff_yds_avg": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 0,
+                        "fgm": 0,
+                        "xpa": 0,
+                        "xpm": 0,
+                        "kickoff": 1,
+                        "kickoff_yds": 79,
+                        "kickoff_tb": 0,
+                        "kickoff_tb_pct": 0.0,
+                        "kickoff_yds_avg": 79,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 0,
+                        "fgm": 0,
+                        "xpa": 0,
+                        "xpm": 0,
+                        "kickoff": 4,
+                        "kickoff_yds": 230,
+                        "kickoff_tb": 0,
+                        "kickoff_tb_pct": 0.0,
+                        "kickoff_yds_avg": 58,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "fga1": "",
+                        "fgm1": "",
+                        "fga2": "",
+                        "fgm2": "",
+                        "fga3": "",
+                        "fgm3": "",
+                        "fga4": "",
+                        "fgm4": "",
+                        "fga5": "",
+                        "fgm5": "",
+                        "fga": "",
+                        "fgm": "",
+                        "xpa": "",
+                        "xpm": "",
+                        "kickoff": "",
+                        "kickoff_yds": "",
+                        "kickoff_tb": "",
+                        "kickoff_tb_pct": "",
+                        "kickoff_yds_avg": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_kickoffs": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "fga1": 0,
+                        "fgm1": 0,
+                        "fga2": 0,
+                        "fgm2": 0,
+                        "fga3": 0,
+                        "fgm3": 0,
+                        "fga4": 0,
+                        "fgm4": 0,
+                        "fga5": 0,
+                        "fgm5": 0,
+                        "fga": 0,
+                        "fgm": 0,
+                        "xpa": 0,
+                        "xpm": 0,
+                        "kickoff": 1,
+                        "kickoff_yds": 9,
+                        "kickoff_tb": 0,
+                        "kickoff_tb_pct": 0.0,
+                        "kickoff_yds_avg": 9,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                }
+            ],
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 2,
+                        "fumbles_rec": 2,
+                        "fumbles_rec_yds": -25,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 0,
+                        "tackles_solo": 0,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 8,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "GNB",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 1,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 0,
+                        "tackles_solo": 0,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 0
+                    }
+                }
+            ],
+            "passing": [
+                {
+                    "year_id": 2018,
+                    "age": 22,
+                    "team_name_abbr": "BUF",
+                    "comp_name_abbr": "NFL",
+                    "pos": "P",
+                    "games": 8,
+                    "games_started": 0,
+                    "pass_cmp": 0,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 0.0,
+                    "pass_yds": 0,
+                    "pass_td": 0,
+                    "pass_td_pct": 0.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 0,
+                    "pass_yds_per_att": 0.0,
+                    "pass_adj_yds_per_att": 0.0,
+                    "pass_yds_per_g": 0.0,
+                    "pass_rating": 39.6,
+                    "qbr": "",
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 0.0,
+                    "pass_adj_net_yds_per_att": 0.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": ""
+                },
+                {
+                    "year_id": "",
+                    "age": "",
+                    "team_name_abbr": "",
+                    "comp_name_abbr": "",
+                    "pos": "",
+                    "games": "",
+                    "games_started": "",
+                    "pass_cmp": "",
+                    "pass_att": "",
+                    "pass_cmp_pct": "",
+                    "pass_yds": "",
+                    "pass_td": "",
+                    "pass_td_pct": "",
+                    "pass_int": "",
+                    "pass_int_pct": "",
+                    "pass_first_down": "",
+                    "pass_yds_per_att": "",
+                    "pass_adj_yds_per_att": "",
+                    "pass_yds_per_g": "",
+                    "pass_rating": "",
+                    "qbr": "",
+                    "pass_sacked": "",
+                    "pass_sacked_yds": "",
+                    "pass_sacked_pct": "",
+                    "pass_net_yds_per_att": "",
+                    "pass_adj_net_yds_per_att": "",
+                    "comebacks": "",
+                    "gwd": "",
+                    "awards": ""
+                },
+                {
+                    "year_id": 2025,
+                    "age": 29,
+                    "team_name_abbr": "CLE",
+                    "comp_name_abbr": "NFL",
+                    "pos": "P",
+                    "games": 17,
+                    "games_started": 0,
+                    "pass_cmp": 0,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 0.0,
+                    "pass_yds": 0,
+                    "pass_td": 0,
+                    "pass_td_pct": 0.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 0,
+                    "pass_yds_per_att": 0.0,
+                    "pass_adj_yds_per_att": 0.0,
+                    "pass_yds_per_g": 0.0,
+                    "pass_rating": 39.6,
+                    "qbr": 0.0,
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 0.0,
+                    "pass_adj_net_yds_per_att": 0.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": ""
+                }
+            ],
+            "passing_advanced": [
+                {
+                    "header_play_action": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "pass_att": 1,
+                        "pass_target_yds": -8,
+                        "pass_tgt_yds_per_att": -8.0,
+                        "pass_air_yds": 0,
+                        "pass_air_yds_per_att": 0.0,
+                        "pass_yac": 0,
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 0,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": 0.0,
+                        "pass_poor_throws": 0,
+                        "pass_poor_throw_pct": 0.0,
+                        "pass_on_target": "",
+                        "pocket_time": 0.0,
+                        "pass_blitzed": 0,
+                        "pass_hurried": 0,
+                        "pass_hits": 0,
+                        "pass_pressured": 0,
+                        "pass_pressured_pct": 0.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": "",
+                        "pass_rpo_yds": "",
+                        "pass_rpo_pass_att": "",
+                        "pass_rpo_pass_yds": "",
+                        "pass_rpo_rush_att": "",
+                        "pass_rpo_rush_yds": "",
+                        "pass_play_action": "",
+                        "pass_play_action_pass_yds": "",
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 8
+                    },
+                    "header_pressure": {
+                        "games_started": 0
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 0
+                    }
+                },
+                {
+                    "header_play_action": {
+                        "year_id": "",
+                        "age": "",
+                        "pass_att": "",
+                        "pass_target_yds": "",
+                        "pass_tgt_yds_per_att": "",
+                        "pass_air_yds": "",
+                        "pass_air_yds_per_att": "",
+                        "pass_yac": "",
+                        "pass_batted_passes": "",
+                        "pass_throwaways": "",
+                        "pass_spikes": "",
+                        "pass_drops": "",
+                        "pass_drop_pct": "",
+                        "pass_poor_throws": "",
+                        "pass_poor_throw_pct": "",
+                        "pass_on_target": "",
+                        "pocket_time": "",
+                        "pass_blitzed": "",
+                        "pass_hurried": "",
+                        "pass_hits": "",
+                        "pass_pressured": "",
+                        "pass_pressured_pct": "",
+                        "rush_scrambles": "",
+                        "pass_rpo": "",
+                        "pass_rpo_yds": "",
+                        "pass_rpo_pass_att": "",
+                        "pass_rpo_pass_yds": "",
+                        "pass_rpo_rush_att": "",
+                        "pass_rpo_rush_yds": "",
+                        "pass_play_action": "",
+                        "pass_play_action_pass_yds": "",
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": ""
+                    },
+                    "header_pressure": {
+                        "games_started": ""
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": ""
+                    }
+                },
+                {
+                    "header_play_action": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "pass_att": 1,
+                        "pass_target_yds": 15,
+                        "pass_tgt_yds_per_att": 15.0,
+                        "pass_air_yds": 0,
+                        "pass_air_yds_per_att": 0.0,
+                        "pass_yac": 0,
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 1,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": "",
+                        "pass_poor_throws": 0,
+                        "pass_poor_throw_pct": "",
+                        "pass_on_target": 0,
+                        "pocket_time": 2.8,
+                        "pass_blitzed": 1,
+                        "pass_hurried": 0,
+                        "pass_hits": 0,
+                        "pass_pressured": 0,
+                        "pass_pressured_pct": 0.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": 0,
+                        "pass_rpo_yds": 0,
+                        "pass_rpo_pass_att": 0,
+                        "pass_rpo_pass_yds": 0,
+                        "pass_rpo_rush_att": 0,
+                        "pass_rpo_rush_yds": 0,
+                        "pass_play_action": 0,
+                        "pass_play_action_pass_yds": 0,
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 17
+                    },
+                    "header_pressure": {
+                        "games_started": 0
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 0
+                    }
+                }
+            ],
+            "rushing_and_receiving": [
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": 0.0,
+                        "rush_yds_per_att": 0.0,
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.1,
+                        "targets": 0,
+                        "rec": 0,
+                        "rec_yds": 0,
+                        "rec_td": 0,
+                        "rec_first_down": 0,
+                        "rec_per_g": 0.0,
+                        "rec_yds_per_g": 0.0,
+                        "touches": 1,
+                        "yds_per_touch": 0.0,
+                        "yds_from_scrimmage": 0,
+                        "rush_receive_td": 0,
+                        "fumbles": 2,
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "pos": "P",
+                        "games": 8,
+                        "games_started": 0
+                    },
+                    "header_rush": {
+                        "rush_att": 1
+                    }
+                }
+            ],
+            "adv_rushing_and_receiving": [
+                {
+                    "header_rec": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 8,
+                        "games_started": 0,
+                        "rush_att": 1,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": 0.0,
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": 0.0,
+                        "rush_broken_tackles": 0,
+                        "targets": 0,
+                        "rec": 0,
+                        "rec_yds": 0,
+                        "rec_first_down": 0,
+                        "rec_air_yds": 0,
+                        "rec_yac": 0,
+                        "rec_broken_tackles": 0,
+                        "rec_drops": 0,
+                        "rec_target_int": 0,
+                        "awards": ""
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2018,
+                        "age": 22,
+                        "team": "BUF",
+                        "pos": "P",
+                        "uniform_number": 9,
+                        "g": 8,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 69,
+                        "st_pct": "33%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team": "BUF",
+                        "pos": "P",
+                        "uniform_number": 9,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 1,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 144,
+                        "st_pct": "35%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team": "BUF",
+                        "pos": "P",
+                        "uniform_number": 9,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 138,
+                        "st_pct": "31%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team": "GNB",
+                        "pos": "P",
+                        "uniform_number": 7,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 140,
+                        "st_pct": "32%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2022,
+                        "age": 26,
+                        "team": "CLE",
+                        "pos": "P",
+                        "uniform_number": 13,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 133,
+                        "st_pct": "30%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team": "CLE",
+                        "pos": "P",
+                        "uniform_number": 13,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 159,
+                        "st_pct": "33%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2024,
+                        "age": 28,
+                        "team": "CLE",
+                        "pos": "P",
+                        "uniform_number": 13,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 139,
+                        "st_pct": "30%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2025,
+                        "age": 29,
+                        "team": "CLE",
+                        "pos": "P",
+                        "uniform_number": 13,
+                        "g": 17,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 151,
+                        "st_pct": "33%"
+                    }
+                }
+            ]
+        },
+        "post_season": {
+            "punting": [
+                {
+                    "header_punt": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 1,
+                        "games_started": 0,
+                        "punt": 4,
+                        "punt_yds": 179,
+                        "punt_yds_per_punt": 44.8,
+                        "punt_ret_yds_opp": "",
+                        "punt_net_yds": "",
+                        "punt_net_yds_per_punt": "",
+                        "punt_long": 56,
+                        "punt_tb": 0,
+                        "punt_tb_pct": 0.0,
+                        "punt_in_20": 0,
+                        "punt_in_20_pct": 0.0,
+                        "punt_blocked": 0,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2020,
+                        "age": 24,
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 3,
+                        "games_started": 0,
+                        "punt": 11,
+                        "punt_yds": 483,
+                        "punt_yds_per_punt": 43.9,
+                        "punt_ret_yds_opp": "",
+                        "punt_net_yds": "",
+                        "punt_net_yds_per_punt": "",
+                        "punt_long": 58,
+                        "punt_tb": 0,
+                        "punt_tb_pct": 0.0,
+                        "punt_in_20": 0,
+                        "punt_in_20_pct": 0.0,
+                        "punt_blocked": 0,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2021,
+                        "age": 25,
+                        "team_name_abbr": "GNB",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 1,
+                        "games_started": 0,
+                        "punt": 5,
+                        "punt_yds": 235,
+                        "punt_yds_per_punt": 47.0,
+                        "punt_ret_yds_opp": 22,
+                        "punt_net_yds": 213,
+                        "punt_net_yds_per_punt": 35.5,
+                        "punt_long": 59,
+                        "punt_tb": 0,
+                        "punt_tb_pct": 0.0,
+                        "punt_in_20": 0,
+                        "punt_in_20_pct": 0.0,
+                        "punt_blocked": 1,
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": "",
+                        "games_started": "",
+                        "punt": "",
+                        "punt_yds": "",
+                        "punt_yds_per_punt": "",
+                        "punt_ret_yds_opp": "",
+                        "punt_net_yds": "",
+                        "punt_net_yds_per_punt": "",
+                        "punt_long": "",
+                        "punt_tb": "",
+                        "punt_tb_pct": "",
+                        "punt_in_20": "",
+                        "punt_in_20_pct": "",
+                        "punt_blocked": "",
+                        "awards": ""
+                    }
+                },
+                {
+                    "header_punt": {
+                        "year_id": 2023,
+                        "age": 27,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 1,
+                        "games_started": 0,
+                        "punt": 4,
+                        "punt_yds": 176,
+                        "punt_yds_per_punt": 44.0,
+                        "punt_ret_yds_opp": 8,
+                        "punt_net_yds": 168,
+                        "punt_net_yds_per_punt": 42.0,
+                        "punt_long": 52,
+                        "punt_tb": 0,
+                        "punt_tb_pct": 0.0,
+                        "punt_in_20": 1,
+                        "punt_in_20_pct": 25.0,
+                        "punt_blocked": 0,
+                        "awards": ""
+                    }
+                }
+            ],
+            "passing": [
+                {
+                    "year_id": 2019,
+                    "age": 23,
+                    "team_name_abbr": "BUF",
+                    "comp_name_abbr": "NFL",
+                    "pos": "P",
+                    "games": 1,
+                    "games_started": 0,
+                    "pass_cmp": 0,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 0.0,
+                    "pass_yds": 0,
+                    "pass_td": 0,
+                    "pass_td_pct": 0.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 0,
+                    "pass_yds_per_att": 0.0,
+                    "pass_adj_yds_per_att": 0.0,
+                    "pass_yds_per_g": 0.0,
+                    "pass_rating": 39.6,
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 0.0,
+                    "pass_adj_net_yds_per_att": 0.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": ""
+                }
+            ],
+            "passing_advanced": [
+                {
+                    "header_play_action": {
+                        "year_id": 2019,
+                        "age": 23,
+                        "pass_target_yds": 0,
+                        "pass_tgt_yds_per_att": 0.0,
+                        "pass_air_yds": 0,
+                        "pass_air_yds_per_att": 0.0,
+                        "pass_yac": 0,
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 0,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": 0.0,
+                        "pass_poor_throws": 0,
+                        "pass_poor_throw_pct": 0.0,
+                        "pass_on_target": 0,
+                        "pass_on_target_pct": 0.0,
+                        "pocket_time": 0.0,
+                        "pass_blitzed": 0,
+                        "pass_hurried": 0,
+                        "pass_hits": 0,
+                        "pass_pressured": 0,
+                        "pass_pressured_pct": 0.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": 0,
+                        "pass_rpo_yds": 0,
+                        "pass_rpo_pass_att": 0,
+                        "pass_rpo_pass_yds": 0,
+                        "pass_rpo_rush_att": 0,
+                        "pass_rpo_rush_yds": 0,
+                        "pass_play_action": 0,
+                        "pass_play_action_pass_yds": 0,
+                        "awards": ""
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "BUF",
+                        "comp_name_abbr": "NFL",
+                        "pos": "P",
+                        "games": 1
+                    },
+                    "header_pressure": {
+                        "games_started": 0
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 0,
+                        "pass_att": 1
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [],
+    "links": {
+        "overview": {
+            "href": "/players/B/BojoCo00.htm"
+        },
+        "general": {
+            "penalties": "/players/B/BojoCo00/penalties"
+        },
+        "game_logs": {
+            "career": "/players/B/BojoCo00/gamelog/",
+            "playoffs": "/players/B/BojoCo00/gamelog/post/",
+            "2018": "/players/B/BojoCo00/gamelog/2018/",
+            "2019": "/players/B/BojoCo00/gamelog/2019/",
+            "2020": "/players/B/BojoCo00/gamelog/2020/",
+            "2021": "/players/B/BojoCo00/gamelog/2021/",
+            "2022": "/players/B/BojoCo00/gamelog/2022/",
+            "2023": "/players/B/BojoCo00/gamelog/2023/",
+            "2024": "/players/B/BojoCo00/gamelog/2024/",
+            "2025": "/players/B/BojoCo00/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=BojoCo00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/B/BojoCo00/gamelog/advanced/",
+            "2018": "/players/B/BojoCo00/gamelog/2018/advanced/",
+            "2019": "/players/B/BojoCo00/gamelog/2019/advanced/",
+            "2020": "/players/B/BojoCo00/gamelog/2020/advanced/",
+            "2021": "/players/B/BojoCo00/gamelog/2021/advanced/",
+            "2022": "/players/B/BojoCo00/gamelog/2022/advanced/",
+            "2023": "/players/B/BojoCo00/gamelog/2023/advanced/",
+            "2024": "/players/B/BojoCo00/gamelog/2024/advanced/",
+            "2025": "/players/B/BojoCo00/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/B/BojoCo00/splits/",
+            "2018": "/players/B/BojoCo00/splits/2018/",
+            "2019": "/players/B/BojoCo00/splits/2019/",
+            "2020": "/players/B/BojoCo00/splits/2020/",
+            "2021": "/players/B/BojoCo00/splits/2021/",
+            "2022": "/players/B/BojoCo00/splits/2022/",
+            "2023": "/players/B/BojoCo00/splits/2023/",
+            "2024": "/players/B/BojoCo00/splits/2024/",
+            "2025": "/players/B/BojoCo00/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=BojoCo00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "passing_plays": {
+            "2018": "/players/B/BojoCo00/passing-plays/2018/",
+            "2019": "/players/B/BojoCo00/passing-plays/2019/",
+            "2025": "/players/B/BojoCo00/passing-plays/2025/"
+        },
+        "rushing_plays": {
+            "2018": "/players/B/BojoCo00/rushing-plays/2018/"
+        },
+        "more_corey_bojorquez_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/corey-bojorquez-1.html"
+        }
+    },
+    "leader_boards": {
+        "potw": [
+            "2022 - Week 17 AFC Special Teams\n"
+        ],
+        "punt": [
+            "2019 NFL 79 (4)",
+            "2023 NFL 87 (4)",
+            "2024 NFL 89 (1)",
+            "2025 NFL 91 (1)",
+            "Active 546 (10)",
+            "Career 546 (97)"
+        ],
+        "punt_yds": [
+            "2023 NFL 4294 (4/53)",
+            "2024 NFL 4387 (1/40)",
+            "2025 NFL 4165 (1/81)",
+            "Active 25695 (10)",
+            "Career 25695 (83)"
+        ],
+        "punt_long": [
+            "2019 NFL 67 (10)",
+            "2020 NFL 72 (1)",
+            "2021 NFL 82 (1/23)",
+            "2022 NFL 76 (2/81)",
+            "2023 NFL 73 (10)",
+            "2024 NFL 84 (1/13)"
+        ],
+        "punt_blocked": [
+            "2018 NFL 1 (3)",
+            "2019 NFL 1 (2)",
+            "2025 NFL 2 (1/40)",
+            "Active 4 (4)",
+            "Career 4 (85)"
+        ],
+        "punt_yds_per_punt": [
+            "2020 NFL 50.8 (1/11)",
+            "2022 NFL 48.5 (7/70)",
+            "2023 NFL 49.4 (8/34)",
+            "2024 NFL 49.3 (9/37)",
+            "Active 47.1 (10)",
+            "Career 47.1 (11)"
+        ]
+    }
+}

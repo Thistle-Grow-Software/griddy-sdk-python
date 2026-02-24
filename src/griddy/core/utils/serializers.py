@@ -1,6 +1,7 @@
 import functools
 import json
 import typing
+from datetime import date, datetime, time
 from decimal import Decimal
 from typing import Any, Dict, List, Tuple, Union, get_args
 
@@ -245,3 +246,10 @@ def _get_typing_objects_by_name_of(name: str) -> Tuple[Any, ...]:
             f"Neither typing nor typing_extensions has an object called {name!r}"
         )
     return result
+
+
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, (datetime, date, time)):
+            return o.isoformat()
+        return super().default(o=o)
