@@ -31,9 +31,10 @@ class PlayerProfileParser:
         last_name = full_name_parts[-1]
 
         if nicknames:
+            nicknames_str = " ".join(nicknames)
             nicknames_list = [
                 name.strip()
-                for name in nicknames.replace("(", "")
+                for name in nicknames_str.replace("(", "")
                 .replace(")", "")
                 .replace("or", ",")
                 .split(",")
@@ -172,15 +173,12 @@ class PlayerProfileParser:
         return [element.get_text(strip=True) for element in tag.find_all("li")]
 
     def _extract_team_and_years_jersey_num(self, text: str) -> dict:
-        first_digit_idx = -1
-        for idx, char in enumerate(text):
-            if char.isdigit():
-                first_digit_idx = idx
-                break
+        # Split on last space to separate team name from year(s).
+        # This avoids issues with team names containing digits (e.g. "49ers").
+        last_space_idx = text.rfind(" ")
+        team = text[:last_space_idx].strip()
+        years = text[last_space_idx + 1 :]
 
-        team = text[:first_digit_idx].strip()
-
-        years = text[first_digit_idx:]
         if "-" in years:
             start_year, end_year = [int(y) for y in years.split("-")]
         else:
@@ -401,13 +399,19 @@ class PlayerProfileParser:
         full_stats = self._extract_all_stats(stats_tables=stats_tables)
 
         transactions_div = self.soup.find(id="div_transactions")
-        transactions = self._parse_transactions(tag=transactions_div)
+        transactions = (
+            self._parse_transactions(tag=transactions_div) if transactions_div else []
+        )
 
         bottom_nav_div = self.soup.find(id="bottom_nav_container")
-        player_links = self._parse_bottom_nav(tag=bottom_nav_div)
+        player_links = (
+            self._parse_bottom_nav(tag=bottom_nav_div) if bottom_nav_div else {}
+        )
 
         leaderboard_div = self.soup.find(id="div_leaderboard")
-        leader_boards = self._parse_leader_boards(tag=leaderboard_div)
+        leader_boards = (
+            self._parse_leader_boards(tag=leaderboard_div) if leaderboard_div else {}
+        )
 
         return {
             "bio": bio,
