@@ -1,0 +1,1868 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/HeywCa01_2025.jpg",
+        "names": {
+            "first_name": "Cameron",
+            "middle_name": "Phillips",
+            "last_name": "Heyward",
+            "suffix": "",
+            "nicknames": [],
+            "pretty_name": "Cameron Heyward"
+        },
+        "position": "DT",
+        "height": 77,
+        "weight": "295lb",
+        "birth_date": "1989-05-06T00:00:00",
+        "birth_place": {
+            "city": "Pittsburgh",
+            "state": "PA"
+        },
+        "college": "Ohio St.",
+        "high_school": "Peachtree Ridge (GA)",
+        "draft": {
+            "team": "Pittsburgh Steelers",
+            "rd_and_ovr": {
+                "round": 1,
+                "overall": 31
+            },
+            "year": 2011
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "97",
+            "team": "Pittsburgh Steelers",
+            "start_year": 2011,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 228,
+        "Sk": 13,
+        "Solo": 151,
+        "FF": 3.5
+    },
+    "statistics": {
+        "regular_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2011,
+                        "age": 22,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.0,
+                        "tackles_combined": 11,
+                        "tackles_solo": 10,
+                        "tackles_assists": 1,
+                        "tackles_loss": 1,
+                        "qb_hits": 4,
+                        "safety_md": 0,
+                        "av": 2,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2012,
+                        "age": 23,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.5,
+                        "tackles_combined": 20,
+                        "tackles_solo": 13,
+                        "tackles_assists": 7,
+                        "tackles_loss": 4,
+                        "qb_hits": 6,
+                        "safety_md": 0,
+                        "av": 2,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2013,
+                        "age": 24,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 7,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 8,
+                        "fumbles_rec_td": 0,
+                        "sacks": 5.0,
+                        "tackles_combined": 59,
+                        "tackles_solo": 35,
+                        "tackles_assists": 24,
+                        "tackles_loss": 7,
+                        "qb_hits": 10,
+                        "safety_md": 0,
+                        "av": 7,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 13
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2014,
+                        "age": 25,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 4,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 7.5,
+                        "tackles_combined": 53,
+                        "tackles_solo": 33,
+                        "tackles_assists": 20,
+                        "tackles_loss": 11,
+                        "qb_hits": 16,
+                        "safety_md": 0,
+                        "av": 7,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2015,
+                        "age": 26,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 2,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 7.0,
+                        "tackles_combined": 54,
+                        "tackles_solo": 39,
+                        "tackles_assists": 15,
+                        "tackles_loss": 15,
+                        "qb_hits": 13,
+                        "safety_md": 0,
+                        "av": 9,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2016,
+                        "age": 27,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 4,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 1,
+                        "fumbles_rec_td": 0,
+                        "sacks": 3.0,
+                        "tackles_combined": 21,
+                        "tackles_solo": 17,
+                        "tackles_assists": 4,
+                        "tackles_loss": 4,
+                        "qb_hits": 5,
+                        "safety_md": 0,
+                        "av": 4,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 7,
+                        "games_started": 7
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2017,
+                        "age": 28,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 2,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 12.0,
+                        "tackles_combined": 45,
+                        "tackles_solo": 30,
+                        "tackles_assists": 15,
+                        "tackles_loss": 16,
+                        "qb_hits": 22,
+                        "safety_md": 0,
+                        "av": 16,
+                        "awards": "PB,AP-1,AP CPoY-4"
+                    },
+                    "general": {
+                        "games": 15,
+                        "games_started": 15
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2018,
+                        "age": 29,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 8.0,
+                        "tackles_combined": 51,
+                        "tackles_solo": 29,
+                        "tackles_assists": 22,
+                        "tackles_loss": 10,
+                        "qb_hits": 18,
+                        "safety_md": 0,
+                        "av": 11,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2019,
+                        "age": 30,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 6,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 9.0,
+                        "tackles_combined": 83,
+                        "tackles_solo": 51,
+                        "tackles_assists": 32,
+                        "tackles_loss": 11,
+                        "qb_hits": 23,
+                        "safety_md": 0,
+                        "av": 17,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 31,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 1,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 4.0,
+                        "tackles_combined": 54,
+                        "tackles_solo": 30,
+                        "tackles_assists": 24,
+                        "tackles_loss": 7,
+                        "qb_hits": 19,
+                        "safety_md": 0,
+                        "av": 15,
+                        "awards": "PB,AP-2"
+                    },
+                    "general": {
+                        "games": 15,
+                        "games_started": 15
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 32,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 1,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 9,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 10.0,
+                        "tackles_combined": 89,
+                        "tackles_solo": 53,
+                        "tackles_assists": 36,
+                        "tackles_loss": 15,
+                        "qb_hits": 17,
+                        "safety_md": 0,
+                        "av": 16,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2022,
+                        "age": 33,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 4,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 10.5,
+                        "tackles_combined": 74,
+                        "tackles_solo": 39,
+                        "tackles_assists": 35,
+                        "tackles_loss": 14,
+                        "qb_hits": 23,
+                        "safety_md": 0,
+                        "av": 11,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 2.0,
+                        "tackles_combined": 33,
+                        "tackles_solo": 25,
+                        "tackles_assists": 8,
+                        "tackles_loss": 6,
+                        "qb_hits": 3,
+                        "safety_md": 0,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 11,
+                        "games_started": 11
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 35,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 11,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 8.0,
+                        "tackles_combined": 71,
+                        "tackles_solo": 35,
+                        "tackles_assists": 36,
+                        "tackles_loss": 12,
+                        "qb_hits": 20,
+                        "safety_md": 0,
+                        "av": 16,
+                        "awards": "PB,AP-1,AP DPoY-13,AP CPoY-9"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 36,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 6,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 3.5,
+                        "tackles_combined": 78,
+                        "tackles_solo": 38,
+                        "tackles_assists": 40,
+                        "tackles_loss": 9,
+                        "qb_hits": 9,
+                        "safety_md": 0,
+                        "av": 13,
+                        "awards": "AP-2"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2018,
+                        "age": 29,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": 0.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 39.6,
+                        "def_tgt_yds_per_att": 3.0,
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 0,
+                        "qb_hurry": 7,
+                        "qb_knockdown": 9,
+                        "def_batted_passes": 0,
+                        "sacks": 8.0,
+                        "pressures": 25,
+                        "tackles_combined": 51,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 1.9,
+                        "awards": "PB"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 1,
+                        "def_cmp": 0,
+                        "def_cmp_pct": 0.0,
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2019,
+                        "age": 30,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": 8.5,
+                        "def_yds_per_target": 4.3,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 61.5,
+                        "def_tgt_yds_per_att": -3.0,
+                        "def_air_yds": -8,
+                        "def_yac": 25,
+                        "blitzes": 0,
+                        "qb_hurry": 11,
+                        "qb_knockdown": 12,
+                        "def_batted_passes": 4,
+                        "sacks": 9.0,
+                        "pressures": 33,
+                        "tackles_combined": 83,
+                        "tackles_missed": 6,
+                        "tackles_missed_pct": 6.7,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 4,
+                        "def_cmp": 2,
+                        "def_cmp_pct": 50.0,
+                        "def_cmp_yds": 17
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2020,
+                        "age": 31,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": 0.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 0.0,
+                        "def_tgt_yds_per_att": -1.5,
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 0,
+                        "qb_hurry": 12,
+                        "qb_knockdown": 14,
+                        "def_batted_passes": 1,
+                        "sacks": 4.0,
+                        "pressures": 31,
+                        "tackles_combined": 54,
+                        "tackles_missed": 5,
+                        "tackles_missed_pct": 8.5,
+                        "awards": "PB,AP-2"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 15
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 15,
+                        "def_int": 1,
+                        "def_targets": 2,
+                        "def_cmp": 0,
+                        "def_cmp_pct": 0.0,
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2021,
+                        "age": 32,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": 7.0,
+                        "def_yds_per_target": 2.3,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 2.8,
+                        "def_tgt_yds_per_att": -4.0,
+                        "def_air_yds": -4,
+                        "def_yac": 11,
+                        "blitzes": 0,
+                        "qb_hurry": 15,
+                        "qb_knockdown": 6,
+                        "def_batted_passes": 8,
+                        "sacks": 10.0,
+                        "pressures": 32,
+                        "tackles_combined": 89,
+                        "tackles_missed": 5,
+                        "tackles_missed_pct": 5.3,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 1,
+                        "def_targets": 3,
+                        "def_cmp": 1,
+                        "def_cmp_pct": 33.3,
+                        "def_cmp_yds": 7
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2022,
+                        "age": 33,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": "",
+                        "def_cmp_td": 0,
+                        "def_pass_rating": "",
+                        "def_tgt_yds_per_att": "",
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 0,
+                        "qb_hurry": 7,
+                        "qb_knockdown": 11,
+                        "def_batted_passes": 3,
+                        "sacks": 10.5,
+                        "pressures": 30,
+                        "tackles_combined": 74,
+                        "tackles_missed": 6,
+                        "tackles_missed_pct": 7.5,
+                        "awards": "PB"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 0,
+                        "def_cmp": 0,
+                        "def_cmp_pct": "",
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2023,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": "",
+                        "def_cmp_td": 0,
+                        "def_pass_rating": "",
+                        "def_tgt_yds_per_att": "",
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 0,
+                        "qb_hurry": 3,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 1,
+                        "sacks": 2.0,
+                        "pressures": 5,
+                        "tackles_combined": 33,
+                        "tackles_missed": 3,
+                        "tackles_missed_pct": 8.3,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 11
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 11,
+                        "def_int": 0,
+                        "def_targets": 0,
+                        "def_cmp": 0,
+                        "def_cmp_pct": "",
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2024,
+                        "age": 35,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": 5.0,
+                        "def_yds_per_target": 5.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 87.5,
+                        "def_tgt_yds_per_att": 2.0,
+                        "def_air_yds": 2,
+                        "def_yac": 3,
+                        "blitzes": 0,
+                        "qb_hurry": 5,
+                        "qb_knockdown": 10,
+                        "def_batted_passes": 10,
+                        "sacks": 8.0,
+                        "pressures": 24,
+                        "tackles_combined": 71,
+                        "tackles_missed": 3,
+                        "tackles_missed_pct": 4.1,
+                        "awards": "PB,AP-1,AP DPoY-13,AP CPoY-9"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 1,
+                        "def_cmp": 1,
+                        "def_cmp_pct": 100.0,
+                        "def_cmp_yds": 5
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2025,
+                        "age": 36,
+                        "team_name_abbr": "PIT",
+                        "def_yds_per_cmp": 0.5,
+                        "def_yds_per_target": 0.5,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 79.2,
+                        "def_tgt_yds_per_att": -3.0,
+                        "def_air_yds": -6,
+                        "def_yac": 7,
+                        "blitzes": 0,
+                        "qb_hurry": 5,
+                        "qb_knockdown": 3,
+                        "def_batted_passes": 6,
+                        "sacks": 3.5,
+                        "pressures": 12,
+                        "tackles_combined": 78,
+                        "tackles_missed": 3,
+                        "tackles_missed_pct": 3.7,
+                        "awards": "AP-2"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 2,
+                        "def_cmp": 2,
+                        "def_cmp_pct": 100.0,
+                        "def_cmp_yds": 1
+                    }
+                }
+            ],
+            "returns": [
+                {
+                    "general": {
+                        "year_id": 2013,
+                        "age": 24,
+                        "games": 16,
+                        "games_started": 13,
+                        "punt_ret": 0,
+                        "punt_ret_yds": 0,
+                        "punt_ret_td": 0,
+                        "punt_ret_long": 0,
+                        "kick_ret": 1,
+                        "kick_ret_yds": 11,
+                        "kick_ret_td": 0,
+                        "kick_ret_long": 11,
+                        "kick_ret_yds_per_ret": 11.0,
+                        "all_purpose_yds": 19,
+                        "awards": ""
+                    },
+                    "header_kr": {
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE"
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2012,
+                        "age": 23,
+                        "team": "PIT",
+                        "pos": "DE",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 0,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 262,
+                        "def_pct": "27%",
+                        "special_teams": 207,
+                        "st_pct": "46%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2013,
+                        "age": 24,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 13,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 828,
+                        "def_pct": "77%",
+                        "special_teams": 188,
+                        "st_pct": "40%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2014,
+                        "age": 25,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 859,
+                        "def_pct": "87%",
+                        "special_teams": 151,
+                        "st_pct": "33%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2015,
+                        "age": 26,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 976,
+                        "def_pct": "88%",
+                        "special_teams": 140,
+                        "st_pct": "31%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2016,
+                        "age": 27,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 7,
+                        "gs": 7,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 364,
+                        "def_pct": "78%",
+                        "special_teams": 45,
+                        "st_pct": "22%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2017*+",
+                        "age": 28,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 15,
+                        "gs": 15,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 782,
+                        "def_pct": "85%",
+                        "special_teams": 123,
+                        "st_pct": "30%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2018*",
+                        "age": 29,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 841,
+                        "def_pct": "81%",
+                        "special_teams": 128,
+                        "st_pct": "28%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2019*+",
+                        "age": 30,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 873,
+                        "def_pct": "81%",
+                        "special_teams": 112,
+                        "st_pct": "26%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2020*",
+                        "age": 31,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 15,
+                        "gs": 15,
+                        "offense": 2,
+                        "off_pct": "0%",
+                        "defense": 806,
+                        "def_pct": "83%",
+                        "special_teams": 110,
+                        "st_pct": "26%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2021*+",
+                        "age": 32,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 955,
+                        "def_pct": "82%",
+                        "special_teams": 109,
+                        "st_pct": "22%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2022*",
+                        "age": 33,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 801,
+                        "def_pct": "75%",
+                        "special_teams": 120,
+                        "st_pct": "27%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2023,
+                        "age": 34,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 11,
+                        "gs": 11,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 443,
+                        "def_pct": "64%",
+                        "special_teams": 57,
+                        "st_pct": "20%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*+",
+                        "age": 35,
+                        "team": "PIT",
+                        "pos": "LDE",
+                        "uniform_number": 97,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 778,
+                        "def_pct": "71%",
+                        "special_teams": 123,
+                        "st_pct": "27%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2025,
+                        "age": 36,
+                        "team": "PIT",
+                        "pos": "DT",
+                        "uniform_number": 97,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 3,
+                        "off_pct": "0%",
+                        "defense": 823,
+                        "def_pct": "71%",
+                        "special_teams": 129,
+                        "st_pct": "29%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2017,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2019,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2019,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2019,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2019,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2019,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2020,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2020,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2022,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DT",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DL",
+                    "voters": "Pro Football Focus"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2011,
+                    "pos": "DE",
+                    "height": 77,
+                    "weight": 294,
+                    "forty_yd": 4.95,
+                    "bench_reps": "",
+                    "broad_jump": "",
+                    "shuttle": "",
+                    "cone": "",
+                    "vertical": 30.0
+                }
+            ]
+        },
+        "post_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2011,
+                        "age": 22,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 4,
+                        "tackles_solo": 3,
+                        "tackles_assists": 1,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 0
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2014,
+                        "age": 25,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 2,
+                        "tackles_solo": 2,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 2,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2015,
+                        "age": 26,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 4,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 2,
+                        "games_started": 2
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2017,
+                        "age": 28,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 31,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 1,
+                        "tackles_solo": 1,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 32,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 4,
+                        "tackles_solo": 2,
+                        "tackles_assists": 2,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 34,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 6,
+                        "tackles_solo": 4,
+                        "tackles_assists": 2,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 35,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 10,
+                        "tackles_solo": 3,
+                        "tackles_assists": 7,
+                        "tackles_loss": 2,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 36,
+                        "team_name_abbr": "PIT",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DT",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 3,
+                        "tackles_solo": 0,
+                        "tackles_assists": 3,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [
+        {
+            "date": "2023-11-01",
+            "description": " The Pittsburgh Steelers activated DT Cameron Heyward from the IRD."
+        },
+        {
+            "date": "2023-10-26",
+            "description": " The Pittsburgh Steelers placed DL Cameron Heyward on IRD."
+        },
+        {
+            "date": "2023-09-14",
+            "description": " The Pittsburgh Steelers placed DT Cameron Heyward on the IR."
+        },
+        {
+            "date": "2020-09-07",
+            "description": " The Pittsburgh Steelers re-signed DT Cameron Heyward."
+        },
+        {
+            "date": "2018-09-03",
+            "description": " The Pittsburgh Steelers re-signed DT Cameron Heyward."
+        },
+        {
+            "date": "2018-01-03",
+            "description": " The Pittsburgh Steelers activated DT Cameron Heyward."
+        },
+        {
+            "date": "2017-12-31",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-09-05",
+            "description": " The Pittsburgh Steelers re-signed DT Cameron Heyward."
+        },
+        {
+            "date": "2017-02-06",
+            "description": " The Pittsburgh Steelers activated DT Cameron Heyward."
+        },
+        {
+            "date": "2016-11-19",
+            "description": " The Pittsburgh Steelers placed DT Cameron Heyward on IR."
+        },
+        {
+            "date": "2016-10-26",
+            "description": " The Pittsburgh Steelers activated DT Cameron Heyward."
+        },
+        {
+            "date": "2016-10-23",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2016-10-19",
+            "description": " The Pittsburgh Steelers activated DT Cameron Heyward."
+        },
+        {
+            "date": "2016-10-16",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2011-07-30",
+            "description": " The Pittsburgh Steelers signed DT Cameron Heyward."
+        }
+    ],
+    "links": {
+        "overview": {
+            "href": "/players/H/HeywCa01.htm"
+        },
+        "general": {
+            "penalties": "/players/H/HeywCa01/penalties"
+        },
+        "game_logs": {
+            "career": "/players/H/HeywCa01/gamelog/",
+            "playoffs": "/players/H/HeywCa01/gamelog/post/",
+            "2011": "/players/H/HeywCa01/gamelog/2011/",
+            "2012": "/players/H/HeywCa01/gamelog/2012/",
+            "2013": "/players/H/HeywCa01/gamelog/2013/",
+            "2014": "/players/H/HeywCa01/gamelog/2014/",
+            "2015": "/players/H/HeywCa01/gamelog/2015/",
+            "2016": "/players/H/HeywCa01/gamelog/2016/",
+            "2017": "/players/H/HeywCa01/gamelog/2017/",
+            "2018": "/players/H/HeywCa01/gamelog/2018/",
+            "2019": "/players/H/HeywCa01/gamelog/2019/",
+            "2020": "/players/H/HeywCa01/gamelog/2020/",
+            "2021": "/players/H/HeywCa01/gamelog/2021/",
+            "2022": "/players/H/HeywCa01/gamelog/2022/",
+            "2023": "/players/H/HeywCa01/gamelog/2023/",
+            "2024": "/players/H/HeywCa01/gamelog/2024/",
+            "2025": "/players/H/HeywCa01/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=HeywCa01&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/H/HeywCa01/gamelog/advanced/",
+            "2018": "/players/H/HeywCa01/gamelog/2018/advanced/",
+            "2019": "/players/H/HeywCa01/gamelog/2019/advanced/",
+            "2020": "/players/H/HeywCa01/gamelog/2020/advanced/",
+            "2021": "/players/H/HeywCa01/gamelog/2021/advanced/",
+            "2022": "/players/H/HeywCa01/gamelog/2022/advanced/",
+            "2023": "/players/H/HeywCa01/gamelog/2023/advanced/",
+            "2024": "/players/H/HeywCa01/gamelog/2024/advanced/",
+            "2025": "/players/H/HeywCa01/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/H/HeywCa01/splits/",
+            "2011": "/players/H/HeywCa01/splits/2011/",
+            "2012": "/players/H/HeywCa01/splits/2012/",
+            "2013": "/players/H/HeywCa01/splits/2013/",
+            "2014": "/players/H/HeywCa01/splits/2014/",
+            "2015": "/players/H/HeywCa01/splits/2015/",
+            "2016": "/players/H/HeywCa01/splits/2016/",
+            "2017": "/players/H/HeywCa01/splits/2017/",
+            "2018": "/players/H/HeywCa01/splits/2018/",
+            "2019": "/players/H/HeywCa01/splits/2019/",
+            "2020": "/players/H/HeywCa01/splits/2020/",
+            "2021": "/players/H/HeywCa01/splits/2021/",
+            "2022": "/players/H/HeywCa01/splits/2022/",
+            "2023": "/players/H/HeywCa01/splits/2023/",
+            "2024": "/players/H/HeywCa01/splits/2024/",
+            "2025": "/players/H/HeywCa01/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=HeywCa01&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "more_cameron_heyward_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/cameron-heyward-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2023 NFL Walter Payton Man of the Year\n",
+            "2016 NFL Top 100 (#88)",
+            "2018 NFL Top 100 (#48)",
+            "2019 NFL Top 100 (#88)",
+            "2020 NFL Top 100 (#84)",
+            "2021 NFL Top 100 (#57)",
+            "2022 NFL Top 100 (#42)",
+            "2023 NFL Top 100 (#45)",
+            "2024 NFL Top 100 (#98)",
+            "2025 NFL Top 100 (#83)"
+        ],
+        "apdpoy_shares": [
+            "2024 AP Def. PoY .01 (13)",
+            "Career AP Def. PoY .01 (220)"
+        ],
+        "pro_bowls": [
+            "2017\n",
+            "2018\n",
+            "2019\n",
+            "2020\n",
+            "2021\n",
+            "2022\n",
+            "2024\n"
+        ],
+        "all_pro": [
+            "2017\n",
+            "2019\n",
+            "2021\n",
+            "2024\n"
+        ],
+        "potw": [
+            "2022 - Week 16 AFC Defensive\n",
+            "2017 - Week 12 AFC Defensive\n",
+            "2017 - Week 4 AFC Defensive\n"
+        ],
+        "av": [
+            "2017 NFL 16 (6)",
+            "2019 NFL 17 (4)",
+            "Active 151 (8)",
+            "Career 151 (69)"
+        ],
+        "career_av": [
+            "Active 115 (6)",
+            "Career 115 (57)"
+        ],
+        "g": [
+            "Active 228 (15)",
+            "Career 228 (134)"
+        ],
+        "gs": [
+            "Active 193 (16)",
+            "Career 193 (143)"
+        ],
+        "tackles_solo": [
+            "Active 477 (26)"
+        ],
+        "tackles_combined": [
+            "Active 796 (18)",
+            "Career 796 (193)"
+        ],
+        "tackles_loss": [
+            "2017 NFL 16 (7)",
+            "2021 NFL 15 (8)",
+            "Active 142 (7)",
+            "Career 142 (15)"
+        ],
+        "pass_defended": [
+            "Active 64 (28)"
+        ],
+        "sacks": [
+            "2017 NFL 12.0 (8)",
+            "Active 92.0 (9)",
+            "Career 92.0 (58)"
+        ],
+        "sacks_all": [
+            "2017 NFL 12.0 (8)",
+            "Active 92.0 (9)",
+            "Career 92.0 (85)"
+        ]
+    }
+}

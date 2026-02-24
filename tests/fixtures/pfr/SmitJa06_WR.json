@@ -1,0 +1,904 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/SmitJa06_2025.jpg",
+        "names": {
+            "first_name": "Jaxon",
+            "middle_name": "",
+            "last_name": "Smith-Njigba",
+            "suffix": "",
+            "nicknames": [
+                "JSN",
+                "Emerald City Route Artist"
+            ],
+            "pretty_name": "Jaxon Smith-Njigba"
+        },
+        "position": "WR",
+        "throws": "Right",
+        "height": 72,
+        "weight": "197lb",
+        "birth_date": "2002-02-14T00:00:00",
+        "birth_place": {
+            "city": "Nacogdoches",
+            "state": "TX"
+        },
+        "college": "Ohio St.",
+        "high_school": "Rockwall (TX)",
+        "draft": {
+            "team": "Seattle Seahawks",
+            "rd_and_ovr": {
+                "round": 1,
+                "overall": 20
+            },
+            "year": 2023
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "11",
+            "team": "Seattle Seahawks",
+            "start_year": 2023,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 51,
+        "Rec": 16,
+        "Yds": 31,
+        "Y/R": 119,
+        "TD": 282,
+        "FantPt": 1793
+    },
+    "statistics": {
+        "regular_season": {
+            "receiving_and_rushing": [
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2023,
+                        "age": 21,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 29,
+                        "rec_success": 47.3,
+                        "rec_long": 35,
+                        "rec_per_g": 3.7,
+                        "rec_yds_per_g": 36.9,
+                        "catch_pct": 67.7,
+                        "rec_yds_per_tgt": 6.8,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": "",
+                        "rush_long": "",
+                        "rush_yds_per_att": "",
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 63,
+                        "yds_per_touch": 10.0,
+                        "yds_from_scrimmage": 628,
+                        "rush_receive_td": 4,
+                        "fumbles": 0,
+                        "av": 6,
+                        "awards": ""
+                    },
+                    "header_rush": {
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 3,
+                        "targets": 93,
+                        "rec": 63
+                    },
+                    "header_rec": {
+                        "rec_yds": 628,
+                        "rec_yds_per_rec": 10.0,
+                        "rec_td": 4
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2024,
+                        "age": 22,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 57,
+                        "rec_success": 58.4,
+                        "rec_long": 46,
+                        "rec_per_g": 5.9,
+                        "rec_yds_per_g": 66.5,
+                        "catch_pct": 73.0,
+                        "rec_yds_per_tgt": 8.2,
+                        "rush_att": 5,
+                        "rush_yds": 26,
+                        "rush_td": 0,
+                        "rush_first_down": 1,
+                        "rush_success": 60.0,
+                        "rush_long": 8,
+                        "rush_yds_per_att": 5.2,
+                        "rush_yds_per_g": 1.5,
+                        "rush_att_per_g": 0.3,
+                        "touches": 105,
+                        "yds_per_touch": 11.0,
+                        "yds_from_scrimmage": 1156,
+                        "rush_receive_td": 6,
+                        "fumbles": 1,
+                        "av": 9,
+                        "awards": "PB"
+                    },
+                    "header_rush": {
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 16,
+                        "targets": 137,
+                        "rec": 100
+                    },
+                    "header_rec": {
+                        "rec_yds": 1130,
+                        "rec_yds_per_rec": 11.3,
+                        "rec_td": 6
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 79,
+                        "rec_success": 61.3,
+                        "rec_long": 63,
+                        "rec_per_g": 7.0,
+                        "rec_yds_per_g": 105.5,
+                        "catch_pct": 73.0,
+                        "rec_yds_per_tgt": 11.0,
+                        "rush_att": 7,
+                        "rush_yds": 36,
+                        "rush_td": 0,
+                        "rush_first_down": 2,
+                        "rush_success": 57.1,
+                        "rush_long": 11,
+                        "rush_yds_per_att": 5.1,
+                        "rush_yds_per_g": 2.1,
+                        "rush_att_per_g": 0.4,
+                        "touches": 126,
+                        "yds_per_touch": 14.5,
+                        "yds_from_scrimmage": 1829,
+                        "rush_receive_td": 10,
+                        "fumbles": 3,
+                        "av": 16,
+                        "awards": "PB,AP-1,AP OPoY-1"
+                    },
+                    "header_rush": {
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 17,
+                        "targets": 163,
+                        "rec": 119
+                    },
+                    "header_rec": {
+                        "rec_yds": 1793,
+                        "rec_yds_per_rec": 15.1,
+                        "rec_td": 10
+                    }
+                }
+            ],
+            "adv_receiving_and_rushing": [
+                {
+                    "header_rush": {
+                        "year_id": 2023,
+                        "age": 21,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 3,
+                        "targets": 93,
+                        "rec": 63,
+                        "rec_adot": 6.1,
+                        "rec_broken_tackles": 3,
+                        "rec_broken_tackles_per_rec": 21.0,
+                        "rec_drops": 10,
+                        "rec_drop_pct": 10.8,
+                        "rec_target_int": 2,
+                        "rec_pass_rating": 92.0,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": "",
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": "",
+                        "rush_broken_tackles": 0,
+                        "rush_broken_tackles_per_rush": "",
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "rec_yds": 628,
+                        "rec_first_down": 29,
+                        "rec_air_yds": 262,
+                        "rec_air_yds_per_rec": 4.2,
+                        "rec_yac": 366,
+                        "rec_yac_per_rec": 5.8
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2024,
+                        "age": 22,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 16,
+                        "targets": 137,
+                        "rec": 100,
+                        "rec_adot": 8.7,
+                        "rec_broken_tackles": 4,
+                        "rec_broken_tackles_per_rec": 25.0,
+                        "rec_drops": 5,
+                        "rec_drop_pct": 3.6,
+                        "rec_target_int": 4,
+                        "rec_pass_rating": 99.7,
+                        "rush_att": 5,
+                        "rush_yds": 26,
+                        "rush_first_down": 1,
+                        "rush_yds_before_contact": 17,
+                        "rush_yds_bc_per_rush": 3.4,
+                        "rush_yac": 9,
+                        "rush_yac_per_rush": 1.8,
+                        "rush_broken_tackles": 0,
+                        "rush_broken_tackles_per_rush": "",
+                        "awards": "PB"
+                    },
+                    "header_rec": {
+                        "rec_yds": 1130,
+                        "rec_first_down": 57,
+                        "rec_air_yds": 653,
+                        "rec_air_yds_per_rec": 6.5,
+                        "rec_yac": 477,
+                        "rec_yac_per_rec": 4.8
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 17,
+                        "targets": 163,
+                        "rec": 119,
+                        "rec_adot": 11.2,
+                        "rec_broken_tackles": 3,
+                        "rec_broken_tackles_per_rec": 39.7,
+                        "rec_drops": 5,
+                        "rec_drop_pct": 3.1,
+                        "rec_target_int": 5,
+                        "rec_pass_rating": 116.4,
+                        "rush_att": 7,
+                        "rush_yds": 36,
+                        "rush_first_down": 2,
+                        "rush_yds_before_contact": 16,
+                        "rush_yds_bc_per_rush": 2.3,
+                        "rush_yac": 20,
+                        "rush_yac_per_rush": 2.9,
+                        "rush_broken_tackles": 1,
+                        "rush_broken_tackles_per_rush": 7.0,
+                        "awards": "PB,AP-1,AP OPoY-1"
+                    },
+                    "header_rec": {
+                        "rec_yds": 1793,
+                        "rec_first_down": 79,
+                        "rec_air_yds": 1265,
+                        "rec_air_yds_per_rec": 10.6,
+                        "rec_yac": 528,
+                        "rec_yac_per_rec": 4.4
+                    }
+                }
+            ],
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 22,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 1,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 0,
+                        "tackles_solo": 0,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 3,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 0,
+                        "tackles_solo": 0,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": "PB,AP-1,AP OPoY-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                }
+            ],
+            "passing": [
+                {
+                    "year_id": 2024,
+                    "age": 22,
+                    "team_name_abbr": "SEA",
+                    "comp_name_abbr": "NFL",
+                    "pos": "WR",
+                    "games": 17,
+                    "games_started": 16,
+                    "pass_cmp": 1,
+                    "pass_att": 1,
+                    "pass_cmp_pct": 100.0,
+                    "pass_yds": 35,
+                    "pass_td": 0,
+                    "pass_td_pct": 0.0,
+                    "pass_int": 0,
+                    "pass_int_pct": 0.0,
+                    "pass_first_down": 1,
+                    "pass_success": 100.0,
+                    "pass_long": 35,
+                    "pass_yds_per_att": 35.0,
+                    "pass_adj_yds_per_att": 35.0,
+                    "pass_yds_per_cmp": 35.0,
+                    "pass_yds_per_g": 2.1,
+                    "pass_rating": 118.7,
+                    "qbr": 100.0,
+                    "pass_sacked": 0,
+                    "pass_sacked_yds": 0,
+                    "pass_sacked_pct": 0.0,
+                    "pass_net_yds_per_att": 35.0,
+                    "pass_adj_net_yds_per_att": 35.0,
+                    "comebacks": 0,
+                    "gwd": 0,
+                    "awards": "PB"
+                }
+            ],
+            "passing_advanced": [
+                {
+                    "header_play_action": {
+                        "year_id": 2024,
+                        "age": 22,
+                        "pass_target_yds": 35,
+                        "pass_tgt_yds_per_att": 35.0,
+                        "pass_air_yds": 35,
+                        "pass_air_yds_per_cmp": 35.0,
+                        "pass_air_yds_per_att": 35.0,
+                        "pass_yac": 0,
+                        "pass_yac_per_cmp": 0.0,
+                        "pass_batted_passes": 0,
+                        "pass_throwaways": 0,
+                        "pass_spikes": 0,
+                        "pass_drops": 0,
+                        "pass_drop_pct": 0.0,
+                        "pass_poor_throws": 0,
+                        "pass_poor_throw_pct": 0.0,
+                        "pass_on_target": 1,
+                        "pass_on_target_pct": 100.0,
+                        "pocket_time": 3.6,
+                        "pass_blitzed": 0,
+                        "pass_hurried": 0,
+                        "pass_hits": 1,
+                        "pass_pressured": 1,
+                        "pass_pressured_pct": 100.0,
+                        "rush_scrambles": 0,
+                        "pass_rpo": 0,
+                        "pass_rpo_yds": 0,
+                        "pass_rpo_pass_att": 0,
+                        "pass_rpo_pass_yds": 0,
+                        "pass_rpo_rush_att": 0,
+                        "pass_rpo_rush_yds": 0,
+                        "pass_play_action": 0,
+                        "pass_play_action_pass_yds": 0,
+                        "awards": "PB"
+                    },
+                    "header_rpo": {
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17
+                    },
+                    "header_pressure": {
+                        "games_started": 16
+                    },
+                    "header_accuracy": {
+                        "pass_cmp": 1,
+                        "pass_att": 1
+                    }
+                }
+            ],
+            "fantasy": [
+                {
+                    "year_id": 2023,
+                    "age": 21,
+                    "g": 17,
+                    "fantasy_pos": "WR",
+                    "fantasy_points": 87,
+                    "vbd": "",
+                    "fantasy_rank_pos": 51,
+                    "fantasy_rank_overall": "",
+                    "games": "All 2023 Games"
+                },
+                {
+                    "year_id": 2024,
+                    "age": 22,
+                    "g": 17,
+                    "fantasy_pos": "WR",
+                    "fantasy_points": 153,
+                    "vbd": 22,
+                    "fantasy_rank_pos": 14,
+                    "fantasy_rank_overall": 50,
+                    "games": "All 2024 Games"
+                },
+                {
+                    "year_id": 2025,
+                    "age": 23,
+                    "g": 17,
+                    "fantasy_pos": "WR",
+                    "fantasy_points": 241,
+                    "vbd": 116,
+                    "fantasy_rank_pos": 2,
+                    "fantasy_rank_overall": 6,
+                    "games": "All 2025 Games"
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2023,
+                        "age": 21,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 4,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 24,
+                        "points_per_g": 1.4,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 3,
+                        "rush_td": 0,
+                        "rec_td": 4
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 22,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 6,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 36,
+                        "points_per_g": 2.1,
+                        "awards": "PB"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 16,
+                        "rush_td": 0,
+                        "rec_td": 6
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 10,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 60,
+                        "points_per_g": 3.5,
+                        "awards": "PB,AP-1,AP OPoY-1"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 17,
+                        "games_started": 17,
+                        "rush_td": 0,
+                        "rec_td": 10
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2023,
+                        "age": 21,
+                        "team": "SEA",
+                        "pos": "WR",
+                        "uniform_number": 11,
+                        "g": 17,
+                        "gs": 3,
+                        "offense": 675,
+                        "off_pct": "64%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 0,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*",
+                        "age": 22,
+                        "team": "SEA",
+                        "pos": "WR",
+                        "uniform_number": 11,
+                        "g": 17,
+                        "gs": 16,
+                        "offense": 948,
+                        "off_pct": "86%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 0,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2025*+",
+                        "age": 23,
+                        "team": "SEA",
+                        "pos": "WR",
+                        "uniform_number": 11,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 829,
+                        "off_pct": "78%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 2,
+                        "st_pct": "0%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "WR",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "WR",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "WR",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "WR",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "WR",
+                    "voters": "Sporting News"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2023,
+                    "pos": "WR",
+                    "height": 73,
+                    "weight": 196,
+                    "forty_yd": "",
+                    "bench_reps": "",
+                    "broad_jump": 125,
+                    "shuttle": 3.93,
+                    "cone": 6.57,
+                    "vertical": 35.0
+                }
+            ]
+        },
+        "post_season": {
+            "receiving_and_rushing": [
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 11,
+                        "rec_success": 50.0,
+                        "rec_long": 42,
+                        "rec_per_g": 5.7,
+                        "rec_yds_per_g": 66.3,
+                        "catch_pct": 65.4,
+                        "rec_yds_per_tgt": 7.7,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 17,
+                        "yds_per_touch": 11.7,
+                        "yds_from_scrimmage": 199,
+                        "rush_receive_td": 2,
+                        "fumbles": 0,
+                        "awards": ""
+                    },
+                    "header_rush": {
+                        "pos": "WR",
+                        "games": 3
+                    },
+                    "header_rec": {
+                        "games_started": 3,
+                        "targets": 26,
+                        "rec": 17,
+                        "rec_yds": 199,
+                        "rec_yds_per_rec": 11.7,
+                        "rec_td": 2
+                    }
+                }
+            ],
+            "adv_receiving_and_rushing": [
+                {
+                    "header_rush": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 3,
+                        "rec_yac_per_rec": 4.0,
+                        "rec_adot": 10.1,
+                        "rec_broken_tackles": 0,
+                        "rec_drops": 0,
+                        "rec_drop_pct": 0.0,
+                        "rec_target_int": 0,
+                        "rec_pass_rating": 114.1,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yac": 0,
+                        "rush_broken_tackles": 0,
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "games_started": 3,
+                        "targets": 26,
+                        "rec": 17,
+                        "rec_yds": 199,
+                        "rec_first_down": 11,
+                        "rec_air_yds": 131,
+                        "rec_air_yds_per_rec": 7.7,
+                        "rec_yac": 68
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2025,
+                        "age": 23,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 2,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 12,
+                        "points_per_g": 4.0,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "SEA",
+                        "comp_name_abbr": "NFL",
+                        "pos": "WR",
+                        "games": 3,
+                        "games_started": 3,
+                        "rush_td": 0,
+                        "rec_td": 2
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [],
+    "links": {
+        "overview": {
+            "href": "/players/S/SmitJa06.htm"
+        },
+        "general": {
+            "touchdowns": "/players/S/SmitJa06/touchdowns/",
+            "super_bowl": "/players/S/SmitJa06/super-bowl/",
+            "penalties": "/players/S/SmitJa06/penalties"
+        },
+        "game_logs": {
+            "career": "/players/S/SmitJa06/gamelog/",
+            "playoffs": "/players/S/SmitJa06/gamelog/post/",
+            "2023": "/players/S/SmitJa06/gamelog/2023/",
+            "2024": "/players/S/SmitJa06/gamelog/2024/",
+            "2025": "/players/S/SmitJa06/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=SmitJa06&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/S/SmitJa06/gamelog/advanced/",
+            "2023": "/players/S/SmitJa06/gamelog/2023/advanced/",
+            "2024": "/players/S/SmitJa06/gamelog/2024/advanced/",
+            "2025": "/players/S/SmitJa06/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/S/SmitJa06/splits/",
+            "2023": "/players/S/SmitJa06/splits/2023/",
+            "2024": "/players/S/SmitJa06/splits/2024/",
+            "2025": "/players/S/SmitJa06/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=SmitJa06&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "passing_plays": {
+            "2024": "/players/S/SmitJa06/passing-plays/2024/"
+        },
+        "receiving_plays": {
+            "2023": "/players/S/SmitJa06/receiving-plays/2023/",
+            "2024": "/players/S/SmitJa06/receiving-plays/2024/",
+            "2025": "/players/S/SmitJa06/receiving-plays/2025/"
+        },
+        "rushing_plays": {
+            "2024": "/players/S/SmitJa06/rushing-plays/2024/",
+            "2025": "/players/S/SmitJa06/rushing-plays/2025/"
+        },
+        "more_jaxon_smith-njigba_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/jaxon-smith-njigba-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2025 NFL AP Offensive Player of the Year\n",
+            "2025 NFL PFWA Offensive Player of the Year\n",
+            "2025 NFL Sporting News Offensive Player of the Year\n"
+        ],
+        "apopoy_shares": [
+            "2025 AP Off. PoY .54 (1)",
+            "Career AP Off. PoY .54 (38)"
+        ],
+        "pro_bowls": [
+            "2024\n",
+            "2025\n"
+        ],
+        "all_pro": [
+            "2025\n"
+        ],
+        "potm": [
+            "2025 October - NFC Offensive\n"
+        ],
+        "av": [
+            "2025 NFL 16 (10)"
+        ],
+        "rec": [
+            "2024 NFL 100 (9)",
+            "2025 NFL 119 (4/23)"
+        ],
+        "rec_yds": [
+            "2025 NFL 1793 (1/8)"
+        ],
+        "rec_td": [
+            "2025 NFL 10 (6)"
+        ],
+        "rec_yds_per_rec": [
+            "2025 NFL 15.1 (9)"
+        ],
+        "rec_yds_per_g": [
+            "2025 NFL 105.5 (2/29)",
+            "Active 69.6 (13)",
+            "Career 69.6 (27)"
+        ],
+        "yds_from_scrimmage": [
+            "2025 NFL 1829 (7)"
+        ],
+        "all_purpose_yds": [
+            "2025 NFL 1829 (9)"
+        ],
+        "yds_per_touch": [
+            "2025 NFL 14.5 (1/20)"
+        ]
+    }
+}

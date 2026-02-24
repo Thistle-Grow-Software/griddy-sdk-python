@@ -1,0 +1,1473 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/GarrMy00_2024.jpg",
+        "names": {
+            "first_name": "Myles",
+            "middle_name": "Lorenz",
+            "last_name": "Garrett",
+            "suffix": "",
+            "nicknames": [
+                "Superman",
+                "Big Foot"
+            ],
+            "pretty_name": "Myles Garrett"
+        },
+        "position": "DE",
+        "height": 76,
+        "weight": "272lb",
+        "birth_date": "1995-12-29T00:00:00",
+        "birth_place": {
+            "city": "Arlington",
+            "state": "TX"
+        },
+        "college": "Texas A&M",
+        "high_school": "Martin (TX)",
+        "draft": {
+            "team": "Cleveland Browns",
+            "rd_and_ovr": {
+                "round": 1,
+                "overall": 1
+            },
+            "year": 2017
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "95",
+            "team": "Cleveland Browns",
+            "start_year": 2017,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 134,
+        "Sk": 19,
+        "Solo": 123,
+        "FF": 23.0
+    },
+    "statistics": {
+        "regular_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2017,
+                        "age": 22,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 7.0,
+                        "tackles_combined": 31,
+                        "tackles_solo": 19,
+                        "tackles_assists": 12,
+                        "tackles_loss": 9,
+                        "qb_hits": 18,
+                        "safety_md": 0,
+                        "av": 4,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 11,
+                        "games_started": 9
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2018,
+                        "age": 23,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 3,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 13.5,
+                        "tackles_combined": 44,
+                        "tackles_solo": 35,
+                        "tackles_assists": 9,
+                        "tackles_loss": 12,
+                        "qb_hits": 29,
+                        "safety_md": 0,
+                        "av": 14,
+                        "awards": "PB,AP-2"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2019,
+                        "age": 24,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 2,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 10.0,
+                        "tackles_combined": 29,
+                        "tackles_solo": 20,
+                        "tackles_assists": 9,
+                        "tackles_loss": 11,
+                        "qb_hits": 18,
+                        "safety_md": 0,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 10,
+                        "games_started": 10
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 25,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 2,
+                        "fumbles_forced": 4,
+                        "fumbles": 0,
+                        "fumbles_rec": 2,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 12.0,
+                        "tackles_combined": 48,
+                        "tackles_solo": 33,
+                        "tackles_assists": 15,
+                        "tackles_loss": 10,
+                        "qb_hits": 18,
+                        "safety_md": 0,
+                        "av": 14,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 14,
+                        "games_started": 14
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 26,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 15,
+                        "fumbles_rec_td": 1,
+                        "sacks": 16.0,
+                        "tackles_combined": 51,
+                        "tackles_solo": 33,
+                        "tackles_assists": 18,
+                        "tackles_loss": 17,
+                        "qb_hits": 33,
+                        "safety_md": 0,
+                        "av": 17,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2022,
+                        "age": 27,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 4,
+                        "fumbles_forced": 2,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 16.0,
+                        "tackles_combined": 60,
+                        "tackles_solo": 37,
+                        "tackles_assists": 23,
+                        "tackles_loss": 18,
+                        "qb_hits": 26,
+                        "safety_md": 0,
+                        "av": 13,
+                        "awards": "PB,AP-2,AP DPoY-5"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 15
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 28,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 3,
+                        "fumbles_forced": 4,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 1,
+                        "fumbles_rec_td": 0,
+                        "sacks": 14.0,
+                        "tackles_combined": 42,
+                        "tackles_solo": 33,
+                        "tackles_assists": 9,
+                        "tackles_loss": 17,
+                        "qb_hits": 30,
+                        "safety_md": 0,
+                        "av": 20,
+                        "awards": "PB,AP-1,AP MVP-10,AP DPoY-1"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 29,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "RDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 3,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 14.0,
+                        "tackles_combined": 47,
+                        "tackles_solo": 40,
+                        "tackles_assists": 7,
+                        "tackles_loss": 22,
+                        "qb_hits": 28,
+                        "safety_md": 0,
+                        "av": 17,
+                        "awards": "PB,AP-1,AP DPoY-3"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 30,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 3,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 23.0,
+                        "tackles_combined": 60,
+                        "tackles_solo": 43,
+                        "tackles_assists": 17,
+                        "tackles_loss": 33,
+                        "qb_hits": 39,
+                        "safety_md": 0,
+                        "av": 19,
+                        "awards": "PB,AP-1,AP DPoY-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2018,
+                        "age": 23,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 10.0,
+                        "def_yds_per_target": 7.5,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 95.8,
+                        "def_tgt_yds_per_att": 4.5,
+                        "def_air_yds": 6,
+                        "def_yac": 24,
+                        "blitzes": 19,
+                        "qb_hurry": 19,
+                        "qb_knockdown": 13,
+                        "def_batted_passes": 0,
+                        "sacks": 13.5,
+                        "pressures": 48,
+                        "tackles_combined": 44,
+                        "tackles_missed": 6,
+                        "tackles_missed_pct": 12.0,
+                        "awards": "PB,AP-2"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 4,
+                        "def_cmp": 3,
+                        "def_cmp_pct": 75.0,
+                        "def_cmp_yds": 30
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2019,
+                        "age": 24,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 9.0,
+                        "def_yds_per_target": 9.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 104.2,
+                        "def_tgt_yds_per_att": 5.0,
+                        "def_air_yds": 5,
+                        "def_yac": 4,
+                        "blitzes": 7,
+                        "qb_hurry": 10,
+                        "qb_knockdown": 9,
+                        "def_batted_passes": 0,
+                        "sacks": 10.0,
+                        "pressures": 29,
+                        "tackles_combined": 29,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 3.3,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 10
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 10,
+                        "def_int": 0,
+                        "def_targets": 1,
+                        "def_cmp": 1,
+                        "def_cmp_pct": 100.0,
+                        "def_cmp_yds": 9
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2020,
+                        "age": 25,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 2.0,
+                        "def_yds_per_target": 1.3,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 70.1,
+                        "def_tgt_yds_per_att": -0.7,
+                        "def_air_yds": -7,
+                        "def_yac": 11,
+                        "blitzes": 0,
+                        "qb_hurry": 12,
+                        "qb_knockdown": 7,
+                        "def_batted_passes": 0,
+                        "sacks": 12.0,
+                        "pressures": 32,
+                        "tackles_combined": 48,
+                        "tackles_missed": 2,
+                        "tackles_missed_pct": 4.0,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 14
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 14,
+                        "def_int": 0,
+                        "def_targets": 3,
+                        "def_cmp": 2,
+                        "def_cmp_pct": 66.7,
+                        "def_cmp_yds": 4
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2021,
+                        "age": 26,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 7.5,
+                        "def_yds_per_target": 5.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 78.5,
+                        "def_tgt_yds_per_att": -2.7,
+                        "def_air_yds": -4,
+                        "def_yac": 19,
+                        "blitzes": 2,
+                        "qb_hurry": 16,
+                        "qb_knockdown": 17,
+                        "def_batted_passes": 2,
+                        "sacks": 16.0,
+                        "pressures": 51,
+                        "tackles_combined": 51,
+                        "tackles_missed": 2,
+                        "tackles_missed_pct": 3.8,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 3,
+                        "def_cmp": 2,
+                        "def_cmp_pct": 66.7,
+                        "def_cmp_yds": 15
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2022,
+                        "age": 27,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": 0.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 39.6,
+                        "def_tgt_yds_per_att": -2.0,
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 2,
+                        "qb_hurry": 11,
+                        "qb_knockdown": 9,
+                        "def_batted_passes": 4,
+                        "sacks": 16.0,
+                        "pressures": 38,
+                        "tackles_combined": 60,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 1.6,
+                        "awards": "PB,AP-2,AP DPoY-5"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 15,
+                        "def_int": 0,
+                        "def_targets": 1,
+                        "def_cmp": 0,
+                        "def_cmp_pct": 0.0,
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2023,
+                        "age": 28,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": 0.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 39.6,
+                        "def_tgt_yds_per_att": -4.0,
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 0,
+                        "qb_hurry": 6,
+                        "qb_knockdown": 16,
+                        "def_batted_passes": 3,
+                        "sacks": 14.0,
+                        "pressures": 37,
+                        "tackles_combined": 42,
+                        "tackles_missed": 4,
+                        "tackles_missed_pct": 8.7,
+                        "awards": "PB,AP-1,AP MVP-10,AP DPoY-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 0,
+                        "def_targets": 1,
+                        "def_cmp": 0,
+                        "def_cmp_pct": 0.0,
+                        "def_cmp_yds": 0
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2024,
+                        "age": 29,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 10.0,
+                        "def_yds_per_target": 6.7,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 85.4,
+                        "def_tgt_yds_per_att": -1.7,
+                        "def_air_yds": 2,
+                        "def_yac": 18,
+                        "blitzes": 0,
+                        "qb_hurry": 13,
+                        "qb_knockdown": 17,
+                        "def_batted_passes": 1,
+                        "sacks": 14.0,
+                        "pressures": 44,
+                        "tackles_combined": 47,
+                        "tackles_missed": 3,
+                        "tackles_missed_pct": 6.0,
+                        "awards": "PB,AP-1,AP DPoY-3"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "RDE",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 3,
+                        "def_cmp": 2,
+                        "def_cmp_pct": 66.7,
+                        "def_cmp_yds": 20
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2025,
+                        "age": 30,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": "",
+                        "def_yds_per_target": "",
+                        "def_cmp_td": 0,
+                        "def_pass_rating": "",
+                        "def_tgt_yds_per_att": "",
+                        "def_air_yds": 0,
+                        "def_yac": 0,
+                        "blitzes": 1,
+                        "qb_hurry": 14,
+                        "qb_knockdown": 14,
+                        "def_batted_passes": 1,
+                        "sacks": 23.0,
+                        "pressures": 53,
+                        "tackles_combined": 60,
+                        "tackles_missed": 2,
+                        "tackles_missed_pct": 3.2,
+                        "awards": "PB,AP-1,AP DPoY-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 0,
+                        "def_targets": 0,
+                        "def_cmp": 0,
+                        "def_cmp_pct": "",
+                        "def_cmp_yds": 0
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2021,
+                        "age": 26,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 1,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": "PB,AP-1"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 17,
+                        "games_started": 17,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2017,
+                        "age": 22,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 11,
+                        "gs": 9,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 518,
+                        "def_pct": "71%",
+                        "special_teams": 55,
+                        "st_pct": "19%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2018*",
+                        "age": 23,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 1012,
+                        "def_pct": "86%",
+                        "special_teams": 82,
+                        "st_pct": "18%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2019,
+                        "age": 24,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 10,
+                        "gs": 10,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 545,
+                        "def_pct": "81%",
+                        "special_teams": 44,
+                        "st_pct": "16%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2020*+",
+                        "age": 25,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 14,
+                        "gs": 14,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 758,
+                        "def_pct": "80%",
+                        "special_teams": 60,
+                        "st_pct": "16%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2021*+",
+                        "age": 26,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 865,
+                        "def_pct": "77%",
+                        "special_teams": 53,
+                        "st_pct": "13%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2022*",
+                        "age": 27,
+                        "team": "CLE",
+                        "pos": "LDE",
+                        "uniform_number": 95,
+                        "g": 16,
+                        "gs": 15,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 817,
+                        "def_pct": "79%",
+                        "special_teams": 56,
+                        "st_pct": "13%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2023*+",
+                        "age": 28,
+                        "team": "CLE",
+                        "pos": "DE",
+                        "uniform_number": 95,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 812,
+                        "def_pct": "81%",
+                        "special_teams": 59,
+                        "st_pct": "12%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*+",
+                        "age": 29,
+                        "team": "CLE",
+                        "pos": "RDE",
+                        "uniform_number": 95,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 826,
+                        "def_pct": "76%",
+                        "special_teams": 82,
+                        "st_pct": "18%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2025*+",
+                        "age": 30,
+                        "team": "CLE",
+                        "pos": "DE",
+                        "uniform_number": 95,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 868,
+                        "def_pct": "82%",
+                        "special_teams": 85,
+                        "st_pct": "19%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2018,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2018,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2020,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2020,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2021,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "EDGE",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "DE",
+                    "voters": "Sporting News"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2017,
+                    "pos": "DE",
+                    "height": 76,
+                    "weight": 272,
+                    "forty_yd": 4.64,
+                    "bench_reps": 33,
+                    "broad_jump": 128,
+                    "shuttle": "",
+                    "cone": "",
+                    "vertical": 41.0
+                }
+            ]
+        },
+        "post_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2020,
+                        "age": 25,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 1.0,
+                        "tackles_combined": 3,
+                        "tackles_solo": 3,
+                        "tackles_assists": 0,
+                        "tackles_loss": 1,
+                        "qb_hits": 2,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 2,
+                        "games_started": 2
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": "",
+                        "age": "",
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "def_int": "",
+                        "def_int_yds": "",
+                        "def_int_td": "",
+                        "def_int_long": "",
+                        "pass_defended": "",
+                        "fumbles_forced": "",
+                        "fumbles": "",
+                        "fumbles_rec": "",
+                        "fumbles_rec_yds": "",
+                        "fumbles_rec_td": "",
+                        "sacks": "",
+                        "tackles_combined": "",
+                        "tackles_solo": "",
+                        "tackles_assists": "",
+                        "tackles_loss": "",
+                        "qb_hits": "",
+                        "safety_md": "",
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": "",
+                        "games_started": ""
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 28,
+                        "team_name_abbr": "CLE",
+                        "comp_name_abbr": "NFL",
+                        "pos": "DE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 3,
+                        "tackles_solo": 2,
+                        "tackles_assists": 1,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2020,
+                        "age": 25,
+                        "team_name_abbr": "CLE",
+                        "def_yds_per_cmp": 19.0,
+                        "def_yds_per_target": 19.0,
+                        "def_cmp_td": 0,
+                        "def_pass_rating": 118.7,
+                        "def_tgt_yds_per_att": -1.0,
+                        "def_air_yds": -3,
+                        "def_yac": 60,
+                        "blitzes": 0,
+                        "qb_hurry": 2,
+                        "qb_knockdown": 1,
+                        "def_batted_passes": 0,
+                        "sacks": 1.0,
+                        "pressures": 4,
+                        "tackles_combined": 3,
+                        "tackles_missed": 4,
+                        "tackles_missed_pct": 57.1,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LDE",
+                        "games": 2
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 2,
+                        "def_int": 0,
+                        "def_targets": 3,
+                        "def_cmp": 3,
+                        "def_cmp_pct": 100.0,
+                        "def_cmp_yds": 57
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [
+        {
+            "date": "2025-03-11",
+            "description": " The Cleveland Browns re-signed DE Myles Garrett."
+        },
+        {
+            "date": "2025-03-11",
+            "description": " DE Myles Garrett elected free agency."
+        },
+        {
+            "date": "2020-11-20",
+            "description": " Reserve/COVID-19"
+        },
+        {
+            "date": "2020-07-16",
+            "description": " The Cleveland Browns re-signed DE Myles Garrett."
+        },
+        {
+            "date": "2020-04-27",
+            "description": " Option Exercised"
+        },
+        {
+            "date": "2020-02-12",
+            "description": " DE Myles Garrett was reinstated from suspension."
+        },
+        {
+            "date": "2019-11-21",
+            "description": " The NFL suspended DE Myles Garrett."
+        },
+        {
+            "date": "2017-11-01",
+            "description": " The Cleveland Browns activated DE Myles Garrett."
+        },
+        {
+            "date": "2017-10-29",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-10-04",
+            "description": " The Cleveland Browns activated DE Myles Garrett."
+        },
+        {
+            "date": "2017-10-01",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-09-27",
+            "description": " The Cleveland Browns activated DE Myles Garrett."
+        },
+        {
+            "date": "2017-09-24",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-09-20",
+            "description": " The Cleveland Browns activated DE Myles Garrett."
+        },
+        {
+            "date": "2017-09-17",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-09-13",
+            "description": " The Cleveland Browns activated DE Myles Garrett."
+        },
+        {
+            "date": "2017-09-10",
+            "description": " De-Activated"
+        },
+        {
+            "date": "2017-05-19",
+            "description": " Selection List Signing"
+        },
+        {
+            "date": "2017-04-27",
+            "description": " Reserve/Selection List"
+        }
+    ],
+    "links": {
+        "overview": {
+            "href": "/players/G/GarrMy00.htm"
+        },
+        "general": {
+            "touchdowns": "/players/G/GarrMy00/touchdowns/",
+            "penalties": "/players/G/GarrMy00/penalties"
+        },
+        "game_logs": {
+            "career": "/players/G/GarrMy00/gamelog/",
+            "playoffs": "/players/G/GarrMy00/gamelog/post/",
+            "2017": "/players/G/GarrMy00/gamelog/2017/",
+            "2018": "/players/G/GarrMy00/gamelog/2018/",
+            "2019": "/players/G/GarrMy00/gamelog/2019/",
+            "2020": "/players/G/GarrMy00/gamelog/2020/",
+            "2021": "/players/G/GarrMy00/gamelog/2021/",
+            "2022": "/players/G/GarrMy00/gamelog/2022/",
+            "2023": "/players/G/GarrMy00/gamelog/2023/",
+            "2024": "/players/G/GarrMy00/gamelog/2024/",
+            "2025": "/players/G/GarrMy00/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=GarrMy00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/G/GarrMy00/gamelog/advanced/",
+            "2018": "/players/G/GarrMy00/gamelog/2018/advanced/",
+            "2019": "/players/G/GarrMy00/gamelog/2019/advanced/",
+            "2020": "/players/G/GarrMy00/gamelog/2020/advanced/",
+            "2021": "/players/G/GarrMy00/gamelog/2021/advanced/",
+            "2022": "/players/G/GarrMy00/gamelog/2022/advanced/",
+            "2023": "/players/G/GarrMy00/gamelog/2023/advanced/",
+            "2024": "/players/G/GarrMy00/gamelog/2024/advanced/",
+            "2025": "/players/G/GarrMy00/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/G/GarrMy00/splits/",
+            "2017": "/players/G/GarrMy00/splits/2017/",
+            "2018": "/players/G/GarrMy00/splits/2018/",
+            "2019": "/players/G/GarrMy00/splits/2019/",
+            "2020": "/players/G/GarrMy00/splits/2020/",
+            "2021": "/players/G/GarrMy00/splits/2021/",
+            "2022": "/players/G/GarrMy00/splits/2022/",
+            "2023": "/players/G/GarrMy00/splits/2023/",
+            "2024": "/players/G/GarrMy00/splits/2024/",
+            "2025": "/players/G/GarrMy00/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=GarrMy00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "more_myles_garrett_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/myles-garrett-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2023 NFL AP Defensive Player of the Year\n",
+            "2023 NFL PFWA Defensive Player of the Year\n",
+            "2023 NFL Sporting News Defensive Player of the Year\n",
+            "2024 NFL Sporting News Defensive Player of the Year\n",
+            "2025 NFL AP Defensive Player of the Year\n",
+            "2025 NFL PFWA Defensive Player of the Year\n",
+            "2025 NFL Sporting News Defensive Player of the Year\n",
+            "2017 NFL All-Rookie Team",
+            "2019 NFL Top 100 (#49)",
+            "2020 NFL Top 100 (#80)",
+            "2021 NFL Top 100 (#16)",
+            "2022 NFL Top 100 (#11)",
+            "2023 NFL Top 100 (#20)",
+            "2024 NFL Top 100 (#5)",
+            "2025 NFL Top 100 (#8)"
+        ],
+        "apmvp_shares": [
+            "2023 AP MVP .00 (10)",
+            "Career AP MVP .00 (201)"
+        ],
+        "apdpoy_shares": [
+            "2022 AP Def. PoY .07 (5)",
+            "2023 AP Def. PoY .66 (1)",
+            "2024 AP Def. PoY .32 (3)",
+            "2025 AP Def. PoY 1.00 (1)",
+            "Career AP Def. PoY 2.05 (4)"
+        ],
+        "pro_bowls": [
+            "2018\n",
+            "2020\n",
+            "2021\n",
+            "2022\n",
+            "2023\n",
+            "2024\n",
+            "2025\n"
+        ],
+        "all_pro": [
+            "2020\n",
+            "2021\n",
+            "2023\n",
+            "2024\n",
+            "2025\n"
+        ],
+        "potw": [
+            "2025 - Week 12 AFC Defensive\n",
+            "2024 - Week 12 AFC Defensive\n",
+            "2023 - Week 7 AFC Defensive\n",
+            "2021 - Week 3 AFC Defensive\n",
+            "2020 - Week 4 AFC Defensive\n"
+        ],
+        "potm": [
+            "2025 November - AFC Defensive\n",
+            "2020 October - AFC Defensive\n"
+        ],
+        "av": [
+            "2021 NFL 17 (6)",
+            "2023 NFL 20 (1/69)",
+            "2024 NFL 17 (8)",
+            "2025 NFL 19 (2)",
+            "Active 123 (22)"
+        ],
+        "career_av": [
+            "Active 104 (16)",
+            "Career 104 (112)"
+        ],
+        "non_offense_td": [
+            "2021 NFL 1 (10)"
+        ],
+        "fumbles_rec_td": [
+            "2021 NFL 1 (2)",
+            "Active 1 (20)"
+        ],
+        "tackles_loss": [
+            "2021 NFL 17 (6)",
+            "2022 NFL 18 (4/80)",
+            "2023 NFL 17 (7)",
+            "2024 NFL 22 (1/21)",
+            "2025 NFL 33 (1/2)",
+            "Active 149 (5)",
+            "Career 149 (12)"
+        ],
+        "fumbles_forced": [
+            "2018 NFL 3 (10)",
+            "2020 NFL 4 (3)",
+            "2023 NFL 4 (5)",
+            "2024 NFL 3 (9)",
+            "2025 NFL 3 (8)",
+            "Active 23 (6)",
+            "Career 23 (61)"
+        ],
+        "sacks": [
+            "2018 NFL 13.5 (6)",
+            "2020 NFL 12.0 (6)",
+            "2021 NFL 16.0 (3/68)",
+            "2022 NFL 16.0 (2/68)",
+            "2023 NFL 14.0 (7)",
+            "2024 NFL 14.0 (2)",
+            "2025 NFL 23.0 (1/1)",
+            "Active 125.5 (3)",
+            "Career 125.5 (20)"
+        ],
+        "sacks_all": [
+            "2018 NFL 13.5 (6)",
+            "2020 NFL 12.0 (6)",
+            "2021 NFL 16.0 (3/97)",
+            "2022 NFL 16.0 (2/97)",
+            "2023 NFL 14.0 (7)",
+            "2024 NFL 14.0 (2)",
+            "2025 NFL 23.0 (1/1)",
+            "Active 125.5 (3)",
+            "Career 125.5 (28)"
+        ]
+    }
+}

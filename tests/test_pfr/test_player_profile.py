@@ -1,7 +1,6 @@
 """Tests for griddy.pfr.parsers.player_profile module."""
 
 import json
-from pathlib import Path
 from unittest.mock import patch
 
 import pytest
@@ -9,8 +8,9 @@ import pytest
 from griddy.pfr import GriddyPFR
 from griddy.pfr.models.entities.player_profile import PlayerProfile
 from griddy.pfr.parsers.player_profile import PlayerProfileParser
+from griddy.settings import FIXTURE_DIR
 
-FIXTURE_DIR = Path(__file__).resolve().parents[2] / "data" / "pfr_examples"
+FIXTURE_DIR = FIXTURE_DIR / "pfr"
 
 
 @pytest.fixture

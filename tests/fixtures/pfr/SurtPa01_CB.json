@@ -1,0 +1,957 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/SurtPa01_2023.jpg",
+        "names": {
+            "first_name": "Patrick",
+            "middle_name": "Frank",
+            "last_name": "Surtain",
+            "suffix": "II",
+            "nicknames": [],
+            "pretty_name": "Patrick Surtain II"
+        },
+        "position": "CB",
+        "height": 74,
+        "weight": "202lb",
+        "birth_date": "2000-04-14T00:00:00",
+        "birth_place": {
+            "city": "Plantation",
+            "state": "FL"
+        },
+        "college": "Alabama",
+        "high_school": "American Heritage-Plantation (FL)",
+        "draft": {
+            "team": "Denver Broncos",
+            "rd_and_ovr": {
+                "round": 1,
+                "overall": 9
+            },
+            "year": 2021
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "2",
+            "team": "Denver Broncos",
+            "start_year": 2021,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 14,
+        "AV": 80,
+        "Int": 11,
+        "Yds": 55,
+        "TD": 1
+    },
+    "statistics": {
+        "regular_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB/RCB",
+                        "def_int": 4,
+                        "def_int_yds": 70,
+                        "def_int_td": 1,
+                        "def_int_long": 70,
+                        "pass_defended": 14,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 58,
+                        "tackles_solo": 45,
+                        "tackles_assists": 13,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "av": 7,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 15
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "def_int": 2,
+                        "def_int_yds": -3,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 10,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 60,
+                        "tackles_solo": 46,
+                        "tackles_assists": 14,
+                        "tackles_loss": 2,
+                        "qb_hits": 1,
+                        "safety_md": 0,
+                        "av": 14,
+                        "awards": "PB,AP-1"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "def_int": 1,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 12,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 69,
+                        "tackles_solo": 59,
+                        "tackles_assists": 10,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "av": 8,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 17
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "def_int": 4,
+                        "def_int_yds": 132,
+                        "def_int_td": 1,
+                        "def_int_long": 100,
+                        "pass_defended": 11,
+                        "fumbles_forced": 1,
+                        "fumbles": 0,
+                        "fumbles_rec": 1,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 45,
+                        "tackles_solo": 34,
+                        "tackles_assists": 11,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "av": 15,
+                        "awards": "PB,AP-1,AP DPoY-1"
+                    },
+                    "general": {
+                        "games": 16,
+                        "games_started": 16
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "def_int": 1,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 12,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 47,
+                        "tackles_solo": 37,
+                        "tackles_assists": 10,
+                        "tackles_loss": 1,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "av": 11,
+                        "awards": "PB,AP-2"
+                    },
+                    "general": {
+                        "games": 14,
+                        "games_started": 14
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 11.1,
+                        "def_yds_per_target": 5.7,
+                        "def_cmp_td": 3,
+                        "def_pass_rating": 61.3,
+                        "def_tgt_yds_per_att": 11.4,
+                        "def_air_yds": 382,
+                        "def_yac": 163,
+                        "blitzes": 0,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 58,
+                        "tackles_missed": 5,
+                        "tackles_missed_pct": 7.9,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB/RCB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 15,
+                        "def_int": 4,
+                        "def_targets": 96,
+                        "def_cmp": 49,
+                        "def_cmp_pct": 51.0,
+                        "def_cmp_yds": 545
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 10.4,
+                        "def_yds_per_target": 6.1,
+                        "def_cmp_td": 4,
+                        "def_pass_rating": 82.6,
+                        "def_tgt_yds_per_att": 11.5,
+                        "def_air_yds": 360,
+                        "def_yac": 108,
+                        "blitzes": 3,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 1,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 1,
+                        "tackles_combined": 60,
+                        "tackles_missed": 5,
+                        "tackles_missed_pct": 7.7,
+                        "awards": "PB,AP-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 2,
+                        "def_targets": 77,
+                        "def_cmp": 45,
+                        "def_cmp_pct": 58.4,
+                        "def_cmp_yds": 468
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 12.2,
+                        "def_yds_per_target": 7.3,
+                        "def_cmp_td": 3,
+                        "def_pass_rating": 88.2,
+                        "def_tgt_yds_per_att": 11.1,
+                        "def_air_yds": 483,
+                        "def_yac": 177,
+                        "blitzes": 5,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 69,
+                        "tackles_missed": 6,
+                        "tackles_missed_pct": 8.0,
+                        "awards": "PB"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "games": 17
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 17,
+                        "def_int": 1,
+                        "def_targets": 91,
+                        "def_cmp": 54,
+                        "def_cmp_pct": 59.3,
+                        "def_cmp_yds": 660
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 8.6,
+                        "def_yds_per_target": 5.3,
+                        "def_cmp_td": 2,
+                        "def_pass_rating": 58.9,
+                        "def_tgt_yds_per_att": 6.4,
+                        "def_air_yds": 229,
+                        "def_yac": 97,
+                        "blitzes": 2,
+                        "qb_hurry": 1,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 1,
+                        "tackles_combined": 45,
+                        "tackles_missed": 0,
+                        "tackles_missed_pct": 0.0,
+                        "awards": "PB,AP-1,AP DPoY-1"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "games": 16
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 16,
+                        "def_int": 4,
+                        "def_targets": 62,
+                        "def_cmp": 38,
+                        "def_cmp_pct": 61.3,
+                        "def_cmp_yds": 326
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 9.2,
+                        "def_yds_per_target": 5.0,
+                        "def_cmp_td": 1,
+                        "def_pass_rating": 66.6,
+                        "def_tgt_yds_per_att": 11.5,
+                        "def_air_yds": 221,
+                        "def_yac": 84,
+                        "blitzes": 1,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 47,
+                        "tackles_missed": 4,
+                        "tackles_missed_pct": 7.8,
+                        "awards": "PB,AP-2"
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "games": 14
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 14,
+                        "def_int": 1,
+                        "def_targets": 61,
+                        "def_cmp": 33,
+                        "def_cmp_pct": 54.1,
+                        "def_cmp_yds": 305
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 1,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB/RCB",
+                        "games": 16,
+                        "games_started": 15,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": "",
+                        "age": "",
+                        "punt_ret_td": "",
+                        "kick_ret_td": "",
+                        "fumbles_rec_td": "",
+                        "def_int_td": "",
+                        "other_td": "",
+                        "total_td": "",
+                        "two_pt_md": "",
+                        "def_two_pt": "",
+                        "xpm": "",
+                        "xpa": "",
+                        "fgm": "",
+                        "fga": "",
+                        "safety_md": "",
+                        "scoring": "",
+                        "points_per_g": "",
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "",
+                        "comp_name_abbr": "",
+                        "pos": "",
+                        "games": "",
+                        "games_started": "",
+                        "rush_td": "",
+                        "rec_td": ""
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 1,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": "PB,AP-1,AP DPoY-1"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "games": 16,
+                        "games_started": 16,
+                        "rush_td": 0,
+                        "rec_td": 0
+                    }
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team": "DEN",
+                        "pos": "LCB/RCB",
+                        "uniform_number": 2,
+                        "g": 16,
+                        "gs": 15,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 902,
+                        "def_pct": "89%",
+                        "special_teams": 1,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2022*+",
+                        "age": 22,
+                        "team": "DEN",
+                        "pos": "LCB",
+                        "uniform_number": 2,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 1106,
+                        "def_pct": "97%",
+                        "special_teams": 11,
+                        "st_pct": "2%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2023*",
+                        "age": 23,
+                        "team": "DEN",
+                        "pos": "CB",
+                        "uniform_number": 2,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 1121,
+                        "def_pct": "99%",
+                        "special_teams": 78,
+                        "st_pct": "17%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2024*+",
+                        "age": 24,
+                        "team": "DEN",
+                        "pos": "LCB",
+                        "uniform_number": 2,
+                        "g": 16,
+                        "gs": 16,
+                        "offense": 5,
+                        "off_pct": "1%",
+                        "defense": 978,
+                        "def_pct": "90%",
+                        "special_teams": 4,
+                        "st_pct": "1%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2025*",
+                        "age": 25,
+                        "team": "DEN",
+                        "pos": "CB/LCB",
+                        "uniform_number": 2,
+                        "g": 14,
+                        "gs": 14,
+                        "offense": 0,
+                        "off_pct": "0%",
+                        "defense": 864,
+                        "def_pct": "94%",
+                        "special_teams": 29,
+                        "st_pct": "8%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2022,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2023,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "NFL Players Assoc."
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Pro Football Focus"
+                },
+                {
+                    "year": 2024,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Sporting News"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "All-Conf.",
+                    "pos": "CB",
+                    "voters": "Pro Football Writers"
+                },
+                {
+                    "year": 2025,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Associated Press"
+                },
+                {
+                    "year": 2025,
+                    "team": "1st Tm",
+                    "level": "",
+                    "pos": "CB",
+                    "voters": "Sporting News"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2021,
+                    "pos": "DB",
+                    "height": 74,
+                    "weight": 208,
+                    "forty_yd": 4.42,
+                    "bench_reps": 18,
+                    "broad_jump": 131,
+                    "shuttle": "",
+                    "cone": "",
+                    "vertical": 39.0
+                }
+            ]
+        },
+        "post_season": {
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 5,
+                        "tackles_solo": 4,
+                        "tackles_assists": 1,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 1,
+                        "games_started": 1
+                    }
+                },
+                {
+                    "header_other_defense": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "DEN",
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 1,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 8,
+                        "tackles_solo": 4,
+                        "tackles_assists": 4,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": ""
+                    },
+                    "general": {
+                        "games": 2,
+                        "games_started": 2
+                    }
+                }
+            ],
+            "adv_defense": [
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 26.3,
+                        "def_yds_per_target": 26.3,
+                        "def_cmp_td": 1,
+                        "def_pass_rating": 158.3,
+                        "def_tgt_yds_per_att": 14.0,
+                        "def_air_yds": 42,
+                        "def_yac": 37,
+                        "blitzes": 0,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 5,
+                        "tackles_missed": 0,
+                        "tackles_missed_pct": 0.0,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "LCB",
+                        "games": 1
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 1,
+                        "def_int": 0,
+                        "def_targets": 3,
+                        "def_cmp": 3,
+                        "def_cmp_pct": 100.0,
+                        "def_cmp_yds": 79
+                    }
+                },
+                {
+                    "block_auto_header_tackles": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "DEN",
+                        "def_yds_per_cmp": 7.2,
+                        "def_yds_per_target": 5.4,
+                        "def_cmp_td": 1,
+                        "def_pass_rating": 126.6,
+                        "def_tgt_yds_per_att": 14.9,
+                        "def_air_yds": 27,
+                        "def_yac": 16,
+                        "blitzes": 0,
+                        "qb_hurry": 0,
+                        "qb_knockdown": 0,
+                        "def_batted_passes": 0,
+                        "sacks": 0.0,
+                        "pressures": 0,
+                        "tackles_combined": 8,
+                        "tackles_missed": 1,
+                        "tackles_missed_pct": 11.1,
+                        "awards": ""
+                    },
+                    "block_auto_header_pass rush": {
+                        "comp_name_abbr": "NFL",
+                        "pos": "CB",
+                        "games": 2
+                    },
+                    "block_auto_header_pass coverage": {
+                        "games_started": 2,
+                        "def_int": 0,
+                        "def_targets": 8,
+                        "def_cmp": 6,
+                        "def_cmp_pct": 75.0,
+                        "def_cmp_yds": 43
+                    }
+                }
+            ]
+        }
+    },
+    "transactions": [
+        {
+            "date": "2022-01-07",
+            "description": " The Denver Broncos placed CB Pat Surtain II on IR."
+        }
+    ],
+    "links": {
+        "overview": {
+            "href": "/players/S/SurtPa01.htm"
+        },
+        "general": {
+            "touchdowns": "/players/S/SurtPa01/touchdowns/",
+            "penalties": "/players/S/SurtPa01/penalties"
+        },
+        "game_logs": {
+            "career": "/players/S/SurtPa01/gamelog/",
+            "playoffs": "/players/S/SurtPa01/gamelog/post/",
+            "2021": "/players/S/SurtPa01/gamelog/2021/",
+            "2022": "/players/S/SurtPa01/gamelog/2022/",
+            "2023": "/players/S/SurtPa01/gamelog/2023/",
+            "2024": "/players/S/SurtPa01/gamelog/2024/",
+            "2025": "/players/S/SurtPa01/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=SurtPa01&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/S/SurtPa01/gamelog/advanced/",
+            "2021": "/players/S/SurtPa01/gamelog/2021/advanced/",
+            "2022": "/players/S/SurtPa01/gamelog/2022/advanced/",
+            "2023": "/players/S/SurtPa01/gamelog/2023/advanced/",
+            "2024": "/players/S/SurtPa01/gamelog/2024/advanced/",
+            "2025": "/players/S/SurtPa01/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/S/SurtPa01/splits/",
+            "2021": "/players/S/SurtPa01/splits/2021/",
+            "2022": "/players/S/SurtPa01/splits/2022/",
+            "2023": "/players/S/SurtPa01/splits/2023/",
+            "2024": "/players/S/SurtPa01/splits/2024/",
+            "2025": "/players/S/SurtPa01/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=SurtPa01&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "more_patrick_surtain_ii_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/patrick-surtain-ii-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2024 NFL AP Defensive Player of the Year\n",
+            "2024 NFL PFWA Defensive Player of the Year\n",
+            "2021 NFL All-Rookie Team",
+            "2023 NFL Top 100 (#49)",
+            "2024 NFL Top 100 (#52)",
+            "2025 NFL Top 100 (#10)"
+        ],
+        "apdpoy_shares": [
+            "2024 AP Def. PoY .65 (1)",
+            "Career AP Def. PoY .65 (18)"
+        ],
+        "pro_bowls": [
+            "2022\n",
+            "2023\n",
+            "2024\n",
+            "2025\n"
+        ],
+        "all_pro": [
+            "2022\n",
+            "2024\n"
+        ],
+        "potw": [
+            "2024 - Week 5 AFC Defensive\n",
+            "2021 - Week 12 AFC Defensive\n"
+        ],
+        "potm": [
+            "2024 November - AFC Defensive\n"
+        ],
+        "non_offense_td": [
+            "2021 NFL 1 (10)",
+            "2024 NFL 1 (7)"
+        ],
+        "def_int": [
+            "2024 NFL 4 (10)"
+        ],
+        "def_int_yds": [
+            "2024 NFL 132 (1)"
+        ],
+        "def_int_td": [
+            "2021 NFL 1 (4)",
+            "2024 NFL 1 (2)",
+            "Active 2 (14)"
+        ],
+        "def_int_long": [
+            "2021 NFL 70 (7)",
+            "2024 NFL 100 (2/29)"
+        ]
+    }
+}

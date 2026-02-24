@@ -1,0 +1,889 @@
+{
+    "bio": {
+        "photo_url": "https://www.pro-football-reference.com/req/20230307/images/headshots/PittKy00_2025.jpg",
+        "names": {
+            "first_name": "Kyle",
+            "middle_name": "Anthony",
+            "last_name": "Pitts",
+            "suffix": "",
+            "nicknames": [
+                "Unic",
+                "n"
+            ],
+            "pretty_name": "Kyle Pitts"
+        },
+        "position": "TE",
+        "height": 78,
+        "weight": "250lb",
+        "birth_date": "2000-10-06T00:00:00",
+        "birth_place": {
+            "city": "Philadelphia",
+            "state": "PA"
+        },
+        "college": "Florida",
+        "high_school": "Abington (PA),",
+        "draft": {
+            "team": "Atlanta Falcons",
+            "rd_and_ovr": {
+                "round": 1,
+                "overall": 4
+            },
+            "year": 2021
+        }
+    },
+    "jersey_numbers": [
+        {
+            "number": "8",
+            "team": "Atlanta Falcons",
+            "start_year": 2021,
+            "end_year": 2025
+        }
+    ],
+    "summary_stats": {
+        "2025": 2025,
+        "G": 17,
+        "AV": 78,
+        "Rec": 8,
+        "Yds": 30,
+        "Y/R": 88,
+        "TD": 284,
+        "FantPt": 928
+    },
+    "statistics": {
+        "regular_season": {
+            "receiving_and_rushing": [
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 43,
+                        "rec_success": 50.9,
+                        "rec_long": 61,
+                        "rec_per_g": 4.0,
+                        "rec_yds_per_g": 60.4,
+                        "catch_pct": 61.8,
+                        "rec_yds_per_tgt": 9.3,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": "",
+                        "rush_long": "",
+                        "rush_yds_per_att": "",
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 68,
+                        "yds_per_touch": 15.1,
+                        "yds_from_scrimmage": 1026,
+                        "rush_receive_td": 1,
+                        "fumbles": 0,
+                        "av": 8,
+                        "awards": "PB"
+                    },
+                    "header_rush": {
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 110,
+                        "rec": 68
+                    },
+                    "header_rec": {
+                        "rec_yds": 1026,
+                        "rec_yds_per_rec": 15.1,
+                        "rec_td": 1
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 20,
+                        "rec_success": 42.4,
+                        "rec_long": 33,
+                        "rec_per_g": 2.8,
+                        "rec_yds_per_g": 35.6,
+                        "catch_pct": 47.5,
+                        "rec_yds_per_tgt": 6.0,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": "",
+                        "rush_long": "",
+                        "rush_yds_per_att": "",
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 28,
+                        "yds_per_touch": 12.7,
+                        "yds_from_scrimmage": 356,
+                        "rush_receive_td": 2,
+                        "fumbles": 0,
+                        "av": 4,
+                        "awards": ""
+                    },
+                    "header_rush": {
+                        "pos": "TE",
+                        "games": 10,
+                        "games_started": 10,
+                        "targets": 59,
+                        "rec": 28
+                    },
+                    "header_rec": {
+                        "rec_yds": 356,
+                        "rec_yds_per_rec": 12.7,
+                        "rec_td": 2
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 35,
+                        "rec_success": 52.2,
+                        "rec_long": 39,
+                        "rec_per_g": 3.1,
+                        "rec_yds_per_g": 39.2,
+                        "catch_pct": 58.9,
+                        "rec_yds_per_tgt": 7.4,
+                        "rush_att": 1,
+                        "rush_yds": -4,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": 0.0,
+                        "rush_long": -4,
+                        "rush_yds_per_att": -4.0,
+                        "rush_yds_per_g": -0.2,
+                        "rush_att_per_g": 0.1,
+                        "touches": 54,
+                        "yds_per_touch": 12.3,
+                        "yds_from_scrimmage": 663,
+                        "rush_receive_td": 3,
+                        "fumbles": 0,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "header_rush": {
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 90,
+                        "rec": 53
+                    },
+                    "header_rec": {
+                        "rec_yds": 667,
+                        "rec_yds_per_rec": 12.6,
+                        "rec_td": 3
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 21,
+                        "rec_success": 41.9,
+                        "rec_long": 52,
+                        "rec_per_g": 2.8,
+                        "rec_yds_per_g": 35.4,
+                        "catch_pct": 63.5,
+                        "rec_yds_per_tgt": 8.1,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": "",
+                        "rush_long": "",
+                        "rush_yds_per_att": "",
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 47,
+                        "yds_per_touch": 12.8,
+                        "yds_from_scrimmage": 602,
+                        "rush_receive_td": 4,
+                        "fumbles": 0,
+                        "av": 5,
+                        "awards": ""
+                    },
+                    "header_rush": {
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 74,
+                        "rec": 47
+                    },
+                    "header_rec": {
+                        "rec_yds": 602,
+                        "rec_yds_per_rec": 12.8,
+                        "rec_td": 4
+                    }
+                },
+                {
+                    "block_auto_header_scrimmage": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "rec_first_down": 51,
+                        "rec_success": 55.1,
+                        "rec_long": 36,
+                        "rec_per_g": 5.2,
+                        "rec_yds_per_g": 54.6,
+                        "catch_pct": 74.6,
+                        "rec_yds_per_tgt": 7.9,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_td": 0,
+                        "rush_first_down": 0,
+                        "rush_success": "",
+                        "rush_long": "",
+                        "rush_yds_per_att": "",
+                        "rush_yds_per_g": 0.0,
+                        "rush_att_per_g": 0.0,
+                        "touches": 88,
+                        "yds_per_touch": 10.5,
+                        "yds_from_scrimmage": 928,
+                        "rush_receive_td": 5,
+                        "fumbles": 0,
+                        "av": 8,
+                        "awards": "AP-2"
+                    },
+                    "header_rush": {
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 17,
+                        "targets": 118,
+                        "rec": 88
+                    },
+                    "header_rec": {
+                        "rec_yds": 928,
+                        "rec_yds_per_rec": 10.5,
+                        "rec_td": 5
+                    }
+                }
+            ],
+            "adv_receiving_and_rushing": [
+                {
+                    "header_rush": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 110,
+                        "rec_adot": 10.8,
+                        "rec_broken_tackles": 3,
+                        "rec_broken_tackles_per_rec": 22.7,
+                        "rec_drops": 6,
+                        "rec_drop_pct": 5.5,
+                        "rec_target_int": 5,
+                        "rec_pass_rating": 76.6,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": "",
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": "",
+                        "rush_broken_tackles": 0,
+                        "awards": "PB"
+                    },
+                    "header_rec": {
+                        "rec": 68,
+                        "rec_yds": 1026,
+                        "rec_first_down": 43,
+                        "rec_air_yds": 713,
+                        "rec_air_yds_per_rec": 10.5,
+                        "rec_yac": 313,
+                        "rec_yac_per_rec": 4.6
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 10,
+                        "games_started": 10,
+                        "targets": 59,
+                        "rec_adot": 13.8,
+                        "rec_broken_tackles": 0,
+                        "rec_broken_tackles_per_rec": "",
+                        "rec_drops": 3,
+                        "rec_drop_pct": 5.1,
+                        "rec_target_int": 1,
+                        "rec_pass_rating": 71.0,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": "",
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": "",
+                        "rush_broken_tackles": 0,
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "rec": 28,
+                        "rec_yds": 356,
+                        "rec_first_down": 20,
+                        "rec_air_yds": 230,
+                        "rec_air_yds_per_rec": 8.2,
+                        "rec_yac": 126,
+                        "rec_yac_per_rec": 4.5
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 90,
+                        "rec_adot": 11.4,
+                        "rec_broken_tackles": 0,
+                        "rec_broken_tackles_per_rec": "",
+                        "rec_drops": 4,
+                        "rec_drop_pct": 4.4,
+                        "rec_target_int": 2,
+                        "rec_pass_rating": 83.9,
+                        "rush_att": 1,
+                        "rush_yds": -4,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": -4,
+                        "rush_yds_bc_per_rush": -4.0,
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": 0.0,
+                        "rush_broken_tackles": 0,
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "rec": 53,
+                        "rec_yds": 667,
+                        "rec_first_down": 35,
+                        "rec_air_yds": 533,
+                        "rec_air_yds_per_rec": 10.1,
+                        "rec_yac": 134,
+                        "rec_yac_per_rec": 2.5
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "targets": 74,
+                        "rec_adot": 8.6,
+                        "rec_broken_tackles": 4,
+                        "rec_broken_tackles_per_rec": 11.8,
+                        "rec_drops": 4,
+                        "rec_drop_pct": 5.4,
+                        "rec_target_int": 4,
+                        "rec_pass_rating": 84.4,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": "",
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": "",
+                        "rush_broken_tackles": 0,
+                        "awards": ""
+                    },
+                    "header_rec": {
+                        "rec": 47,
+                        "rec_yds": 602,
+                        "rec_first_down": 21,
+                        "rec_air_yds": 330,
+                        "rec_air_yds_per_rec": 7.0,
+                        "rec_yac": 272,
+                        "rec_yac_per_rec": 5.8
+                    }
+                },
+                {
+                    "header_rush": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 17,
+                        "targets": 118,
+                        "rec_adot": 7.4,
+                        "rec_broken_tackles": 2,
+                        "rec_broken_tackles_per_rec": 44.0,
+                        "rec_drops": 2,
+                        "rec_drop_pct": 1.7,
+                        "rec_target_int": 3,
+                        "rec_pass_rating": 100.5,
+                        "rush_att": 0,
+                        "rush_yds": 0,
+                        "rush_first_down": 0,
+                        "rush_yds_before_contact": 0,
+                        "rush_yds_bc_per_rush": "",
+                        "rush_yac": 0,
+                        "rush_yac_per_rush": "",
+                        "rush_broken_tackles": 0,
+                        "awards": "AP-2"
+                    },
+                    "header_rec": {
+                        "rec": 88,
+                        "rec_yds": 928,
+                        "rec_first_down": 51,
+                        "rec_air_yds": 528,
+                        "rec_air_yds_per_rec": 6.0,
+                        "rec_yac": 400,
+                        "rec_yac_per_rec": 4.5
+                    }
+                }
+            ],
+            "defense": [
+                {
+                    "header_other_defense": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "def_int": 0,
+                        "def_int_yds": 0,
+                        "def_int_td": 0,
+                        "def_int_long": 0,
+                        "pass_defended": 0,
+                        "fumbles_forced": 0,
+                        "fumbles": 0,
+                        "fumbles_rec": 0,
+                        "fumbles_rec_yds": 0,
+                        "fumbles_rec_td": 0,
+                        "sacks": 0.0,
+                        "tackles_combined": 3,
+                        "tackles_solo": 3,
+                        "tackles_assists": 0,
+                        "tackles_loss": 0,
+                        "qb_hits": 0,
+                        "safety_md": 0,
+                        "awards": "PB"
+                    },
+                    "general": {
+                        "games": 17,
+                        "games_started": 15
+                    }
+                }
+            ],
+            "scoring": [
+                {
+                    "general": {
+                        "year_id": 2021,
+                        "age": 21,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 1,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 6,
+                        "points_per_g": 0.4,
+                        "awards": "PB"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "rush_td": 0,
+                        "rec_td": 1
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 2,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 12,
+                        "points_per_g": 1.2,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 10,
+                        "games_started": 10,
+                        "rush_td": 0,
+                        "rec_td": 2
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 3,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 18,
+                        "points_per_g": 1.1,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "rush_td": 0,
+                        "rec_td": 3
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 4,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 24,
+                        "points_per_g": 1.4,
+                        "awards": ""
+                    },
+                    "header_td": {
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 15,
+                        "rush_td": 0,
+                        "rec_td": 4
+                    }
+                },
+                {
+                    "general": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "punt_ret_td": 0,
+                        "kick_ret_td": 0,
+                        "fumbles_rec_td": 0,
+                        "def_int_td": 0,
+                        "other_td": 0,
+                        "total_td": 5,
+                        "two_pt_md": 0,
+                        "def_two_pt": 0,
+                        "xpm": 0,
+                        "xpa": 0,
+                        "fgm": 0,
+                        "fga": 0,
+                        "safety_md": 0,
+                        "scoring": 30,
+                        "points_per_g": 1.8,
+                        "awards": "AP-2"
+                    },
+                    "header_td": {
+                        "team_name_abbr": "ATL",
+                        "comp_name_abbr": "NFL",
+                        "pos": "TE",
+                        "games": 17,
+                        "games_started": 17,
+                        "rush_td": 0,
+                        "rec_td": 5
+                    }
+                }
+            ],
+            "fantasy": [
+                {
+                    "year_id": 2021,
+                    "age": 21,
+                    "g": 17,
+                    "fantasy_pos": "TE",
+                    "fantasy_points": 109,
+                    "vbd": 16,
+                    "fantasy_rank_pos": 10,
+                    "fantasy_rank_overall": 59,
+                    "games": "All 2021 Games"
+                },
+                {
+                    "year_id": 2022,
+                    "age": 22,
+                    "g": 10,
+                    "fantasy_pos": "TE",
+                    "fantasy_points": 48,
+                    "vbd": "",
+                    "fantasy_rank_pos": 33,
+                    "fantasy_rank_overall": "",
+                    "games": "All 2022 Games"
+                },
+                {
+                    "year_id": 2023,
+                    "age": 23,
+                    "g": 17,
+                    "fantasy_pos": "TE",
+                    "fantasy_points": 84,
+                    "vbd": "",
+                    "fantasy_rank_pos": 13,
+                    "fantasy_rank_overall": "",
+                    "games": "All 2023 Games"
+                },
+                {
+                    "year_id": 2024,
+                    "age": 24,
+                    "g": 17,
+                    "fantasy_pos": "TE",
+                    "fantasy_points": 84,
+                    "vbd": "",
+                    "fantasy_rank_pos": 12,
+                    "fantasy_rank_overall": "",
+                    "games": "All 2024 Games"
+                },
+                {
+                    "year_id": 2025,
+                    "age": 25,
+                    "g": 17,
+                    "fantasy_pos": "TE",
+                    "fantasy_points": 123,
+                    "vbd": 19,
+                    "fantasy_rank_pos": 3,
+                    "fantasy_rank_overall": 46,
+                    "games": "All 2025 Games"
+                }
+            ],
+            "snap_counts": [
+                {
+                    "special_teams_snaps": {
+                        "year_id": "2021*",
+                        "age": 21,
+                        "team": "ATL",
+                        "pos": "TE",
+                        "uniform_number": 8,
+                        "g": 17,
+                        "gs": 15,
+                        "offense": 774,
+                        "off_pct": "74%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 0,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2022,
+                        "age": 22,
+                        "team": "ATL",
+                        "pos": "TE",
+                        "uniform_number": 8,
+                        "g": 10,
+                        "gs": 10,
+                        "offense": 434,
+                        "off_pct": "73%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 0,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2023,
+                        "age": 23,
+                        "team": "ATL",
+                        "pos": "TE",
+                        "uniform_number": 8,
+                        "g": 17,
+                        "gs": 15,
+                        "offense": 728,
+                        "off_pct": "64%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 0,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2024,
+                        "age": 24,
+                        "team": "ATL",
+                        "pos": "TE",
+                        "uniform_number": 8,
+                        "g": 17,
+                        "gs": 15,
+                        "offense": 707,
+                        "off_pct": "62%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 1,
+                        "st_pct": "0%"
+                    }
+                },
+                {
+                    "special_teams_snaps": {
+                        "year_id": 2025,
+                        "age": 25,
+                        "team": "ATL",
+                        "pos": "TE",
+                        "uniform_number": 8,
+                        "g": 17,
+                        "gs": 17,
+                        "offense": 961,
+                        "off_pct": "88%",
+                        "defense": 0,
+                        "def_pct": "0%",
+                        "special_teams": 2,
+                        "st_pct": "0%"
+                    }
+                }
+            ],
+            "all_pro": [
+                {
+                    "year": 2025,
+                    "team": "2nd Tm",
+                    "level": "",
+                    "pos": "TE",
+                    "voters": "Associated Press"
+                }
+            ],
+            "combine": [
+                {
+                    "year_id": 2021,
+                    "pos": "TE",
+                    "height": 77,
+                    "weight": 245,
+                    "forty_yd": 4.44,
+                    "bench_reps": 22,
+                    "broad_jump": 129,
+                    "shuttle": 4.3,
+                    "cone": 7.12,
+                    "vertical": 33.5
+                }
+            ]
+        }
+    },
+    "transactions": [
+        {
+            "date": "2022-11-21",
+            "description": " The Atlanta Falcons placed TE Kyle Pitts on injured reserve."
+        }
+    ],
+    "links": {
+        "overview": {
+            "href": "/players/P/PittKy00.htm"
+        },
+        "general": {
+            "touchdowns": "/players/P/PittKy00/touchdowns/",
+            "penalties": "/players/P/PittKy00/penalties"
+        },
+        "game_logs": {
+            "career": "/players/P/PittKy00/gamelog/",
+            "2021": "/players/P/PittKy00/gamelog/2021/",
+            "2022": "/players/P/PittKy00/gamelog/2022/",
+            "2023": "/players/P/PittKy00/gamelog/2023/",
+            "2024": "/players/P/PittKy00/gamelog/2024/",
+            "2025": "/players/P/PittKy00/gamelog/2025/",
+            "player_game_finder": "https://www.sports-reference.com/stathead/football/player-game-finder.cgi?player_id=PittKy00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "advanced_gamelogs": {
+            "career": "/players/P/PittKy00/gamelog/advanced/",
+            "2021": "/players/P/PittKy00/gamelog/2021/advanced/",
+            "2022": "/players/P/PittKy00/gamelog/2022/advanced/",
+            "2023": "/players/P/PittKy00/gamelog/2023/advanced/",
+            "2024": "/players/P/PittKy00/gamelog/2024/advanced/",
+            "2025": "/players/P/PittKy00/gamelog/2025/advanced/"
+        },
+        "splits": {
+            "career": "/players/P/PittKy00/splits/",
+            "2021": "/players/P/PittKy00/splits/2021/",
+            "2022": "/players/P/PittKy00/splits/2022/",
+            "2023": "/players/P/PittKy00/splits/2023/",
+            "2024": "/players/P/PittKy00/splits/2024/",
+            "2025": "/players/P/PittKy00/splits/2025/",
+            "player_split_finder": "https://www.sports-reference.com/stathead/football/player_split_finder.cgi?utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "fantasy": {
+            "versus_finder": "https://www.sports-reference.com/stathead/football/versus-finder.cgi?player_id1=PittKy00&utm_source=pfr&utm_medium=sr_xsite&utm_campaign=2023_01_player_innernav_stathead"
+        },
+        "receiving_plays": {
+            "2021": "/players/P/PittKy00/receiving-plays/2021/",
+            "2022": "/players/P/PittKy00/receiving-plays/2022/",
+            "2023": "/players/P/PittKy00/receiving-plays/2023/",
+            "2024": "/players/P/PittKy00/receiving-plays/2024/",
+            "2025": "/players/P/PittKy00/receiving-plays/2025/"
+        },
+        "rushing_plays": {
+            "2023": "/players/P/PittKy00/rushing-plays/2023/"
+        },
+        "more_kyle_pitts_pages_at_sports_reference": {
+            "college_football_at_sports-reference.com": "https://www.sports-reference.com/cfb/players/kyle-pitts-1.html"
+        }
+    },
+    "leader_boards": {
+        "awards": [
+            "2021 NFL All-Rookie Team",
+            "2022 NFL Top 100 (#91)"
+        ],
+        "pro_bowls": [
+            "2021\n"
+        ],
+        "potw": [
+            "2025 - Week 15 NFC Offensive\n"
+        ],
+        "rec": [
+            "2025 NFL 88 (10)"
+        ]
+    }
+}
