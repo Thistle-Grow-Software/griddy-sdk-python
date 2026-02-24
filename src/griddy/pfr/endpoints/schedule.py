@@ -8,7 +8,7 @@ from typing import List, Optional
 
 from ..basesdk import BaseSDK, EndpointConfig
 from ..models.entities.schedule_game import ScheduleGame
-from ..utils.parsers import PFRParser
+from ..utils.parsers import ScheduleParser
 
 
 class Schedule(BaseSDK):
@@ -24,7 +24,7 @@ class Schedule(BaseSDK):
             path_template="/years/{season}/games.htm",
             operation_id="getSeasonSchedule",
             wait_for_element="#games",
-            parser=PFRParser().parse_schedule_table,
+            parser=ScheduleParser().parse,
             response_type=ScheduleGame,
             path_params={"season": season},
             timeout_ms=timeout_ms,

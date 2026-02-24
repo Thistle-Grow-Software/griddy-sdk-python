@@ -1,119 +1,22 @@
-"""HTML table parsers for Pro Football Reference pages.
+"""Game details (boxscore) HTML parser for Pro Football Reference.
 
-Each parser method takes raw HTML and returns structured data extracted
-from PFR's ``<table>`` elements using BeautifulSoup.
+Parses PFR ``/boxscores/{game_id}.htm`` pages into structured dicts
+containing scorebox, linescore, scoring plays, team stats, player stats,
+drives, and more.
 """
 
 import re
 from typing import Any, Dict, List, Optional
 
-from bs4 import BeautifulSoup, Comment, Tag
+from bs4 import BeautifulSoup, Tag
 
-from griddy.pfr.models.entities.schedule_game import ScheduleGame
-
-# Columns in the PFR schedule table where the cell value should be cast to int.
-_INT_COLUMNS = {"pts_win", "pts_lose", "yards_win", "to_win", "yards_lose", "to_lose"}
-
-# Columns where we also want to extract the ``href`` from a child ``<a>`` tag.
-_LINK_COLUMNS = {"winner", "loser", "boxscore_word"}
+from ._helpers import safe_int, safe_numeric, uncomment_tables
 
 
-class PFRParser:
-    """Parses HTML tables from Pro Football Reference pages."""
+class GameDetailsParser:
+    """Parses PFR boxscore pages into comprehensive game data dicts."""
 
-    @staticmethod
-    def _safe_int(value: str) -> Optional[int]:
-        """Convert a string to int, returning None for empty/non-numeric values."""
-        try:
-            return int(value)
-        except (ValueError, TypeError):
-            return None
-
-    @staticmethod
-    def _extract_cell(cell: Tag, stat: str) -> Dict[str, Any]:
-        """Extract text and optional href from a single ``<td>`` or ``<th>``.
-
-        Returns a dict with at least ``{stat: text_value}``.  For columns in
-        ``_LINK_COLUMNS``, an additional ``{stat}_href`` key is added when a
-        link is present.  For columns in ``_INT_COLUMNS`` the value is cast
-        to ``int | None``.
-        """
-        text = cell.get_text(strip=True)
-        result: Dict[str, Any] = {}
-
-        if stat in _INT_COLUMNS:
-            result[stat] = PFRParser._safe_int(text)
-        else:
-            result[stat] = text
-
-        if stat in _LINK_COLUMNS:
-            link = cell.find("a")
-            result[f"{stat}_href"] = link["href"] if link and link.get("href") else None
-
-        return result
-
-    def parse_schedule_table(self, html: str) -> List[ScheduleGame]:
-        """Parse the PFR season-schedule table into a list of ScheduleGame models.
-
-        Looks for ``<table id="games">``, iterates over ``<tbody> <tr>`` rows,
-        and skips:
-
-        * Separator rows (``class="thead"``)
-        * Rows where *all* data cells are empty (e.g. the "Playoffs" label row)
-
-        Args:
-            html: Raw HTML string of a PFR ``/years/{season}/games.htm`` page.
-
-        Returns:
-            A list of ``ScheduleGame`` models, one per game.
-
-        Raises:
-            ValueError: If ``<table id="games">`` is not found in the HTML.
-        """
-        soup = BeautifulSoup(html, "html.parser")
-        table = soup.find("table", id="games")
-        if table is None:
-            raise ValueError("Could not find <table id='games'> in the HTML.")
-
-        tbody = table.find("tbody")
-        if tbody is None:
-            raise ValueError("Could not find <tbody> inside the games table.")
-
-        games: List[ScheduleGame] = []
-
-        for row in tbody.find_all("tr"):
-            # Skip separator header rows that repeat column names mid-table.
-            if "thead" in (row.get("class") or []):
-                continue
-
-            game_data: Dict[str, Any] = {}
-            cells = row.find_all(["th", "td"])
-
-            all_empty = True
-            for cell in cells:
-                stat = cell.get("data-stat")
-                if not stat:
-                    continue
-                extracted = self._extract_cell(cell, stat)
-                game_data.update(extracted)
-                # Check if this cell has meaningful text content.
-                text = cell.get_text(strip=True)
-                if text and text != "Playoffs":
-                    all_empty = False
-
-            # Skip label-only rows (e.g. the "Playoffs" divider).
-            if all_empty:
-                continue
-
-            games.append(ScheduleGame(**game_data))
-
-        return games
-
-    # ------------------------------------------------------------------
-    # Boxscore / Game Details parsing
-    # ------------------------------------------------------------------
-
-    def parse_game_details(self, html: str) -> Dict[str, Any]:
+    def parse(self, html: str) -> Dict[str, Any]:
         """Parse a PFR boxscore page into a comprehensive JSON-serializable dict.
 
         Extracts all game-specific data from
@@ -152,7 +55,7 @@ class PFRParser:
         result["linescore"] = self._parse_linescore(soup)
 
         # Uncomment hidden HTML so all tables become visible to BS4.
-        self._uncomment_tables(soup)
+        uncomment_tables(soup)
 
         result["scoring"] = self._parse_table_rows(soup, "scoring")
         result["game_info"] = self._parse_kv_table(soup, "game_info")
@@ -173,19 +76,8 @@ class PFRParser:
         return result
 
     # ------------------------------------------------------------------
-    # Private helpers for game-detail parsing
+    # Private helpers (in call order)
     # ------------------------------------------------------------------
-
-    @staticmethod
-    def _uncomment_tables(soup: BeautifulSoup) -> None:
-        """Replace HTML comment nodes that contain ``<table`` tags with
-        their parsed content so that subsequent ``soup.find`` calls can
-        locate them.
-        """
-        for comment in soup.find_all(string=lambda t: isinstance(t, Comment)):
-            if "<table" in comment:
-                fragment = BeautifulSoup(comment, "html.parser")
-                comment.replace_with(fragment)
 
     @staticmethod
     def _parse_scorebox(soup: BeautifulSoup) -> Dict[str, Any]:
@@ -211,7 +103,7 @@ class PFRParser:
             # Final score.
             score_div = team_div.find("div", class_="score")
             if score_div:
-                team_data["score"] = PFRParser._safe_int(score_div.get_text(strip=True))
+                team_data["score"] = safe_int(score_div.get_text(strip=True))
 
             # Record (e.g. "1-0") — text node directly after scores div.
             scores_div = team_div.find("div", class_="scores")
@@ -298,7 +190,7 @@ class PFRParser:
             # Quarter scores start at cells[2].
             quarters: List[Optional[int]] = []
             for cell in cells[2:]:
-                quarters.append(PFRParser._safe_int(cell.get_text(strip=True)))
+                quarters.append(safe_int(cell.get_text(strip=True)))
 
             # Map quarter scores to header labels (skip first 2 blanks).
             quarter_headers = [h for h in headers if h not in ("", "\xa0")]
@@ -310,22 +202,6 @@ class PFRParser:
             rows.append(row_data)
 
         return rows
-
-    @staticmethod
-    def _safe_numeric(value: str) -> Any:
-        """Try to convert a string to int or float; return the string
-        unchanged if conversion fails.
-        """
-        if not value:
-            return None
-        try:
-            return int(value)
-        except ValueError:
-            pass
-        try:
-            return float(value)
-        except ValueError:
-            return value
 
     def _parse_table_rows(
         self,
@@ -367,7 +243,7 @@ class PFRParser:
                 if not stat:
                     continue
                 text = cell.get_text(strip=True)
-                row_data[stat] = self._safe_numeric(text)
+                row_data[stat] = safe_numeric(text)
 
                 # Extract player link and PFR ID.
                 if stat == "player":

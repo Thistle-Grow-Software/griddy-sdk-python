@@ -7,7 +7,7 @@ import pytest
 
 from griddy.pfr import GriddyPFR
 from griddy.pfr.models import GameDetails
-from griddy.pfr.utils.parsers import PFRParser
+from griddy.pfr.utils.parsers import GameDetailsParser
 
 FIXTURE_PATH = Path(__file__).resolve().parents[2] / "PFR_boxscore_201509100nwe.htm"
 
@@ -19,14 +19,14 @@ def boxscore_html() -> str:
 
 
 @pytest.fixture
-def parser() -> PFRParser:
-    return PFRParser()
+def parser() -> GameDetailsParser:
+    return GameDetailsParser()
 
 
 @pytest.fixture
-def game_data(parser: PFRParser, boxscore_html: str) -> dict:
+def game_data(parser: GameDetailsParser, boxscore_html: str) -> dict:
     """Parsed game details dict for reuse across tests."""
-    return parser.parse_game_details(boxscore_html)
+    return parser.parse(boxscore_html)
 
 
 # ------------------------------------------------------------------
