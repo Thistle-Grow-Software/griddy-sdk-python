@@ -153,3 +153,69 @@ class SeasonStatsTypedDict(TypedDict):
 class SeasonStats(BaseModel):
     regular_season: List[Dict[str, Any]] = []
     postseason: List[Dict[str, Any]] = []
+
+
+# --- Week Game (individual game from /years/{year}/week_{number}.htm) ---
+
+
+class WeekGameTypedDict(TypedDict):
+    game_date: NotRequired[str]
+    away_team: NotRequired[str]
+    away_team_href: NotRequired[str]
+    away_score: NotRequired[int]
+    home_team: NotRequired[str]
+    home_team_href: NotRequired[str]
+    home_score: NotRequired[int]
+    winner: NotRequired[str]
+    boxscore_href: NotRequired[str]
+    top_passer: NotRequired[str]
+    top_passer_href: NotRequired[str]
+    top_passer_yds: NotRequired[str]
+    top_rusher: NotRequired[str]
+    top_rusher_href: NotRequired[str]
+    top_rusher_yds: NotRequired[str]
+    top_receiver: NotRequired[str]
+    top_receiver_href: NotRequired[str]
+    top_receiver_yds: NotRequired[str]
+
+
+class WeekGame(BaseModel):
+    game_date: Optional[str] = None
+    away_team: Optional[str] = None
+    away_team_href: Optional[str] = None
+    away_score: Optional[int] = None
+    home_team: Optional[str] = None
+    home_team_href: Optional[str] = None
+    home_score: Optional[int] = None
+    winner: Optional[str] = None
+    boxscore_href: Optional[str] = None
+    top_passer: Optional[str] = None
+    top_passer_href: Optional[str] = None
+    top_passer_yds: Optional[str] = None
+    top_rusher: Optional[str] = None
+    top_rusher_href: Optional[str] = None
+    top_rusher_yds: Optional[str] = None
+    top_receiver: Optional[str] = None
+    top_receiver_href: Optional[str] = None
+    top_receiver_yds: Optional[str] = None
+
+
+# --- Week Summary (top-level for /years/{year}/week_{number}.htm) ---
+
+
+class WeekSummaryTypedDict(TypedDict):
+    games: List[WeekGameTypedDict]
+    players_of_the_week: List[Dict[str, Any]]
+    top_passers: List[Dict[str, Any]]
+    top_receivers: List[Dict[str, Any]]
+    top_rushers: List[Dict[str, Any]]
+    top_defenders: List[Dict[str, Any]]
+
+
+class WeekSummary(BaseModel):
+    games: List[WeekGame] = []
+    players_of_the_week: List[Dict[str, Any]] = []
+    top_passers: List[Dict[str, Any]] = []
+    top_receivers: List[Dict[str, Any]] = []
+    top_rushers: List[Dict[str, Any]] = []
+    top_defenders: List[Dict[str, Any]] = []
