@@ -1,7 +1,8 @@
 """Season endpoints for Pro Football Reference.
 
-Provides ``get_season()`` and ``get_season_stats()`` to fetch and parse
-PFR season overview and stat category pages.
+Provides ``get_season()``, ``get_season_stats()``, and ``get_week()``
+to fetch and parse PFR season overview, stat category, and weekly
+summary pages.
 """
 
 from typing import Optional
@@ -9,7 +10,7 @@ from typing import Optional
 from griddy.pfr.parsers import SeasonOverviewParser
 
 from ..basesdk import BaseSDK, EndpointConfig
-from ..models import SeasonOverview, SeasonStats
+from ..models import SeasonOverview, SeasonStats, WeekSummary
 
 _parser = SeasonOverviewParser()
 
@@ -104,3 +105,46 @@ class Seasons(BaseSDK):
         )
         data = self._execute_endpoint(config)
         return SeasonStats.model_validate(data)
+
+    def _get_week_config(
+        self,
+        *,
+        year: int,
+        week: int,
+        timeout_ms: Optional[int] = None,
+    ) -> EndpointConfig:
+        return EndpointConfig(
+            path_template="/years/{year}/week_{week}.htm",
+            operation_id="getWeek",
+            wait_for_element="div.game_summaries",
+            parser=_parser.parse_week,
+            response_type=WeekSummary,
+            path_params={"year": year, "week": week},
+            timeout_ms=timeout_ms,
+        )
+
+    def get_week(
+        self,
+        *,
+        year: int,
+        week: int,
+        timeout_ms: Optional[int] = None,
+    ) -> WeekSummary:
+        """Fetch and parse a week summary page from Pro Football Reference.
+
+        Scrapes
+        ``https://www.pro-football-reference.com/years/{year}/week_{week}.htm``
+        and returns game results, scores, and weekly stat leaders.
+
+        Args:
+            year: The NFL season year (e.g. ``2024``).
+            week: The week number (e.g. ``1``).
+            timeout_ms: Optional timeout in milliseconds for the page
+                selector.
+
+        Returns:
+            A :class:`~griddy.pfr.models.WeekSummary` instance.
+        """
+        config = self._get_week_config(year=year, week=week, timeout_ms=timeout_ms)
+        data = self._execute_endpoint(config)
+        return WeekSummary.model_validate(data)

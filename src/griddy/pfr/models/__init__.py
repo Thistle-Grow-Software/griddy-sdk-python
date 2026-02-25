@@ -97,6 +97,10 @@ if TYPE_CHECKING:
         SeasonOverviewTypedDict,
         SeasonStats,
         SeasonStatsTypedDict,
+        WeekGame,
+        WeekGameTypedDict,
+        WeekSummary,
+        WeekSummaryTypedDict,
     )
     from griddy.pfr.models.entities.security import Security, SecurityTypedDict
     from griddy.pfr.models.entities.stadium import (
@@ -203,6 +207,10 @@ __all__ = [
     "SeasonOverviewTypedDict",
     "SeasonStats",
     "SeasonStatsTypedDict",
+    "WeekGame",
+    "WeekGameTypedDict",
+    "WeekSummary",
+    "WeekSummaryTypedDict",
     "StadiumBestGame",
     "StadiumBestGameTypedDict",
     "StadiumBio",
@@ -326,6 +334,10 @@ _dynamic_imports: dict[str, str] = {
     "SeasonOverviewTypedDict": ".entities.season",
     "SeasonStats": ".entities.season",
     "SeasonStatsTypedDict": ".entities.season",
+    "WeekGame": ".entities.season",
+    "WeekGameTypedDict": ".entities.season",
+    "WeekSummary": ".entities.season",
+    "WeekSummaryTypedDict": ".entities.season",
     "StadiumBestGame": ".entities.stadium",
     "StadiumBestGameTypedDict": ".entities.stadium",
     "StadiumBio": ".entities.stadium",
