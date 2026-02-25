@@ -8,5 +8,11 @@ Re-exports the individual parser classes for convenient access::
 from .game_details import GameDetailsParser
 from .player_profile import PlayerProfileParser
 from .schedule import ScheduleParser
+from .team_season import TeamSeasonParser
 
-__all__ = ["GameDetailsParser", "PlayerProfileParser", "ScheduleParser"]
+__all__ = [
+    "GameDetailsParser",
+    "PlayerProfileParser",
+    "ScheduleParser",
+    "TeamSeasonParser",
+]

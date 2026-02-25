@@ -68,6 +68,13 @@ tgf-format                                      # Format code
 
 Coverage is enabled by default in pyproject.toml (`--cov=src/griddy`). Test markers: `unit`, `integration`, `slow`.
 
+## Web Scraping
+
+When fetching any page from `pro-football-reference.com` (or any site that
+blocks automated requests), always use the `unblock_fetch` MCP tool instead
+of curl/requests/fetch. This routes the request through Browserless to bypass
+bot protection.
+
 ## Architecture
 
 The SDK has two main clients: `GriddyNFL` for NFL.com APIs and `GriddyPFR` for Pro Football Reference (HTML scraping).
@@ -125,8 +132,3 @@ PFR: currently does not require authentication.
 - Black (line-length 88), isort (black profile), mypy strict (`disallow_untyped_defs`)
 - `Annotated` types with Pydantic `Field` for model metadata
 - Tests in `tests/` mirror `src/` structure; fixtures in `tests/conftest.py`
-
-## Environment Variables
-
-- `NFL_API_KEY`, `NFL_CLIENT_KEY`, `NFL_CLIENT_SECRET` - API credentials (loaded in `settings.py`)
-- `NFL_LOGIN_EMAIL`, `NFL_LOGIN_PASSWORD` - For browser-based auth
