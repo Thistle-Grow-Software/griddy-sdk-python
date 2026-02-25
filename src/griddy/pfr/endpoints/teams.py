@@ -10,7 +10,7 @@ from typing import Optional
 from griddy.pfr.parsers import TeamFranchiseParser, TeamSeasonParser
 
 from ..basesdk import BaseSDK, EndpointConfig
-from ..models import TeamFranchise, TeamSeason
+from ..models import Franchise, TeamSeason
 
 
 class Teams(BaseSDK):
@@ -82,10 +82,10 @@ class Teams(BaseSDK):
     ) -> EndpointConfig:
         return EndpointConfig(
             path_template="/teams/{team}/",
-            operation_id="getTeamFranchise",
+            operation_id="getFranchise",
             wait_for_element="#team_index",
             parser=TeamFranchiseParser().parse,
-            response_type=TeamFranchise,
+            response_type=Franchise,
             path_params={"team": team.lower()},
             timeout_ms=timeout_ms,
         )
@@ -95,7 +95,7 @@ class Teams(BaseSDK):
         *,
         team: str,
         timeout_ms: Optional[int] = None,
-    ) -> TeamFranchise:
+    ) -> Franchise:
         """Fetch and parse a team franchise page from Pro Football Reference.
 
         Scrapes
@@ -111,9 +111,9 @@ class Teams(BaseSDK):
                 selector.
 
         Returns:
-            A :class:`~griddy.pfr.models.TeamFranchise` instance containing
+            A :class:`~griddy.pfr.models.Franchise` instance containing
             the franchise metadata and year-by-year season records.
         """
         config = self._get_team_franchise_config(team=team, timeout_ms=timeout_ms)
         data = self._execute_endpoint(config)
-        return TeamFranchise.model_validate(data)
+        return Franchise.model_validate(data)

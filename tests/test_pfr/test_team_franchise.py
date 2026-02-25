@@ -7,10 +7,10 @@ import pytest
 
 from griddy.pfr import GriddyPFR
 from griddy.pfr.models.entities.team_franchise import (
+    Franchise,
     FranchiseLeader,
     FranchiseMeta,
     FranchiseSeasonRecord,
-    TeamFranchise,
 )
 from griddy.pfr.parsers.team_franchise import TeamFranchiseParser
 from griddy.settings import FIXTURE_DIR
@@ -35,8 +35,8 @@ def parsed_data(raw_html: str) -> dict:
 
 
 @pytest.fixture(scope="module")
-def franchise(parsed_data: dict) -> TeamFranchise:
-    return TeamFranchise.model_validate(parsed_data)
+def franchise(parsed_data: dict) -> Franchise:
+    return Franchise.model_validate(parsed_data)
 
 
 # ---------------------------------------------------------------------------
@@ -56,7 +56,7 @@ class TestParseSmoke:
         assert set(parsed_data.keys()) == expected_keys
 
     def test_model_validates_successfully(self, franchise):
-        assert isinstance(franchise, TeamFranchise)
+        assert isinstance(franchise, Franchise)
 
 
 # ---------------------------------------------------------------------------
@@ -306,7 +306,7 @@ class TestJsonSerialization:
 
 
 @pytest.mark.unit
-class TestTeamFranchiseEndpoint:
+class TestFranchiseEndpoint:
     def test_get_team_franchise_returns_model(self, raw_html):
         pfr = GriddyPFR()
         with patch.object(
@@ -317,7 +317,7 @@ class TestTeamFranchiseEndpoint:
             result = pfr.teams.get_team_franchise(team="nwe")
 
         mock_fetch.assert_called_once()
-        assert isinstance(result, TeamFranchise)
+        assert isinstance(result, Franchise)
         assert "Boston Patriots" in result.meta.team_names
         assert len(result.team_index) == 66
 

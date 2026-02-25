@@ -60,14 +60,14 @@ if TYPE_CHECKING:
     )
     from griddy.pfr.models.entities.security import Security, SecurityTypedDict
     from griddy.pfr.models.entities.team_franchise import (
+        Franchise,
         FranchiseLeader,
         FranchiseLeaderTypedDict,
         FranchiseMeta,
         FranchiseMetaTypedDict,
         FranchiseSeasonRecord,
         FranchiseSeasonRecordTypedDict,
-        TeamFranchise,
-        TeamFranchiseTypedDict,
+        FranchiseTypedDict,
     )
     from griddy.pfr.models.entities.team_season import (
         SeasonGame,
@@ -135,8 +135,8 @@ __all__ = [
     "SnapCountTypedDict",
     "Starter",
     "StarterTypedDict",
-    "TeamFranchise",
-    "TeamFranchiseTypedDict",
+    "Franchise",
+    "FranchiseTypedDict",
     "TeamSeason",
     "TeamSeasonMeta",
     "TeamSeasonMetaTypedDict",
@@ -202,8 +202,8 @@ _dynamic_imports: dict[str, str] = {
     "SnapCountTypedDict": ".entities.game_details",
     "Starter": ".entities.game_details",
     "StarterTypedDict": ".entities.game_details",
-    "TeamFranchise": ".entities.team_franchise",
-    "TeamFranchiseTypedDict": ".entities.team_franchise",
+    "Franchise": ".entities.team_franchise",
+    "FranchiseTypedDict": ".entities.team_franchise",
     "TeamSeason": ".entities.team_season",
     "TeamSeasonMeta": ".entities.team_season",
     "TeamSeasonMetaTypedDict": ".entities.team_season",

@@ -147,11 +147,11 @@ class FranchiseSeasonRecord(BaseModel):
 # --- Top-level Team Franchise ---
 
 
-class TeamFranchiseTypedDict(TypedDict):
+class FranchiseTypedDict(TypedDict):
     meta: FranchiseMetaTypedDict
     team_index: List[FranchiseSeasonRecordTypedDict]
 
 
-class TeamFranchise(BaseModel):
+class Franchise(BaseModel):
     meta: FranchiseMeta
     team_index: List[FranchiseSeasonRecord]
