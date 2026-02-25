@@ -29,6 +29,7 @@ if TYPE_CHECKING:
     from .endpoints.games import Games
     from .endpoints.players import Players
     from .endpoints.schedule import Schedule
+    from .endpoints.teams import Teams
 
 
 class GriddyPFR(LazySubSDKMixin, BaseSDK):
@@ -45,11 +46,13 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     games: "Games"
     players: "Players"
     schedule: "Schedule"
+    teams: "Teams"
 
     _sub_sdk_map = {
         "games": ("griddy.pfr.endpoints.games", "Games"),
         "players": ("griddy.pfr.endpoints.players", "Players"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
+        "teams": ("griddy.pfr.endpoints.teams", "Teams"),
     }
 
     def __init__(

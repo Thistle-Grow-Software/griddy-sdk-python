@@ -59,6 +59,14 @@ if TYPE_CHECKING:
         ScheduleGameTypedDict,
     )
     from griddy.pfr.models.entities.security import Security, SecurityTypedDict
+    from griddy.pfr.models.entities.team_season import (
+        SeasonGame,
+        SeasonGameTypedDict,
+        TeamSeason,
+        TeamSeasonMeta,
+        TeamSeasonMetaTypedDict,
+        TeamSeasonTypedDict,
+    )
 
 __all__ = [
     "Drive",
@@ -103,12 +111,18 @@ __all__ = [
     "ScoreboxTypedDict",
     "ScoringPlay",
     "ScoringPlayTypedDict",
+    "SeasonGame",
+    "SeasonGameTypedDict",
     "Security",
     "SecurityTypedDict",
     "SnapCount",
     "SnapCountTypedDict",
     "Starter",
     "StarterTypedDict",
+    "TeamSeason",
+    "TeamSeasonMeta",
+    "TeamSeasonMetaTypedDict",
+    "TeamSeasonTypedDict",
     "Transaction",
     "TransactionTypedDict",
 ]
@@ -156,12 +170,18 @@ _dynamic_imports: dict[str, str] = {
     "ScoringPlayTypedDict": ".entities.game_details",
     "ScheduleGame": ".entities.schedule_game",
     "ScheduleGameTypedDict": ".entities.schedule_game",
+    "SeasonGame": ".entities.team_season",
+    "SeasonGameTypedDict": ".entities.team_season",
     "Security": ".entities.security",
     "SecurityTypedDict": ".entities.security",
     "SnapCount": ".entities.game_details",
     "SnapCountTypedDict": ".entities.game_details",
     "Starter": ".entities.game_details",
     "StarterTypedDict": ".entities.game_details",
+    "TeamSeason": ".entities.team_season",
+    "TeamSeasonMeta": ".entities.team_season",
+    "TeamSeasonMetaTypedDict": ".entities.team_season",
+    "TeamSeasonTypedDict": ".entities.team_season",
     "Transaction": ".entities.player_profile",
     "TransactionTypedDict": ".entities.player_profile",
 }
