@@ -4,6 +4,24 @@ from typing import TYPE_CHECKING
 from griddy.core._import import dynamic_import
 
 if TYPE_CHECKING:
+    from griddy.pfr.models.entities.coach_profile import (
+        ChallengeResult,
+        ChallengeResultTypedDict,
+        CoachBio,
+        CoachBioTypedDict,
+        CoachingHistoryEntry,
+        CoachingHistoryEntryTypedDict,
+        CoachingRank,
+        CoachingRankTypedDict,
+        CoachingResult,
+        CoachingResultTotal,
+        CoachingResultTotalTypedDict,
+        CoachingResultTypedDict,
+        CoachingTreeEntry,
+        CoachingTreeEntryTypedDict,
+        CoachProfile,
+        CoachProfileTypedDict,
+    )
     from griddy.pfr.models.entities.game_details import (
         Drive,
         DriveTypedDict,
@@ -79,6 +97,22 @@ if TYPE_CHECKING:
     )
 
 __all__ = [
+    "ChallengeResult",
+    "ChallengeResultTypedDict",
+    "CoachBio",
+    "CoachBioTypedDict",
+    "CoachingHistoryEntry",
+    "CoachingHistoryEntryTypedDict",
+    "CoachingRank",
+    "CoachingRankTypedDict",
+    "CoachingResult",
+    "CoachingResultTotal",
+    "CoachingResultTotalTypedDict",
+    "CoachingResultTypedDict",
+    "CoachingTreeEntry",
+    "CoachingTreeEntryTypedDict",
+    "CoachProfile",
+    "CoachProfileTypedDict",
     "Drive",
     "DriveTypedDict",
     "ExpectedPoints",
@@ -146,6 +180,22 @@ __all__ = [
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "ChallengeResult": ".entities.coach_profile",
+    "ChallengeResultTypedDict": ".entities.coach_profile",
+    "CoachBio": ".entities.coach_profile",
+    "CoachBioTypedDict": ".entities.coach_profile",
+    "CoachingHistoryEntry": ".entities.coach_profile",
+    "CoachingHistoryEntryTypedDict": ".entities.coach_profile",
+    "CoachingRank": ".entities.coach_profile",
+    "CoachingRankTypedDict": ".entities.coach_profile",
+    "CoachingResult": ".entities.coach_profile",
+    "CoachingResultTotal": ".entities.coach_profile",
+    "CoachingResultTotalTypedDict": ".entities.coach_profile",
+    "CoachingResultTypedDict": ".entities.coach_profile",
+    "CoachingTreeEntry": ".entities.coach_profile",
+    "CoachingTreeEntryTypedDict": ".entities.coach_profile",
+    "CoachProfile": ".entities.coach_profile",
+    "CoachProfileTypedDict": ".entities.coach_profile",
     "BirthPlace": ".entities.player_profile",
     "BirthPlaceTypedDict": ".entities.player_profile",
     "DraftInfo": ".entities.player_profile",
