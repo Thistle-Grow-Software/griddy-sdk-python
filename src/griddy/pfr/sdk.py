@@ -31,6 +31,7 @@ if TYPE_CHECKING:
     from .endpoints.officials import Officials
     from .endpoints.players import Players
     from .endpoints.schedule import Schedule
+    from .endpoints.seasons import Seasons
     from .endpoints.stadiums import Stadiums
     from .endpoints.teams import Teams
 
@@ -51,6 +52,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     officials: "Officials"
     players: "Players"
     schedule: "Schedule"
+    seasons: "Seasons"
     stadiums: "Stadiums"
     teams: "Teams"
 
@@ -60,6 +62,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
         "officials": ("griddy.pfr.endpoints.officials", "Officials"),
         "players": ("griddy.pfr.endpoints.players", "Players"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
+        "seasons": ("griddy.pfr.endpoints.seasons", "Seasons"),
         "stadiums": ("griddy.pfr.endpoints.stadiums", "Stadiums"),
         "teams": ("griddy.pfr.endpoints.teams", "Teams"),
     }
