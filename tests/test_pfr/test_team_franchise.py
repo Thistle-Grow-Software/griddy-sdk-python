@@ -12,15 +12,15 @@ from griddy.pfr.models.entities.team_franchise import (
     FranchiseMeta,
     FranchiseSeasonRecord,
 )
-from griddy.pfr.parsers.team_franchise import TeamFranchiseParser
+from griddy.pfr.parsers.team_franchise import FranchiseParser
 from griddy.settings import FIXTURE_DIR
 
 FIXTURE_DIR = FIXTURE_DIR / "pfr" / "teams"
 
 
 @pytest.fixture
-def parser() -> TeamFranchiseParser:
-    return TeamFranchiseParser()
+def parser() -> FranchiseParser:
+    return FranchiseParser()
 
 
 @pytest.fixture(scope="module")
@@ -31,7 +31,7 @@ def raw_html() -> str:
 
 @pytest.fixture(scope="module")
 def parsed_data(raw_html: str) -> dict:
-    return TeamFranchiseParser().parse(raw_html)
+    return FranchiseParser().parse(raw_html)
 
 
 @pytest.fixture(scope="module")

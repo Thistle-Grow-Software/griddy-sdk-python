@@ -7,7 +7,7 @@ and parse a PFR team franchise page (``/teams/{team_abbrev}/``).
 
 from typing import Optional
 
-from griddy.pfr.parsers import TeamFranchiseParser, TeamSeasonParser
+from griddy.pfr.parsers import FranchiseParser, TeamSeasonParser
 
 from ..basesdk import BaseSDK, EndpointConfig
 from ..models import Franchise, TeamSeason
@@ -84,7 +84,7 @@ class Teams(BaseSDK):
             path_template="/teams/{team}/",
             operation_id="getFranchise",
             wait_for_element="#team_index",
-            parser=TeamFranchiseParser().parse,
+            parser=FranchiseParser().parse,
             response_type=Franchise,
             path_params={"team": team.lower()},
             timeout_ms=timeout_ms,

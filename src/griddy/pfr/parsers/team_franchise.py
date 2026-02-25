@@ -65,7 +65,7 @@ _LEADER_LABELS: Dict[str, str] = {
 }
 
 
-class TeamFranchiseParser:
+class FranchiseParser:
     """Parses PFR team franchise pages into comprehensive data dicts."""
 
     def parse(self, html: str) -> Dict[str, Any]:
