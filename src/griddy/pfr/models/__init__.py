@@ -120,6 +120,16 @@ if TYPE_CHECKING:
         ScheduleGame,
         ScheduleGameTypedDict,
     )
+    from griddy.pfr.models.entities.schools import (
+        College,
+        CollegeList,
+        CollegeListTypedDict,
+        CollegeTypedDict,
+        HighSchool,
+        HighSchoolList,
+        HighSchoolListTypedDict,
+        HighSchoolTypedDict,
+    )
     from griddy.pfr.models.entities.season import (
         ConferenceStanding,
         ConferenceStandingTypedDict,
@@ -351,6 +361,14 @@ __all__ = [
     "SuperBowlStandingTypedDict",
     "SuperBowlStandings",
     "SuperBowlStandingsTypedDict",
+    "College",
+    "CollegeTypedDict",
+    "CollegeList",
+    "CollegeListTypedDict",
+    "HighSchool",
+    "HighSchoolTypedDict",
+    "HighSchoolList",
+    "HighSchoolListTypedDict",
 ]
 
 _dynamic_imports: dict[str, str] = {
@@ -514,6 +532,14 @@ _dynamic_imports: dict[str, str] = {
     "SuperBowlStandingTypedDict": ".entities.superbowl",
     "SuperBowlStandings": ".entities.superbowl",
     "SuperBowlStandingsTypedDict": ".entities.superbowl",
+    "College": ".entities.schools",
+    "CollegeTypedDict": ".entities.schools",
+    "CollegeList": ".entities.schools",
+    "CollegeListTypedDict": ".entities.schools",
+    "HighSchool": ".entities.schools",
+    "HighSchoolTypedDict": ".entities.schools",
+    "HighSchoolList": ".entities.schools",
+    "HighSchoolListTypedDict": ".entities.schools",
 }
 
 
