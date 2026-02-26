@@ -13,6 +13,7 @@ from .leaders import LeadersParser
 from .official_profile import OfficialProfileParser
 from .player_profile import PlayerProfileParser
 from .schedule import ScheduleParser
+from .schools import SchoolsParser
 from .season_overview import SeasonOverviewParser
 from .stadium import StadiumParser
 from .superbowl import SuperBowlParser
@@ -28,6 +29,7 @@ __all__ = [
     "OfficialProfileParser",
     "PlayerProfileParser",
     "ScheduleParser",
+    "SchoolsParser",
     "SeasonOverviewParser",
     "StadiumParser",
     "SuperBowlParser",
