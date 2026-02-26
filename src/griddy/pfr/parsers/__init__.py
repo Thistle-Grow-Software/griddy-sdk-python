@@ -15,6 +15,7 @@ from .player_profile import PlayerProfileParser
 from .schedule import ScheduleParser
 from .season_overview import SeasonOverviewParser
 from .stadium import StadiumParser
+from .superbowl import SuperBowlParser
 from .team_franchise import FranchiseParser
 from .team_season import TeamSeasonParser
 
@@ -29,6 +30,7 @@ __all__ = [
     "ScheduleParser",
     "SeasonOverviewParser",
     "StadiumParser",
+    "SuperBowlParser",
     "FranchiseParser",
     "TeamSeasonParser",
 ]
