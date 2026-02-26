@@ -8,6 +8,7 @@ Re-exports the individual parser classes for convenient access::
 from .awards import AwardsParser
 from .coach_profile import CoachProfileParser
 from .draft import DraftParser
+from .executive_profile import ExecutiveProfileParser
 from .game_details import GameDetailsParser
 from .leaders import LeadersParser
 from .official_profile import OfficialProfileParser
@@ -24,6 +25,7 @@ __all__ = [
     "AwardsParser",
     "CoachProfileParser",
     "DraftParser",
+    "ExecutiveProfileParser",
     "GameDetailsParser",
     "LeadersParser",
     "OfficialProfileParser",

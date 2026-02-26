@@ -29,6 +29,7 @@ if TYPE_CHECKING:
     from .endpoints.awards import Awards
     from .endpoints.coaches import Coaches
     from .endpoints.draft import Draft
+    from .endpoints.executives import Executives
     from .endpoints.games import Games
     from .endpoints.hof import Hof
     from .endpoints.leaders import Leaders
@@ -57,6 +58,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     awards: "Awards"
     coaches: "Coaches"
     draft: "Draft"
+    executives: "Executives"
     games: "Games"
     hof: "Hof"
     leaders: "Leaders"
@@ -74,6 +76,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
         "awards": ("griddy.pfr.endpoints.awards", "Awards"),
         "coaches": ("griddy.pfr.endpoints.coaches", "Coaches"),
         "draft": ("griddy.pfr.endpoints.draft", "Draft"),
+        "executives": ("griddy.pfr.endpoints.executives", "Executives"),
         "games": ("griddy.pfr.endpoints.games", "Games"),
         "hof": ("griddy.pfr.endpoints.hof", "Hof"),
         "leaders": ("griddy.pfr.endpoints.leaders", "Leaders"),
