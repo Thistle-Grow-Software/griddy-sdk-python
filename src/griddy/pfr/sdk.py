@@ -28,6 +28,7 @@ from .utils import Logger, RetryConfig
 if TYPE_CHECKING:
     from .endpoints.coaches import Coaches
     from .endpoints.games import Games
+    from .endpoints.leaders import Leaders
     from .endpoints.officials import Officials
     from .endpoints.players import Players
     from .endpoints.schedule import Schedule
@@ -49,6 +50,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
 
     coaches: "Coaches"
     games: "Games"
+    leaders: "Leaders"
     officials: "Officials"
     players: "Players"
     schedule: "Schedule"
@@ -59,6 +61,7 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
     _sub_sdk_map = {
         "coaches": ("griddy.pfr.endpoints.coaches", "Coaches"),
         "games": ("griddy.pfr.endpoints.games", "Games"),
+        "leaders": ("griddy.pfr.endpoints.leaders", "Leaders"),
         "officials": ("griddy.pfr.endpoints.officials", "Officials"),
         "players": ("griddy.pfr.endpoints.players", "Players"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),

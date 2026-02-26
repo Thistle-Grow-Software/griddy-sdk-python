@@ -52,6 +52,12 @@ if TYPE_CHECKING:
         Starter,
         StarterTypedDict,
     )
+    from griddy.pfr.models.entities.leaders import (
+        Leaderboard,
+        LeaderboardTypedDict,
+        LeaderEntry,
+        LeaderEntryTypedDict,
+    )
     from griddy.pfr.models.entities.official_profile import (
         OfficialBio,
         OfficialBioTypedDict,
@@ -163,6 +169,10 @@ __all__ = [
     "OfficialProfileTypedDict",
     "OfficialSeasonStat",
     "OfficialSeasonStatTypedDict",
+    "Leaderboard",
+    "LeaderboardTypedDict",
+    "LeaderEntry",
+    "LeaderEntryTypedDict",
     "Drive",
     "DriveTypedDict",
     "ExpectedPoints",
@@ -286,6 +296,10 @@ _dynamic_imports: dict[str, str] = {
     "BirthPlaceTypedDict": ".entities.player_profile",
     "DraftInfo": ".entities.player_profile",
     "DraftInfoTypedDict": ".entities.player_profile",
+    "Leaderboard": ".entities.leaders",
+    "LeaderboardTypedDict": ".entities.leaders",
+    "LeaderEntry": ".entities.leaders",
+    "LeaderEntryTypedDict": ".entities.leaders",
     "Drive": ".entities.game_details",
     "DriveTypedDict": ".entities.game_details",
     "ExpectedPoints": ".entities.game_details",
