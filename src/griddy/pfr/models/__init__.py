@@ -22,6 +22,20 @@ if TYPE_CHECKING:
         CoachProfile,
         CoachProfileTypedDict,
     )
+    from griddy.pfr.models.entities.draft import (
+        CombineEntry,
+        CombineEntryTypedDict,
+        CombineResults,
+        CombineResultsTypedDict,
+        DraftPick,
+        DraftPickTypedDict,
+        TeamDraft,
+        TeamDraftPick,
+        TeamDraftPickTypedDict,
+        TeamDraftTypedDict,
+        YearDraft,
+        YearDraftTypedDict,
+    )
     from griddy.pfr.models.entities.game_details import (
         Drive,
         DriveTypedDict,
@@ -145,6 +159,18 @@ if TYPE_CHECKING:
     )
 
 __all__ = [
+    "CombineEntry",
+    "CombineEntryTypedDict",
+    "CombineResults",
+    "CombineResultsTypedDict",
+    "DraftPick",
+    "DraftPickTypedDict",
+    "TeamDraft",
+    "TeamDraftPick",
+    "TeamDraftPickTypedDict",
+    "TeamDraftTypedDict",
+    "YearDraft",
+    "YearDraftTypedDict",
     "ChallengeResult",
     "ChallengeResultTypedDict",
     "CoachBio",
@@ -268,6 +294,18 @@ __all__ = [
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "CombineEntry": ".entities.draft",
+    "CombineEntryTypedDict": ".entities.draft",
+    "CombineResults": ".entities.draft",
+    "CombineResultsTypedDict": ".entities.draft",
+    "DraftPick": ".entities.draft",
+    "DraftPickTypedDict": ".entities.draft",
+    "TeamDraft": ".entities.draft",
+    "TeamDraftPick": ".entities.draft",
+    "TeamDraftPickTypedDict": ".entities.draft",
+    "TeamDraftTypedDict": ".entities.draft",
+    "YearDraft": ".entities.draft",
+    "YearDraftTypedDict": ".entities.draft",
     "ChallengeResult": ".entities.coach_profile",
     "ChallengeResultTypedDict": ".entities.coach_profile",
     "CoachBio": ".entities.coach_profile",
