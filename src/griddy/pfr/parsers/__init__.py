@@ -6,6 +6,7 @@ Re-exports the individual parser classes for convenient access::
 """
 
 from .coach_profile import CoachProfileParser
+from .draft import DraftParser
 from .game_details import GameDetailsParser
 from .leaders import LeadersParser
 from .official_profile import OfficialProfileParser
@@ -18,6 +19,7 @@ from .team_season import TeamSeasonParser
 
 __all__ = [
     "CoachProfileParser",
+    "DraftParser",
     "GameDetailsParser",
     "LeadersParser",
     "OfficialProfileParser",
