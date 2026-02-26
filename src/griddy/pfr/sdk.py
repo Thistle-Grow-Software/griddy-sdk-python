@@ -26,12 +26,15 @@ from .types import UNSET, OptionalNullable
 from .utils import Logger, RetryConfig
 
 if TYPE_CHECKING:
+    from .endpoints.awards import Awards
     from .endpoints.coaches import Coaches
     from .endpoints.draft import Draft
     from .endpoints.games import Games
+    from .endpoints.hof import Hof
     from .endpoints.leaders import Leaders
     from .endpoints.officials import Officials
     from .endpoints.players import Players
+    from .endpoints.probowl import ProBowl
     from .endpoints.schedule import Schedule
     from .endpoints.seasons import Seasons
     from .endpoints.stadiums import Stadiums
@@ -49,24 +52,30 @@ class GriddyPFR(LazySubSDKMixin, BaseSDK):
         >>> games = pfr.schedule.get_season_schedule(season=2015)
     """
 
+    awards: "Awards"
     coaches: "Coaches"
     draft: "Draft"
     games: "Games"
+    hof: "Hof"
     leaders: "Leaders"
     officials: "Officials"
     players: "Players"
+    probowl: "ProBowl"
     schedule: "Schedule"
     seasons: "Seasons"
     stadiums: "Stadiums"
     teams: "Teams"
 
     _sub_sdk_map = {
+        "awards": ("griddy.pfr.endpoints.awards", "Awards"),
         "coaches": ("griddy.pfr.endpoints.coaches", "Coaches"),
         "draft": ("griddy.pfr.endpoints.draft", "Draft"),
         "games": ("griddy.pfr.endpoints.games", "Games"),
+        "hof": ("griddy.pfr.endpoints.hof", "Hof"),
         "leaders": ("griddy.pfr.endpoints.leaders", "Leaders"),
         "officials": ("griddy.pfr.endpoints.officials", "Officials"),
         "players": ("griddy.pfr.endpoints.players", "Players"),
+        "probowl": ("griddy.pfr.endpoints.probowl", "ProBowl"),
         "schedule": ("griddy.pfr.endpoints.schedule", "Schedule"),
         "seasons": ("griddy.pfr.endpoints.seasons", "Seasons"),
         "stadiums": ("griddy.pfr.endpoints.stadiums", "Stadiums"),

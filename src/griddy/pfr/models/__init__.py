@@ -4,6 +4,20 @@ from typing import TYPE_CHECKING
 from griddy.core._import import dynamic_import
 
 if TYPE_CHECKING:
+    from griddy.pfr.models.entities.awards import (
+        AwardHistory,
+        AwardHistoryTypedDict,
+        AwardWinner,
+        AwardWinnerTypedDict,
+        HallOfFame,
+        HallOfFameTypedDict,
+        HofPlayer,
+        HofPlayerTypedDict,
+        ProBowlPlayer,
+        ProBowlPlayerTypedDict,
+        ProBowlRoster,
+        ProBowlRosterTypedDict,
+    )
     from griddy.pfr.models.entities.coach_profile import (
         ChallengeResult,
         ChallengeResultTypedDict,
@@ -159,6 +173,18 @@ if TYPE_CHECKING:
     )
 
 __all__ = [
+    "AwardHistory",
+    "AwardHistoryTypedDict",
+    "AwardWinner",
+    "AwardWinnerTypedDict",
+    "HallOfFame",
+    "HallOfFameTypedDict",
+    "HofPlayer",
+    "HofPlayerTypedDict",
+    "ProBowlPlayer",
+    "ProBowlPlayerTypedDict",
+    "ProBowlRoster",
+    "ProBowlRosterTypedDict",
     "CombineEntry",
     "CombineEntryTypedDict",
     "CombineResults",
@@ -294,6 +320,18 @@ __all__ = [
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "AwardHistory": ".entities.awards",
+    "AwardHistoryTypedDict": ".entities.awards",
+    "AwardWinner": ".entities.awards",
+    "AwardWinnerTypedDict": ".entities.awards",
+    "HallOfFame": ".entities.awards",
+    "HallOfFameTypedDict": ".entities.awards",
+    "HofPlayer": ".entities.awards",
+    "HofPlayerTypedDict": ".entities.awards",
+    "ProBowlPlayer": ".entities.awards",
+    "ProBowlPlayerTypedDict": ".entities.awards",
+    "ProBowlRoster": ".entities.awards",
+    "ProBowlRosterTypedDict": ".entities.awards",
     "CombineEntry": ".entities.draft",
     "CombineEntryTypedDict": ".entities.draft",
     "CombineResults": ".entities.draft",
