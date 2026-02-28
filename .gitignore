@@ -231,3 +231,4 @@ docs/site/
 cookies.txt*
 FiddlerSnapshots/
 .claude/
+.mcp.json
