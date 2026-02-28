@@ -9,6 +9,7 @@ from .awards import AwardsParser
 from .coach_profile import CoachProfileParser
 from .draft import DraftParser
 from .executive_profile import ExecutiveProfileParser
+from .fantasy import FantasyParser
 from .game_details import GameDetailsParser
 from .leaders import LeadersParser
 from .official_profile import OfficialProfileParser
@@ -26,6 +27,7 @@ __all__ = [
     "CoachProfileParser",
     "DraftParser",
     "ExecutiveProfileParser",
+    "FantasyParser",
     "GameDetailsParser",
     "LeadersParser",
     "OfficialProfileParser",

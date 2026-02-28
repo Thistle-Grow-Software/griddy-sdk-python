@@ -60,6 +60,12 @@ if TYPE_CHECKING:
         ExecutiveResultsTotalTypedDict,
         ExecutiveResultTypedDict,
     )
+    from griddy.pfr.models.entities.fantasy import (
+        FantasyPlayer,
+        FantasyPlayerTypedDict,
+        TopFantasyPlayers,
+        TopFantasyPlayersTypedDict,
+    )
     from griddy.pfr.models.entities.game_details import (
         Drive,
         DriveTypedDict,
@@ -223,6 +229,10 @@ __all__ = [
     "ProBowlPlayerTypedDict",
     "ProBowlRoster",
     "ProBowlRosterTypedDict",
+    "FantasyPlayer",
+    "FantasyPlayerTypedDict",
+    "TopFantasyPlayers",
+    "TopFantasyPlayersTypedDict",
     "ExecutiveBio",
     "ExecutiveBioTypedDict",
     "ExecutiveProfile",
@@ -402,6 +412,10 @@ _dynamic_imports: dict[str, str] = {
     "ProBowlPlayerTypedDict": ".entities.awards",
     "ProBowlRoster": ".entities.awards",
     "ProBowlRosterTypedDict": ".entities.awards",
+    "FantasyPlayer": ".entities.fantasy",
+    "FantasyPlayerTypedDict": ".entities.fantasy",
+    "TopFantasyPlayers": ".entities.fantasy",
+    "TopFantasyPlayersTypedDict": ".entities.fantasy",
     "ExecutiveBio": ".entities.executive_profile",
     "ExecutiveBioTypedDict": ".entities.executive_profile",
     "ExecutiveProfile": ".entities.executive_profile",
