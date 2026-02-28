@@ -4,6 +4,14 @@ Covers:
 - ``/years/{year}/fantasy.htm`` — Top Fantasy Players (table ``#fantasy``)
 - ``/fantasy/{position}-fantasy-matchups.htm`` — Fantasy Matchups
   (table ``#fantasy_stats``)
+- ``/years/{year}/fantasy-points-against-{position}.htm`` — Fantasy Points
+  Allowed (table ``#fantasy_def``)
+- ``/years/{year}/redzone-passing.htm`` — Red Zone Passing
+  (table ``#fantasy_rz``)
+- ``/years/{year}/redzone-receiving.htm`` — Red Zone Receiving
+  (table ``#fantasy_rz``)
+- ``/years/{year}/redzone-rushing.htm`` — Red Zone Rushing
+  (table ``#fantasy_rz``)
 """
 
 from __future__ import annotations
@@ -322,3 +330,203 @@ class FantasyPointsAllowedTypedDict(TypedDict):
 
 class FantasyPointsAllowed(BaseModel):
     teams: List[FantasyPointsAllowedTeam] = []
+
+
+# ---------------------------------------------------------------------------
+# RedZonePassingPlayer (one row in /years/{year}/redzone-passing.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZonePassingPlayerTypedDict(TypedDict):
+    player: NotRequired[str]
+    player_href: NotRequired[str]
+    player_id: NotRequired[str]
+    team: NotRequired[str]
+    team_href: NotRequired[str]
+    # Inside 20
+    pass_cmp: NotRequired[int]
+    pass_att: NotRequired[int]
+    pass_cmp_perc: NotRequired[Any]
+    pass_yds: NotRequired[int]
+    pass_td: NotRequired[int]
+    pass_int: NotRequired[int]
+    # Inside 10
+    pass_cmp_in_10: NotRequired[int]
+    pass_att_in_10: NotRequired[int]
+    pass_cmp_perc_in_10: NotRequired[Any]
+    pass_yds_in_10: NotRequired[int]
+    pass_td_in_10: NotRequired[int]
+    pass_int_in_10: NotRequired[int]
+    # Link
+    link_href: NotRequired[str]
+
+
+class RedZonePassingPlayer(BaseModel):
+    player: Optional[str] = None
+    player_href: Optional[str] = None
+    player_id: Optional[str] = None
+    team: Optional[str] = None
+    team_href: Optional[str] = None
+    # Inside 20
+    pass_cmp: Optional[int] = None
+    pass_att: Optional[int] = None
+    pass_cmp_perc: Optional[float] = None
+    pass_yds: Optional[int] = None
+    pass_td: Optional[int] = None
+    pass_int: Optional[int] = None
+    # Inside 10
+    pass_cmp_in_10: Optional[int] = None
+    pass_att_in_10: Optional[int] = None
+    pass_cmp_perc_in_10: Optional[float] = None
+    pass_yds_in_10: Optional[int] = None
+    pass_td_in_10: Optional[int] = None
+    pass_int_in_10: Optional[int] = None
+    # Link
+    link_href: Optional[str] = None
+
+
+# ---------------------------------------------------------------------------
+# RedZonePassing (top-level for /years/{year}/redzone-passing.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZonePassingTypedDict(TypedDict):
+    players: NotRequired[List[RedZonePassingPlayerTypedDict]]
+
+
+class RedZonePassing(BaseModel):
+    players: List[RedZonePassingPlayer] = []
+
+
+# ---------------------------------------------------------------------------
+# RedZoneReceivingPlayer (one row in /years/{year}/redzone-receiving.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZoneReceivingPlayerTypedDict(TypedDict):
+    player: NotRequired[str]
+    player_href: NotRequired[str]
+    player_id: NotRequired[str]
+    team: NotRequired[str]
+    team_href: NotRequired[str]
+    # Inside 20
+    targets: NotRequired[int]
+    rec: NotRequired[int]
+    catch_pct: NotRequired[Any]
+    rec_yds: NotRequired[int]
+    rec_td: NotRequired[int]
+    targets_pct: NotRequired[Any]
+    # Inside 10
+    targets_in_10: NotRequired[int]
+    rec_in_10: NotRequired[int]
+    catch_pct_in_10: NotRequired[Any]
+    rec_yds_in_10: NotRequired[int]
+    rec_td_in_10: NotRequired[int]
+    targets_in_10_pct: NotRequired[Any]
+    # Link
+    link_href: NotRequired[str]
+
+
+class RedZoneReceivingPlayer(BaseModel):
+    player: Optional[str] = None
+    player_href: Optional[str] = None
+    player_id: Optional[str] = None
+    team: Optional[str] = None
+    team_href: Optional[str] = None
+    # Inside 20
+    targets: Optional[int] = None
+    rec: Optional[int] = None
+    catch_pct: Optional[float] = None
+    rec_yds: Optional[int] = None
+    rec_td: Optional[int] = None
+    targets_pct: Optional[float] = None
+    # Inside 10
+    targets_in_10: Optional[int] = None
+    rec_in_10: Optional[int] = None
+    catch_pct_in_10: Optional[float] = None
+    rec_yds_in_10: Optional[int] = None
+    rec_td_in_10: Optional[int] = None
+    targets_in_10_pct: Optional[float] = None
+    # Link
+    link_href: Optional[str] = None
+
+
+# ---------------------------------------------------------------------------
+# RedZoneReceiving (top-level for /years/{year}/redzone-receiving.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZoneReceivingTypedDict(TypedDict):
+    players: NotRequired[List[RedZoneReceivingPlayerTypedDict]]
+
+
+class RedZoneReceiving(BaseModel):
+    players: List[RedZoneReceivingPlayer] = []
+
+
+# ---------------------------------------------------------------------------
+# RedZoneRushingPlayer (one row in /years/{year}/redzone-rushing.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZoneRushingPlayerTypedDict(TypedDict):
+    player: NotRequired[str]
+    player_href: NotRequired[str]
+    player_id: NotRequired[str]
+    team: NotRequired[str]
+    team_href: NotRequired[str]
+    # Inside 20
+    rush_att: NotRequired[int]
+    rush_yds: NotRequired[int]
+    rush_td: NotRequired[int]
+    rush_att_pct: NotRequired[Any]
+    # Inside 10
+    rush_att_in_10: NotRequired[int]
+    rush_yds_in_10: NotRequired[int]
+    rush_td_in_10: NotRequired[int]
+    rush_att_in_10_pct: NotRequired[Any]
+    # Inside 5
+    rush_att_in_5: NotRequired[int]
+    rush_yds_in_5: NotRequired[int]
+    rush_td_in_5: NotRequired[int]
+    rush_att_in_5_pct: NotRequired[Any]
+    # Link
+    link_href: NotRequired[str]
+
+
+class RedZoneRushingPlayer(BaseModel):
+    player: Optional[str] = None
+    player_href: Optional[str] = None
+    player_id: Optional[str] = None
+    team: Optional[str] = None
+    team_href: Optional[str] = None
+    # Inside 20
+    rush_att: Optional[int] = None
+    rush_yds: Optional[int] = None
+    rush_td: Optional[int] = None
+    rush_att_pct: Optional[float] = None
+    # Inside 10
+    rush_att_in_10: Optional[int] = None
+    rush_yds_in_10: Optional[int] = None
+    rush_td_in_10: Optional[int] = None
+    rush_att_in_10_pct: Optional[float] = None
+    # Inside 5
+    rush_att_in_5: Optional[int] = None
+    rush_yds_in_5: Optional[int] = None
+    rush_td_in_5: Optional[int] = None
+    rush_att_in_5_pct: Optional[float] = None
+    # Link
+    link_href: Optional[str] = None
+
+
+# ---------------------------------------------------------------------------
+# RedZoneRushing (top-level for /years/{year}/redzone-rushing.htm)
+# ---------------------------------------------------------------------------
+
+
+class RedZoneRushingTypedDict(TypedDict):
+    players: NotRequired[List[RedZoneRushingPlayerTypedDict]]
+
+
+class RedZoneRushing(BaseModel):
+    players: List[RedZoneRushingPlayer] = []

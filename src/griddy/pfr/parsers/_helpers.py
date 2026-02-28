@@ -29,6 +29,23 @@ def safe_numeric(value: str) -> Any:
         return value
 
 
+def safe_pct(value: str) -> Optional[float]:
+    """Convert a percentage string (e.g. ``'63.46%'``) to a float.
+
+    Strips a trailing ``%`` sign before conversion.  Returns ``None``
+    for empty or non-numeric values.
+    """
+    if not value:
+        return None
+    cleaned = value.rstrip("%").strip()
+    if not cleaned:
+        return None
+    try:
+        return float(cleaned)
+    except (ValueError, TypeError):
+        return None
+
+
 def uncomment_tables(soup: BeautifulSoup) -> None:
     """Replace HTML comment nodes that contain ``<table`` tags with
     their parsed content so that subsequent ``soup.find`` calls can
