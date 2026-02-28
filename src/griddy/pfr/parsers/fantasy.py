@@ -6,13 +6,19 @@ Handles:
   (table ``#fantasy_stats``)
 - ``/years/{year}/fantasy-points-against-{position}.htm`` — Fantasy Points
   Allowed (table ``#fantasy_def``)
+- ``/years/{year}/redzone-passing.htm`` — Red Zone Passing
+  (table ``#fantasy_rz``)
+- ``/years/{year}/redzone-receiving.htm`` — Red Zone Receiving
+  (table ``#fantasy_rz``)
+- ``/years/{year}/redzone-rushing.htm`` — Red Zone Rushing
+  (table ``#fantasy_rz``)
 """
 
 from typing import Any, Dict, List, Optional
 
 from bs4 import BeautifulSoup, Tag
 
-from ._helpers import safe_int, safe_numeric
+from ._helpers import safe_int, safe_numeric, safe_pct
 
 
 class FantasyParser:
@@ -347,3 +353,276 @@ class FantasyParser:
                 teams.append(row)
 
         return teams
+
+    # ── Red Zone Passing (/years/{year}/redzone-passing.htm) ───────────
+
+    # Int columns for the red zone passing table.
+    _RZ_PASSING_INT_COLUMNS = frozenset(
+        {
+            "pass_cmp",
+            "pass_att",
+            "pass_yds",
+            "pass_td",
+            "pass_int",
+            "pass_cmp_in_10",
+            "pass_att_in_10",
+            "pass_yds_in_10",
+            "pass_td_in_10",
+            "pass_int_in_10",
+        }
+    )
+
+    # Float columns for the red zone passing table (completion pct).
+    _RZ_PASSING_FLOAT_COLUMNS = frozenset(
+        {
+            "pass_cmp_perc",
+            "pass_cmp_perc_in_10",
+        }
+    )
+
+    def parse_redzone_passing(self, html: str) -> Dict[str, Any]:
+        """Parse the red zone passing page.
+
+        Returns:
+            A dict with key ``players``.
+        """
+        soup = BeautifulSoup(html, "html.parser")
+
+        table = soup.find("table", id="fantasy_rz")
+        if table is None:
+            return {"players": []}
+
+        players = self._parse_rz_passing_rows(table)
+        return {"players": players}
+
+    def _parse_rz_passing_rows(self, table: Tag) -> List[Dict[str, Any]]:
+        """Extract player rows from the red zone passing table."""
+        tbody = table.find("tbody")
+        if tbody is None:
+            return []
+
+        players: List[Dict[str, Any]] = []
+
+        for tr in tbody.find_all("tr"):
+            if "thead" in (tr.get("class") or []):
+                continue
+
+            row: Dict[str, Any] = {}
+            all_empty = True
+
+            for cell in tr.find_all(["th", "td"]):
+                stat = cell.get("data-stat", "")
+                if not stat:
+                    continue
+
+                text = cell.get_text(strip=True).replace("\xa0", " ")
+                if text:
+                    all_empty = False
+
+                link = cell.find("a")
+
+                if stat == "player":
+                    row["player"] = text or None
+                    if link:
+                        row["player_href"] = link.get("href")
+                    player_id = cell.get("data-append-csv")
+                    if player_id:
+                        row["player_id"] = player_id
+                elif stat == "team":
+                    row["team"] = text or None
+                    if link:
+                        row["team_href"] = link.get("href")
+                elif stat == "link":
+                    if link:
+                        row["link_href"] = link.get("href")
+                elif stat in self._RZ_PASSING_INT_COLUMNS:
+                    row[stat] = safe_int(text)
+                elif stat in self._RZ_PASSING_FLOAT_COLUMNS:
+                    row[stat] = safe_numeric(text)
+
+            if not all_empty:
+                players.append(row)
+
+        return players
+
+    # ── Red Zone Receiving (/years/{year}/redzone-receiving.htm) ───────
+
+    # Int columns for the red zone receiving table.
+    _RZ_RECEIVING_INT_COLUMNS = frozenset(
+        {
+            "targets",
+            "rec",
+            "rec_yds",
+            "rec_td",
+            "targets_in_10",
+            "rec_in_10",
+            "rec_yds_in_10",
+            "rec_td_in_10",
+        }
+    )
+
+    # Percentage columns for the red zone receiving table (include % sign).
+    _RZ_RECEIVING_PCT_COLUMNS = frozenset(
+        {
+            "catch_pct",
+            "targets_pct",
+            "catch_pct_in_10",
+            "targets_in_10_pct",
+        }
+    )
+
+    def parse_redzone_receiving(self, html: str) -> Dict[str, Any]:
+        """Parse the red zone receiving page.
+
+        Returns:
+            A dict with key ``players``.
+        """
+        soup = BeautifulSoup(html, "html.parser")
+
+        table = soup.find("table", id="fantasy_rz")
+        if table is None:
+            return {"players": []}
+
+        players = self._parse_rz_receiving_rows(table)
+        return {"players": players}
+
+    def _parse_rz_receiving_rows(self, table: Tag) -> List[Dict[str, Any]]:
+        """Extract player rows from the red zone receiving table."""
+        tbody = table.find("tbody")
+        if tbody is None:
+            return []
+
+        players: List[Dict[str, Any]] = []
+
+        for tr in tbody.find_all("tr"):
+            if "thead" in (tr.get("class") or []):
+                continue
+
+            row: Dict[str, Any] = {}
+            all_empty = True
+
+            for cell in tr.find_all(["th", "td"]):
+                stat = cell.get("data-stat", "")
+                if not stat:
+                    continue
+
+                text = cell.get_text(strip=True).replace("\xa0", " ")
+                if text:
+                    all_empty = False
+
+                link = cell.find("a")
+
+                if stat == "player":
+                    row["player"] = text or None
+                    if link:
+                        row["player_href"] = link.get("href")
+                    player_id = cell.get("data-append-csv")
+                    if player_id:
+                        row["player_id"] = player_id
+                elif stat == "team":
+                    row["team"] = text or None
+                    if link:
+                        row["team_href"] = link.get("href")
+                elif stat == "link":
+                    if link:
+                        row["link_href"] = link.get("href")
+                elif stat in self._RZ_RECEIVING_INT_COLUMNS:
+                    row[stat] = safe_int(text)
+                elif stat in self._RZ_RECEIVING_PCT_COLUMNS:
+                    row[stat] = safe_pct(text)
+
+            if not all_empty:
+                players.append(row)
+
+        return players
+
+    # ── Red Zone Rushing (/years/{year}/redzone-rushing.htm) ──────────
+
+    # Int columns for the red zone rushing table.
+    _RZ_RUSHING_INT_COLUMNS = frozenset(
+        {
+            "rush_att",
+            "rush_yds",
+            "rush_td",
+            "rush_att_in_10",
+            "rush_yds_in_10",
+            "rush_td_in_10",
+            "rush_att_in_5",
+            "rush_yds_in_5",
+            "rush_td_in_5",
+        }
+    )
+
+    # Percentage columns for the red zone rushing table (include % sign).
+    _RZ_RUSHING_PCT_COLUMNS = frozenset(
+        {
+            "rush_att_pct",
+            "rush_att_in_10_pct",
+            "rush_att_in_5_pct",
+        }
+    )
+
+    def parse_redzone_rushing(self, html: str) -> Dict[str, Any]:
+        """Parse the red zone rushing page.
+
+        Returns:
+            A dict with key ``players``.
+        """
+        soup = BeautifulSoup(html, "html.parser")
+
+        table = soup.find("table", id="fantasy_rz")
+        if table is None:
+            return {"players": []}
+
+        players = self._parse_rz_rushing_rows(table)
+        return {"players": players}
+
+    def _parse_rz_rushing_rows(self, table: Tag) -> List[Dict[str, Any]]:
+        """Extract player rows from the red zone rushing table."""
+        tbody = table.find("tbody")
+        if tbody is None:
+            return []
+
+        players: List[Dict[str, Any]] = []
+
+        for tr in tbody.find_all("tr"):
+            if "thead" in (tr.get("class") or []):
+                continue
+
+            row: Dict[str, Any] = {}
+            all_empty = True
+
+            for cell in tr.find_all(["th", "td"]):
+                stat = cell.get("data-stat", "")
+                if not stat:
+                    continue
+
+                text = cell.get_text(strip=True).replace("\xa0", " ")
+                if text:
+                    all_empty = False
+
+                link = cell.find("a")
+
+                if stat == "player":
+                    row["player"] = text or None
+                    if link:
+                        row["player_href"] = link.get("href")
+                    player_id = cell.get("data-append-csv")
+                    if player_id:
+                        row["player_id"] = player_id
+                elif stat == "team":
+                    row["team"] = text or None
+                    if link:
+                        row["team_href"] = link.get("href")
+                elif stat == "link":
+                    if link:
+                        row["link_href"] = link.get("href")
+                elif stat in self._RZ_RUSHING_INT_COLUMNS:
+                    row[stat] = safe_int(text)
+                elif stat in self._RZ_RUSHING_PCT_COLUMNS:
+                    row[stat] = safe_pct(text)
+
+            if not all_empty:
+                players.append(row)
+
+        return players

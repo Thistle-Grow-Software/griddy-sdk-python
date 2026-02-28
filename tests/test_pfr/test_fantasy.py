@@ -3,6 +3,10 @@
 Covers:
 - Top Fantasy Players (``/years/{year}/fantasy.htm``)
 - Fantasy Matchups (``/fantasy/{position}-fantasy-matchups.htm``)
+- Fantasy Points Allowed (``/years/{year}/fantasy-points-against-{position}.htm``)
+- Red Zone Passing (``/years/{year}/redzone-passing.htm``)
+- Red Zone Receiving (``/years/{year}/redzone-receiving.htm``)
+- Red Zone Rushing (``/years/{year}/redzone-rushing.htm``)
 """
 
 from unittest.mock import patch
@@ -15,6 +19,12 @@ from griddy.pfr.models import (
     FantasyPlayer,
     FantasyPointsAllowed,
     FantasyPointsAllowedTeam,
+    RedZonePassing,
+    RedZonePassingPlayer,
+    RedZoneReceiving,
+    RedZoneReceivingPlayer,
+    RedZoneRushing,
+    RedZoneRushingPlayer,
     TopFantasyPlayers,
 )
 from griddy.pfr.parsers.fantasy import FantasyParser
@@ -1027,3 +1037,598 @@ class TestGetPointsAllowedEndpoint:
         call_args = mock_fetch.call_args
         url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
         assert "/years/2025/fantasy-points-against-te.htm" in url
+
+
+# #########################################################################
+# RED ZONE PASSING TESTS
+# #########################################################################
+
+# -------------------------------------------------------------------------
+# Red zone passing fixtures
+# -------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def rz_passing_html() -> str:
+    return (FIXTURE_DIR / "redzone_passing.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def rz_passing_parsed(rz_passing_html: str) -> dict:
+    return _parser.parse_redzone_passing(rz_passing_html)
+
+
+@pytest.fixture(scope="module")
+def rz_passing_model(rz_passing_parsed: dict) -> RedZonePassing:
+    return RedZonePassing.model_validate(rz_passing_parsed)
+
+
+# =========================================================================
+# Red zone passing smoke tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZonePassingSmoke:
+    def test_parse_returns_dict(self, rz_passing_parsed):
+        assert isinstance(rz_passing_parsed, dict)
+
+    def test_has_players_key(self, rz_passing_parsed):
+        assert "players" in rz_passing_parsed
+
+    def test_model_validates(self, rz_passing_model):
+        assert isinstance(rz_passing_model, RedZonePassing)
+
+    def test_player_count(self, rz_passing_model):
+        assert len(rz_passing_model.players) == 78
+
+
+# =========================================================================
+# Red zone passing — first player (Matthew Stafford)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZonePassingFirstPlayer:
+    def test_identity(self, rz_passing_model):
+        first = rz_passing_model.players[0]
+        assert isinstance(first, RedZonePassingPlayer)
+        assert first.player == "Matthew Stafford"
+        assert first.player_href == "/players/S/StafMa00.htm"
+        assert first.player_id == "StafMa00"
+
+    def test_team(self, rz_passing_model):
+        first = rz_passing_model.players[0]
+        assert first.team == "LAR"
+        assert first.team_href == "/teams/ram/2025.htm"
+
+    def test_inside_20(self, rz_passing_model):
+        first = rz_passing_model.players[0]
+        assert first.pass_cmp == 66
+        assert first.pass_att == 104
+        assert first.pass_cmp_perc == pytest.approx(63.46)
+        assert first.pass_yds == 409
+        assert first.pass_td == 33
+        assert first.pass_int == 1
+
+    def test_inside_10(self, rz_passing_model):
+        first = rz_passing_model.players[0]
+        assert first.pass_cmp_in_10 == 34
+        assert first.pass_att_in_10 == 58
+        assert first.pass_cmp_perc_in_10 == pytest.approx(58.62)
+        assert first.pass_yds_in_10 == 143
+        assert first.pass_td_in_10 == 27
+        assert first.pass_int_in_10 == 1
+
+    def test_link(self, rz_passing_model):
+        first = rz_passing_model.players[0]
+        assert first.link_href is not None
+        assert "red-zone-passing-plays" in first.link_href
+
+
+# =========================================================================
+# Red zone passing — second player (Jared Goff)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZonePassingSecondPlayer:
+    def test_identity(self, rz_passing_model):
+        second = rz_passing_model.players[1]
+        assert second.player == "Jared Goff"
+        assert second.player_id == "GoffJa00"
+
+    def test_inside_20(self, rz_passing_model):
+        second = rz_passing_model.players[1]
+        assert second.pass_cmp == 48
+        assert second.pass_att == 86
+        assert second.pass_cmp_perc == pytest.approx(55.81)
+        assert second.pass_yds == 349
+        assert second.pass_td == 23
+        assert second.pass_int == 1
+
+    def test_inside_10(self, rz_passing_model):
+        second = rz_passing_model.players[1]
+        assert second.pass_cmp_in_10 == 21
+        assert second.pass_att_in_10 == 43
+        assert second.pass_cmp_perc_in_10 == pytest.approx(48.84)
+        assert second.pass_yds_in_10 == 107
+        assert second.pass_td_in_10 == 13
+        assert second.pass_int_in_10 == 0
+
+
+# =========================================================================
+# Red zone passing JSON serialization
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZonePassingJsonSerialization:
+    def test_roundtrip(self, rz_passing_model):
+        data = rz_passing_model.model_dump()
+        rebuilt = RedZonePassing.model_validate(data)
+        assert len(rebuilt.players) == len(rz_passing_model.players)
+
+    def test_data_preserved(self, rz_passing_model):
+        data = rz_passing_model.model_dump()
+        rebuilt = RedZonePassing.model_validate(data)
+        assert rebuilt.players[0].player == "Matthew Stafford"
+        assert rebuilt.players[0].pass_cmp == 66
+        assert rebuilt.players[0].pass_cmp_perc == pytest.approx(63.46)
+
+
+# =========================================================================
+# Red zone passing endpoint integration tests (mocked)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestGetRedZonePassingEndpoint:
+    def test_returns_model(self, rz_passing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_passing_html,
+        ) as mock_fetch:
+            result = pfr.fantasy.get_redzone_passing(year=2025)
+
+        mock_fetch.assert_called_once()
+        assert isinstance(result, RedZonePassing)
+        assert len(result.players) == 78
+
+    def test_url_construction(self, rz_passing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_passing_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_passing(year=2025)
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/years/2025/redzone-passing.htm" in url
+
+    def test_wait_for_element(self, rz_passing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_passing_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_passing(year=2025)
+
+        call_args = mock_fetch.call_args
+        wait_for = (
+            call_args[1].get("wait_for_element") if call_args[1] else call_args[0][1]
+        )
+        assert wait_for == "#fantasy_rz"
+
+
+# #########################################################################
+# RED ZONE RECEIVING TESTS
+# #########################################################################
+
+# -------------------------------------------------------------------------
+# Red zone receiving fixtures
+# -------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def rz_receiving_html() -> str:
+    return (FIXTURE_DIR / "redzone_receiving.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def rz_receiving_parsed(rz_receiving_html: str) -> dict:
+    return _parser.parse_redzone_receiving(rz_receiving_html)
+
+
+@pytest.fixture(scope="module")
+def rz_receiving_model(rz_receiving_parsed: dict) -> RedZoneReceiving:
+    return RedZoneReceiving.model_validate(rz_receiving_parsed)
+
+
+# =========================================================================
+# Red zone receiving smoke tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneReceivingSmoke:
+    def test_parse_returns_dict(self, rz_receiving_parsed):
+        assert isinstance(rz_receiving_parsed, dict)
+
+    def test_has_players_key(self, rz_receiving_parsed):
+        assert "players" in rz_receiving_parsed
+
+    def test_model_validates(self, rz_receiving_model):
+        assert isinstance(rz_receiving_model, RedZoneReceiving)
+
+    def test_player_count(self, rz_receiving_model):
+        assert len(rz_receiving_model.players) == 377
+
+
+# =========================================================================
+# Red zone receiving — first player (Amon-Ra St. Brown)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneReceivingFirstPlayer:
+    def test_identity(self, rz_receiving_model):
+        first = rz_receiving_model.players[0]
+        assert isinstance(first, RedZoneReceivingPlayer)
+        assert first.player == "Amon-Ra St. Brown"
+        assert first.player_href == "/players/S/StxxAm00.htm"
+        assert first.player_id == "StxxAm00"
+
+    def test_team(self, rz_receiving_model):
+        first = rz_receiving_model.players[0]
+        assert first.team == "DET"
+        assert first.team_href == "/teams/det/2025.htm"
+
+    def test_inside_20(self, rz_receiving_model):
+        first = rz_receiving_model.players[0]
+        assert first.targets == 34
+        assert first.rec == 20
+        assert first.catch_pct == pytest.approx(58.82)
+        assert first.rec_yds == 134
+        assert first.rec_td == 10
+        assert first.targets_pct == pytest.approx(41.5)
+
+    def test_inside_10(self, rz_receiving_model):
+        first = rz_receiving_model.players[0]
+        assert first.targets_in_10 == 21
+        assert first.rec_in_10 == 11
+        assert first.catch_pct_in_10 == pytest.approx(52.38)
+        assert first.rec_yds_in_10 == 57
+        assert first.rec_td_in_10 == 7
+        assert first.targets_in_10_pct == pytest.approx(50.0)
+
+    def test_link(self, rz_receiving_model):
+        first = rz_receiving_model.players[0]
+        assert first.link_href is not None
+        assert "red-zone-receiving-plays" in first.link_href
+
+
+# =========================================================================
+# Red zone receiving — second player (Trey McBride)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneReceivingSecondPlayer:
+    def test_identity(self, rz_receiving_model):
+        second = rz_receiving_model.players[1]
+        assert second.player == "Trey McBride"
+        assert second.player_id == "McBrTr01"
+
+    def test_inside_20(self, rz_receiving_model):
+        second = rz_receiving_model.players[1]
+        assert second.targets == 32
+        assert second.rec == 19
+        assert second.catch_pct == pytest.approx(59.38)
+        assert second.rec_yds == 157
+        assert second.rec_td == 10
+        assert second.targets_pct == pytest.approx(33.3)
+
+    def test_inside_10(self, rz_receiving_model):
+        second = rz_receiving_model.players[1]
+        assert second.targets_in_10 == 11
+        assert second.rec_in_10 == 6
+        assert second.catch_pct_in_10 == pytest.approx(54.55)
+        assert second.rec_yds_in_10 == 22
+        assert second.rec_td_in_10 == 4
+        assert second.targets_in_10_pct == pytest.approx(32.4)
+
+
+# =========================================================================
+# Red zone receiving JSON serialization
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneReceivingJsonSerialization:
+    def test_roundtrip(self, rz_receiving_model):
+        data = rz_receiving_model.model_dump()
+        rebuilt = RedZoneReceiving.model_validate(data)
+        assert len(rebuilt.players) == len(rz_receiving_model.players)
+
+    def test_data_preserved(self, rz_receiving_model):
+        data = rz_receiving_model.model_dump()
+        rebuilt = RedZoneReceiving.model_validate(data)
+        assert rebuilt.players[0].player == "Amon-Ra St. Brown"
+        assert rebuilt.players[0].targets == 34
+        assert rebuilt.players[0].catch_pct == pytest.approx(58.82)
+
+
+# =========================================================================
+# Red zone receiving endpoint integration tests (mocked)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestGetRedZoneReceivingEndpoint:
+    def test_returns_model(self, rz_receiving_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_receiving_html,
+        ) as mock_fetch:
+            result = pfr.fantasy.get_redzone_receiving(year=2025)
+
+        mock_fetch.assert_called_once()
+        assert isinstance(result, RedZoneReceiving)
+        assert len(result.players) == 377
+
+    def test_url_construction(self, rz_receiving_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_receiving_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_receiving(year=2025)
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/years/2025/redzone-receiving.htm" in url
+
+    def test_wait_for_element(self, rz_receiving_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_receiving_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_receiving(year=2025)
+
+        call_args = mock_fetch.call_args
+        wait_for = (
+            call_args[1].get("wait_for_element") if call_args[1] else call_args[0][1]
+        )
+        assert wait_for == "#fantasy_rz"
+
+
+# #########################################################################
+# RED ZONE RUSHING TESTS
+# #########################################################################
+
+# -------------------------------------------------------------------------
+# Red zone rushing fixtures
+# -------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def rz_rushing_html() -> str:
+    return (FIXTURE_DIR / "redzone_rushing.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def rz_rushing_parsed(rz_rushing_html: str) -> dict:
+    return _parser.parse_redzone_rushing(rz_rushing_html)
+
+
+@pytest.fixture(scope="module")
+def rz_rushing_model(rz_rushing_parsed: dict) -> RedZoneRushing:
+    return RedZoneRushing.model_validate(rz_rushing_parsed)
+
+
+# =========================================================================
+# Red zone rushing smoke tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneRushingSmoke:
+    def test_parse_returns_dict(self, rz_rushing_parsed):
+        assert isinstance(rz_rushing_parsed, dict)
+
+    def test_has_players_key(self, rz_rushing_parsed):
+        assert "players" in rz_rushing_parsed
+
+    def test_model_validates(self, rz_rushing_model):
+        assert isinstance(rz_rushing_model, RedZoneRushing)
+
+    def test_player_count(self, rz_rushing_model):
+        assert len(rz_rushing_model.players) == 214
+
+
+# =========================================================================
+# Red zone rushing — first player (Christian McCaffrey)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneRushingFirstPlayer:
+    def test_identity(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert isinstance(first, RedZoneRushingPlayer)
+        assert first.player == "Christian McCaffrey"
+        assert first.player_href == "/players/M/McCaCh01.htm"
+        assert first.player_id == "McCaCh01"
+
+    def test_team(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert first.team == "SFO"
+        assert first.team_href == "/teams/sfo/2025.htm"
+
+    def test_inside_20(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert first.rush_att == 71
+        assert first.rush_yds == 119
+        assert first.rush_td == 10
+        assert first.rush_att_pct == pytest.approx(76.3)
+
+    def test_inside_10(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert first.rush_att_in_10 == 37
+        assert first.rush_yds_in_10 == 62
+        assert first.rush_td_in_10 == 9
+        assert first.rush_att_in_10_pct == pytest.approx(80.4)
+
+    def test_inside_5(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert first.rush_att_in_5 == 18
+        assert first.rush_yds_in_5 == 26
+        assert first.rush_td_in_5 == 8
+        assert first.rush_att_in_5_pct == pytest.approx(78.3)
+
+    def test_link(self, rz_rushing_model):
+        first = rz_rushing_model.players[0]
+        assert first.link_href is not None
+        assert "red-zone-rushing-plays" in first.link_href
+
+
+# =========================================================================
+# Red zone rushing — second player (Jonathan Taylor)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneRushingSecondPlayer:
+    def test_identity(self, rz_rushing_model):
+        second = rz_rushing_model.players[1]
+        assert second.player == "Jonathan Taylor"
+        assert second.player_id == "TaylJo02"
+
+    def test_inside_20(self, rz_rushing_model):
+        second = rz_rushing_model.players[1]
+        assert second.rush_att == 70
+        assert second.rush_yds == 204
+        assert second.rush_td == 14
+        assert second.rush_att_pct == pytest.approx(69.3)
+
+    def test_inside_10(self, rz_rushing_model):
+        second = rz_rushing_model.players[1]
+        assert second.rush_att_in_10 == 39
+        assert second.rush_yds_in_10 == 71
+        assert second.rush_td_in_10 == 12
+        assert second.rush_att_in_10_pct == pytest.approx(67.2)
+
+    def test_inside_5(self, rz_rushing_model):
+        second = rz_rushing_model.players[1]
+        assert second.rush_att_in_5 == 19
+        assert second.rush_yds_in_5 == 19
+        assert second.rush_td_in_5 == 9
+        assert second.rush_att_in_5_pct == pytest.approx(61.3)
+
+
+# =========================================================================
+# Red zone rushing JSON serialization
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRedZoneRushingJsonSerialization:
+    def test_roundtrip(self, rz_rushing_model):
+        data = rz_rushing_model.model_dump()
+        rebuilt = RedZoneRushing.model_validate(data)
+        assert len(rebuilt.players) == len(rz_rushing_model.players)
+
+    def test_data_preserved(self, rz_rushing_model):
+        data = rz_rushing_model.model_dump()
+        rebuilt = RedZoneRushing.model_validate(data)
+        assert rebuilt.players[0].player == "Christian McCaffrey"
+        assert rebuilt.players[0].rush_att == 71
+        assert rebuilt.players[0].rush_att_pct == pytest.approx(76.3)
+
+
+# =========================================================================
+# Red zone rushing endpoint integration tests (mocked)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestGetRedZoneRushingEndpoint:
+    def test_returns_model(self, rz_rushing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_rushing_html,
+        ) as mock_fetch:
+            result = pfr.fantasy.get_redzone_rushing(year=2025)
+
+        mock_fetch.assert_called_once()
+        assert isinstance(result, RedZoneRushing)
+        assert len(result.players) == 214
+
+    def test_url_construction(self, rz_rushing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_rushing_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_rushing(year=2025)
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/years/2025/redzone-rushing.htm" in url
+
+    def test_wait_for_element(self, rz_rushing_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rz_rushing_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_redzone_rushing(year=2025)
+
+        call_args = mock_fetch.call_args
+        wait_for = (
+            call_args[1].get("wait_for_element") if call_args[1] else call_args[0][1]
+        )
+        assert wait_for == "#fantasy_rz"
+
+
+# =========================================================================
+# safe_pct helper tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestSafePct:
+    def test_strips_percent_sign(self):
+        from griddy.pfr.parsers._helpers import safe_pct
+
+        assert safe_pct("58.82%") == pytest.approx(58.82)
+
+    def test_plain_float(self):
+        from griddy.pfr.parsers._helpers import safe_pct
+
+        assert safe_pct("63.46") == pytest.approx(63.46)
+
+    def test_empty_string_returns_none(self):
+        from griddy.pfr.parsers._helpers import safe_pct
+
+        assert safe_pct("") is None
+
+    def test_non_numeric_returns_none(self):
+        from griddy.pfr.parsers._helpers import safe_pct
+
+        assert safe_pct("abc%") is None

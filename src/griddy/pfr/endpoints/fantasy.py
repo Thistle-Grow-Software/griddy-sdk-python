@@ -6,6 +6,12 @@ Provides:
   (``/fantasy/{position}-fantasy-matchups.htm``)
 - ``get_points_allowed()`` — Fantasy Points Allowed
   (``/years/{year}/fantasy-points-against-{position}.htm``)
+- ``get_redzone_passing()`` — Red Zone Passing
+  (``/years/{year}/redzone-passing.htm``)
+- ``get_redzone_receiving()`` — Red Zone Receiving
+  (``/years/{year}/redzone-receiving.htm``)
+- ``get_redzone_rushing()`` — Red Zone Rushing
+  (``/years/{year}/redzone-rushing.htm``)
 """
 
 from typing import Literal, Optional
@@ -13,7 +19,14 @@ from typing import Literal, Optional
 from griddy.pfr.parsers.fantasy import FantasyParser
 
 from ..basesdk import BaseSDK, EndpointConfig
-from ..models import FantasyMatchups, FantasyPointsAllowed, TopFantasyPlayers
+from ..models import (
+    FantasyMatchups,
+    FantasyPointsAllowed,
+    RedZonePassing,
+    RedZoneReceiving,
+    RedZoneRushing,
+    TopFantasyPlayers,
+)
 
 _parser = FantasyParser()
 
@@ -158,3 +171,135 @@ class Fantasy(BaseSDK):
         )
         data = self._execute_endpoint(config)
         return FantasyPointsAllowed.model_validate(data)
+
+    # ── Red Zone Passing ──────────────────────────────────────────────
+
+    def _get_redzone_passing_config(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> EndpointConfig:
+        return EndpointConfig(
+            path_template="/years/{year}/redzone-passing.htm",
+            operation_id="getRedZonePassing",
+            wait_for_element="#fantasy_rz",
+            parser=lambda html: _parser.parse_redzone_passing(html),
+            response_type=RedZonePassing,
+            path_params={"year": year},
+            timeout_ms=timeout_ms,
+        )
+
+    def get_redzone_passing(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> RedZonePassing:
+        """Fetch and parse the Red Zone Passing page from Pro Football Reference.
+
+        Scrapes
+        ``https://www.pro-football-reference.com/years/{year}/redzone-passing.htm``
+        and returns per-player red zone passing stats for Inside 20 and
+        Inside 10.
+
+        Args:
+            year: The NFL season year (e.g. 2025).
+            timeout_ms: Optional timeout in milliseconds for the page
+                selector.
+
+        Returns:
+            A :class:`~griddy.pfr.models.RedZonePassing` instance containing
+            all player entries.
+        """
+        config = self._get_redzone_passing_config(year=year, timeout_ms=timeout_ms)
+        data = self._execute_endpoint(config)
+        return RedZonePassing.model_validate(data)
+
+    # ── Red Zone Receiving ────────────────────────────────────────────
+
+    def _get_redzone_receiving_config(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> EndpointConfig:
+        return EndpointConfig(
+            path_template="/years/{year}/redzone-receiving.htm",
+            operation_id="getRedZoneReceiving",
+            wait_for_element="#fantasy_rz",
+            parser=lambda html: _parser.parse_redzone_receiving(html),
+            response_type=RedZoneReceiving,
+            path_params={"year": year},
+            timeout_ms=timeout_ms,
+        )
+
+    def get_redzone_receiving(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> RedZoneReceiving:
+        """Fetch and parse the Red Zone Receiving page from Pro Football Reference.
+
+        Scrapes
+        ``https://www.pro-football-reference.com/years/{year}/redzone-receiving.htm``
+        and returns per-player red zone receiving stats for Inside 20 and
+        Inside 10.
+
+        Args:
+            year: The NFL season year (e.g. 2025).
+            timeout_ms: Optional timeout in milliseconds for the page
+                selector.
+
+        Returns:
+            A :class:`~griddy.pfr.models.RedZoneReceiving` instance containing
+            all player entries.
+        """
+        config = self._get_redzone_receiving_config(year=year, timeout_ms=timeout_ms)
+        data = self._execute_endpoint(config)
+        return RedZoneReceiving.model_validate(data)
+
+    # ── Red Zone Rushing ──────────────────────────────────────────────
+
+    def _get_redzone_rushing_config(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> EndpointConfig:
+        return EndpointConfig(
+            path_template="/years/{year}/redzone-rushing.htm",
+            operation_id="getRedZoneRushing",
+            wait_for_element="#fantasy_rz",
+            parser=lambda html: _parser.parse_redzone_rushing(html),
+            response_type=RedZoneRushing,
+            path_params={"year": year},
+            timeout_ms=timeout_ms,
+        )
+
+    def get_redzone_rushing(
+        self,
+        *,
+        year: int,
+        timeout_ms: Optional[int] = None,
+    ) -> RedZoneRushing:
+        """Fetch and parse the Red Zone Rushing page from Pro Football Reference.
+
+        Scrapes
+        ``https://www.pro-football-reference.com/years/{year}/redzone-rushing.htm``
+        and returns per-player red zone rushing stats for Inside 20,
+        Inside 10, and Inside 5.
+
+        Args:
+            year: The NFL season year (e.g. 2025).
+            timeout_ms: Optional timeout in milliseconds for the page
+                selector.
+
+        Returns:
+            A :class:`~griddy.pfr.models.RedZoneRushing` instance containing
+            all player entries.
+        """
+        config = self._get_redzone_rushing_config(year=year, timeout_ms=timeout_ms)
+        data = self._execute_endpoint(config)
+        return RedZoneRushing.model_validate(data)
