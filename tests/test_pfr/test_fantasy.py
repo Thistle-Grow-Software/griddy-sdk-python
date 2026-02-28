@@ -2,6 +2,7 @@
 
 Covers:
 - Top Fantasy Players (``/years/{year}/fantasy.htm``)
+- Fantasy Matchups (``/fantasy/{position}-fantasy-matchups.htm``)
 """
 
 from unittest.mock import patch
@@ -9,6 +10,8 @@ from unittest.mock import patch
 import pytest
 
 from griddy.pfr.models import (
+    FantasyMatchupPlayer,
+    FantasyMatchups,
     FantasyPlayer,
     TopFantasyPlayers,
 )
@@ -281,3 +284,364 @@ class TestLazyLoading:
     def test_fantasy_cached(self):
         pfr = GriddyPFR()
         assert pfr.fantasy is pfr.fantasy
+
+
+# #########################################################################
+# MATCHUPS TESTS
+# #########################################################################
+
+# -------------------------------------------------------------------------
+# Matchup fixtures
+# -------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def qb_matchups_html() -> str:
+    return (FIXTURE_DIR / "qb_matchups.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def wr_matchups_html() -> str:
+    return (FIXTURE_DIR / "wr_matchups.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def rb_matchups_html() -> str:
+    return (FIXTURE_DIR / "rb_matchups.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def te_matchups_html() -> str:
+    return (FIXTURE_DIR / "te_matchups.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def qb_matchups_parsed(qb_matchups_html: str) -> dict:
+    return _parser.parse_matchups(qb_matchups_html)
+
+
+@pytest.fixture(scope="module")
+def wr_matchups_parsed(wr_matchups_html: str) -> dict:
+    return _parser.parse_matchups(wr_matchups_html)
+
+
+@pytest.fixture(scope="module")
+def rb_matchups_parsed(rb_matchups_html: str) -> dict:
+    return _parser.parse_matchups(rb_matchups_html)
+
+
+@pytest.fixture(scope="module")
+def te_matchups_parsed(te_matchups_html: str) -> dict:
+    return _parser.parse_matchups(te_matchups_html)
+
+
+@pytest.fixture(scope="module")
+def qb_matchups_model(qb_matchups_parsed: dict) -> FantasyMatchups:
+    return FantasyMatchups.model_validate(qb_matchups_parsed)
+
+
+@pytest.fixture(scope="module")
+def wr_matchups_model(wr_matchups_parsed: dict) -> FantasyMatchups:
+    return FantasyMatchups.model_validate(wr_matchups_parsed)
+
+
+@pytest.fixture(scope="module")
+def rb_matchups_model(rb_matchups_parsed: dict) -> FantasyMatchups:
+    return FantasyMatchups.model_validate(rb_matchups_parsed)
+
+
+@pytest.fixture(scope="module")
+def te_matchups_model(te_matchups_parsed: dict) -> FantasyMatchups:
+    return FantasyMatchups.model_validate(te_matchups_parsed)
+
+
+# =========================================================================
+# Matchup smoke tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestMatchupsSmoke:
+    def test_qb_parse_returns_dict(self, qb_matchups_parsed):
+        assert isinstance(qb_matchups_parsed, dict)
+        assert "players" in qb_matchups_parsed
+
+    def test_wr_parse_returns_dict(self, wr_matchups_parsed):
+        assert isinstance(wr_matchups_parsed, dict)
+        assert "players" in wr_matchups_parsed
+
+    def test_rb_parse_returns_dict(self, rb_matchups_parsed):
+        assert isinstance(rb_matchups_parsed, dict)
+        assert "players" in rb_matchups_parsed
+
+    def test_te_parse_returns_dict(self, te_matchups_parsed):
+        assert isinstance(te_matchups_parsed, dict)
+        assert "players" in te_matchups_parsed
+
+    def test_qb_model_validates(self, qb_matchups_model):
+        assert isinstance(qb_matchups_model, FantasyMatchups)
+
+    def test_qb_player_count(self, qb_matchups_model):
+        assert len(qb_matchups_model.players) == 67
+
+    def test_wr_player_count(self, wr_matchups_model):
+        assert len(wr_matchups_model.players) == 161
+
+    def test_rb_player_count(self, rb_matchups_model):
+        assert len(rb_matchups_model.players) == 101
+
+    def test_te_player_count(self, te_matchups_model):
+        assert len(te_matchups_model.players) == 98
+
+
+# =========================================================================
+# QB matchup — first player (Jalen Hurts)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestQBMatchupFirstPlayer:
+    def test_identity(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert isinstance(first, FantasyMatchupPlayer)
+        assert first.player == "Jalen Hurts"
+        assert first.player_href == "/players/H/HurtJa00.htm"
+        assert first.player_id == "HurtJa00"
+
+    def test_team(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.team == "PHI"
+        assert first.team_href == "/teams/phi/2025.htm"
+
+    def test_games(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.g == 15
+        assert first.gs == 15
+
+    def test_snaps(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.snaps == "1190 (92.11%)"
+
+    def test_passing(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.pass_cmp == pytest.approx(16.5)
+        assert first.pass_att == pytest.approx(24.1)
+        assert first.pass_yds == pytest.approx(193.5)
+        assert first.pass_td == pytest.approx(1.2)
+        assert first.pass_int == pytest.approx(0.3)
+        assert first.pass_sacked == pytest.approx(2.5)
+
+    def test_rushing(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.rush_att == pytest.approx(10.0)
+        assert first.rush_yds == pytest.approx(42.0)
+        assert first.rush_td == pytest.approx(0.9)
+
+    def test_fantasy_per_game(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.fantasy_points_per_game == pytest.approx(21.0)
+        assert first.draftkings_points_per_game == pytest.approx(21.9)
+        assert first.fanduel_points_per_game == pytest.approx(21.3)
+
+    def test_matchup(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.opp == "DAL"
+        assert first.opp_href == "/teams/dal/2025.htm"
+        assert first.rank == 32
+
+    def test_opp_fantasy_allowed(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.opp_fantasy_points_per_game == pytest.approx(20.9)
+        assert first.opp_draftkings_points_per_game == pytest.approx(22.5)
+        assert first.opp_fanduel_points_per_game == pytest.approx(21.7)
+
+    def test_proj_ranks(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.fantasy_points_proj_rank == 1
+        assert first.draftkings_points_proj_rank == 2
+        assert first.fanduel_points_proj_rank == 2
+
+    def test_qb_has_no_receiving(self, qb_matchups_model):
+        first = qb_matchups_model.players[0]
+        assert first.targets is None
+        assert first.rec is None
+        assert first.rec_yds is None
+        assert first.rec_td is None
+
+
+# =========================================================================
+# WR matchup — first player (Ja'Marr Chase)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestWRMatchupFirstPlayer:
+    def test_identity(self, wr_matchups_model):
+        first = wr_matchups_model.players[0]
+        assert first.player == "Ja'Marr Chase"
+        assert first.player_id == "ChasJa00"
+
+    def test_receiving(self, wr_matchups_model):
+        first = wr_matchups_model.players[0]
+        assert first.targets == pytest.approx(10.3)
+        assert first.rec == pytest.approx(7.5)
+        assert first.rec_yds == pytest.approx(100.5)
+        assert first.rec_td == pytest.approx(1.0)
+
+    def test_wr_has_no_passing(self, wr_matchups_model):
+        first = wr_matchups_model.players[0]
+        assert first.pass_cmp is None
+        assert first.pass_att is None
+        assert first.pass_yds is None
+        assert first.pass_td is None
+        assert first.pass_int is None
+        assert first.pass_sacked is None
+
+    def test_wr_has_no_rushing(self, wr_matchups_model):
+        first = wr_matchups_model.players[0]
+        assert first.rush_att is None
+        assert first.rush_yds is None
+        assert first.rush_td is None
+
+    def test_fantasy_per_game(self, wr_matchups_model):
+        first = wr_matchups_model.players[0]
+        assert first.fantasy_points_per_game == pytest.approx(16.2)
+        assert first.draftkings_points_per_game == pytest.approx(24.6)
+        assert first.fanduel_points_per_game == pytest.approx(20.0)
+
+
+# =========================================================================
+# RB matchup — first player (Saquon Barkley)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRBMatchupFirstPlayer:
+    def test_identity(self, rb_matchups_model):
+        first = rb_matchups_model.players[0]
+        assert first.player == "Saquon Barkley"
+        assert first.player_id == "BarkSa00"
+
+    def test_rushing(self, rb_matchups_model):
+        first = rb_matchups_model.players[0]
+        assert first.rush_att == pytest.approx(21.6)
+        assert first.rush_yds == pytest.approx(125.3)
+        assert first.rush_td == pytest.approx(0.8)
+
+    def test_receiving(self, rb_matchups_model):
+        first = rb_matchups_model.players[0]
+        assert first.targets == pytest.approx(2.7)
+        assert first.rec == pytest.approx(2.1)
+        assert first.rec_yds == pytest.approx(17.4)
+        assert first.rec_td == pytest.approx(0.1)
+
+    def test_rb_has_no_passing(self, rb_matchups_model):
+        first = rb_matchups_model.players[0]
+        assert first.pass_cmp is None
+        assert first.pass_att is None
+
+
+# =========================================================================
+# TE matchup — first player (George Kittle)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestTEMatchupFirstPlayer:
+    def test_identity(self, te_matchups_model):
+        first = te_matchups_model.players[0]
+        assert first.player == "George Kittle"
+        assert first.player_id == "KittGe00"
+
+    def test_receiving(self, te_matchups_model):
+        first = te_matchups_model.players[0]
+        assert first.targets == pytest.approx(6.3)
+        assert first.rec == pytest.approx(5.2)
+        assert first.rec_yds == pytest.approx(73.7)
+        assert first.rec_td == pytest.approx(0.5)
+
+    def test_matchup(self, te_matchups_model):
+        first = te_matchups_model.players[0]
+        assert first.opp == "SEA"
+        assert first.rank == 13
+
+
+# =========================================================================
+# Matchup JSON serialization
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestMatchupsJsonSerialization:
+    def test_roundtrip(self, qb_matchups_model):
+        data = qb_matchups_model.model_dump()
+        rebuilt = FantasyMatchups.model_validate(data)
+        assert len(rebuilt.players) == len(qb_matchups_model.players)
+
+    def test_data_preserved(self, qb_matchups_model):
+        data = qb_matchups_model.model_dump()
+        rebuilt = FantasyMatchups.model_validate(data)
+        assert rebuilt.players[0].player == "Jalen Hurts"
+        assert rebuilt.players[0].pass_yds == pytest.approx(193.5)
+
+
+# =========================================================================
+# Matchup endpoint integration tests (mocked)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestGetMatchupsEndpoint:
+    def test_returns_model(self, qb_matchups_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_matchups_html,
+        ) as mock_fetch:
+            result = pfr.fantasy.get_matchups(position="qb")
+
+        mock_fetch.assert_called_once()
+        assert isinstance(result, FantasyMatchups)
+        assert len(result.players) == 67
+
+    def test_url_construction(self, qb_matchups_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_matchups_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_matchups(position="qb")
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/fantasy/qb-fantasy-matchups.htm" in url
+
+    def test_wait_for_element(self, qb_matchups_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_matchups_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_matchups(position="qb")
+
+        call_args = mock_fetch.call_args
+        wait_for = (
+            call_args[1].get("wait_for_element") if call_args[1] else call_args[0][1]
+        )
+        assert wait_for == "#fantasy_stats"
+
+    def test_rb_position_url(self, rb_matchups_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=rb_matchups_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_matchups(position="rb")
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/fantasy/rb-fantasy-matchups.htm" in url
