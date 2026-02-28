@@ -13,6 +13,8 @@ from griddy.pfr.models import (
     FantasyMatchupPlayer,
     FantasyMatchups,
     FantasyPlayer,
+    FantasyPointsAllowed,
+    FantasyPointsAllowedTeam,
     TopFantasyPlayers,
 )
 from griddy.pfr.parsers.fantasy import FantasyParser
@@ -645,3 +647,383 @@ class TestGetMatchupsEndpoint:
         call_args = mock_fetch.call_args
         url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
         assert "/fantasy/rb-fantasy-matchups.htm" in url
+
+
+# #########################################################################
+# POINTS ALLOWED TESTS
+# #########################################################################
+
+# -------------------------------------------------------------------------
+# Points allowed fixtures
+# -------------------------------------------------------------------------
+
+
+@pytest.fixture(scope="module")
+def qb_points_allowed_html() -> str:
+    return (FIXTURE_DIR / "qb_points_allowed.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def wr_points_allowed_html() -> str:
+    return (FIXTURE_DIR / "wr_points_allowed.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def rb_points_allowed_html() -> str:
+    return (FIXTURE_DIR / "rb_points_allowed.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def te_points_allowed_html() -> str:
+    return (FIXTURE_DIR / "te_points_allowed.htm").read_text()
+
+
+@pytest.fixture(scope="module")
+def qb_points_allowed_parsed(qb_points_allowed_html: str) -> dict:
+    return _parser.parse_points_allowed(qb_points_allowed_html)
+
+
+@pytest.fixture(scope="module")
+def wr_points_allowed_parsed(wr_points_allowed_html: str) -> dict:
+    return _parser.parse_points_allowed(wr_points_allowed_html)
+
+
+@pytest.fixture(scope="module")
+def rb_points_allowed_parsed(rb_points_allowed_html: str) -> dict:
+    return _parser.parse_points_allowed(rb_points_allowed_html)
+
+
+@pytest.fixture(scope="module")
+def te_points_allowed_parsed(te_points_allowed_html: str) -> dict:
+    return _parser.parse_points_allowed(te_points_allowed_html)
+
+
+@pytest.fixture(scope="module")
+def qb_points_allowed_model(qb_points_allowed_parsed: dict) -> FantasyPointsAllowed:
+    return FantasyPointsAllowed.model_validate(qb_points_allowed_parsed)
+
+
+@pytest.fixture(scope="module")
+def wr_points_allowed_model(wr_points_allowed_parsed: dict) -> FantasyPointsAllowed:
+    return FantasyPointsAllowed.model_validate(wr_points_allowed_parsed)
+
+
+@pytest.fixture(scope="module")
+def rb_points_allowed_model(rb_points_allowed_parsed: dict) -> FantasyPointsAllowed:
+    return FantasyPointsAllowed.model_validate(rb_points_allowed_parsed)
+
+
+@pytest.fixture(scope="module")
+def te_points_allowed_model(te_points_allowed_parsed: dict) -> FantasyPointsAllowed:
+    return FantasyPointsAllowed.model_validate(te_points_allowed_parsed)
+
+
+# =========================================================================
+# Points allowed smoke tests
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestPointsAllowedSmoke:
+    def test_qb_parse_returns_dict(self, qb_points_allowed_parsed):
+        assert isinstance(qb_points_allowed_parsed, dict)
+        assert "teams" in qb_points_allowed_parsed
+
+    def test_wr_parse_returns_dict(self, wr_points_allowed_parsed):
+        assert isinstance(wr_points_allowed_parsed, dict)
+        assert "teams" in wr_points_allowed_parsed
+
+    def test_rb_parse_returns_dict(self, rb_points_allowed_parsed):
+        assert isinstance(rb_points_allowed_parsed, dict)
+        assert "teams" in rb_points_allowed_parsed
+
+    def test_te_parse_returns_dict(self, te_points_allowed_parsed):
+        assert isinstance(te_points_allowed_parsed, dict)
+        assert "teams" in te_points_allowed_parsed
+
+    def test_qb_model_validates(self, qb_points_allowed_model):
+        assert isinstance(qb_points_allowed_model, FantasyPointsAllowed)
+
+    def test_qb_team_count(self, qb_points_allowed_model):
+        assert len(qb_points_allowed_model.teams) == 32
+
+    def test_wr_team_count(self, wr_points_allowed_model):
+        assert len(wr_points_allowed_model.teams) == 32
+
+    def test_rb_team_count(self, rb_points_allowed_model):
+        assert len(rb_points_allowed_model.teams) == 32
+
+    def test_te_team_count(self, te_points_allowed_model):
+        assert len(te_points_allowed_model.teams) == 32
+
+
+# =========================================================================
+# QB points allowed — first team (Dallas Cowboys)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestQBPointsAllowedFirstTeam:
+    def test_identity(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert isinstance(first, FantasyPointsAllowedTeam)
+        assert first.team == "Dallas Cowboys"
+        assert first.team_href == "/teams/dal/2025.htm"
+
+    def test_games(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.g == 17
+
+    def test_passing(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.pass_cmp == 381
+        assert first.pass_att == 555
+        assert first.pass_yds == 4521
+        assert first.pass_td == 35
+        assert first.pass_int == 6
+
+    def test_scoring_and_sacked(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.two_pt_pass == 2
+        assert first.pass_sacked == 34
+
+    def test_rushing(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.rush_att == 88
+        assert first.rush_yds == 398
+        assert first.rush_td == 8
+
+    def test_fantasy_totals(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.fantasy_points == pytest.approx(397.04)
+        assert first.draftkings_points == pytest.approx(416.6)
+        assert first.fanduel_points == pytest.approx(402.6)
+
+    def test_fantasy_per_game(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.fantasy_points_per_game == pytest.approx(23.4)
+        assert first.draftkings_points_per_game == pytest.approx(24.5)
+        assert first.fanduel_points_per_game == pytest.approx(23.7)
+
+    def test_qb_has_no_receiving(self, qb_points_allowed_model):
+        first = qb_points_allowed_model.teams[0]
+        assert first.targets is None
+        assert first.rec is None
+        assert first.rec_yds is None
+        assert first.rec_td is None
+
+
+# =========================================================================
+# WR points allowed — first team (Dallas Cowboys)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestWRPointsAllowedFirstTeam:
+    def test_identity(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.team == "Dallas Cowboys"
+        assert first.team_href == "/teams/dal/2025.htm"
+
+    def test_games(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.g == 17
+
+    def test_receiving(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.targets == 302
+        assert first.rec == 206
+        assert first.rec_yds == 2907
+        assert first.rec_td == 26
+
+    def test_fantasy_totals(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.fantasy_points == pytest.approx(460.30)
+        assert first.draftkings_points == pytest.approx(685.3)
+        assert first.fanduel_points == pytest.approx(563.3)
+
+    def test_fantasy_per_game(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.fantasy_points_per_game == pytest.approx(27.1)
+        assert first.draftkings_points_per_game == pytest.approx(40.3)
+        assert first.fanduel_points_per_game == pytest.approx(33.1)
+
+    def test_wr_has_no_passing(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.pass_cmp is None
+        assert first.pass_att is None
+        assert first.pass_yds is None
+        assert first.pass_td is None
+        assert first.pass_int is None
+        assert first.pass_sacked is None
+
+    def test_wr_has_no_rushing(self, wr_points_allowed_model):
+        first = wr_points_allowed_model.teams[0]
+        assert first.rush_att is None
+        assert first.rush_yds is None
+        assert first.rush_td is None
+
+
+# =========================================================================
+# RB points allowed — first team (New York Jets)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestRBPointsAllowedFirstTeam:
+    def test_identity(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.team == "New York Jets"
+        assert first.team_href == "/teams/nyj/2025.htm"
+
+    def test_games(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.g == 17
+
+    def test_rushing(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.rush_att == 430
+        assert first.rush_yds == 1873
+        assert first.rush_td == 17
+
+    def test_receiving(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.targets == 80
+        assert first.rec == 62
+        assert first.rec_yds == 587
+        assert first.rec_td == 11
+
+    def test_fantasy_totals(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.fantasy_points == pytest.approx(414.30)
+        assert first.draftkings_points == pytest.approx(491.0)
+        assert first.fanduel_points == pytest.approx(445.0)
+
+    def test_fantasy_per_game(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.fantasy_points_per_game == pytest.approx(24.4)
+        assert first.draftkings_points_per_game == pytest.approx(28.9)
+        assert first.fanduel_points_per_game == pytest.approx(26.2)
+
+    def test_rb_has_no_passing(self, rb_points_allowed_model):
+        first = rb_points_allowed_model.teams[0]
+        assert first.pass_cmp is None
+        assert first.pass_att is None
+
+
+# =========================================================================
+# TE points allowed — first team (Cincinnati Bengals)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestTEPointsAllowedFirstTeam:
+    def test_identity(self, te_points_allowed_model):
+        first = te_points_allowed_model.teams[0]
+        assert first.team == "Cincinnati Bengals"
+        assert first.team_href == "/teams/cin/2025.htm"
+
+    def test_games(self, te_points_allowed_model):
+        first = te_points_allowed_model.teams[0]
+        assert first.g == 17
+
+    def test_receiving(self, te_points_allowed_model):
+        first = te_points_allowed_model.teams[0]
+        assert first.targets == 165
+        assert first.rec == 116
+        assert first.rec_yds == 1444
+        assert first.rec_td == 16
+
+    def test_fantasy_totals(self, te_points_allowed_model):
+        first = te_points_allowed_model.teams[0]
+        assert first.fantasy_points == pytest.approx(239.00)
+        assert first.draftkings_points == pytest.approx(366.0)
+        assert first.fanduel_points == pytest.approx(297.0)
+
+    def test_fantasy_per_game(self, te_points_allowed_model):
+        first = te_points_allowed_model.teams[0]
+        assert first.fantasy_points_per_game == pytest.approx(14.1)
+        assert first.draftkings_points_per_game == pytest.approx(21.5)
+        assert first.fanduel_points_per_game == pytest.approx(17.5)
+
+
+# =========================================================================
+# Points allowed JSON serialization
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestPointsAllowedJsonSerialization:
+    def test_roundtrip(self, qb_points_allowed_model):
+        data = qb_points_allowed_model.model_dump()
+        rebuilt = FantasyPointsAllowed.model_validate(data)
+        assert len(rebuilt.teams) == len(qb_points_allowed_model.teams)
+
+    def test_data_preserved(self, qb_points_allowed_model):
+        data = qb_points_allowed_model.model_dump()
+        rebuilt = FantasyPointsAllowed.model_validate(data)
+        assert rebuilt.teams[0].team == "Dallas Cowboys"
+        assert rebuilt.teams[0].pass_yds == 4521
+        assert rebuilt.teams[0].fantasy_points == pytest.approx(397.04)
+
+
+# =========================================================================
+# Points allowed endpoint integration tests (mocked)
+# =========================================================================
+
+
+@pytest.mark.unit
+class TestGetPointsAllowedEndpoint:
+    def test_returns_model(self, qb_points_allowed_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_points_allowed_html,
+        ) as mock_fetch:
+            result = pfr.fantasy.get_points_allowed(year=2025, position="qb")
+
+        mock_fetch.assert_called_once()
+        assert isinstance(result, FantasyPointsAllowed)
+        assert len(result.teams) == 32
+
+    def test_url_construction(self, qb_points_allowed_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_points_allowed_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_points_allowed(year=2025, position="qb")
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/years/2025/fantasy-points-against-qb.htm" in url
+
+    def test_wait_for_element(self, qb_points_allowed_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=qb_points_allowed_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_points_allowed(year=2025, position="qb")
+
+        call_args = mock_fetch.call_args
+        wait_for = (
+            call_args[1].get("wait_for_element") if call_args[1] else call_args[0][1]
+        )
+        assert wait_for == "#fantasy_def"
+
+    def test_te_position_url(self, te_points_allowed_html):
+        pfr = GriddyPFR()
+        with patch.object(
+            pfr.fantasy.browserless,
+            "get_page_content",
+            return_value=te_points_allowed_html,
+        ) as mock_fetch:
+            pfr.fantasy.get_points_allowed(year=2025, position="te")
+
+        call_args = mock_fetch.call_args
+        url = call_args[0][0] if call_args[0] else call_args[1].get("url", "")
+        assert "/years/2025/fantasy-points-against-te.htm" in url

@@ -232,3 +232,93 @@ class FantasyMatchupsTypedDict(TypedDict):
 
 class FantasyMatchups(BaseModel):
     players: List[FantasyMatchupPlayer] = []
+
+
+# ---------------------------------------------------------------------------
+# FantasyPointsAllowedTeam
+# (one row in /years/{year}/fantasy-points-against-{position}.htm)
+# ---------------------------------------------------------------------------
+
+
+class FantasyPointsAllowedTeamTypedDict(TypedDict):
+    team: NotRequired[str]
+    team_href: NotRequired[str]
+    g: NotRequired[int]
+    # Passing (QB only)
+    pass_cmp: NotRequired[int]
+    pass_att: NotRequired[int]
+    pass_yds: NotRequired[int]
+    pass_td: NotRequired[int]
+    pass_int: NotRequired[int]
+    two_pt_pass: NotRequired[int]
+    pass_sacked: NotRequired[int]
+    # Rushing (QB / RB)
+    rush_att: NotRequired[int]
+    rush_yds: NotRequired[int]
+    rush_td: NotRequired[int]
+    # Receiving (WR / RB / TE)
+    targets: NotRequired[int]
+    rec: NotRequired[int]
+    rec_yds: NotRequired[int]
+    rec_td: NotRequired[int]
+    # Scoring (WR / RB / TE)
+    two_pt_md: NotRequired[int]
+    # Fumbles (WR / RB / TE)
+    fumbles_lost: NotRequired[int]
+    # Fantasy totals
+    fantasy_points: NotRequired[Any]
+    draftkings_points: NotRequired[Any]
+    fanduel_points: NotRequired[Any]
+    # Fantasy per game
+    fantasy_points_per_game: NotRequired[Any]
+    draftkings_points_per_game: NotRequired[Any]
+    fanduel_points_per_game: NotRequired[Any]
+
+
+class FantasyPointsAllowedTeam(BaseModel):
+    team: Optional[str] = None
+    team_href: Optional[str] = None
+    g: Optional[int] = None
+    # Passing (QB only)
+    pass_cmp: Optional[int] = None
+    pass_att: Optional[int] = None
+    pass_yds: Optional[int] = None
+    pass_td: Optional[int] = None
+    pass_int: Optional[int] = None
+    two_pt_pass: Optional[int] = None
+    pass_sacked: Optional[int] = None
+    # Rushing (QB / RB)
+    rush_att: Optional[int] = None
+    rush_yds: Optional[int] = None
+    rush_td: Optional[int] = None
+    # Receiving (WR / RB / TE)
+    targets: Optional[int] = None
+    rec: Optional[int] = None
+    rec_yds: Optional[int] = None
+    rec_td: Optional[int] = None
+    # Scoring (WR / RB / TE)
+    two_pt_md: Optional[int] = None
+    # Fumbles (WR / RB / TE)
+    fumbles_lost: Optional[int] = None
+    # Fantasy totals
+    fantasy_points: Optional[float] = None
+    draftkings_points: Optional[float] = None
+    fanduel_points: Optional[float] = None
+    # Fantasy per game
+    fantasy_points_per_game: Optional[float] = None
+    draftkings_points_per_game: Optional[float] = None
+    fanduel_points_per_game: Optional[float] = None
+
+
+# ---------------------------------------------------------------------------
+# FantasyPointsAllowed
+# (top-level for /years/{year}/fantasy-points-against-{position}.htm)
+# ---------------------------------------------------------------------------
+
+
+class FantasyPointsAllowedTypedDict(TypedDict):
+    teams: NotRequired[List[FantasyPointsAllowedTeamTypedDict]]
+
+
+class FantasyPointsAllowed(BaseModel):
+    teams: List[FantasyPointsAllowedTeam] = []
