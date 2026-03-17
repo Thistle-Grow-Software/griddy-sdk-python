@@ -8,7 +8,7 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
 
 jobs:
   quality-gates:
@@ -19,3 +19,8 @@ jobs:
       codecov-slug: "Thistle-Grow-Software/griddy-sdk-python"
     secrets:
       codecov-token: ${{ secrets.CODECOV_TOKEN }}
+
+  release:
+    if: github.ref == 'refs/heads/master'
+    needs: [quality-gates]
+    uses: Thistle-Grow-Software/.github/.github/workflows/create-release.yml@main
