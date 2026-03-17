@@ -9,7 +9,7 @@ This mixin provides that behaviour so each class only needs to define its
 ``_sub_sdk_map``.
 """
 
-from typing import Any, Dict, List, Tuple
+from typing import Dict, List, Tuple
 
 from ._import import dynamic_import
 
@@ -52,7 +52,7 @@ class LazySubSDKMixin:
 
     _sub_sdk_map: Dict[str, Tuple[str, str]] = {}
 
-    def __getattr__(self, name: str) -> Any:
+    def __getattr__(self, name: str) -> object:
         """Lazily import, instantiate, and cache a sub-SDK on first access.
 
         When *name* matches a key in ``_sub_sdk_map``, the corresponding
