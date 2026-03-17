@@ -20,7 +20,23 @@ jobs:
     secrets:
       codecov-token: ${{ secrets.CODECOV_TOKEN }}
 
+  pyright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+      - name: Install dependencies
+        run: uv sync --all-groups
+      - name: Verify type completeness
+        run: uv run pyright --verifytypes griddy
+        continue-on-error: true
+
   release:
     if: github.ref == 'refs/heads/master'
-    needs: [quality-gates]
+    needs: [quality-gates, pyright]
     uses: Thistle-Grow-Software/.github/.github/workflows/create-release.yml@main
