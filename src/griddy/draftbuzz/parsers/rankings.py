@@ -4,7 +4,7 @@ Extracts prospect names, positions, schools, and rankings from the
 ``#positionRankTable`` on each position rankings page.
 """
 
-from typing import Any, Dict, List
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -19,7 +19,7 @@ class RankingsParser:
         position: str,
         year: int,
         page: int,
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """Parse a position rankings page.
 
         Args:
@@ -41,9 +41,9 @@ class RankingsParser:
             "entries": entries,
         }
 
-    def _extract_entries(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+    def _extract_entries(self, soup: BeautifulSoup) -> list[dict[str, Any]]:
         """Extract ranked prospect entries from the rankings table."""
-        entries: List[Dict[str, Any]] = []
+        entries: list[dict[str, Any]] = []
 
         table = soup.find(id="positionRankTable")
         if not table:
@@ -57,16 +57,9 @@ class RankingsParser:
             href = row.get("data-href")
             cells = row.find_all("td")
 
-            name = None
-            position = None
-            school = None
-
-            if len(cells) >= 1:
-                name = cells[0].get_text(strip=True)
-            if len(cells) >= 2:
-                position = cells[1].get_text(strip=True)
-            if len(cells) >= 3:
-                school = cells[2].get_text(strip=True)
+            name = cells[0].get_text(strip=True) if len(cells) >= 1 else None
+            position = cells[1].get_text(strip=True) if len(cells) >= 2 else None
+            school = cells[2].get_text(strip=True) if len(cells) >= 3 else None
 
             entries.append(
                 {

@@ -23,7 +23,7 @@ class TestBasicInfo:
     def test_defaults(self):
         info = BasicInfo()
         assert info.first_name is None
-        assert info.position == ""
+        assert info.position is None
         assert info.photo_url is None
 
     def test_full_construction(self):
@@ -118,9 +118,9 @@ class TestDefenseStats:
 class TestScoutingReport:
     def test_defaults(self):
         sr = ScoutingReport()
-        assert sr.bio == ""
-        assert sr.strengths == []
-        assert sr.weaknesses == []
+        assert sr.bio is None
+        assert sr.strengths is None
+        assert sr.weaknesses is None
         assert sr.summary is None
 
     def test_construction(self):

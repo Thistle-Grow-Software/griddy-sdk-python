@@ -6,10 +6,11 @@ SDK-compatible parser that returns plain dicts for Pydantic validation.
 """
 
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 from bs4 import BeautifulSoup, Tag
 
+from ..constants import POSITION_TO_GROUP_MAP
 from ..errors.parsing_error import ParsingError
 from ._helpers import (
     get_tag_with_text,
@@ -21,44 +22,6 @@ from ._helpers import (
 
 logger = logging.getLogger(__name__)
 
-# Maps raw positions (and sub-positions) to canonical position groups.
-_POSITION_TO_GROUP: dict[str, str] = {
-    "QB": "QB",
-    "HB": "RB",
-    "FB": "RB",
-    "RB": "RB",
-    "WR": "WR",
-    "TE": "TE",
-    "OT": "OL",
-    "LT": "OL",
-    "RT": "OL",
-    "OG": "OL",
-    "LG": "OL",
-    "RG": "OL",
-    "C": "OL",
-    "DL": "DL",
-    "DT": "DL",
-    "NT": "DL",
-    "NG": "DL",
-    "EDGE": "EDGE",
-    "LE": "EDGE",
-    "RE": "EDGE",
-    "DE": "EDGE",
-    "LB": "LB",
-    "LOLB": "LB",
-    "ROLB": "LB",
-    "OLB": "LB",
-    "MLB": "LB",
-    "ILB": "LB",
-    "CB": "DB",
-    "LCB": "DB",
-    "RCB": "DB",
-    "S": "DB",
-    "FS": "DB",
-    "SS": "DB",
-    "DB": "DB",
-}
-
 
 class ProspectProfileParser:
     """Parses an NFL Draft Buzz prospect profile page into a dict.
@@ -67,7 +30,7 @@ class ProspectProfileParser:
     Stats are parsed from a separate stats page and merged in.
     """
 
-    def parse_profile(self, html: str, *, position: str) -> Dict[str, Any]:
+    def parse_profile(self, html: str, *, position: str) -> dict[str, Any]:
         """Parse the main prospect profile page.
 
         Args:
@@ -87,7 +50,7 @@ class ProspectProfileParser:
         comparisons = self._parse_comparisons(comps_table) if comps_table else None
         scouting_report = self._parse_scouting_report(soup)
 
-        result: Dict[str, Any] = {
+        result: dict[str, Any] = {
             "basic_info": basic_info,
             "ratings": ratings,
             "skills": skills,
@@ -100,7 +63,7 @@ class ProspectProfileParser:
 
     def parse_stats(
         self, html: str, *, position: str
-    ) -> Optional[List[Dict[str, Any]]]:
+    ) -> Optional[list[dict[str, Any]]]:
         """Parse the prospect stats page.
 
         Args:
@@ -117,7 +80,7 @@ class ProspectProfileParser:
     # Basic Info
     # ------------------------------------------------------------------
 
-    def _parse_basic_info(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_basic_info(self, soup: BeautifulSoup) -> dict[str, Any]:
         """Extract basic biographical information."""
         first_name_tag = soup.find("span", class_="player-info__first-name")
         last_name_tag = soup.find("span", class_="player-info__last-name")
@@ -131,7 +94,7 @@ class ProspectProfileParser:
         first_name = first_name_tag.get_text(strip=True)
         last_name = last_name_tag.get_text(strip=True)
 
-        info: Dict[str, Any] = {
+        info: dict[str, Any] = {
             "first_name": first_name,
             "last_name": last_name,
             "full_name": f"{first_name} {last_name}",
@@ -180,36 +143,34 @@ class ProspectProfileParser:
         """Normalize a position string to its canonical group."""
         if "/" in value:
             parts = value.split("/")
-            groups = [_POSITION_TO_GROUP.get(p.strip().upper()) for p in parts]
+            groups = [POSITION_TO_GROUP_MAP.get(p.strip().upper()) for p in parts]
             valid = [g for g in groups if g]
             if valid:
-                return "/".join(dict.fromkeys(valid))  # deduplicate preserving order
+                return "/".join(dict.fromkeys(valid))
             return value
-        return _POSITION_TO_GROUP.get(value.strip().upper(), value)
+        return POSITION_TO_GROUP_MAP.get(value.strip().upper(), value)
 
-    def _parse_basic_info_table(self, tag: Tag) -> Dict[str, Any]:
+    def _parse_basic_info_table(self, tag: Tag) -> dict[str, Any]:
         """Extract jersey, play style, draft year, forty time from the info table."""
-        result: Dict[str, Any] = {}
+        result: dict[str, Any] = {}
 
         jersey_tag = get_tag_with_title_containing(tag, "#")
         if jersey_tag:
             result["jersey"] = jersey_tag.get_text(strip=True)
 
         sub_pos_label = get_tag_with_title_containing(tag, "Sub-Position")
-        result["play_style"] = get_text_following_label(sub_pos_label) or ""
+        result["play_style"] = get_text_following_label(sub_pos_label)
 
         updated_label = get_tag_with_title_containing(tag, "Last Updated")
-        result["last_updated"] = get_text_following_label(updated_label) or ""
+        result["last_updated"] = get_text_following_label(updated_label)
 
         draft_yr_label = get_tag_with_title_containing(tag, "Draft Year")
-        result["draft_year"] = get_text_following_label(draft_yr_label) or ""
+        result["draft_year"] = get_text_following_label(draft_yr_label)
 
         forty_label = get_tag_with_title_containing(tag, "40 yard dash time")
         forty_val = get_text_following_label(forty_label) or ""
         if forty_val:
             result["forty"] = forty_val.split()[0]
-        else:
-            result["forty"] = ""
 
         return result
 
@@ -235,7 +196,7 @@ class ProspectProfileParser:
         comparisons = tables[1] if len(tables) > 1 else None
         return ratings, comparisons
 
-    def _parse_ratings(self, soup: BeautifulSoup, table: Tag) -> Dict[str, Any]:
+    def _parse_ratings(self, soup: BeautifulSoup, table: Tag) -> dict[str, Any]:
         """Extract ratings, rankings, and outlet grades."""
         rows = table.find_all("tr")
 
@@ -256,13 +217,8 @@ class ProspectProfileParser:
                 opposition = safe_int(opp_str)
                 break
 
-        # Draft projection & ranks
         proj_ranks = self._extract_proj_and_rankings(rows)
-
-        # Average ranks from rankingBox
         avg_ranks = self._extract_average_ranks(soup)
-
-        # Outlet ratings
         outlets = self._extract_outlet_ratings(table)
 
         return {
@@ -273,9 +229,9 @@ class ProspectProfileParser:
             **outlets,
         }
 
-    def _extract_proj_and_rankings(self, rows: List[Tag]) -> Dict[str, Any]:
+    def _extract_proj_and_rankings(self, rows: list[Tag]) -> dict[str, Any]:
         """Extract draft projection, overall rank, and position rank."""
-        result: Dict[str, Any] = {}
+        result: dict[str, Any] = {}
         proj_row = None
         for row in rows:
             if "draft projection" in row.get_text().lower():
@@ -297,7 +253,7 @@ class ProspectProfileParser:
 
         return result
 
-    def _extract_average_ranks(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _extract_average_ranks(self, soup: BeautifulSoup) -> dict[str, Any]:
         """Extract average overall and position ranks from the ranking box."""
         rankings_div = soup.find("div", class_="rankingBox")
         if not rankings_div:
@@ -310,7 +266,7 @@ class ProspectProfileParser:
             "avg_position_rank": safe_float(rank_vals[1].get_text(strip=True)),
         }
 
-    def _extract_outlet_ratings(self, table: Tag) -> Dict[str, Optional[float]]:
+    def _extract_outlet_ratings(self, table: Tag) -> dict[str, Optional[float]]:
         """Extract ESPN, Rivals, and 247 ratings."""
         return {
             "espn": self._extract_outlet_value(table, "espn"),
@@ -324,7 +280,6 @@ class ProspectProfileParser:
         if not tag:
             return None
         raw = tag.get_text(strip=True)
-        # Format is like "ESPN: 85 / 100" or "Rivals: 5.8"
         parts = raw.split(":")
         if len(parts) < 2:
             return None
@@ -335,12 +290,10 @@ class ProspectProfileParser:
     # Skills
     # ------------------------------------------------------------------
 
-    def _parse_skills(self, table: Tag, position: str) -> Optional[Dict[str, Any]]:
+    def _parse_skills(self, table: Tag, position: str) -> Optional[dict[str, Any]]:
         """Extract position-specific skill ratings from the ratings table."""
         rows = table.find_all("tr")
-        # Skill rows contain ":" (e.g., "Release Speed: 90") and appear
-        # before the "draft projection" row.
-        skill_rows: List[Tag] = []
+        skill_rows: list[Tag] = []
         for row in rows:
             text = row.get_text().lower()
             if "draft projection" in text:
@@ -355,7 +308,7 @@ class ProspectProfileParser:
         if not skill_rows:
             return None
 
-        skills: Dict[str, Any] = {}
+        skills: dict[str, Any] = {}
         for row in skill_rows:
             text = row.get_text(strip=True).lower().replace(" ", "_").replace("%", "")
             parts = text.split(":")
@@ -376,9 +329,9 @@ class ProspectProfileParser:
     # Comparisons
     # ------------------------------------------------------------------
 
-    def _parse_comparisons(self, table: Tag) -> List[Dict[str, Any]]:
+    def _parse_comparisons(self, table: Tag) -> list[dict[str, Any]]:
         """Extract player comparisons from the comparisons table."""
-        comparisons: List[Dict[str, Any]] = []
+        comparisons: list[dict[str, Any]] = []
         tbody = table.find("tbody")
         if not tbody:
             return comparisons
@@ -387,15 +340,11 @@ class ProspectProfileParser:
             text_parts = row.get_text().split()
             if len(text_parts) < 4:
                 continue
-            name = f"{text_parts[0]} {text_parts[1]}"
-            school = text_parts[3]
-            similarity_str = text_parts[-1].replace("%", "")
-            similarity = safe_int(similarity_str)
             comparisons.append(
                 {
-                    "name": name,
-                    "school": school,
-                    "similarity": similarity,
+                    "name": f"{text_parts[0]} {text_parts[1]}",
+                    "school": text_parts[3],
+                    "similarity": safe_int(text_parts[-1].replace("%", "")),
                 }
             )
 
@@ -405,34 +354,20 @@ class ProspectProfileParser:
     # Scouting Report
     # ------------------------------------------------------------------
 
-    def _parse_scouting_report(self, soup: BeautifulSoup) -> Dict[str, Any]:
+    def _parse_scouting_report(self, soup: BeautifulSoup) -> dict[str, Any]:
         """Extract scouting report (bio, strengths, weaknesses, summary)."""
         intro_div = soup.find("div", class_="playerDescIntro")
         if not intro_div:
-            return {"bio": "", "strengths": [], "weaknesses": []}
+            return {}
 
         bio = intro_div.get_text(strip=True)
 
         strengths_div = soup.find("div", class_="playerDescPro")
-        strengths: List[str] = []
-        if strengths_div:
-            strengths = [
-                line
-                for line in strengths_div.get_text().splitlines()
-                if line.strip() and "scouting report" not in line.lower()
-            ]
+        strengths = self._extract_report_lines(strengths_div) if strengths_div else []
 
         weak_divs = soup.find_all("div", class_="playerDescNeg")
-        weaknesses: List[str] = []
-        summary: Optional[str] = None
-        if weak_divs:
-            weaknesses = [
-                line
-                for line in weak_divs[0].get_text().splitlines()
-                if line.strip() and "scouting report" not in line.lower()
-            ]
-            if len(weak_divs) > 1:
-                summary = weak_divs[1].get_text(strip=True)
+        weaknesses = self._extract_report_lines(weak_divs[0]) if weak_divs else []
+        summary = weak_divs[1].get_text(strip=True) if len(weak_divs) > 1 else None
 
         return {
             "bio": bio,
@@ -441,13 +376,22 @@ class ProspectProfileParser:
             "summary": summary,
         }
 
+    @staticmethod
+    def _extract_report_lines(div: Tag) -> list[str]:
+        """Extract non-header text lines from a scouting report section."""
+        return [
+            line
+            for line in div.get_text().splitlines()
+            if line.strip() and "scouting report" not in line.lower()
+        ]
+
     # ------------------------------------------------------------------
     # Stats (from separate stats page)
     # ------------------------------------------------------------------
 
     def _parse_stats_page(
         self, soup: BeautifulSoup, position: str
-    ) -> Optional[List[Dict[str, Any]]]:
+    ) -> Optional[list[dict[str, Any]]]:
         """Parse the stats page and return a list of season stat dicts."""
         table_div = None
         match position:
@@ -474,7 +418,7 @@ class ProspectProfileParser:
             if th.get_text(strip=True)
         ]
 
-        seasons: List[Dict[str, Any]] = []
+        seasons: list[dict[str, Any]] = []
         for row in stats_table.tbody.find_all("tr"):
             cells = [td.get_text(strip=True) for td in row.find_all("td")]
             stat_dict = self._build_stat_dict(
@@ -486,7 +430,7 @@ class ProspectProfileParser:
         seasons.sort(key=lambda s: s.get("year", 0) or 0, reverse=True)
         return seasons if seasons else None
 
-    def _extract_games_and_snaps(self, soup: BeautifulSoup) -> Dict[str, int]:
+    def _extract_games_and_snaps(self, soup: BeautifulSoup) -> dict[str, int]:
         """Extract games played and snap count from the stats page."""
         gp_label = get_tag_with_title_containing(soup, "College Games Played")
         gp_text = get_text_following_label(gp_label)
@@ -501,39 +445,35 @@ class ProspectProfileParser:
     def _build_stat_dict(
         self,
         position: str,
-        headers: List[str],
-        cells: List[str],
-        gp_and_snaps: Dict[str, int],
-    ) -> Optional[Dict[str, Any]]:
+        headers: list[str],
+        cells: list[str],
+        gp_and_snaps: dict[str, int],
+    ) -> Optional[dict[str, Any]]:
         """Build a position-appropriate stat dict from a table row."""
         if not cells:
             return None
 
         if position == "QB":
             return self._build_passing_stats(headers, cells, gp_and_snaps)
-        elif position in ("RB",):
-            return self._build_rb_stats(cells, gp_and_snaps)
-        elif position in ("WR", "TE"):
-            return self._build_wr_te_stats(cells, gp_and_snaps)
+        elif position in ("RB", "WR", "TE"):
+            return self._build_skill_player_stats(position, cells, gp_and_snaps)
         elif position in ("DL", "EDGE", "LB", "DB"):
             return self._build_defense_stats(cells, gp_and_snaps)
         return None
 
     def _build_passing_stats(
         self,
-        headers: List[str],
-        cells: List[str],
-        gp_and_snaps: Dict[str, int],
-    ) -> Dict[str, Any]:
+        headers: list[str],
+        cells: list[str],
+        gp_and_snaps: dict[str, int],
+    ) -> dict[str, Any]:
         """Build QB passing stats dict."""
         raw = dict(zip(headers, cells))
-
         year_str = raw.get("year", "").split()[0] if raw.get("year") else ""
 
         return {
             "year": safe_int(year_str),
-            "games_played": gp_and_snaps.get("games_played"),
-            "snap_count": gp_and_snaps.get("snap_count"),
+            **gp_and_snaps,
             "cmp": safe_int(raw.get("cmp", "")),
             "att": safe_int(raw.get("att", "")),
             "cmp_pct": safe_float(raw.get("cmp%", "")),
@@ -544,68 +484,71 @@ class ProspectProfileParser:
             "qb_rtg": safe_float(raw.get("pro rat", "")),
         }
 
-    def _build_rb_stats(
-        self, cells: List[str], gp_and_snaps: Dict[str, int]
-    ) -> Dict[str, Any]:
-        """Build RB stats dict with rushing and receiving sub-dicts."""
+    def _build_skill_player_stats(
+        self, position: str, cells: list[str], gp_and_snaps: dict[str, int]
+    ) -> dict[str, Any]:
+        """Build RB/WR/TE stats with rushing and receiving sub-dicts."""
+        rushing = self._extract_sub_stats(cells, start=1)
+        receiving = self._extract_sub_stats(cells, start=5, include_rec=True)
+
+        # RBs lead with rushing; WR/TE lead with receiving
+        if position == "RB":
+            primary, secondary = "rushing", "receiving"
+        else:
+            primary, secondary = "receiving", "rushing"
+            rushing, receiving = receiving, rushing
+
         return {
             "year": safe_int(cells[0].split()[0] if cells[0] else ""),
-            "games_played": gp_and_snaps.get("games_played"),
-            "snap_count": gp_and_snaps.get("snap_count"),
-            "rushing": {
-                "att": safe_int(cells[1]) if len(cells) > 1 else None,
-                "yds": safe_int(cells[2]) if len(cells) > 2 else None,
-                "avg": safe_float(cells[3]) if len(cells) > 3 else None,
-                "td": safe_int(cells[4]) if len(cells) > 4 else None,
-            },
-            "receiving": {
-                "rec": safe_int(cells[5]) if len(cells) > 5 else None,
-                "yds": safe_int(cells[6]) if len(cells) > 6 else None,
-                "avg": safe_float(cells[7]) if len(cells) > 7 else None,
-                "td": safe_int(cells[8]) if len(cells) > 8 else None,
-            },
+            **gp_and_snaps,
+            primary: rushing,
+            secondary: receiving,
         }
 
-    def _build_wr_te_stats(
-        self, cells: List[str], gp_and_snaps: Dict[str, int]
-    ) -> Dict[str, Any]:
-        """Build WR/TE stats dict with receiving and rushing sub-dicts."""
+    def _extract_sub_stats(
+        self, cells: list[str], *, start: int, include_rec: bool = False
+    ) -> dict[str, Any]:
+        """Extract a 4-field rushing/receiving sub-dict from table cells."""
+
+        def _cell(offset: int) -> Optional[str]:
+            idx = start + offset
+            return cells[idx] if idx < len(cells) else None
+
+        if include_rec:
+            return {
+                "rec": safe_int(_cell(0)),
+                "yds": safe_int(_cell(1)),
+                "avg": safe_float(_cell(2)),
+                "td": safe_int(_cell(3)),
+            }
         return {
-            "year": safe_int(cells[0].split()[0] if cells[0] else ""),
-            "games_played": gp_and_snaps.get("games_played"),
-            "snap_count": gp_and_snaps.get("snap_count"),
-            "receiving": {
-                "rec": safe_int(cells[1]) if len(cells) > 1 else None,
-                "yds": safe_int(cells[2]) if len(cells) > 2 else None,
-                "avg": safe_float(cells[3]) if len(cells) > 3 else None,
-                "td": safe_int(cells[4]) if len(cells) > 4 else None,
-            },
-            "rushing": {
-                "att": safe_int(cells[5]) if len(cells) > 5 else None,
-                "yds": safe_int(cells[6]) if len(cells) > 6 else None,
-                "avg": safe_float(cells[7]) if len(cells) > 7 else None,
-                "td": safe_int(cells[8]) if len(cells) > 8 else None,
-            },
+            "att": safe_int(_cell(0)),
+            "yds": safe_int(_cell(1)),
+            "avg": safe_float(_cell(2)),
+            "td": safe_int(_cell(3)),
         }
 
     def _build_defense_stats(
-        self, cells: List[str], gp_and_snaps: Dict[str, int]
-    ) -> Dict[str, Any]:
+        self, cells: list[str], gp_and_snaps: dict[str, int]
+    ) -> dict[str, Any]:
         """Build defensive stats dict with tackle and interception sub-dicts."""
+
+        def _cell(idx: int) -> Optional[str]:
+            return cells[idx] if idx < len(cells) else None
+
         return {
             "year": safe_int(cells[0].split()[0] if cells[0] else ""),
-            "games_played": gp_and_snaps.get("games_played"),
-            "snap_count": gp_and_snaps.get("snap_count"),
+            **gp_and_snaps,
             "tackle": {
-                "total": safe_int(cells[1]) if len(cells) > 1 else None,
-                "solo": safe_int(cells[2]) if len(cells) > 2 else None,
-                "ff": safe_int(cells[3]) if len(cells) > 3 else None,
-                "sacks": safe_float(cells[4]) if len(cells) > 4 else None,
+                "total": safe_int(_cell(1)),
+                "solo": safe_int(_cell(2)),
+                "ff": safe_int(_cell(3)),
+                "sacks": safe_float(_cell(4)),
             },
             "interception": {
-                "ints": safe_int(cells[5]) if len(cells) > 5 else None,
-                "yds": safe_int(cells[6]) if len(cells) > 6 else None,
-                "td": safe_int(cells[7]) if len(cells) > 7 else None,
-                "pds": safe_int(cells[8]) if len(cells) > 8 else None,
+                "ints": safe_int(_cell(5)),
+                "yds": safe_int(_cell(6)),
+                "td": safe_int(_cell(7)),
+                "pds": safe_int(_cell(8)),
             },
         }

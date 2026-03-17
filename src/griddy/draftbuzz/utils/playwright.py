@@ -13,24 +13,84 @@ import logging
 import time
 from typing import Optional
 
-logger = logging.getLogger(__name__)
-
-_RECOVERABLE_ERROR_PHRASES = ("target closed", "browser has been closed")
-
-# Defaults matching fbcm constants
-_DEFAULT_SLOW_MO_MS = 150
-_DEFAULT_MAX_RETRIES = 3
-_DEFAULT_RETRY_DELAY = 1.0
-_DEFAULT_USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+from ..constants import (
+    DEFAULT_MAX_RETRIES,
+    DEFAULT_RETRY_DELAY,
+    DEFAULT_SLOW_MO_MS,
+    RECOVERABLE_ERROR_PHRASES,
 )
+
+logger = logging.getLogger(__name__)
 
 
 def _is_recoverable(error: Exception) -> bool:
     """Check if a Playwright error is a recoverable browser crash."""
     msg = str(error).lower()
-    return any(phrase in msg for phrase in _RECOVERABLE_ERROR_PHRASES)
+    return any(phrase in msg for phrase in RECOVERABLE_ERROR_PHRASES)
+
+
+def _close_quietly(closeable: object) -> None:
+    """Call ``close()`` on *closeable*, suppressing all errors."""
+    try:
+        closeable.close()  # type: ignore[union-attr]
+    except Exception:
+        pass
+
+
+async def _aclose_quietly(closeable: object) -> None:
+    """Call ``await close()`` on *closeable*, suppressing all errors."""
+    try:
+        await closeable.close()  # type: ignore[union-attr]
+    except Exception:
+        pass
+
+
+def _navigate_and_wait(page: object, url: str, wait_for_element: str) -> str:
+    """Navigate a sync Playwright page, wait for the selector, return HTML.
+
+    Timeouts on navigation or selector wait are tolerated — the page
+    content is returned regardless.
+    """
+    from playwright.sync_api import TimeoutError as PlaywrightTimeout
+
+    try:
+        page.goto(url)  # type: ignore[union-attr]
+    except PlaywrightTimeout:
+        logger.warning(
+            "Page load timeout for %s, continuing with partial content...", url
+        )
+
+    if wait_for_element:
+        try:
+            page.wait_for_selector(wait_for_element, timeout=10000)  # type: ignore[union-attr]
+        except PlaywrightTimeout:
+            logger.debug(
+                "Selector %s not found within timeout, continuing...", wait_for_element
+            )
+
+    return page.content()  # type: ignore[union-attr]
+
+
+async def _anavigate_and_wait(page: object, url: str, wait_for_element: str) -> str:
+    """Async version of :func:`_navigate_and_wait`."""
+    from playwright.async_api import TimeoutError as PlaywrightTimeout
+
+    try:
+        await page.goto(url)  # type: ignore[union-attr]
+    except PlaywrightTimeout:
+        logger.warning(
+            "Page load timeout for %s, continuing with partial content...", url
+        )
+
+    if wait_for_element:
+        try:
+            await page.wait_for_selector(wait_for_element, timeout=10000)  # type: ignore[union-attr]
+        except PlaywrightTimeout:
+            logger.debug(
+                "Selector %s not found within timeout, continuing...", wait_for_element
+            )
+
+    return await page.content()  # type: ignore[union-attr]
 
 
 class PlaywrightBackend:
@@ -50,9 +110,9 @@ class PlaywrightBackend:
     def __init__(
         self,
         headless: bool = True,
-        slow_mo: int = _DEFAULT_SLOW_MO_MS,
-        max_retries: int = _DEFAULT_MAX_RETRIES,
-        retry_delay: float = _DEFAULT_RETRY_DELAY,
+        slow_mo: int = DEFAULT_SLOW_MO_MS,
+        max_retries: int = DEFAULT_MAX_RETRIES,
+        retry_delay: float = DEFAULT_RETRY_DELAY,
     ) -> None:
         try:
             from playwright.sync_api import sync_playwright
@@ -97,7 +157,6 @@ class PlaywrightBackend:
             PlaywrightError: If all retry attempts are exhausted.
         """
         from playwright.sync_api import Error as PlaywrightError
-        from playwright.sync_api import TimeoutError as PlaywrightTimeout
 
         self._ensure_connected()
         last_error: Optional[Exception] = None
@@ -106,25 +165,7 @@ class PlaywrightBackend:
             page = self._browser.new_page()
             try:
                 logger.info("Navigating to: %s", url)
-                try:
-                    page.goto(url)
-                except PlaywrightTimeout:
-                    logger.warning(
-                        "Page load timeout for %s, continuing with partial content...",
-                        url,
-                    )
-
-                if wait_for_element:
-                    try:
-                        page.wait_for_selector(wait_for_element, timeout=10000)
-                    except PlaywrightTimeout:
-                        logger.debug(
-                            "Selector %s not found within timeout, continuing...",
-                            wait_for_element,
-                        )
-
-                return page.content()
-
+                return _navigate_and_wait(page, url, wait_for_element)
             except PlaywrightError as exc:
                 if not _is_recoverable(exc):
                     raise
@@ -134,30 +175,18 @@ class PlaywrightBackend:
                     attempt + 1,
                     self._max_retries,
                 )
-                try:
-                    self._browser.close()
-                except PlaywrightError, OSError:
-                    pass
+                _close_quietly(self._browser)
                 self._browser = self._launch_browser()
                 time.sleep(self._retry_delay)
             finally:
-                try:
-                    page.close()
-                except Exception:
-                    pass
+                _close_quietly(page)
 
         raise last_error  # type: ignore[misc]
 
     def close(self) -> None:
         """Shut down the browser and Playwright."""
-        try:
-            self._browser.close()
-        except Exception:
-            pass
-        try:
-            self._pw_context.__exit__(None, None, None)
-        except Exception:
-            pass
+        _close_quietly(self._browser)
+        _close_quietly(self._pw_context)
 
 
 class AsyncPlaywrightBackend:
@@ -176,9 +205,9 @@ class AsyncPlaywrightBackend:
     def __init__(
         self,
         headless: bool = True,
-        slow_mo: int = _DEFAULT_SLOW_MO_MS,
-        max_retries: int = _DEFAULT_MAX_RETRIES,
-        retry_delay: float = _DEFAULT_RETRY_DELAY,
+        slow_mo: int = DEFAULT_SLOW_MO_MS,
+        max_retries: int = DEFAULT_MAX_RETRIES,
+        retry_delay: float = DEFAULT_RETRY_DELAY,
     ) -> None:
         self._headless = headless
         self._slow_mo = slow_mo
@@ -223,7 +252,6 @@ class AsyncPlaywrightBackend:
         import asyncio
 
         from playwright.async_api import Error as PlaywrightError
-        from playwright.async_api import TimeoutError as PlaywrightTimeout
 
         await self._ensure_started()
         last_error: Optional[Exception] = None
@@ -232,25 +260,7 @@ class AsyncPlaywrightBackend:
             page = await self._browser.new_page()
             try:
                 logger.info("Navigating to: %s", url)
-                try:
-                    await page.goto(url)
-                except PlaywrightTimeout:
-                    logger.warning(
-                        "Page load timeout for %s, continuing with partial content...",
-                        url,
-                    )
-
-                if wait_for_element:
-                    try:
-                        await page.wait_for_selector(wait_for_element, timeout=10000)
-                    except PlaywrightTimeout:
-                        logger.debug(
-                            "Selector %s not found within timeout, continuing...",
-                            wait_for_element,
-                        )
-
-                return await page.content()
-
+                return await _anavigate_and_wait(page, url, wait_for_element)
             except PlaywrightError as exc:
                 if not _is_recoverable(exc):
                     raise
@@ -260,31 +270,18 @@ class AsyncPlaywrightBackend:
                     attempt + 1,
                     self._max_retries,
                 )
-                try:
-                    await self._browser.close()
-                except PlaywrightError, OSError:
-                    pass
+                await _aclose_quietly(self._browser)
                 self._browser = await self._pw.firefox.launch(
                     headless=self._headless, slow_mo=self._slow_mo
                 )
                 await asyncio.sleep(self._retry_delay)
             finally:
-                try:
-                    await page.close()
-                except Exception:
-                    pass
+                await _aclose_quietly(page)
 
         raise last_error  # type: ignore[misc]
 
     async def close(self) -> None:
         """Shut down the browser and Playwright."""
-        if self._browser:
-            try:
-                await self._browser.close()
-            except Exception:
-                pass
+        await _aclose_quietly(self._browser)
         if self._pw_context:
-            try:
-                await self._pw_context.__aexit__(None, None, None)
-            except Exception:
-                pass
+            await _aclose_quietly(self._pw_context)

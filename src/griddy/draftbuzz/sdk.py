@@ -26,8 +26,7 @@ if TYPE_CHECKING:
     from .endpoints.prospects import Prospects
     from .endpoints.rankings import Rankings
 
-# Re-export for type stubs
-UNSET = object()
+from griddy.core.types import UNSET
 
 
 class GriddyDraftBuzz(LazySubSDKMixin, BaseGriddySDK, BaseSDK):

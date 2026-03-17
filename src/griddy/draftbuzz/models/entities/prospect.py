@@ -6,7 +6,7 @@ Griddy SDK data provider pattern.
 
 from __future__ import annotations
 
-from typing import List, Optional, Union
+from typing import Optional, Union
 
 from typing_extensions import TypeAlias
 
@@ -23,19 +23,19 @@ class BasicInfo(DraftBuzzBaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     full_name: Optional[str] = None
-    position: str = ""
-    college: str = ""
-    class_: str = ""
-    jersey: str = ""
-    play_style: str = ""
-    draft_year: str = ""
-    last_updated: str = ""
-    height: str = ""
-    weight: str = ""
-    forty: str = ""
-    age: str = ""
-    dob: str = ""
-    hometown: str = ""
+    position: Optional[str] = None
+    college: Optional[str] = None
+    class_: Optional[str] = None
+    jersey: Optional[str] = None
+    play_style: Optional[str] = None
+    draft_year: Optional[str] = None
+    last_updated: Optional[str] = None
+    height: Optional[str] = None
+    weight: Optional[str] = None
+    forty: Optional[str] = None
+    age: Optional[str] = None
+    dob: Optional[str] = None
+    hometown: Optional[str] = None
     photo_url: Optional[str] = None
 
 
@@ -242,9 +242,9 @@ Stats: TypeAlias = Union[
 class ScoutingReport(DraftBuzzBaseModel):
     """Scouting report text including bio, strengths, weaknesses, and summary."""
 
-    bio: str = ""
-    strengths: List[str] = []
-    weaknesses: List[str] = []
+    bio: Optional[str] = None
+    strengths: Optional[list[str]] = None
+    weaknesses: Optional[list[str]] = None
     summary: Optional[str] = None
 
 
@@ -254,48 +254,6 @@ class Comparison(DraftBuzzBaseModel):
     name: Optional[str] = None
     school: Optional[str] = None
     similarity: Optional[int] = None
-
-
-# ---------------------------------------------------------------------------
-# Position Mappings
-# ---------------------------------------------------------------------------
-
-POSITION_TO_GROUP_MAP: dict[str, str] = {
-    "QB": "QB",
-    "HB": "RB",
-    "FB": "RB",
-    "RB": "RB",
-    "WR": "WR",
-    "TE": "TE",
-    "OT": "OL",
-    "LT": "OL",
-    "RT": "OL",
-    "OG": "OL",
-    "LG": "OL",
-    "RG": "OL",
-    "C": "OL",
-    "DL": "DL",
-    "DT": "DL",
-    "NT": "DL",
-    "NG": "DL",
-    "EDGE": "EDGE",
-    "LE": "EDGE",
-    "RE": "EDGE",
-    "DE": "EDGE",
-    "LB": "LB",
-    "LOLB": "LB",
-    "ROLB": "LB",
-    "OLB": "LB",
-    "MLB": "LB",
-    "ILB": "LB",
-    "CB": "DB",
-    "LCB": "DB",
-    "RCB": "DB",
-    "S": "DB",
-    "FS": "DB",
-    "SS": "DB",
-    "DB": "DB",
-}
 
 
 # ---------------------------------------------------------------------------
@@ -314,6 +272,6 @@ class ProspectProfile(DraftBuzzBaseModel):
     basic_info: Optional[BasicInfo] = None
     ratings: Optional[RatingsAndRankings] = None
     skills: Optional[SkillRatings] = None
-    comparisons: Optional[List[Comparison]] = None
-    stats: Optional[List[Stats]] = None
+    comparisons: Optional[list[Comparison]] = None
+    stats: Optional[list[Stats]] = None
     scouting_report: Optional[ScoutingReport] = None
