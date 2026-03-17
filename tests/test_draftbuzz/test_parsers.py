@@ -114,6 +114,27 @@ RANKINGS_HTML = """
         </tr>
     </tbody>
 </table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="/positions/QB/1/2026">1</a></li>
+    <li class="page-item"><a class="page-link" href="/positions/QB/2/2026">2</a></li>
+    <li class="page-item"><a class="page-link" href="/positions/QB/3/2026">3</a></li>
+</ul>
+</body>
+</html>
+"""
+
+RANKINGS_SINGLE_PAGE_HTML = """
+<html>
+<body>
+<table id="positionRankTable">
+    <tbody>
+        <tr data-href="/players/cam-ward-qb-2025">
+            <td>Cam Ward</td>
+            <td>QB</td>
+            <td>Miami</td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>
 """
@@ -321,8 +342,21 @@ class TestRankingsParser:
         assert first["rank"] == 1
         assert first["href"] == "/players/cam-ward-qb-2025"
 
+    def test_parse_total_pages_multi_page(self):
+        result = self.parser.parse_position_rankings(
+            RANKINGS_HTML, position="QB", year=2026, page=1
+        )
+        assert result["total_pages"] == 3
+
+    def test_parse_total_pages_single_page(self):
+        result = self.parser.parse_position_rankings(
+            RANKINGS_SINGLE_PAGE_HTML, position="QB", year=2026, page=1
+        )
+        assert result["total_pages"] == 1
+
     def test_parse_empty_page(self):
         result = self.parser.parse_position_rankings(
             "<html><body></body></html>", position="QB", year=2026, page=1
         )
         assert result["entries"] == []
+        assert result["total_pages"] == 1

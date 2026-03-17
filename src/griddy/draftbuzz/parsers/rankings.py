@@ -4,7 +4,7 @@ Extracts prospect names, positions, schools, and rankings from the
 ``#positionRankTable`` on each position rankings page.
 """
 
-from typing import Any
+from typing import Any, Optional
 
 from bs4 import BeautifulSoup
 
@@ -33,11 +33,13 @@ class RankingsParser:
         """
         soup = BeautifulSoup(html, "html.parser")
         entries = self._extract_entries(soup)
+        total_pages = self._extract_total_pages(soup)
 
         return {
             "position": position,
             "year": year,
             "page": page,
+            "total_pages": total_pages,
             "entries": entries,
         }
 
@@ -72,3 +74,16 @@ class RankingsParser:
             )
 
         return entries
+
+    def _extract_total_pages(self, soup: BeautifulSoup) -> Optional[int]:
+        """Extract the total page count from the pagination element.
+
+        Looks for ``ul.pagination`` and counts distinct page links.
+        Falls back to 1 if no pagination is present (single-page result).
+        """
+        pagination = soup.find("ul", class_="pagination")
+        if not pagination:
+            return 1
+
+        page_links = pagination.find_all("li", class_="page-item")
+        return len(page_links)

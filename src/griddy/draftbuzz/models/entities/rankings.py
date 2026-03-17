@@ -26,4 +26,5 @@ class PositionRankings(DraftBuzzBaseModel):
     position: Optional[str] = None
     year: Optional[int] = None
     page: Optional[int] = None
+    total_pages: Optional[int] = None
     entries: List[RankedProspect] = []

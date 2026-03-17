@@ -165,6 +165,7 @@ class TestPositionRankings:
     def test_defaults(self):
         r = PositionRankings()
         assert r.entries == []
+        assert r.total_pages is None
 
     def test_construction(self):
         r = PositionRankings(
