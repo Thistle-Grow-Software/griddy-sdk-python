@@ -9,7 +9,6 @@ from . import errors, models
 from .backends import AsyncScrapingBackend, ScrapingBackend
 from .errors import ParsingError
 from .sdkconfiguration import SDKConfiguration
-from .utils.browserless import AsyncBrowserless, Browserless, BrowserlessConfig
 
 
 class DraftBuzzParser(Protocol):
@@ -37,16 +36,20 @@ class EndpointConfig(BaseEndpointConfig):
 
 
 class BaseSDK(CoreBaseSDK[SDKConfiguration]):
-    """DraftBuzz-specific BaseSDK with error classes and scraping backends."""
+    """DraftBuzz-specific BaseSDK with error classes and scraping backends.
 
-    browserless: ScrapingBackend
-    async_browserless: AsyncScrapingBackend
+    Uses Playwright (Firefox) by default to fetch fully-rendered HTML
+    from nfldraftbuzz.com. A custom scraping backend can be injected
+    via the ``scraping_backend`` parameter on :class:`GriddyDraftBuzz`.
+    """
+
+    scraper: ScrapingBackend
+    async_scraper: AsyncScrapingBackend
 
     def __init__(
         self,
         sdk_config: SDKConfiguration,
         parent_ref: Optional[object] = None,
-        browserless_config: Optional[BrowserlessConfig] = None,
     ) -> None:
         """Initialize DraftBuzz BaseSDK with scraping backends for HTML fetching.
 
@@ -54,30 +57,29 @@ class BaseSDK(CoreBaseSDK[SDKConfiguration]):
 
         1. A backend stored on ``sdk_config.scraping_backend`` (set when the
            user passes ``scraping_backend`` to :class:`GriddyDraftBuzz`).
-        2. A ``BrowserlessConfig`` passed directly or pre-set by GriddyDraftBuzz.
-        3. A default :class:`Browserless` instance (requires env vars).
+        2. A default :class:`PlaywrightBackend` instance using Firefox.
 
         Args:
             sdk_config: DraftBuzz SDK configuration with server details.
             parent_ref: Optional reference to the parent SDK instance.
-            browserless_config: Optional Browserless configuration. Falls back
-                to the ``_browserless_config`` attribute set by GriddyDraftBuzz.
         """
         super().__init__(sdk_config=sdk_config, parent_ref=parent_ref)
 
         if sdk_config.scraping_backend is not None:
-            self.browserless = sdk_config.scraping_backend
+            self.scraper = sdk_config.scraping_backend
         else:
-            if browserless_config is None:
-                browserless_config = getattr(self, "_browserless_config", None)
-            self.browserless = Browserless(config=browserless_config)
+            headless = getattr(self, "_headless", True)
+            from .utils.playwright import PlaywrightBackend
+
+            self.scraper = PlaywrightBackend(headless=headless)
 
         if sdk_config.async_scraping_backend is not None:
-            self.async_browserless = sdk_config.async_scraping_backend
+            self.async_scraper = sdk_config.async_scraping_backend
         else:
-            if browserless_config is None:
-                browserless_config = getattr(self, "_browserless_config", None)
-            self.async_browserless = AsyncBrowserless(config=browserless_config)
+            headless = getattr(self, "_headless", True)
+            from .utils.playwright import AsyncPlaywrightBackend
+
+            self.async_scraper = AsyncPlaywrightBackend(headless=headless)
 
     @property
     def _default_error_cls(self) -> Type[Exception]:
@@ -123,11 +125,11 @@ class BaseSDK(CoreBaseSDK[SDKConfiguration]):
         """Execute a DraftBuzz scraping endpoint using its configuration.
 
         Resolves the base URL, templates path params, fetches HTML via
-        Browserless, and runs the configured parser.
+        Playwright, and runs the configured parser.
         """
         url = self._build_url(config)
 
-        html = self.browserless.get_page_content(
+        html = self.scraper.get_page_content(
             url,
             wait_for_element=config.wait_for_element,
         )
@@ -139,13 +141,10 @@ class BaseSDK(CoreBaseSDK[SDKConfiguration]):
             raise
 
     async def _execute_endpoint_async(self, config: EndpointConfig) -> Any:
-        """Async version of :meth:`_execute_endpoint`.
-
-        Uses :class:`AsyncBrowserless` for non-blocking HTML fetching.
-        """
+        """Async version of :meth:`_execute_endpoint`."""
         url = self._build_url(config)
 
-        html = await self.async_browserless.get_page_content(
+        html = await self.async_scraper.get_page_content(
             url,
             wait_for_element=config.wait_for_element,
         )

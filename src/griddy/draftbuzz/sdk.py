@@ -21,7 +21,6 @@ from .basesdk import BaseSDK
 from .httpclient import AsyncHttpClient, HttpClient
 from .sdkconfiguration import SDKConfiguration
 from .utils import Logger
-from .utils.browserless import BrowserlessConfig
 
 if TYPE_CHECKING:
     from .endpoints.prospects import Prospects
@@ -35,6 +34,10 @@ class GriddyDraftBuzz(LazySubSDKMixin, BaseGriddySDK, BaseSDK):
     """Main client for accessing NFL Draft Buzz data.
 
     Sub-SDKs are loaded lazily on first access to minimize startup time.
+    Uses Playwright (Firefox) by default to render JavaScript-heavy pages
+    on nfldraftbuzz.com. Requires the ``browser-auth`` optional extra::
+
+        pip install griddy[browser-auth]
 
     Example:
         >>> from griddy.draftbuzz import GriddyDraftBuzz
@@ -61,7 +64,7 @@ class GriddyDraftBuzz(LazySubSDKMixin, BaseGriddySDK, BaseSDK):
         retry_config: Any = UNSET,
         timeout_ms: Optional[int] = None,
         debug_logger: Optional[Logger] = None,
-        browserless_config: Optional[BrowserlessConfig] = None,
+        headless: bool = True,
         scraping_backend: Optional[ScrapingBackend] = None,
         async_scraping_backend: Optional[AsyncScrapingBackend] = None,
     ) -> None:
@@ -79,18 +82,18 @@ class GriddyDraftBuzz(LazySubSDKMixin, BaseGriddySDK, BaseSDK):
             retry_config: Configuration for automatic request retries.
             timeout_ms: Request timeout in milliseconds.
             debug_logger: Custom logger for debug output.
-            browserless_config: Configuration for Browserless API requests.
-                Overrides default proxy, timeout, and TTL values. Ignored when
-                a custom *scraping_backend* is provided.
+            headless: Run the Playwright browser in headless mode
+                (default ``True``). Ignored when a custom
+                *scraping_backend* is provided.
             scraping_backend: A synchronous scraping backend that satisfies the
                 :class:`~griddy.draftbuzz.backends.ScrapingBackend` protocol.
+                When provided, overrides the default Playwright backend.
             async_scraping_backend: An asynchronous scraping backend that
                 satisfies the :class:`~griddy.draftbuzz.backends.AsyncScrapingBackend`
                 protocol.
         """
-        self._browserless_config = browserless_config
-        self._scraping_backend = scraping_backend
-        self._async_scraping_backend = async_scraping_backend
+        # Pre-set so BaseSDK.__init__ can read via getattr
+        self._headless = headless
         self._init_sdk(
             auth=draftbuzz_auth,
             server_idx=server_idx,

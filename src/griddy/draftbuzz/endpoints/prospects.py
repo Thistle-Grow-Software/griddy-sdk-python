@@ -128,7 +128,7 @@ class Prospects(BaseSDK):
         )
 
         try:
-            html = self.browserless.get_page_content(url, wait_for_element="table")
+            html = self.scraper.get_page_content(url, wait_for_element="table")
         except Exception:
             return None
 
@@ -146,7 +146,7 @@ class Prospects(BaseSDK):
         )
 
         try:
-            html = await self.async_browserless.get_page_content(
+            html = await self.async_scraper.get_page_content(
                 url, wait_for_element="table"
             )
         except Exception:
