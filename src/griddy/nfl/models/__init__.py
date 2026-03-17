@@ -791,10 +791,10 @@ if TYPE_CHECKING:
     from griddy.nfl.models.responses.live_player_statistics_response import (
         LivePlayerStatisticsResponse,
     )
+    from griddy.nfl.models.responses.live_scores_response import LiveScoresResponse
     from griddy.nfl.models.responses.live_team_statistics_response import (
         LiveTeamStatisticsResponse,
     )
-    from griddy.nfl.models.responses.live_scores_response import LiveScoresResponse
     from griddy.nfl.models.responses.matchup_rankings_response import (
         MatchupRankingsResponse,
     )
@@ -1770,7 +1770,7 @@ _dynamic_imports: dict[str, str] = {
     "LivePlayerStatEntry": ".entities.live_stat_entries",
     "LivePlayerStatisticsResponse": ".responses.live_player_statistics_response",
     "LivePlayerTeamEntry": ".entities.live_stat_entries",
-    "LiveScoresResponse": ".responses.lives_cores_response",
+    "LiveScoresResponse": ".responses.live_scores_response",
     "LiveTeamStatEntry": ".entities.live_stat_entries",
     "LiveTeamStatisticsResponse": ".responses.live_team_statistics_response",
     "MatchupRankingsResponse": ".responses.matchup_rankings_response",
