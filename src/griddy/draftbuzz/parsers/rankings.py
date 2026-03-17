@@ -86,23 +86,4 @@ class RankingsParser:
             return 1
 
         page_links = pagination.find_all("li", class_="page-item")
-        if not page_links:
-            return 1
-
-        # Extract page numbers from the href attributes (e.g. /positions/QB/3/2026)
-        max_page = 1
-        for li in page_links:
-            anchor = li.find("a", class_="page-link", href=True)
-            if not anchor:
-                continue
-            href = anchor["href"]
-            # Href format: /positions/{position}/{page}/{year}
-            parts = href.strip("/").split("/")
-            if len(parts) >= 3:
-                try:
-                    page_num = int(parts[2])
-                    max_page = max(max_page, page_num)
-                except ValueError, IndexError:
-                    continue
-
-        return max_page
+        return len(page_links)
