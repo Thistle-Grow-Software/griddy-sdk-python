@@ -44,6 +44,12 @@ dev = [
     "ruff>=0.11.12,<1.0",
     "types-python-dateutil>=2.9.0.20260124,<3.0",
 ]
+docs = [
+    "mkdocs>=1.6.0,<2.0",
+    "mkdocs-material>=9.6.0,<10.0",
+    "mkdocstrings[python]>=0.29.0,<1.0",
+    "mike>=2.1.0,<3.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/jkgriebel93/griddy-sdk-python"
