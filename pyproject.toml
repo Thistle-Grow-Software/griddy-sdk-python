@@ -57,7 +57,7 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["F401", "I"]
-per-file-ignores = { "src/griddy/nfl/_hooks/types.py" = ["F401"], "src/griddy/nfl/types/basemodel.py" = ["F401"], "src/griddy/nfl/httpclient.py" = ["F401"], "src/griddy/pfr/httpclient.py" = ["F401"] }
+per-file-ignores = { "src/griddy/nfl/_hooks/types.py" = ["F401"], "src/griddy/nfl/types/basemodel.py" = ["F401"], "src/griddy/nfl/httpclient.py" = ["F401"], "src/griddy/pfr/httpclient.py" = ["F401"], "src/griddy/draftbuzz/httpclient.py" = ["F401"] }
 
 [tool.ruff.lint.isort]
 known-first-party = ["griddy"]
