@@ -1,66 +1,173 @@
-# Griddy SDK Documentation
+---
+icon: lucide/rocket
+---
 
-Welcome to the Griddy SDK documentation! Griddy is a Python SDK for accessing NFL data from multiple sources.
+# Get started
 
-## Overview
+For full documentation visit [zensical.org](https://zensical.org/docs/).
 
-Griddy SDK provides a unified, type-safe interface for accessing NFL data, including:
+## Commands
 
-- **NFL.com Integration** - Access current season data, live scores, and player information
-- **Next Gen Stats** - Advanced player tracking statistics and analytics
-- **Pro API** - Betting odds, player projections, and advanced statistics
+* [`zensical new`][new] - Create a new project
+* [`zensical serve`][serve] - Start local web server
+* [`zensical build`][build] - Build your site
 
-## Key Features
+  [new]: https://zensical.org/docs/usage/new/
+  [serve]: https://zensical.org/docs/usage/preview/
+  [build]: https://zensical.org/docs/usage/build/
 
-- **Type Safety** - Full type hints and Pydantic models for data validation
-- **Async Support** - Both synchronous and asynchronous APIs
-- **Rate Limiting** - Built-in request throttling to respect API limits
-- **Error Handling** - Comprehensive exception handling and retry logic
-- **Lazy Loading** - Sub-SDKs are loaded on demand for fast startup
+## Examples
 
-## Quick Example
+### Admonitions
 
-```python
-from griddy.nfl import GriddyNFL
+> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
 
-# Initialize with authentication
-nfl = GriddyNFL(nfl_auth={"accessToken": "your_token"})
+!!! note
 
-# Access games data
-games = nfl.games.get_games(season=2024, season_type="REG")
+    This is a **note** admonition. Use it to provide helpful information.
 
-# Access Next Gen Stats
-passing_stats = nfl.ngs.stats.get_passing_stats(season=2024, week=1)
+!!! warning
 
-# Access player statistics
-player_stats = nfl.stats.passing.get_passing_stats(season=2024)
+    This is a **warning** admonition. Be careful!
+
+### Details
+
+> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
+
+??? info "Click to expand for more info"
+
+    This content is hidden until you click to expand it.
+    Great for FAQs or long explanations.
+
+## Code Blocks
+
+> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
+
+``` python hl_lines="2" title="Code blocks"
+def greet(name):
+    print(f"Hello, {name}!") # (1)!
+
+greet("Python")
 ```
 
-## Requirements
+1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
 
-- Python 3.13 or higher
-- NFL.com account for authentication
+    Code annotations allow to attach notes to lines of code.
 
-## Installation
+Code can also be highlighted inline: `#!python print("Hello, Python!")`.
 
-```bash
-pip install griddy
+## Content tabs
+
+> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
+
+=== "Python"
+
+    ``` python
+    print("Hello from Python!")
+    ```
+
+=== "Rust"
+
+    ``` rs
+    println!("Hello from Rust!");
+    ```
+
+## Diagrams
+
+> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
+
+``` mermaid
+graph LR
+  A[Start] --> B{Error?};
+  B -->|Yes| C[Hmm...];
+  C --> D[Debug];
+  D --> B;
+  B ---->|No| E[Yay!];
 ```
 
-For development:
+## Footnotes
 
-```bash
-git clone https://github.com/jkgriebel93/griddy-sdk-python.git
-cd griddy-sdk-python
-pip install -e ".[dev,docs]"
-```
+> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
 
-## Getting Help
+Here's a sentence with a footnote.[^1]
 
-- **Documentation** - You're reading it!
-- **Issues** - [GitHub Issues](https://github.com/jkgriebel93/griddy-sdk-python/issues)
-- **Source Code** - [GitHub Repository](https://github.com/jkgriebel93/griddy-sdk-python)
+Hover it, to see a tooltip.
 
-## License
+[^1]: This is the footnote.
 
-This project is licensed under the MIT License.
+
+## Formatting
+
+> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
+
+- ==This was marked (highlight)==
+- ^^This was inserted (underline)^^
+- ~~This was deleted (strikethrough)~~
+- H~2~O
+- A^T^A
+- ++ctrl+alt+del++
+
+## Icons, Emojis
+
+> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
+
+* :sparkles: `:sparkles:`
+* :rocket: `:rocket:`
+* :tada: `:tada:`
+* :memo: `:memo:`
+* :eyes: `:eyes:`
+
+## Maths
+
+> Go to [documentation](https://zensical.org/docs/authoring/math/)
+
+$$
+\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
+$$
+
+!!! warning "Needs configuration"
+    Note that MathJax is included via a `script` tag on this page and is not
+    configured in the generated default configuration to avoid including it
+    in a pages that do not need it. See the documentation for details on how
+    to configure it on all your pages if they are more Maths-heavy than these
+    simple starter pages.
+
+<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [["\\(", "\\)"]],
+      displayMath: [["\\[", "\\]"]],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      ignoreHtmlClass: ".*|",
+      processHtmlClass: "arithmatex"
+    }
+  };
+
+  document$.subscribe(() => {
+    MathJax.startup.output.clearCache()
+    MathJax.typesetClear()
+    MathJax.texReset()
+    MathJax.typesetPromise()
+  })
+</script>
+
+## Task Lists
+
+> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
+
+* [x] Install Zensical
+* [x] Configure `zensical.toml`
+* [x] Write amazing documentation
+* [ ] Deploy anywhere
+
+## Tooltips
+
+> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
+
+[Hover me][example]
+
+  [example]: https://example.com "I'm a tooltip!"
