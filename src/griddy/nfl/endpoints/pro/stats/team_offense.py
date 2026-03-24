@@ -1,3 +1,5 @@
+r"""Team offensive overview statistics and situational analytics endpoints."""
+
 from typing import List, Mapping, Optional
 
 from griddy.core._constants import STATS_ERROR_CODES
@@ -29,7 +31,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Overview Statistics by Season"""
+        r"""Get Team Offense Overview Statistics by Season.
+
+        Returns:
+            TeamOffenseStatsResponse containing team offense overview
+            statistics for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/overview/season",
@@ -72,7 +85,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Overview Statistics by Week"""
+        r"""Get Team Offense Overview Statistics by Week.
+
+        Returns:
+            TeamOffenseStatsResponse containing team offense overview
+            statistics for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/overview/week",
@@ -114,7 +138,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Pass Statistics by Season"""
+        r"""Get Team Offense Pass Statistics by Season.
+
+        Returns:
+            TeamOffensePassStatsResponse containing team offense pass
+            statistics for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/pass/season",
@@ -155,7 +190,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Pass Statistics by Week"""
+        r"""Get Team Offense Pass Statistics by Week.
+
+        Returns:
+            TeamOffensePassStatsResponse containing team offense pass
+            statistics for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/pass/week",
@@ -195,7 +241,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Rush Statistics by Season"""
+        r"""Get Team Offense Rush Statistics by Season.
+
+        Returns:
+            TeamOffenseRushStatsResponse containing team offense rush
+            statistics for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/rush/season",
@@ -234,7 +291,18 @@ class TeamOffenseStats(ProSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Team Offense Rush Statistics by Week"""
+        r"""Get Team Offense Rush Statistics by Week.
+
+        Returns:
+            TeamOffenseRushStatsResponse containing team offense rush
+            statistics for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/secured/stats/team-offense/rush/week",

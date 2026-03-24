@@ -44,10 +44,16 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of fastest ball carrier speeds recorded.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            limit: Number of results (default: 20)
-            week: Optional week filter
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            limit: Number of results (default: 20).
+            week: Optional week filter.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -83,10 +89,16 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of quickest sacks by time to tackle.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            limit: Number of results (default: 20)
-            week: Optional week filter
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            limit: Number of results (default: 20).
+            week: Optional week filter.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -120,8 +132,14 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of completions with lowest completion probability.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -155,8 +173,14 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of yards after catch over expectation.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -192,10 +216,16 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of plays with most distance covered.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            limit: Number of results (default: 20)
-            week: Optional week filter
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            limit: Number of results (default: 20).
+            week: Optional week filter.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -231,10 +261,16 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of tackles with most distance covered to make the tackle.
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            limit: Number of results (default: 20)
-            week: Optional week filter
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            limit: Number of results (default: 20).
+            week: Optional week filter.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -268,8 +304,14 @@ class NgsLeaders(NgsBaseSDK):
         Returns leaderboard of rush yards over expected (ERY).
 
         Args:
-            season: Season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
+            season: Season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

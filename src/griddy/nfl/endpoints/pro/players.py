@@ -1,3 +1,5 @@
+r"""Player detail, projected stats, and search endpoints."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, RESOURCE_ERROR_CODES
@@ -27,11 +29,21 @@ class Players(ProSDK):
         team information, draft details, and current status.
 
         Args:
-            nfl_id: NFL player identifier
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            nfl_id: NFL player identifier.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            PlayerDetail containing detailed information about the
+            specified player.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -65,14 +77,24 @@ class Players(ProSDK):
         Returns data in JSON:API format with relationships between players and their projected stats.
 
         Args:
-            season: Season year
-            week: Week number within the season
-            filter_nfl_team_id: Filter by NFL team ID (UUID format)
-            page_size: Number of results per page
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            week: Week number within the season.
+            filter_nfl_team_id: Filter by NFL team ID (UUID format).
+            page_size: Number of results per page.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            ProjectedStatsResponse containing projected fantasy statistics
+            for the specified parameters.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -107,11 +129,21 @@ class Players(ProSDK):
         including both active and retired players.
 
         Args:
-            term: Search term for player name (first or last name)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            term: Search term for player name (first or last name).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            PlayerSearchResponse containing players matching the
+            search criteria.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

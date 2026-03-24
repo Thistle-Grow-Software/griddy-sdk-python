@@ -40,12 +40,18 @@ class NgsContent(NgsBaseSDK):
         """Get player charts (route, pass, carry).
 
         Args:
-            season: Season year (e.g., 2025)
-            count: Number of charts to return (default: 12)
-            week: Week filter or "all" (default: "all")
-            chart_type: Chart type filter: "all", "route", "pass", "carry"
-            team_id: Team ID filter or "all"
-            esb_id: Player ESB ID filter or "all"
+            season: Season year (e.g., 2025).
+            count: Number of charts to return (default: 12).
+            week: Week filter or "all" (default: "all").
+            chart_type: Chart type filter: "all", "route", "pass", "carry".
+            team_id: Team ID filter or "all".
+            esb_id: Player ESB ID filter or "all".
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -77,7 +83,14 @@ class NgsContent(NgsBaseSDK):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        """Get players available in the chart system."""
+        """Get players available in the chart system.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return EndpointConfig(
             method="GET",
             path="/api/content/microsite/chart/players",
@@ -106,8 +119,14 @@ class NgsContent(NgsBaseSDK):
         """Get play highlights.
 
         Args:
-            season: Season year (e.g., 2025)
-            limit: Number of highlights to return (default: 16)
+            season: Season year (e.g., 2025).
+            limit: Number of highlights to return (default: 16).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

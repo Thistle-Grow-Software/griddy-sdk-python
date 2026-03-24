@@ -1,3 +1,5 @@
+"""NFL Draft endpoints for retrieving draft picks and team needs."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import RESOURCE_ERROR_CODES
@@ -27,12 +29,23 @@ class Draft(BaseSDK):
         picks, traded picks, and compensatory selections.
 
         Args:
-            year: Draft year
-            limit: Maximum number of picks to return
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            year: Draft year.
+            limit: Maximum number of picks to return.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            DraftResponse containing draft rounds, picks, traded picks,
+            and compensatory selections for the specified year.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetDraftPicksReportRequest(year=year, limit=limit)
 
@@ -65,13 +78,27 @@ class Draft(BaseSDK):
     ) -> EndpointConfig:
         r"""Get Team Needs for Draft
 
+        Retrieves team positional needs heading into the draft for a
+        specific year.
+
         Args:
-            year: Draft year
-            limit: Maximum number of results
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            year: Draft year.
+            limit: Maximum number of results.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TeamNeedsResponse containing team needs data for the specified
+            draft year.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetTeamNeedsRequest(year=year, limit=limit)
 

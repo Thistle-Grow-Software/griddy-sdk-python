@@ -1,3 +1,5 @@
+r"""Individual defensive player statistics (overview, pass rush, nearest defender) endpoints."""
+
 from typing import List, Mapping, Optional
 
 from griddy.core.decorators import sdk_endpoints
@@ -33,19 +35,29 @@ class PlayerDefenseStats(PlayerStatsBase):
         Retrieves comprehensive defensive overview statistics for NFL players during a specified season.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            limit: Maximum number of players to return
-            offset: Number of records to skip for pagination
-            page: Page number for pagination
-            sort_key: Field to sort by
-            sort_value: Sort direction
-            qualified_defender: Filter to only qualified defenders
-            team_defense: Filter by specific team IDs
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            limit: Maximum number of players to return.
+            offset: Number of records to skip for pagination.
+            page: Page number for pagination.
+            sort_key: Field to sort by.
+            sort_value: Sort direction.
+            qualified_defender: Filter to only qualified defenders.
+            team_defense: Filter by specific team IDs.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            DefensiveOverviewStatsResponse containing defensive overview
+            statistics for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return self._make_stats_config(
             "/api/secured/stats/defense/overview/season",
@@ -85,7 +97,18 @@ class PlayerDefenseStats(PlayerStatsBase):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Defensive Player Overview Statistics by Week"""
+        r"""Get Defensive Player Overview Statistics by Week.
+
+        Returns:
+            DefensiveOverviewStatsResponse containing defensive overview
+            statistics for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return self._make_stats_config(
             "/api/secured/stats/defense/overview/season",
             "getDefensiveOverviewStatsBySeason",
@@ -123,7 +146,18 @@ class PlayerDefenseStats(PlayerStatsBase):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Defensive Pass Rush Statistics by Season"""
+        r"""Get Defensive Pass Rush Statistics by Season.
+
+        Returns:
+            PassRushStatsResponse containing pass rush statistics
+            for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return self._make_stats_config(
             "/api/secured/stats/defense/passRush/season",
             "getDefensivePassRushStatsBySeason",
@@ -160,7 +194,18 @@ class PlayerDefenseStats(PlayerStatsBase):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Defensive Pass Rush Statistics by Week"""
+        r"""Get Defensive Pass Rush Statistics by Week.
+
+        Returns:
+            PassRushStatsResponse containing pass rush statistics
+            for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return self._make_stats_config(
             "/api/secured/stats/defense/passRush/week",
             "getDefensivePassRushStatsByWeek",
@@ -199,7 +244,18 @@ class PlayerDefenseStats(PlayerStatsBase):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Defensive Nearest Defender Statistics by Season"""
+        r"""Get Defensive Nearest Defender Statistics by Season.
+
+        Returns:
+            NearestDefenderStatsResponse containing nearest defender
+            statistics for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return self._make_stats_config(
             "/api/secured/stats/defense/nearest/season",
             "getDefensiveNearestDefenderStatsBySeason",
@@ -238,7 +294,18 @@ class PlayerDefenseStats(PlayerStatsBase):
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> EndpointConfig:
-        r"""Get Defensive Nearest Defender Statistics by Week"""
+        r"""Get Defensive Nearest Defender Statistics by Week.
+
+        Returns:
+            NearestDefenderStatsResponse containing nearest defender
+            statistics for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
+        """
         return self._make_stats_config(
             "/api/secured/stats/defense/nearest/week",
             "getDefensiveNearestDefenderStatsByWeek",

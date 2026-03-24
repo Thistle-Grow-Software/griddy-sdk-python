@@ -1,3 +1,5 @@
+r"""Film room content, editorial insights, and coaches film video endpoints."""
+
 from typing import List, Mapping, Optional
 
 from griddy.core._constants import (
@@ -32,10 +34,19 @@ class Content(ProSDK, GameContentMixin):
         Returns weekly playlists and featured player film breakdowns.
 
         Args:
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            HomeFilmCardsResponse containing featured film room content cards.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -72,15 +83,25 @@ class Content(ProSDK, GameContentMixin):
         limits for targeted content discovery.
 
         Args:
-            season: Season year
-            limit: Maximum number of insights to return
-            tags: Content tags to filter by (supports multiple comma-separated tags)
-            team_id: Filter by specific team identifier
-            nfl_id: Filter by specific player NFL identifier
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            limit: Maximum number of insights to return.
+            tags: Content tags to filter by (supports multiple comma-separated tags).
+            team_id: Filter by specific team identifier.
+            nfl_id: Filter by specific player NFL identifier.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            List[Insight] containing curated editorial insights for the
+            specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -162,47 +183,57 @@ class Content(ProSDK, GameContentMixin):
         player involvement, formation types, and tactical elements.
 
         Args:
-            game_id: Filter by specific game IDs (supports multiple values)
-            week_slug: Filter by week identifier (supports multiple values)
-            season: Filter by season year (supports multiple values)
-            season_type: Filter by season type
-            nfl_id: Filter by player NFL ID
-            quarter: Filter by quarter
-            down: Filter by down
-            yards_to_go_type: Filter by yards to go category
-            touchdown: Filter for touchdown plays (1 = yes, 0 = no)
-            rush10_plus_yards: Filter for rushing plays of 10+ yards
-            fumble_lost: Filter for plays with fumbles lost
-            fumble: Filter for plays with fumbles
-            qb_alignment: Filter by quarterback alignment
-            redzone: Filter for red zone plays
-            goal_to_go: Filter for goal-to-go situations
-            pass_play: Filter for passing plays
-            run_play: Filter for running plays
-            play_type: Filter by specific play types
-            attempt: Filter for passing attempts
-            completion: Filter for completed passes
-            interception: Filter for interceptions
-            reception: Filter for receptions
-            sack: Filter for sacks
-            rec_motion: Filter by receiver motion
-            target_location: Filter by target location on field
-            air_yard_type: Filter by air yards category
-            dropback_time_type: Filter by dropback time
-            pressure: Filter by quarterback pressure
-            blitz: Filter by defensive blitz
-            play_action: Filter by play action usage
-            rush_direction: Filter by rush direction
-            run_stuff: Filter for stuffed runs
-            receiver_alignment: Filter by receiver alignment
-            separation_type: Filter by receiver separation
-            personnel: Filter by defensive personnel package
-            defenders_in_the_box_type: Filter by defenders in the box
-            def_coverage_type: Filter by defensive coverage type
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Filter by specific game IDs (supports multiple values).
+            week_slug: Filter by week identifier (supports multiple values).
+            season: Filter by season year (supports multiple values).
+            season_type: Filter by season type.
+            nfl_id: Filter by player NFL ID.
+            quarter: Filter by quarter.
+            down: Filter by down.
+            yards_to_go_type: Filter by yards to go category.
+            touchdown: Filter for touchdown plays (1 = yes, 0 = no).
+            rush10_plus_yards: Filter for rushing plays of 10+ yards.
+            fumble_lost: Filter for plays with fumbles lost.
+            fumble: Filter for plays with fumbles.
+            qb_alignment: Filter by quarterback alignment.
+            redzone: Filter for red zone plays.
+            goal_to_go: Filter for goal-to-go situations.
+            pass_play: Filter for passing plays.
+            run_play: Filter for running plays.
+            play_type: Filter by specific play types.
+            attempt: Filter for passing attempts.
+            completion: Filter for completed passes.
+            interception: Filter for interceptions.
+            reception: Filter for receptions.
+            sack: Filter for sacks.
+            rec_motion: Filter by receiver motion.
+            target_location: Filter by target location on field.
+            air_yard_type: Filter by air yards category.
+            dropback_time_type: Filter by dropback time.
+            pressure: Filter by quarterback pressure.
+            blitz: Filter by defensive blitz.
+            play_action: Filter by play action usage.
+            rush_direction: Filter by rush direction.
+            run_stuff: Filter for stuffed runs.
+            receiver_alignment: Filter by receiver alignment.
+            separation_type: Filter by receiver separation.
+            personnel: Filter by defensive personnel package.
+            defenders_in_the_box_type: Filter by defenders in the box.
+            def_coverage_type: Filter by defensive coverage type.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            FilmroomPlaysResponse containing play-by-play data matching
+            the specified filters.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -276,12 +307,22 @@ class Content(ProSDK, GameContentMixin):
         and appropriate geographic restrictions apply (US only).
 
         Args:
-            game_id: Game identifiers (UUID format, supports multiple games)
-            play_id: Play identifiers for specific plays within the games
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifiers (UUID format, supports multiple games).
+            play_id: Play identifiers for specific plays within the games.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            CoachesFilmResponse containing multi-angle video content
+            for the specified plays.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

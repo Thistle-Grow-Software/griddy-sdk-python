@@ -39,16 +39,22 @@ class NgsGames(NgsBaseSDK):
         quarter-by-quarter scoring, game status, and team information.
 
         Args:
-            season: The season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            week: Week number
-            retries: Override the default retry configuration
-            server_url: Override the default server URL
-            timeout_ms: Override the default timeout
-            http_headers: Additional headers to send
+            season: The season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            week: Week number.
+            retries: Override the default retry configuration.
+            server_url: Override the default server URL.
+            timeout_ms: Override the default timeout.
+            http_headers: Additional headers to send.
 
         Returns:
-            NgsLiveScoresResponse with game scores
+            NgsLiveScoresResponse with game scores.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -87,14 +93,20 @@ class NgsGames(NgsBaseSDK):
         - Game leaders (speed, sacks, pass distance)
 
         Args:
-            game_id: The unique game identifier (e.g., 2025112700)
-            retries: Override the default retry configuration
-            server_url: Override the default server URL
-            timeout_ms: Override the default timeout
-            http_headers: Additional headers to send
+            game_id: The unique game identifier (e.g., 2025112700).
+            retries: Override the default retry configuration.
+            server_url: Override the default server URL.
+            timeout_ms: Override the default timeout.
+            http_headers: Additional headers to send.
 
         Returns:
-            NgsGameCenterOverviewResponse with game overview data
+            NgsGameCenterOverviewResponse with game overview data.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

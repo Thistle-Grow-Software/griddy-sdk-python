@@ -1,3 +1,5 @@
+r"""Mixin providing game schedule, matchup rankings, team rankings, and injury report endpoints."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, RESOURCE_ERROR_CODES
@@ -31,11 +33,20 @@ class GameScheduleMixin:
         and current game status.
 
         Args:
-            game_id: Game identifier (UUID format)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID format).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            GameDetail containing detailed information for the specified game.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -66,11 +77,21 @@ class GameScheduleMixin:
         for various statistical categories.
 
         Args:
-            game_id: Game identifier (10-digit format YYYYMMDDNN)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (10-digit format YYYYMMDDNN).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            MatchupRankingsResponse containing matchup rankings and
+            statistical comparisons for both teams.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -104,15 +125,25 @@ class GameScheduleMixin:
         Returns 300+ statistical categories with rankings for offensive, defensive, and special teams performance.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            away_team_id: Away team UUID
-            home_team_id: Home team UUID
-            week: Week number
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            away_team_id: Away team UUID.
+            home_team_id: Home team UUID.
+            week: Week number.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TeamRankingsResponse containing statistical rankings for both
+            teams in the specified game.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -152,14 +183,24 @@ class GameScheduleMixin:
         Returns player injury status and details for the specified team and week.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            team_id: Team identifier (UUID format)
-            week: Week number within the season
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            team_id: Team identifier (UUID format).
+            week: Week number within the season.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            InjuryReportResponse containing injury report information
+            for the specified team and week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

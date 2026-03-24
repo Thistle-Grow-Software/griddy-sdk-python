@@ -1,3 +1,5 @@
+r"""Game-centric Pro endpoints including gamecenter stats, live scores, schedules, and results."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, RESOURCE_ERROR_CODES
@@ -36,11 +38,21 @@ class ProGames(ProSDK, GameScheduleMixin, GameContentMixin, GameResultsDataMixin
         pass rush metrics, and performance leaders for a specific game.
 
         Args:
-            game_id: Game identifier
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            GamecenterResponse containing advanced game statistics
+            for the specified game.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -74,13 +86,23 @@ class ProGames(ProSDK, GameScheduleMixin, GameContentMixin, GameResultsDataMixin
         during active games. Returns an empty array when no games are currently being played.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            LiveScoresResponse containing real-time scores and game status
+            for all games in the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

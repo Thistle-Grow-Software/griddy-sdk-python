@@ -1,3 +1,5 @@
+"""Base SDK class and endpoint configuration dataclasses used by all SDK endpoints."""
+
 from dataclasses import dataclass, field
 from typing import (
     Any,
