@@ -19,13 +19,18 @@ def test_docs_dependency_group_exists():
 
 
 def test_docs_group_contains_required_packages():
-    """The docs group must include mkdocs, mkdocs-material, mkdocstrings, and mike."""
+    """The docs group must include zensical and mkdocstrings."""
     data = _load_pyproject()
     docs_deps = data["dependency-groups"]["docs"]
     dep_names = {
         dep.split(">")[0].split("<")[0].split("[")[0].strip('"') for dep in docs_deps
     }
-    for required in ("mkdocs", "mkdocs-material", "mkdocstrings", "mike"):
+    for required in (
+        "zensical",
+        "mkdocstrings",
+        "mkdocs-gen-files",
+        "mkdocs-literate-nav",
+    ):
         assert required in dep_names, f"Missing required doc dependency: {required}"
 
 

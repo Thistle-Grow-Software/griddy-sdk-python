@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "docs/**"
+      - "src/**"
       - "zensical.toml"
       - ".github/workflows/docs.yml"
   push:
@@ -11,6 +12,7 @@ on:
       - master
     paths:
       - "docs/**"
+      - "src/**"
       - "zensical.toml"
       - ".github/workflows/docs.yml"
 
@@ -29,11 +31,11 @@ jobs:
         with:
           version: "latest"
 
-      - name: Install Zensical
-        run: uv tool install zensical
+      - name: Install dependencies
+        run: uv sync --group docs
 
       - name: Build docs
-        run: zensical build
+        run: uv run zensical build
 
       - uses: actions/upload-artifact@v7
         with:

@@ -29,6 +29,10 @@ site_author = "John Griebel"
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 site_url = "https://docs.thistlegrow.com/"
 
+# Repository URL for "Edit on GitHub" links
+repo_url = "https://github.com/Thistle-Grow-Software/griddy-sdk-python"
+edit_uri = "edit/master/docs/"
+
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
 #
@@ -37,17 +41,115 @@ copyright = """
 Copyright &copy; 2026 The authors
 """
 
-# Zensical supports both implicit navigation and explicitly defined navigation.
-# If you decide not to define a navigation here then Zensical will simply
-# derive the navigation structure from the directory structure of your
-# "docs_dir". The definition below demonstrates how a navigation structure
-# can be defined using TOML syntax.
-#
-# Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+# Navigation structure organized by domain
+nav = [
+    { "Home" = "index.md" },
+    { "API Reference" = [
+        { "" = "reference/index.md" },
+        { "NFL" = [
+            { "" = "reference/nfl/index.md" },
+            { "SDK" = "reference/nfl/sdk.md" },
+            { "Regular" = [
+                { "" = "reference/nfl/endpoints/regular/index.md" },
+                { "Authentication" = "reference/nfl/endpoints/regular/authentication.md" },
+                { "Content" = "reference/nfl/endpoints/regular/content/index.md" },
+                { "Experience" = "reference/nfl/endpoints/regular/experience/index.md" },
+                { "Football" = [
+                    { "" = "reference/nfl/endpoints/regular/football/index.md" },
+                    { "Combine" = "reference/nfl/endpoints/regular/football/combine.md" },
+                    { "Draft" = "reference/nfl/endpoints/regular/football/draft.md" },
+                    { "Games" = "reference/nfl/endpoints/regular/football/games.md" },
+                    { "Rosters" = "reference/nfl/endpoints/regular/football/rosters.md" },
+                    { "Standings" = "reference/nfl/endpoints/regular/football/standings.md" },
+                    { "Stats" = [
+                        { "" = "reference/nfl/endpoints/regular/football/stats/index.md" },
+                        { "Historical" = "reference/nfl/endpoints/regular/football/stats/historical.md" },
+                        { "Live" = "reference/nfl/endpoints/regular/football/stats/live.md" },
+                    ]},
+                    { "Teams" = "reference/nfl/endpoints/regular/football/teams.md" },
+                    { "Venues" = "reference/nfl/endpoints/regular/football/venues.md" },
+                    { "Weeks" = "reference/nfl/endpoints/regular/football/weeks.md" },
+                ]},
+            ]},
+            { "Pro" = [
+                { "" = "reference/nfl/endpoints/pro/index.md" },
+                { "Betting" = "reference/nfl/endpoints/pro/betting.md" },
+                { "Content" = "reference/nfl/endpoints/pro/content.md" },
+                { "Games" = "reference/nfl/endpoints/pro/games.md" },
+                { "Players" = "reference/nfl/endpoints/pro/players.md" },
+                { "Schedules" = "reference/nfl/endpoints/pro/schedules.md" },
+                { "Stats" = [
+                    { "" = "reference/nfl/endpoints/pro/stats/index.md" },
+                    { "Passing" = "reference/nfl/endpoints/pro/stats/passing.md" },
+                    { "Rushing" = "reference/nfl/endpoints/pro/stats/rushing.md" },
+                    { "Receiving" = "reference/nfl/endpoints/pro/stats/receiving.md" },
+                    { "Defense" = "reference/nfl/endpoints/pro/stats/defense.md" },
+                    { "Fantasy" = "reference/nfl/endpoints/pro/stats/fantasy.md" },
+                    { "Team Defense" = "reference/nfl/endpoints/pro/stats/team_defense.md" },
+                    { "Team Offense" = "reference/nfl/endpoints/pro/stats/team_offense.md" },
+                ]},
+                { "Teams" = "reference/nfl/endpoints/pro/teams.md" },
+                { "Transactions" = "reference/nfl/endpoints/pro/transactions.md" },
+            ]},
+            { "NGS" = [
+                { "" = "reference/nfl/endpoints/ngs/index.md" },
+                { "Content" = "reference/nfl/endpoints/ngs/content.md" },
+                { "Games" = "reference/nfl/endpoints/ngs/games.md" },
+                { "Leaders" = "reference/nfl/endpoints/ngs/leaders.md" },
+                { "League" = "reference/nfl/endpoints/ngs/league.md" },
+                { "News" = "reference/nfl/endpoints/ngs/news.md" },
+                { "Stats" = "reference/nfl/endpoints/ngs/stats.md" },
+            ]},
+            { "Models" = "reference/nfl/models.md" },
+            { "Errors" = "reference/nfl/errors.md" },
+        ]},
+        { "PFR" = [
+            { "" = "reference/pfr/index.md" },
+            { "SDK" = "reference/pfr/sdk.md" },
+            { "Endpoints" = [
+                { "" = "reference/pfr/endpoints/index.md" },
+                { "Awards" = "reference/pfr/endpoints/awards.md" },
+                { "Coaches" = "reference/pfr/endpoints/coaches.md" },
+                { "Draft" = "reference/pfr/endpoints/draft.md" },
+                { "Executives" = "reference/pfr/endpoints/executives.md" },
+                { "Fantasy" = "reference/pfr/endpoints/fantasy.md" },
+                { "Frivolities" = "reference/pfr/endpoints/frivolities.md" },
+                { "Games" = "reference/pfr/endpoints/games.md" },
+                { "Hall of Fame" = "reference/pfr/endpoints/hof.md" },
+                { "Leaders" = "reference/pfr/endpoints/leaders.md" },
+                { "Officials" = "reference/pfr/endpoints/officials.md" },
+                { "Players" = "reference/pfr/endpoints/players.md" },
+                { "Pro Bowl" = "reference/pfr/endpoints/probowl.md" },
+                { "Schedule" = "reference/pfr/endpoints/schedule.md" },
+                { "Schools" = "reference/pfr/endpoints/schools.md" },
+                { "Seasons" = "reference/pfr/endpoints/seasons.md" },
+                { "Stadiums" = "reference/pfr/endpoints/stadiums.md" },
+                { "Super Bowl" = "reference/pfr/endpoints/superbowl.md" },
+                { "Teams" = "reference/pfr/endpoints/teams.md" },
+            ]},
+            { "Models" = "reference/pfr/models.md" },
+            { "Parsers" = "reference/pfr/parsers.md" },
+            { "Errors" = "reference/pfr/errors.md" },
+        ]},
+        { "DraftBuzz" = [
+            { "" = "reference/draftbuzz/index.md" },
+            { "SDK" = "reference/draftbuzz/sdk.md" },
+            { "Endpoints" = [
+                { "" = "reference/draftbuzz/endpoints/index.md" },
+                { "Prospects" = "reference/draftbuzz/endpoints/prospects.md" },
+                { "Rankings" = "reference/draftbuzz/endpoints/rankings.md" },
+            ]},
+            { "Models" = "reference/draftbuzz/models.md" },
+            { "Errors" = "reference/draftbuzz/errors.md" },
+        ]},
+        { "Core" = [
+            { "" = "reference/core/index.md" },
+            { "Exceptions" = "reference/core/exceptions.md" },
+            { "HTTP Client" = "reference/core/httpclient.md" },
+            { "Utilities" = "reference/core/utils.md" },
+        ]},
+    ]},
+]
 
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
@@ -122,13 +224,13 @@ features = [
     # will generate an edit button for the page. This works for common
     # repository hosting services.
     # https://zensical.org/docs/setup/repository/#content-actions
-    #"content.action.edit",
+    "content.action.edit",
 
     # If you have a repository configured and turn on this feature, Zensical
     # will generate a button that allows the user to view the Markdown
     # code for the current page.
     # https://zensical.org/docs/setup/repository/#content-actions
-    #"content.action.view",
+    "content.action.view",
 
     # Code annotations allow you to add an icon with a tooltip to your
     # code blocks to provide explanations at crucial points.
@@ -300,6 +402,30 @@ toggle.name = "Switch to light mode"
 # ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
-#[[project.extra.social]]
-#icon = "fontawesome/brands/github"
-#link = "https://github.com/user/repo"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/Thistle-Grow-Software/griddy-sdk-python"
+
+# ----------------------------------------------------------------------------
+# Plugin configuration
+# ----------------------------------------------------------------------------
+
+# mkdocstrings: Auto-generate API reference from Python docstrings
+[project.plugins.mkdocstrings]
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+docstring_options = { ignore_init_summary = true }
+merge_init_into_class = true
+show_source = true
+show_root_heading = true
+show_root_full_path = false
+show_symbol_type_heading = true
+show_symbol_type_toc = true
+members_order = "source"
+signature_crossrefs = true
+separate_signature = true
+unwrap_annotated = true
+filters = ["!^_"]
+heading_level = 1
