@@ -5,12 +5,14 @@ on:
     paths:
       - "docs/**"
       - "zensical.toml"
+      - ".github/workflows/docs.yml"
   push:
     branches:
       - master
     paths:
       - "docs/**"
       - "zensical.toml"
+      - ".github/workflows/docs.yml"
 
 permissions:
   contents: read
