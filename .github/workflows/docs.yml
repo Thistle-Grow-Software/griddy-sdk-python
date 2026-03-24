@@ -90,14 +90,14 @@ jobs:
             }
 
   deploy-production:
-    if: github.event_name == 'push' && github.ref == 'refs/head/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/download-artifact@v8
         with:
-          name: docs-dite
+          name: docs-site
           path: site/
       - name: Deploy to Cloudflare Pages (production)
         uses: cloudflare/wrangler-action@v3
