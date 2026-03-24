@@ -1,0 +1,3 @@
+# Exceptions
+
+::: griddy.core.exceptions
