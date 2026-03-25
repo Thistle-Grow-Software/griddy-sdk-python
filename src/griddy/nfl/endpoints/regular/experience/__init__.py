@@ -1,3 +1,5 @@
+"""Experience endpoints for retrieving detailed game information by slug or ID."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import RESOURCE_ERROR_CODES
@@ -33,12 +35,23 @@ class Experience(BaseSDK):
         WeeklyGameDetail (the experience response is a subset of those fields).
 
         Args:
-            slug: Game slug identifier
-            include_replays: Include replay videos in response
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            slug: Game slug identifier.
+            include_replays: Include replay videos in response.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            WeeklyGameDetail containing detailed game information for the
+            specified slug.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetGameDetailsBySlugRequest(
             slug=slug,
@@ -82,15 +95,26 @@ class Experience(BaseSDK):
         Returns the same shape as WeeklyGameDetail.
 
         Args:
-            game_id: Game identifier (UUID)
-            include_drive_chart: Include drive chart data in response
-            include_replays: Include replay videos in response
-            include_standings: Include standings data in response
-            include_tagged_videos: Include tagged videos in response
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            include_drive_chart: Include drive chart data in response.
+            include_replays: Include replay videos in response.
+            include_standings: Include standings data in response.
+            include_tagged_videos: Include tagged videos in response.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            WeeklyGameDetail containing detailed game information for the
+            specified game ID.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetGameDetailsRequest(
             game_id=game_id,

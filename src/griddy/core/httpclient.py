@@ -1,3 +1,5 @@
+"""HTTP client protocol definitions and implementations for sync and async requests."""
+
 # pyright: reportReturnType = false
 import asyncio
 from typing import Any, Optional, Union

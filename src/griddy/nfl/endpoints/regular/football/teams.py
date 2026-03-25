@@ -1,3 +1,5 @@
+"""Team information endpoints for retrieving NFL teams by season."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES
@@ -26,12 +28,23 @@ class Teams(BaseSDK):
         Retrieves teams
 
         Args:
-            season: Season year
-            limit: Maximum number of results to return
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            limit: Maximum number of results to return.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            FootballTeamsResponse containing team data for the specified
+            season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetFootballTeamsRequest(
             season=season,

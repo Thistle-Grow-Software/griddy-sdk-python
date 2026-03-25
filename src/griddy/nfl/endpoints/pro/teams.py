@@ -1,3 +1,5 @@
+r"""Team information, rosters, schedules, and ranking endpoints."""
+
 from typing import List, Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, RESOURCE_ERROR_CODES
@@ -26,10 +28,19 @@ class Teams(ProSDK):
         Returns comprehensive team data including colors, logos, stadiums, and contact information.
 
         Args:
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            List[ProTeam] containing information for all NFL teams.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -60,12 +71,22 @@ class Teams(ProSDK):
         Returns detailed player information including physical attributes, college info, and experience.
 
         Args:
-            team_id: Team identifier (4-digit string)
-            season: Season year
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            team_id: Team identifier (4-digit string).
+            season: Season year.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TeamRosterResponse containing the complete roster for the
+            specified team and season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -98,14 +119,24 @@ class Teams(ProSDK):
         Returns player information with weekly status and availability.
 
         Args:
-            team_id: Team identifier (4-digit string)
-            season: Season year
-            season_type: Type of season
-            week: Week number within the season
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            team_id: Team identifier (4-digit string).
+            season: Season year.
+            season_type: Type of season.
+            week: Week number within the season.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            WeeklyRosterResponse containing the roster with weekly status
+            for the specified team and week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -141,12 +172,22 @@ class Teams(ProSDK):
         Returns all games including preseason, regular season, and postseason with scores for completed games.
 
         Args:
-            team_id: Team identifier (4-digit string)
-            season: Season year
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            team_id: Team identifier (4-digit string).
+            season: Season year.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            List[ScheduledGame] containing the complete schedule for the
+            specified team and season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -182,17 +223,27 @@ class Teams(ProSDK):
         Allows comparison of teams across up to 5 different statistics simultaneously.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            stat0: First statistical category
-            stat1: Second statistical category
-            stat2: Third statistical category
-            stat3: Fourth statistical category
-            stat4: Fifth statistical category
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            stat0: First statistical category.
+            stat1: Second statistical category.
+            stat2: Third statistical category.
+            stat3: Fourth statistical category.
+            stat4: Fifth statistical category.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            List[MultipleRankingsCategory] containing rankings for all
+            teams across the specified statistical categories.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

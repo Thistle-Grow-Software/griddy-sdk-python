@@ -40,16 +40,22 @@ class NgsStats(NgsBaseSDK):
         air yards, completion probability, and more.
 
         Args:
-            season: The season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            week: Optional week filter
-            retries: Override the default retry configuration
-            server_url: Override the default server URL
-            timeout_ms: Override the default timeout
-            http_headers: Additional headers to send
+            season: The season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            week: Optional week filter.
+            retries: Override the default retry configuration.
+            server_url: Override the default server URL.
+            timeout_ms: Override the default timeout.
+            http_headers: Additional headers to send.
 
         Returns:
-            Dict containing passing statistics
+            Dict containing passing statistics.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -87,16 +93,22 @@ class NgsStats(NgsBaseSDK):
         cushion, YAC over expectation, and more.
 
         Args:
-            season: The season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            week: Optional week filter
-            retries: Override the default retry configuration
-            server_url: Override the default server URL
-            timeout_ms: Override the default timeout
-            http_headers: Additional headers to send
+            season: The season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            week: Optional week filter.
+            retries: Override the default retry configuration.
+            server_url: Override the default server URL.
+            timeout_ms: Override the default timeout.
+            http_headers: Additional headers to send.
 
         Returns:
-            NgsReceivingStatsResponse containing receiving statistics
+            NgsReceivingStatsResponse containing receiving statistics.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -134,16 +146,22 @@ class NgsStats(NgsBaseSDK):
         rush yards over expected, efficiency, and more.
 
         Args:
-            season: The season year (e.g., 2025)
-            season_type: Season type (REG, PRE, POST)
-            week: Optional week filter
-            retries: Override the default retry configuration
-            server_url: Override the default server URL
-            timeout_ms: Override the default timeout
-            http_headers: Additional headers to send
+            season: The season year (e.g., 2025).
+            season_type: Season type (REG, PRE, POST).
+            week: Optional week filter.
+            retries: Override the default retry configuration.
+            server_url: Override the default server URL.
+            timeout_ms: Override the default timeout.
+            http_headers: Additional headers to send.
 
         Returns:
-            NgsRushingStatsResponse containing rushing statistics
+            NgsRushingStatsResponse containing rushing statistics.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

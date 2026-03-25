@@ -37,13 +37,19 @@ class NgsLeague(NgsBaseSDK):
         including game times, teams, scores, and venue information.
 
         Args:
-            retries: Override the default retry configuration for this request
-            server_url: Override the default server URL for this request
-            timeout_ms: Override the default timeout for this request
-            http_headers: Additional headers to send with the request
+            retries: Override the default retry configuration for this request.
+            server_url: Override the default server URL for this request.
+            timeout_ms: Override the default timeout for this request.
+            http_headers: Additional headers to send with the request.
 
         Returns:
-            NgsCurrentScheduleResponse containing the current week's games
+            NgsCurrentScheduleResponse containing the current week's games.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -73,13 +79,19 @@ class NgsLeague(NgsBaseSDK):
         conference, division, stadium, and contact information.
 
         Args:
-            retries: Override the default retry configuration for this request
-            server_url: Override the default server URL for this request
-            timeout_ms: Override the default timeout for this request
-            http_headers: Additional headers to send with the request
+            retries: Override the default retry configuration for this request.
+            server_url: Override the default server URL for this request.
+            timeout_ms: Override the default timeout for this request.
+            http_headers: Additional headers to send with the request.
 
         Returns:
-            List of TeamInfo objects
+            List of TeamInfo objects.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -110,14 +122,20 @@ class NgsLeague(NgsBaseSDK):
         all games from preseason through postseason.
 
         Args:
-            season: The season year (e.g., 2025)
-            retries: Override the default retry configuration for this request
-            server_url: Override the default server URL for this request
-            timeout_ms: Override the default timeout for this request
-            http_headers: Additional headers to send with the request
+            season: The season year (e.g., 2025).
+            retries: Override the default retry configuration for this request.
+            server_url: Override the default server URL for this request.
+            timeout_ms: Override the default timeout for this request.
+            http_headers: Additional headers to send with the request.
 
         Returns:
-            List of GameSchedule objects for the entire season
+            List of GameSchedule objects for the entire season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

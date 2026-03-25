@@ -1,3 +1,5 @@
+"""Game endpoints for schedules, box scores, play-by-play, live stats, and weekly details."""
+
 from typing import List, Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, RESOURCE_ERROR_CODES
@@ -37,14 +39,25 @@ class Games(BaseSDK):
         This endpoint provides core game data with external IDs.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number
-            with_external_ids: Include external IDs in response
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number.
+            with_external_ids: Include external IDs in response.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            FootballGamesResponse containing game data for the specified
+            season, type, and week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetFootballGamesRequest(
             season=season,
@@ -84,11 +97,22 @@ class Games(BaseSDK):
         team statistics, individual player statistics, and scoring summary.
 
         Args:
-            game_id: Game identifier (UUID)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            ProBoxScoreResponse containing team statistics, individual player
+            statistics, and scoring summary for the specified game.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetFootballBoxScoreRequest(game_id=game_id)
 
@@ -125,13 +149,24 @@ class Games(BaseSDK):
         all plays, drives, scoring events, and key statistics.
 
         Args:
-            game_id: Game identifier (UUID)
-            include_penalties: Include penalty details
-            include_formations: Include offensive/defensive formations
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            include_penalties: Include penalty details.
+            include_formations: Include offensive/defensive formations.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            PlayByPlayResponse containing detailed play-by-play data
+            including drives, plays, and scoring events.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetPlayByPlayRequest(
             game_id=game_id,
@@ -172,13 +207,24 @@ class Games(BaseSDK):
         Provides real-time statistical data for specified season, type, and week.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            GameStatsResponse containing live game statistics and summaries
+            for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetLiveGameStatsRequest(
             season=season,
@@ -223,17 +269,28 @@ class Games(BaseSDK):
         drive charts, replays, and tagged videos.
 
         Args:
-            season: Season year
-            type_: Season type
-            week: Week number
-            include_drive_chart: Include drive chart data
-            include_replays: Include replay videos
-            include_standings: Include team standings
-            include_tagged_videos: Include tagged video content
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            type_: Season type.
+            week: Week number.
+            include_drive_chart: Include drive chart data.
+            include_replays: Include replay videos.
+            include_standings: Include team standings.
+            include_tagged_videos: Include tagged video content.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            List[WeeklyGameDetail] containing detailed game information
+            for each game in the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetWeeklyGameDetailsRequest(
             season=season,

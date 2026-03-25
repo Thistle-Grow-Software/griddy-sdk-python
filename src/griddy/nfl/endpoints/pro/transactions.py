@@ -1,3 +1,5 @@
+r"""Player transaction endpoints (trades, signings, releases, IR designations)."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES
@@ -31,14 +33,24 @@ class Transactions(ProSDK):
         practice squad moves, and injured reserve designations.
 
         Args:
-            month: Month (number) to fetch transactions for
-            year: Year (all four digits as int) to fetch transactions for
-            team_id: Team UUID string
-            limit: Maximum number of results
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            month: Month (number) to fetch transactions for.
+            year: Year (all four digits as int) to fetch transactions for.
+            team_id: Team UUID string.
+            limit: Maximum number of results.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TransactionsResponse containing recent player transactions
+            for the specified period.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

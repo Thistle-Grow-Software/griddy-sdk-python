@@ -1,3 +1,5 @@
+r"""Game schedules, standings, betting futures, and season week endpoints."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, PARAMETERLESS_ERROR_CODES
@@ -31,13 +33,22 @@ class Schedules(ProSDK, GameScheduleMixin):
         and ticket details for all games in the specified week.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number within the season
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number within the season.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            GamesResponse containing all games for the specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -72,10 +83,19 @@ class Schedules(ProSDK, GameScheduleMixin):
         determines the current week based on the current date.
 
         Args:
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            CurrentGamesResponse containing all games for the current week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -106,10 +126,20 @@ class Schedules(ProSDK, GameScheduleMixin):
         This endpoint provides futures market data across multiple betting hierarchies.
 
         Args:
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            FuturesOddsResponse containing betting futures data across
+            multiple market hierarchies.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -143,13 +173,23 @@ class Schedules(ProSDK, GameScheduleMixin):
         Standings are calculated through the specified week.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number within the season
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number within the season.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            StandingsResponse containing team standings for the
+            specified week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -184,11 +224,20 @@ class Schedules(ProSDK, GameScheduleMixin):
         This endpoint provides a comprehensive season calendar with all scheduling information.
 
         Args:
-            season: Season year
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            SeasonWeeksResponse containing all weeks for the specified season.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

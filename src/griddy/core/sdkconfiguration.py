@@ -1,3 +1,5 @@
+"""Base SDK configuration dataclass shared by all provider-specific SDK configurations."""
+
 from dataclasses import dataclass, field
 from typing import Any, Dict, Optional, Tuple, Union
 

@@ -1,3 +1,5 @@
+"""Video content endpoints for retrieving game replay data."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import RESOURCE_ERROR_CODES
@@ -25,11 +27,22 @@ class VideoContent(BaseSDK):
         Retrieves video replay content for a specific game.
 
         Args:
-            game_id: Game identifier (UUID)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            VideoReplaysResponse containing replay video data for the
+            specified game.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetVideoReplaysRequest(
             game_id=game_id,

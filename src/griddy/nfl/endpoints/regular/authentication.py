@@ -1,3 +1,5 @@
+"""Authentication endpoints for generating and refreshing NFL API access tokens."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES, STATS_ERROR_CODES
@@ -30,15 +32,26 @@ class Authentication(BaseSDK):
         endpoint that establishes a session for accessing NFL APIs. Requires client credentials and device information.
 
         Args:
-            client_key: Client application identifier key
-            client_secret: Client application secret for authentication
-            device_id: Unique device identifier (UUID format)
-            device_info: Base64-encoded JSON containing device information such as: {\"model\":\"desktop\",\"version\":\"Chrome\",\"osName\":\"Windows\",\"osVersion\":\"10\"}
-            network_type: Type of network connection
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            client_key: Client application identifier key.
+            client_secret: Client application secret for authentication.
+            device_id: Unique device identifier (UUID format).
+            device_info: Base64-encoded JSON containing device information such as: {\"model\":\"desktop\",\"version\":\"Chrome\",\"osName\":\"Windows\",\"osVersion\":\"10\"}.
+            network_type: Type of network connection.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TokenResponse containing the access token, refresh token,
+            and expiration details.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.TokenRequest(
             client_key=client_key,
@@ -91,19 +104,30 @@ class Authentication(BaseSDK):
         signature verification.
 
         Args:
-            client_key: Client application identifier key
-            client_secret: Client application secret for authentication
-            device_id: Unique device identifier (UUID format)
-            device_info: Base64-encoded JSON containing device information such as: {\"model\":\"desktop\",\"version\":\"Chrome\",\"osName\":\"Windows\",\"osVersion\":\"10\"}
-            network_type: Type of network connection
-            refresh_token: Valid refresh token from previous authentication
-            signature_timestamp: Unix timestamp for signature verification
-            uid: User identifier hash
-            uid_signature: HMAC signature for request verification
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            client_key: Client application identifier key.
+            client_secret: Client application secret for authentication.
+            device_id: Unique device identifier (UUID format).
+            device_info: Base64-encoded JSON containing device information such as: {\"model\":\"desktop\",\"version\":\"Chrome\",\"osName\":\"Windows\",\"osVersion\":\"10\"}.
+            network_type: Type of network connection.
+            refresh_token: Valid refresh token from previous authentication.
+            signature_timestamp: Unix timestamp for signature verification.
+            uid: User identifier hash.
+            uid_signature: HMAC signature for request verification.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            TokenResponse containing the refreshed access token, new refresh
+            token, and expiration details.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.RefreshTokenRequest(
             client_key=client_key,

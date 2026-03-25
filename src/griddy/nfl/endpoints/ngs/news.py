@@ -54,8 +54,14 @@ class NgsNews(BaseSDK):
         """Get mixed NGS content (articles and videos).
 
         Args:
-            limit: Number of items to return (default: 16)
-            offset: Offset for pagination (default: 0)
+            limit: Number of items to return (default: 16).
+            offset: Offset for pagination (default: 0).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -86,9 +92,15 @@ class NgsNews(BaseSDK):
         """Get NGS articles.
 
         Args:
-            category: Article category slug (default: "next-gen-stats-news")
-            limit: Number of items to return (default: 16)
-            offset: Offset for pagination (default: 0)
+            category: Article category slug (default: "next-gen-stats-news").
+            limit: Number of items to return (default: 16).
+            offset: Offset for pagination (default: 0).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",
@@ -121,9 +133,15 @@ class NgsNews(BaseSDK):
         """Get NGS video clips.
 
         Args:
-            video_channel: Video channel slug (default: "next-gen-stats-vc")
-            limit: Number of items to return (default: 16)
-            offset: Offset for pagination (default: 0)
+            video_channel: Video channel slug (default: "next-gen-stats-vc").
+            limit: Number of items to return (default: 16).
+            offset: Offset for pagination (default: 0).
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         return EndpointConfig(
             method="GET",

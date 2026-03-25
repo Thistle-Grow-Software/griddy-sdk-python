@@ -1,3 +1,5 @@
+"""Team standings endpoints for retrieving division, conference, and overall standings."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import COLLECTION_ERROR_CODES
@@ -29,14 +31,25 @@ class Standings(BaseSDK):
         Includes division, conference, and overall standings with detailed statistics.
 
         Args:
-            season: Season year
-            season_type: Type of season
-            week: Week number
-            limit: Maximum number of results to return
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            season: Season year.
+            season_type: Type of season.
+            week: Week number.
+            limit: Maximum number of results to return.
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            StandingsResponse containing team standings for the specified
+            season, type, and week.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetStandingsRequest(
             season=season,

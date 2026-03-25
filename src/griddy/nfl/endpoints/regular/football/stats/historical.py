@@ -1,3 +1,5 @@
+"""Historical game statistics endpoints for team and player stats by game."""
+
 from typing import Mapping, Optional
 
 from griddy.core._constants import RESOURCE_ERROR_CODES
@@ -28,12 +30,23 @@ class HistoricalStats(BaseSDK):
         (defense, passing, rushing, receiving, kicking, etc.).
 
         Args:
-            game_id: Game identifier (UUID)
-            team_id: Team identifier (UUID)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            team_id: Team identifier (UUID).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            HistoricalTeamStatsResponse containing game info, team info,
+            and nested stat categories for the specified game and team.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetHistoricalTeamStatsRequest(
             game_id=game_id,
@@ -73,12 +86,23 @@ class HistoricalStats(BaseSDK):
         with nullable stat categories (defense, passing, rushing, etc.).
 
         Args:
-            game_id: Game identifier (UUID)
-            team_id: Team identifier (UUID)
-            retries: Override the default retry configuration for this method
-            server_url: Override the default server URL for this method
-            timeout_ms: Override the default request timeout configuration for this method in milliseconds
+            game_id: Game identifier (UUID).
+            team_id: Team identifier (UUID).
+            retries: Override the default retry configuration for this method.
+            server_url: Override the default server URL for this method.
+            timeout_ms: Override the default request timeout configuration
+                for this method in milliseconds.
             http_headers: Additional headers to set or replace on requests.
+
+        Returns:
+            HistoricalPlayerStatsResponse containing per-player stat objects
+            with nullable stat categories for the specified game and team.
+
+        Raises:
+            APIError: If the API returns an unexpected error response.
+            AuthenticationError: If the request is not properly authenticated.
+            RateLimitError: If the API rate limit is exceeded.
+            NotFoundError: If the requested resource does not exist.
         """
         request = models.GetHistoricalPlayerStatsRequest(
             game_id=game_id,
