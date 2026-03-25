@@ -1,0 +1,8 @@
+[codespell]
+skip = .git,*.lock,*.min.js,site,*.pyc,__pycache__,.mypy_cache,.ruff_cache
+check-filenames =
+check-hidden =
+# NFL position abbreviations (TE=Tight End, OT=Offensive Tackle) and
+# PFR team abbreviation (nwe=New England)
+ignore-words-list = nfl,ngs,pfr,hof,ans,ags,ist,te,ot,nwe
+count =

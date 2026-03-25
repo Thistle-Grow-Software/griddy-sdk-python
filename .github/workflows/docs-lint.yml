@@ -1,0 +1,62 @@
+name: Documentation Lint
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "specs/**"
+      - ".codespellrc"
+      - ".redocly.yaml"
+      - ".github/workflows/docs-lint.yml"
+  push:
+    branches:
+      - master
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "specs/**"
+      - ".codespellrc"
+      - ".redocly.yaml"
+      - ".github/workflows/docs-lint.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  codespell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: uv sync --group docs
+
+      - name: Run codespell
+        run: uv run codespell docs/ src/
+
+  redocly-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for OpenAPI specs
+        id: check-specs
+        run: |
+          if compgen -G "specs/**/*.yaml" > /dev/null 2>&1; then
+            echo "has_specs=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_specs=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Redocly CLI
+        if: steps.check-specs.outputs.has_specs == 'true'
+        run: npm install -g @redocly/cli
+
+      - name: Lint OpenAPI specs
+        if: steps.check-specs.outputs.has_specs == 'true'
+        run: redocly lint specs/**/*.yaml
