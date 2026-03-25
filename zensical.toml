@@ -44,6 +44,18 @@ Copyright &copy; 2026 The authors
 # Navigation structure organized by domain
 nav = [
     { "Home" = "index.md" },
+    { "Getting Started" = "getting-started.md" },
+    { "Guides" = [
+        { "NFL Regular API" = "guides/nfl-regular-api.md" },
+        { "NFL Pro Stats" = "guides/nfl-pro-stats.md" },
+        { "Next Gen Stats" = "guides/nfl-ngs.md" },
+        { "Pro Football Reference" = "guides/pfr.md" },
+        { "Authentication" = "guides/authentication.md" },
+        { "Error Handling" = "guides/error-handling.md" },
+        { "Async Usage" = "guides/async.md" },
+        { "Architecture" = "guides/architecture.md" },
+        { "Advanced Usage" = "guides/advanced.md" },
+    ]},
     { "API Reference" = [
         { "" = "reference/index.md" },
         { "NFL" = [
