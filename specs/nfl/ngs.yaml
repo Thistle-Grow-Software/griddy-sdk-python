@@ -1,0 +1,1065 @@
+openapi: "3.1.0"
+info:
+  title: "NFL Next Gen Stats API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL Next Gen Stats API, covering
+    league, games, stats, leaders, content, and news endpoints. This spec was
+    derived from the Griddy SDK implementation and may be incomplete. The
+    NFL.com API is undocumented and subject to change without notice.
+servers:
+  - url: https://nextgenstats.nfl.com
+    description: NFL Next Gen Stats API
+  - url: https://api.nfl.com
+    description: NFL Content API
+security:
+  - bearerAuth: []
+components:
+  schemas:
+    SeasonType:
+      type: string
+      enum: ["REG", "PRE", "POST"]
+    # --- League schemas ---
+    NgsCurrentScheduleResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type (REG, PRE, POST).
+        week:
+          type: integer
+          description: Current week number.
+        games:
+          type: array
+          items:
+            type: object
+          description: Array of game objects for the current week.
+    TeamInfo:
+      type: object
+      properties:
+        teamId:
+          type: string
+          description: Unique team identifier.
+        fullName:
+          type: string
+          description: Full team name.
+        abbreviation:
+          type: string
+          description: Team abbreviation.
+        conference:
+          type: string
+          description: Conference (AFC or NFC).
+        division:
+          type: string
+          description: Division name.
+    GameSchedule:
+      type: object
+      properties:
+        gameId:
+          type: integer
+          description: Unique game identifier.
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type.
+        week:
+          type: integer
+          description: Week number.
+        homeTeam:
+          type: string
+          description: Home team abbreviation.
+        awayTeam:
+          type: string
+          description: Away team abbreviation.
+    # --- Games schemas ---
+    NgsLiveScoresResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type (REG, PRE, POST).
+        week:
+          type: integer
+          description: Week number.
+        scores:
+          type: array
+          items:
+            type: object
+          description: Array of live game score objects.
+    NgsGameCenterOverviewResponse:
+      type: object
+      properties:
+        schedule:
+          type: object
+          description: Game schedule information.
+        passers:
+          type: array
+          items:
+            type: object
+          description: Passer statistics with zone breakdowns.
+        rushers:
+          type: array
+          items:
+            type: object
+          description: Rusher statistics with location maps.
+        receivers:
+          type: array
+          items:
+            type: object
+          description: Receiver statistics with separation metrics.
+        passRushers:
+          type: array
+          items:
+            type: object
+          description: Pass rusher statistics.
+        leaders:
+          type: object
+          description: Game leaders (speed, sacks, pass distance).
+    # --- Stats schemas ---
+    NgsPassingStatsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type.
+        filter:
+          type: string
+          description: Active filter description.
+        threshold:
+          type: number
+          description: Minimum qualifying threshold.
+        stats:
+          type: array
+          items:
+            type: object
+          description: Array of passing stat objects.
+    NgsReceivingStatsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type.
+        filter:
+          type: string
+          description: Active filter description.
+        threshold:
+          type: number
+          description: Minimum qualifying threshold.
+        stats:
+          type: array
+          items:
+            type: object
+          description: Array of receiving stat objects.
+    NgsRushingStatsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type.
+        filter:
+          type: string
+          description: Active filter description.
+        threshold:
+          type: number
+          description: Minimum qualifying threshold.
+        stats:
+          type: array
+          items:
+            type: object
+          description: Array of rushing stat objects.
+    # --- Leaders schemas ---
+    NgsSpeedLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of ball carrier speed leader objects.
+    NgsSackLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of sack time leader objects.
+    NgsCompletionLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of improbable completion leader objects.
+    NgsYACLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of YAC over expectation leader objects.
+    NgsDistanceLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of in-play distance leader objects.
+    NgsTackleLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of tackle distance leader objects.
+    NgsERYLeadersResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+        seasonType:
+          type: string
+        leaders:
+          type: array
+          items:
+            type: object
+          description: Array of rush yards over expected leader objects.
+    # --- Content schemas ---
+    NgsChartsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        charts:
+          type: array
+          items:
+            type: object
+          description: Array of chart objects (route, pass, carry).
+        count:
+          type: integer
+          description: Number of charts returned.
+    NgsChartPlayersResponse:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            type: object
+          description: Array of players available in the chart system.
+    NgsHighlightsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        highlights:
+          type: array
+          items:
+            type: object
+          description: Array of play highlight objects.
+    # --- News schemas ---
+    NgsMixedContentResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+          description: Array of mixed content items (articles and videos).
+        total:
+          type: integer
+          description: Total number of available items.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+    NgsArticlesResponse:
+      type: object
+      properties:
+        articles:
+          type: array
+          items:
+            type: object
+          description: Array of article objects.
+        total:
+          type: integer
+          description: Total number of available articles.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+    NgsVideosResponse:
+      type: object
+      properties:
+        videos:
+          type: array
+          items:
+            type: object
+          description: Array of video clip objects.
+        total:
+          type: integer
+          description: Total number of available videos.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+  parameters:
+    SeasonParam:
+      name: season
+      in: query
+      required: true
+      description: The season year (e.g., 2025).
+      schema:
+        type: integer
+    SeasonTypeParam:
+      name: seasonType
+      in: query
+      required: true
+      description: Season type (REG, PRE, POST).
+      schema:
+        $ref: "#/components/schemas/SeasonType"
+    LimitParam:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return (default 20).
+      schema:
+        type: integer
+        default: 20
+    WeekParam:
+      name: week
+      in: query
+      required: false
+      description: Optional week filter.
+      schema:
+        type: integer
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  # ===== League endpoints =====
+  /api/league/schedule/current:
+    get:
+      operationId: getNgsCurrentSchedule
+      summary: Get the current week's schedule.
+      description: >-
+        Returns the schedule for the current week of the NFL season,
+        including game times, teams, scores, and venue information.
+      responses:
+        "200":
+          description: Current week schedule.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsCurrentScheduleResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/league/teams:
+    get:
+      operationId: getNgsTeams
+      summary: Get all NFL teams.
+      description: >-
+        Returns a list of all NFL teams with their details including
+        conference, division, stadium, and contact information.
+      responses:
+        "200":
+          description: List of all NFL teams.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TeamInfo"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/league/schedule:
+    get:
+      operationId: getNgsSchedule
+      summary: Get the full season schedule.
+      description: >-
+        Returns the complete schedule for a given season, including
+        all games from preseason through postseason.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Full season schedule.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/GameSchedule"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  # ===== Games endpoints =====
+  /api/live/games/scores:
+    get:
+      operationId: getNgsLiveScores
+      summary: Get live game scores for a specific week.
+      description: >-
+        Returns live scores for all games in the specified week, including
+        quarter-by-quarter scoring, game status, and team information.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: seasonType
+          in: query
+          required: true
+          description: Season type (REG, PRE, POST).
+          schema:
+            $ref: "#/components/schemas/SeasonType"
+        - name: week
+          in: query
+          required: true
+          description: Week number.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Live game scores for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsLiveScoresResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/gamecenter/overview:
+    get:
+      operationId: getNgsGameOverview
+      summary: Get detailed game center overview with NGS metrics.
+      description: >-
+        Returns comprehensive game data including passer statistics with
+        zone breakdowns, rusher statistics with location maps, receiver
+        statistics with separation metrics, pass rusher statistics, and
+        game leaders (speed, sacks, pass distance).
+      parameters:
+        - name: gameId
+          in: query
+          required: true
+          description: The unique game identifier (e.g., 2025112700).
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Detailed game center overview.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsGameCenterOverviewResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  # ===== Stats endpoints =====
+  /api/statboard/passing:
+    get:
+      operationId: getNgsPassingStats
+      summary: Get NGS passing statistics.
+      description: >-
+        Returns detailed passing statistics including time to throw,
+        air yards, completion probability, and more.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: seasonType
+          in: query
+          required: true
+          description: Season type (REG, PRE, POST).
+          schema:
+            $ref: "#/components/schemas/SeasonType"
+        - name: week
+          in: query
+          required: false
+          description: Optional week filter.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Passing statistics.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsPassingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/statboard/receiving:
+    get:
+      operationId: getNgsReceivingStats
+      summary: Get NGS receiving statistics.
+      description: >-
+        Returns detailed receiving statistics including separation,
+        cushion, YAC over expectation, and more.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: seasonType
+          in: query
+          required: true
+          description: Season type (REG, PRE, POST).
+          schema:
+            $ref: "#/components/schemas/SeasonType"
+        - name: week
+          in: query
+          required: false
+          description: Optional week filter.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Receiving statistics.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsReceivingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/statboard/rushing:
+    get:
+      operationId: getNgsRushingStats
+      summary: Get NGS rushing statistics.
+      description: >-
+        Returns detailed rushing statistics including time to LOS,
+        rush yards over expected, efficiency, and more.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: seasonType
+          in: query
+          required: true
+          description: Season type (REG, PRE, POST).
+          schema:
+            $ref: "#/components/schemas/SeasonType"
+        - name: week
+          in: query
+          required: false
+          description: Optional week filter.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Rushing statistics.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsRushingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  # ===== Leaders endpoints =====
+  /api/leaders/speed/ballCarrier:
+    get:
+      operationId: getNgsFastestBallCarriers
+      summary: Get fastest ball carrier speeds.
+      description: >-
+        Returns leaderboard of fastest ball carrier speeds recorded.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/LimitParam"
+        - $ref: "#/components/parameters/WeekParam"
+      responses:
+        "200":
+          description: Fastest ball carrier speed leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsSpeedLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/time/sack:
+    get:
+      operationId: getNgsFastestSacks
+      summary: Get fastest sack times.
+      description: >-
+        Returns leaderboard of quickest sacks by time to tackle.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/LimitParam"
+        - $ref: "#/components/parameters/WeekParam"
+      responses:
+        "200":
+          description: Fastest sack time leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsSackLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/expectation/completion/season:
+    get:
+      operationId: getNgsImprobableCompletions
+      summary: Get most improbable completions.
+      description: >-
+        Returns leaderboard of completions with lowest completion probability.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+      responses:
+        "200":
+          description: Improbable completion leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsCompletionLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/expectation/yac/season:
+    get:
+      operationId: getNgsIncredibleYAC
+      summary: Get incredible YAC plays.
+      description: >-
+        Returns leaderboard of yards after catch over expectation.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+      responses:
+        "200":
+          description: YAC over expectation leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsYACLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/distance/ballCarrier:
+    get:
+      operationId: getNgsLongestPlays
+      summary: Get longest plays by in-play distance.
+      description: >-
+        Returns leaderboard of plays with most distance covered.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/LimitParam"
+        - $ref: "#/components/parameters/WeekParam"
+      responses:
+        "200":
+          description: Longest play distance leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsDistanceLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/distance/tackle:
+    get:
+      operationId: getNgsLongestTackles
+      summary: Get longest tackles by distance covered.
+      description: >-
+        Returns leaderboard of tackles with most distance covered
+        to make the tackle.
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/LimitParam"
+        - $ref: "#/components/parameters/WeekParam"
+      responses:
+        "200":
+          description: Longest tackle distance leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsTackleLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/leaders/expectation/ery/season:
+    get:
+      operationId: getNgsRemarkableRushes
+      summary: Get remarkable rushes.
+      description: >-
+        Returns leaderboard of rush yards over expected (ERY).
+      parameters:
+        - $ref: "#/components/parameters/SeasonParam"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+      responses:
+        "200":
+          description: Rush yards over expected leaders.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsERYLeadersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  # ===== Content endpoints =====
+  /api/content/microsite/chart:
+    get:
+      operationId: getNgsCharts
+      summary: Get player charts (route, pass, carry).
+      description: >-
+        Returns player tracking charts including route charts, pass charts,
+        and carry charts. Results can be filtered by week, chart type,
+        team, and player.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: count
+          in: query
+          required: false
+          description: Number of charts to return (default 12).
+          schema:
+            type: integer
+            default: 12
+        - name: week
+          in: query
+          required: false
+          description: Week filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+        - name: type
+          in: query
+          required: false
+          description: "Chart type filter: all, route, pass, carry (default \"all\")."
+          schema:
+            type: string
+            default: "all"
+        - name: teamId
+          in: query
+          required: false
+          description: Team ID filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+        - name: esbId
+          in: query
+          required: false
+          description: Player ESB ID filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+      responses:
+        "200":
+          description: Player charts.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsChartsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/content/microsite/chart/players:
+    get:
+      operationId: getNgsChartPlayers
+      summary: Get players available in the chart system.
+      description: >-
+        Returns a list of players that have charts available in
+        the NGS chart system.
+      responses:
+        "200":
+          description: Chart players list.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsChartPlayersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/plays/highlights:
+    get:
+      operationId: getNgsHighlights
+      summary: Get play highlights.
+      description: >-
+        Returns NGS play highlights for the specified season.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Number of highlights to return (default 16).
+          schema:
+            type: integer
+            default: 16
+      responses:
+        "200":
+          description: Play highlights.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsHighlightsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  # ===== News endpoints (use api.nfl.com server) =====
+  /content/v1/mixed/next-gen-stats:
+    get:
+      operationId: getNgsMixedContent
+      summary: Get mixed NGS content (articles and videos).
+      description: >-
+        Returns a paginated mix of NGS-related articles and video content.
+      servers:
+        - url: https://api.nfl.com
+          description: NFL Content API
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Mixed content items.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsMixedContentResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /content/v1/articles:
+    get:
+      operationId: getNgsArticles
+      summary: Get NGS articles.
+      description: >-
+        Returns a paginated list of NGS articles filtered by category.
+      servers:
+        - url: https://api.nfl.com
+          description: NFL Content API
+      parameters:
+        - name: category
+          in: query
+          required: false
+          description: Article category slug (default "next-gen-stats-news").
+          schema:
+            type: string
+            default: "next-gen-stats-news"
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: NGS articles.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsArticlesResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /content/v1/videos/clips:
+    get:
+      operationId: getNgsVideoClips
+      summary: Get NGS video clips.
+      description: >-
+        Returns a paginated list of NGS video clips filtered by channel.
+      servers:
+        - url: https://api.nfl.com
+          description: NFL Content API
+      parameters:
+        - name: videoChannel
+          in: query
+          required: false
+          description: Video channel slug (default "next-gen-stats-vc").
+          schema:
+            type: string
+            default: "next-gen-stats-vc"
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: NGS video clips.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsVideosResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
