@@ -15,6 +15,8 @@ on:
       - "src/**"
       - "zensical.toml"
       - ".github/workflows/docs.yml"
+  release:
+    types: [published]
 
 permissions:
   contents: read
@@ -34,8 +36,8 @@ jobs:
       - name: Install dependencies
         run: uv sync --group docs
 
-      - name: Build docs
-        run: uv run zensical build
+      - name: Build docs (strict)
+        run: uv run zensical build --strict
 
       - uses: actions/upload-artifact@v7
         with:
@@ -109,3 +111,78 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy site/ --project-name=griddy-docs --branch=master
+
+  deploy-release:
+    if: github.event_name == 'release'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: docs-site
+          path: /tmp/new-site/
+
+      - name: Deploy versioned docs
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Checkout existing gh-pages branch, or create an orphan
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . 2>/dev/null || true
+            echo '[]' > versions.json
+          fi
+
+          # Add the new version and update latest
+          rm -rf "${VERSION}" latest
+          cp -r /tmp/new-site/ "${VERSION}/"
+          cp -r /tmp/new-site/ latest/
+
+          # Update versions.json
+          python3 << PYEOF
+          import json, pathlib
+
+          versions_file = pathlib.Path("versions.json")
+          versions = json.loads(versions_file.read_text()) if versions_file.exists() else []
+
+          # Remove existing entry for this version
+          versions = [v for v in versions if v["version"] != "${VERSION}"]
+          # Strip 'latest' alias from all existing versions
+          for v in versions:
+              v["aliases"] = [a for a in v.get("aliases", []) if a != "latest"]
+
+          # Insert new version at the top with latest alias
+          versions.insert(0, {
+              "version": "${VERSION}",
+              "title": "${VERSION} (latest)",
+              "aliases": ["latest"],
+          })
+
+          versions_file.write_text(json.dumps(versions, indent=2) + "\n")
+          PYEOF
+
+          # Root index redirects to latest
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=latest/"></head></html>' > index.html
+
+          git add -A
+          git commit -m "docs: deploy version ${VERSION}"
+          git push origin gh-pages
+
+      - name: Deploy to Cloudflare Pages (production)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy . --project-name=griddy-docs --branch=master

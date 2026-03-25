@@ -1,0 +1,38 @@
+name: Link Checker
+
+on:
+  schedule:
+    # Run weekly on Mondays at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linkchecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "latest"
+
+      - name: Install dependencies
+        run: uv sync --group docs
+
+      - name: Build docs
+        run: uv run zensical build --strict
+
+      - name: Check external links
+        run: |
+          uv run linkchecker site/ \
+            --check-extern \
+            --no-follow-url='https://github.com/.*/edit/.*' \
+            --no-follow-url='https://api\.nfl\.com/.*' \
+            --no-follow-url='https://pro\.nfl\.com/.*' \
+            --no-follow-url='https://nextgenstats\.nfl\.com/.*' \
+            --timeout 30 \
+            --no-warnings
+        continue-on-error: true
