@@ -2,15 +2,15 @@
 
 [![Build Status](https://github.com/Thistle-Grow-Software/griddy-sdk-python/actions/workflows/quality-gates.yml/badge.svg)](https://github.com/Thistle-Grow-Software/griddy-sdk-python/actions/workflows/quality-gates.yml)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue)](https://www.python.org/downloads/)
-[![version](https://img.shields.io/badge/version-0.45.0-green)](https://github.com/Thistle-Grow-Software/griddy-sdk-python)
+[![version](https://img.shields.io/badge/version-0.47.1-green)](https://github.com/Thistle-Grow-Software/griddy-sdk-python)
 [![codecov](https://codecov.io/gh/Thistle-Grow-Software/griddy-sdk-python/graph/badge.svg?token=WEUUCIGCRZ)](https://codecov.io/gh/Thistle-Grow-Software/griddy-sdk-python)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![mypy](https://img.shields.io/badge/type%20checker-mypy-blue)](https://mypy-lang.org/)
-[![Docs](https://img.shields.io/badge/docs-mkdocs-blue)](https://jkgriebel93.github.io/griddy-docs/)
+[![Docs](https://img.shields.io/badge/docs-zensical-blue)](https://docs.thistlegrow.com/)
 
 A Python SDK for accessing NFL data from multiple sources including NFL.com, with other sources to come.
 
-See the full documentation [here](https://jkgriebel93.github.io/griddy-docs/).
+See the full documentation at [docs.thistlegrow.com](https://docs.thistlegrow.com/).
 
 ## Features
 
@@ -176,62 +176,57 @@ with GriddyNFL(nfl_auth=auth) as nfl:
 
 ```bash
 # Clone the repository
-git clone https://github.com/jkgriebel93/griddy-sdk-python.git
+git clone https://github.com/Thistle-Grow-Software/griddy-sdk-python.git
 cd griddy-sdk-python
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -e ".[dev]"
+# Install all dependencies (requires uv)
+uv sync --all-groups
 ```
 
 ### Testing
 
 ```bash
-# Run all tests
-pytest
-
-# Run with coverage
-pytest --cov=src/griddy --cov-report=html
+# Run all tests (coverage enabled by default)
+uv run pytest
 
 # Run specific tests
-pytest tests/test_nfl/test_endpoints/
+uv run pytest tests/test_nfl/test_endpoints/
+
+# Run only unit tests (skip integration)
+uv run pytest -m "not integration"
 ```
 
 ### Code Quality
 
 ```bash
 # Format code
-black src/ tests/
+ruff format src/ tests/
 
-# Sort imports
-isort src/ tests/
+# Lint (includes import sorting)
+ruff check src/ tests/
 
 # Type checking
 mypy src/
-
-# Linting
-flake8 src/ tests/
 ```
 
 ### Documentation
 
 ```bash
 # Install docs dependencies
-pip install -e ".[docs]"
+uv sync --group docs
 
 # Serve documentation locally
-mkdocs serve
+uv run zensical serve
 
 # Build documentation
-mkdocs build
+uv run zensical build
 ```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed development guidelines.
 
 ## Documentation
 
-Full documentation is available at [https://jkgriebel93.github.io/griddy-sdk-python](https://jkgriebel93.github.io/griddy-sdk-python)
+Full documentation is available at [docs.thistlegrow.com](https://docs.thistlegrow.com/)
 
 
 ## Contact
