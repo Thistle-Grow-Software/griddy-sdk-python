@@ -1,0 +1,175 @@
+openapi: "3.1.0"
+info:
+  title: "NFL.com Authentication API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL.com Authentication API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice.
+servers:
+  - url: https://api.nfl.com
+    description: NFL.com API
+paths:
+  /identity/v3/token:
+    post:
+      operationId: generateToken
+      summary: Generate Initial Access Token
+      security: []
+      description: >-
+        Creates a new access token and refresh token for a client device.
+        This is the initial authentication endpoint that establishes a session
+        for accessing NFL APIs. Requires client credentials and device information.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TokenRequest"
+      responses:
+        "200":
+          description: Successfully generated access and refresh tokens.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /identity/v3/token/refresh:
+    post:
+      operationId: refreshToken
+      summary: Refresh Access Token
+      security: []
+      description: >-
+        Refreshes an existing access token using a valid refresh token.
+        This endpoint extends the user's session by generating new access
+        and refresh tokens. Requires the previous refresh token and
+        signature verification.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RefreshTokenRequest"
+      responses:
+        "200":
+          description: Successfully refreshed access and refresh tokens.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+components:
+  schemas:
+    NetworkType:
+      type: string
+      enum: ["other", "wifi", "cellular", "ethernet"]
+      description: Type of network connection.
+    TokenRequest:
+      type: object
+      required:
+        - clientKey
+        - clientSecret
+        - deviceId
+        - deviceInfo
+        - networkType
+      properties:
+        clientKey:
+          type: string
+          description: Client application identifier key.
+        clientSecret:
+          type: string
+          description: Client application secret for authentication.
+        deviceId:
+          type: string
+          format: uuid
+          description: Unique device identifier (UUID format).
+        deviceInfo:
+          type: string
+          description: >-
+            Base64-encoded JSON containing device information such as:
+            {"model":"desktop","version":"Chrome","osName":"Windows","osVersion":"10"}.
+        networkType:
+          $ref: "#/components/schemas/NetworkType"
+    RefreshTokenRequest:
+      type: object
+      required:
+        - clientKey
+        - clientSecret
+        - deviceId
+        - deviceInfo
+        - networkType
+        - refreshToken
+        - signatureTimestamp
+        - uid
+        - uidSignature
+      properties:
+        clientKey:
+          type: string
+          description: Client application identifier key.
+        clientSecret:
+          type: string
+          description: Client application secret for authentication.
+        deviceId:
+          type: string
+          format: uuid
+          description: Unique device identifier (UUID format).
+        deviceInfo:
+          type: string
+          description: >-
+            Base64-encoded JSON containing device information such as:
+            {"model":"desktop","version":"Chrome","osName":"Windows","osVersion":"10"}.
+        networkType:
+          $ref: "#/components/schemas/NetworkType"
+        refreshToken:
+          type: string
+          description: Valid refresh token from previous authentication.
+        signatureTimestamp:
+          type: string
+          description: Unix timestamp for signature verification.
+        uid:
+          type: string
+          description: User identifier hash.
+        uidSignature:
+          type: string
+          description: HMAC signature for request verification.
+    TokenResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+          description: >-
+            JWT access token containing user permissions, subscription plans,
+            location data, and roles. Include this token in the Authorization
+            header as "Bearer {accessToken}" for authenticated requests.
+        expiresIn:
+          type: integer
+          description: Unix timestamp when the access token expires.
+        refreshToken:
+          type: string
+          description: New refresh token for future token refresh requests.
+      required:
+        - accessToken
+        - expiresIn
+        - refreshToken
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded. Retry after the indicated period.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth2 access token obtained from the authentication endpoint.

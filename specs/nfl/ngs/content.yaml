@@ -1,0 +1,180 @@
+openapi: "3.1.0"
+info:
+  title: "NFL Next Gen Stats Content API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL Next Gen Stats Content API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice.
+servers:
+  - url: https://nextgenstats.nfl.com
+    description: NFL Next Gen Stats API
+components:
+  schemas:
+    SeasonType:
+      type: string
+      enum: ["REG", "PRE", "POST"]
+    NgsChartsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        charts:
+          type: array
+          items:
+            type: object
+          description: Array of chart objects (route, pass, carry).
+        count:
+          type: integer
+          description: Number of charts returned.
+    NgsChartPlayersResponse:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            type: object
+          description: Array of players available in the chart system.
+    NgsHighlightsResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        highlights:
+          type: array
+          items:
+            type: object
+          description: Array of play highlight objects.
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+paths:
+  /api/content/microsite/chart:
+    get:
+      operationId: getNgsCharts
+      summary: Get player charts (route, pass, carry).
+      description: >-
+        Returns player tracking charts including route charts, pass charts,
+        and carry charts. Results can be filtered by week, chart type,
+        team, and player.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: count
+          in: query
+          required: false
+          description: Number of charts to return (default 12).
+          schema:
+            type: integer
+            default: 12
+        - name: week
+          in: query
+          required: false
+          description: Week filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+        - name: type
+          in: query
+          required: false
+          description: "Chart type filter: all, route, pass, carry (default \"all\")."
+          schema:
+            type: string
+            default: "all"
+        - name: teamId
+          in: query
+          required: false
+          description: Team ID filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+        - name: esbId
+          in: query
+          required: false
+          description: Player ESB ID filter or "all" (default "all").
+          schema:
+            type: string
+            default: "all"
+      responses:
+        "200":
+          description: Player charts.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsChartsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/content/microsite/chart/players:
+    get:
+      operationId: getNgsChartPlayers
+      summary: Get players available in the chart system.
+      description: >-
+        Returns a list of players that have charts available in
+        the NGS chart system.
+      responses:
+        "200":
+          description: Chart players list.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsChartPlayersResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/plays/highlights:
+    get:
+      operationId: getNgsHighlights
+      summary: Get play highlights.
+      description: >-
+        Returns NGS play highlights for the specified season.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          description: Number of highlights to return (default 16).
+          schema:
+            type: integer
+            default: 16
+      responses:
+        "200":
+          description: Play highlights.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsHighlightsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"

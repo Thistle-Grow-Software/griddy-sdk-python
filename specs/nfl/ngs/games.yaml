@@ -1,0 +1,145 @@
+openapi: "3.1.0"
+info:
+  title: "NFL Next Gen Stats Games API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL Next Gen Stats Games API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice.
+servers:
+  - url: https://nextgenstats.nfl.com
+    description: NFL Next Gen Stats API
+components:
+  schemas:
+    SeasonType:
+      type: string
+      enum: ["REG", "PRE", "POST"]
+    NgsLiveScoresResponse:
+      type: object
+      properties:
+        season:
+          type: integer
+          description: Season year.
+        seasonType:
+          type: string
+          description: Season type (REG, PRE, POST).
+        week:
+          type: integer
+          description: Week number.
+        scores:
+          type: array
+          items:
+            type: object
+          description: Array of live game score objects.
+    NgsGameCenterOverviewResponse:
+      type: object
+      properties:
+        schedule:
+          type: object
+          description: Game schedule information.
+        passers:
+          type: array
+          items:
+            type: object
+          description: Passer statistics with zone breakdowns.
+        rushers:
+          type: array
+          items:
+            type: object
+          description: Rusher statistics with location maps.
+        receivers:
+          type: array
+          items:
+            type: object
+          description: Receiver statistics with separation metrics.
+        passRushers:
+          type: array
+          items:
+            type: object
+          description: Pass rusher statistics.
+        leaders:
+          type: object
+          description: Game leaders (speed, sacks, pass distance).
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+paths:
+  /api/live/games/scores:
+    get:
+      operationId: getNgsLiveScores
+      summary: Get live game scores for a specific week.
+      description: >-
+        Returns live scores for all games in the specified week, including
+        quarter-by-quarter scoring, game status, and team information.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          description: The season year (e.g., 2025).
+          schema:
+            type: integer
+        - name: seasonType
+          in: query
+          required: true
+          description: Season type (REG, PRE, POST).
+          schema:
+            $ref: "#/components/schemas/SeasonType"
+        - name: week
+          in: query
+          required: true
+          description: Week number.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Live game scores for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsLiveScoresResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /api/gamecenter/overview:
+    get:
+      operationId: getNgsGameOverview
+      summary: Get detailed game center overview with NGS metrics.
+      description: >-
+        Returns comprehensive game data including passer statistics with
+        zone breakdowns, rusher statistics with location maps, receiver
+        statistics with separation metrics, pass rusher statistics, and
+        game leaders (speed, sacks, pass distance).
+      parameters:
+        - name: gameId
+          in: query
+          required: true
+          description: The unique game identifier (e.g., 2025112700).
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Detailed game center overview.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsGameCenterOverviewResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"

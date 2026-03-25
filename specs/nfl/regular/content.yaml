@@ -1,0 +1,107 @@
+openapi: "3.1.0"
+info:
+  title: "NFL.com Content API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL.com Content API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice.
+servers:
+  - url: https://api.nfl.com
+    description: NFL.com API
+paths:
+  /content/v1/videos/replays:
+    get:
+      operationId: getVideoReplays
+      summary: Get Video Replays
+      description: Retrieves video replay content for a specific game.
+      parameters:
+        - name: gameId
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Game identifier (UUID).
+      responses:
+        "200":
+          description: Successfully retrieved video replays for the game.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VideoReplaysResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+components:
+  schemas:
+    Replay:
+      type: object
+      description: Video replay reference for a game.
+      properties:
+        type:
+          type: string
+          description: Replay type identifier.
+        description:
+          type: string
+          description: Replay description text.
+        duration:
+          type: integer
+          description: Duration in seconds.
+        externalId:
+          type: string
+          description: External identifier for the replay.
+        mcpPlaybackId:
+          type: string
+          description: MCP playback identifier.
+        title:
+          type: string
+          description: Replay title.
+        publishDate:
+          type: string
+          description: Publication date.
+        subType:
+          type: string
+          description: Replay sub-type.
+    VideoReplaysMetadata:
+      type: object
+      properties:
+        generatedAt:
+          type: string
+          description: Timestamp when the response was generated.
+    VideoReplaysPagination:
+      type: object
+      properties:
+        token:
+          type: ["string", "null"]
+          description: Pagination token for the next page.
+    VideoReplaysResponse:
+      type: object
+      description: Video replays for a game.
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Replay"
+          description: List of replay objects.
+        metadata:
+          $ref: "#/components/schemas/VideoReplaysMetadata"
+        pagination:
+          $ref: "#/components/schemas/VideoReplaysPagination"
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded. Retry after the indicated period.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth2 access token obtained from the authentication endpoint.
+security:
+  - bearerAuth: []

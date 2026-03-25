@@ -1,0 +1,196 @@
+openapi: "3.1.0"
+info:
+  title: "NFL Next Gen Stats News API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL Next Gen Stats News API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice. Note: these endpoints use the api.nfl.com server,
+    not nextgenstats.nfl.com.
+servers:
+  - url: https://api.nfl.com
+    description: NFL Content API
+components:
+  schemas:
+    NgsMixedContentResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+          description: Array of mixed content items (articles and videos).
+        total:
+          type: integer
+          description: Total number of available items.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+    NgsArticlesResponse:
+      type: object
+      properties:
+        articles:
+          type: array
+          items:
+            type: object
+          description: Array of article objects.
+        total:
+          type: integer
+          description: Total number of available articles.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+    NgsVideosResponse:
+      type: object
+      properties:
+        videos:
+          type: array
+          items:
+            type: object
+          description: Array of video clip objects.
+        total:
+          type: integer
+          description: Total number of available videos.
+        limit:
+          type: integer
+          description: Requested limit.
+        offset:
+          type: integer
+          description: Requested offset.
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+paths:
+  /content/v1/mixed/next-gen-stats:
+    get:
+      operationId: getNgsMixedContent
+      summary: Get mixed NGS content (articles and videos).
+      description: >-
+        Returns a paginated mix of NGS-related articles and video content.
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Mixed content items.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsMixedContentResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /content/v1/articles:
+    get:
+      operationId: getNgsArticles
+      summary: Get NGS articles.
+      description: >-
+        Returns a paginated list of NGS articles filtered by category.
+      parameters:
+        - name: category
+          in: query
+          required: false
+          description: Article category slug (default "next-gen-stats-news").
+          schema:
+            type: string
+            default: "next-gen-stats-news"
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: NGS articles.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsArticlesResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /content/v1/videos/clips:
+    get:
+      operationId: getNgsVideoClips
+      summary: Get NGS video clips.
+      description: >-
+        Returns a paginated list of NGS video clips filtered by channel.
+      parameters:
+        - name: videoChannel
+          in: query
+          required: false
+          description: Video channel slug (default "next-gen-stats-vc").
+          schema:
+            type: string
+            default: "next-gen-stats-vc"
+        - name: limit
+          in: query
+          required: false
+          description: Number of items to return (default 16).
+          schema:
+            type: integer
+            default: 16
+        - name: offset
+          in: query
+          required: false
+          description: Offset for pagination (default 0).
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: NGS video clips.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NgsVideosResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"

@@ -1,0 +1,1170 @@
+openapi: "3.1.0"
+info:
+  title: "NFL.com Pro Stats API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL.com Pro Stats API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice. All endpoints under /api/secured/* require NFL Pro
+    Access.
+servers:
+  - url: https://pro.nfl.com
+    description: NFL Pro API
+
+paths:
+  # ---------------------------------------------------------------------------
+  # Player Offense — Passing
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/players-offense/passing/week:
+    get:
+      operationId: getPlayerPassingStatsByWeek
+      summary: Get Player Passing Statistics by Week
+      description: >-
+        Retrieves comprehensive passing statistics for NFL players during a
+        specified week and season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit50"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedPasser
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified passers (minimum attempts threshold).
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player passing statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WeeklyPassingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/players-offense/passing/season:
+    get:
+      operationId: getPlayerPassingStatsBySeason
+      summary: Get Player Passing Statistics by Season
+      description: >-
+        Retrieves comprehensive passing statistics for NFL players during a
+        specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedPasser
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+          description: Filter to only qualified passers (minimum attempts threshold).
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player passing statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PassingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Player Offense — Receiving
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/players-offense/receiving/week:
+    get:
+      operationId: getPlayerReceivingStatsByWeek
+      summary: Get Player Receiving Statistics by Week
+      description: >-
+        Retrieves comprehensive receiving statistics for NFL players during a
+        specified week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit50"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedReceiver
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified receivers.
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player receiving statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReceivingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/players-offense/receiving/season:
+    get:
+      operationId: getPlayerReceivingStatsBySeason
+      summary: Get Player Receiving Statistics by Season
+      description: >-
+        Retrieves comprehensive receiving statistics for NFL players during a
+        specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedReceiver
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified receivers.
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player receiving statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReceivingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Player Offense — Rushing
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/players-offense/rushing/week:
+    get:
+      operationId: getPlayerRushingStatsByWeek
+      summary: Get Player Rushing Statistics by Week
+      description: >-
+        Retrieves comprehensive rushing statistics for NFL players during a
+        specified week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit50"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedRusher
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified rushers.
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player rushing statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WeeklyRushingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/players-offense/rushing/season:
+    get:
+      operationId: getPlayerRushingStatsBySeason
+      summary: Get Player Rushing Statistics by Season
+      description: >-
+        Retrieves comprehensive rushing statistics for NFL players during a
+        specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedRusher
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified rushers.
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Player rushing statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RushingStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Defense — Overview
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/defense/overview/season:
+    get:
+      operationId: getDefensiveOverviewStatsBySeason
+      summary: Get Defensive Player Overview Statistics by Season
+      description: >-
+        Retrieves comprehensive defensive overview statistics for NFL players
+        during a specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Defensive overview statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefensiveOverviewStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/defense/overview/week:
+    get:
+      operationId: getDefensiveOverviewStatsByWeek
+      summary: Get Defensive Player Overview Statistics by Week
+      description: >-
+        Retrieves comprehensive defensive overview statistics for NFL players
+        during a specified week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific team IDs.
+      responses:
+        "200":
+          description: Defensive overview statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefensiveOverviewStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Defense — Pass Rush
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/defense/passRush/season:
+    get:
+      operationId: getDefensivePassRushStatsBySeason
+      summary: Get Defensive Pass Rush Statistics by Season
+      description: >-
+        Retrieves pass rush statistics for defensive players during a
+        specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+      responses:
+        "200":
+          description: Pass rush statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PassRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/defense/passRush/week:
+    get:
+      operationId: getDefensivePassRushStatsByWeek
+      summary: Get Defensive Pass Rush Statistics by Week
+      description: >-
+        Retrieves pass rush statistics for defensive players during a
+        specified week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+      responses:
+        "200":
+          description: Pass rush statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PassRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Defense — Nearest Defender
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/defense/nearest/season:
+    get:
+      operationId: getDefensiveNearestDefenderStatsBySeason
+      summary: Get Defensive Nearest Defender Statistics by Season
+      description: >-
+        Retrieves nearest defender statistics for defensive players during a
+        specified season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+      responses:
+        "200":
+          description: Nearest defender statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NearestDefenderStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/defense/nearest/week:
+    get:
+      operationId: getDefensiveNearestDefenderStatsByWeek
+      summary: Get Defensive Nearest Defender Statistics by Week
+      description: >-
+        Retrieves nearest defender statistics for defensive players during a
+        specified week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: qualifiedDefender
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: false
+          description: Filter to only qualified defenders.
+      responses:
+        "200":
+          description: Nearest defender statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NearestDefenderStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Fantasy
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/fantasy/season:
+    get:
+      operationId: getFantasyStatsBySeason
+      summary: Get Fantasy Football Statistics by Season
+      description: >-
+        Retrieves comprehensive fantasy football statistics for NFL players
+        during a specified season. Supports filtering by position groups,
+        teams, minimum snap thresholds, and rolling N-week windows. Requires
+        NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: positionGroup
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["QB", "RB", "WR", "TE", "SPEC"]
+          description: Filter by position groups.
+        - name: teamOffense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by specific offensive team ID.
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by specific defensive team ID (opponent analysis).
+        - name: minOffensiveSnaps
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+          description: Minimum offensive snaps threshold for inclusion.
+        - name: lastNWeeks
+          in: query
+          required: false
+          schema:
+            type: integer
+          description: Number of recent weeks to analyze (rolling window).
+      responses:
+        "200":
+          description: Fantasy football statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FantasyStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Defense — Overview
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-defense/overview/season:
+    get:
+      operationId: getTeamDefenseStatsBySeason
+      summary: Get Team Defense Statistics by Season
+      description: >-
+        Retrieves team-level defensive overview statistics for a specified
+        season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: split
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Split filter for situational analysis.
+      responses:
+        "200":
+          description: Team defense overview statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefenseStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-defense/overview/week:
+    get:
+      operationId: getTeamDefenseStatsByWeek
+      summary: Get Team Defense Statistics by Week
+      description: >-
+        Retrieves team-level defensive overview statistics for a specified
+        week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: split
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Split filter for situational analysis.
+      responses:
+        "200":
+          description: Team defense overview statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefenseStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Defense — Pass
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-defense/pass/season:
+    get:
+      operationId: getTeamDefensePassStatsBySeason
+      summary: Get Team Defense Pass Statistics by Season
+      description: >-
+        Retrieves team-level defensive pass statistics for a specified season.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team defense pass statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefensePassStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-defense/pass/week:
+    get:
+      operationId: getTeamDefensePassStatsByWeek
+      summary: Get Team Defense Pass Statistics by Week
+      description: >-
+        Retrieves team-level defensive pass statistics for a specified week.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team defense pass statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefensePassStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Defense — Rush
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-defense/rush/season:
+    get:
+      operationId: getTeamDefenseRushStatsBySeason
+      summary: Get Team Defense Rush Statistics by Season
+      description: >-
+        Retrieves team-level defensive rush statistics for a specified season.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team defense rush statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefenseRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-defense/rush/week:
+    get:
+      operationId: getTeamDefenseRushStatsByWeek
+      summary: Get Team Defense Rush Statistics by Week
+      description: >-
+        Retrieves team-level defensive rush statistics for a specified week.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team defense rush statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamDefenseRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Offense — Overview
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-offense/overview/season:
+    get:
+      operationId: getTeamOffenseStatsBySeason
+      summary: Get Team Offense Overview Statistics by Season
+      description: >-
+        Retrieves team-level offensive overview statistics for a specified
+        season. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: split
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Split filter for situational analysis.
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by opposing defensive team ID.
+      responses:
+        "200":
+          description: Team offense overview statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffenseStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-offense/overview/week:
+    get:
+      operationId: getTeamOffenseStatsByWeek
+      summary: Get Team Offense Overview Statistics by Week
+      description: >-
+        Retrieves team-level offensive overview statistics for a specified
+        week. Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: split
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Split filter for situational analysis.
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by opposing defensive team ID.
+      responses:
+        "200":
+          description: Team offense overview statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffenseStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Offense — Pass
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-offense/pass/season:
+    get:
+      operationId: getTeamOffensePassStatsBySeason
+      summary: Get Team Offense Pass Statistics by Season
+      description: >-
+        Retrieves team-level offensive pass statistics for a specified season.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by opposing defensive team ID.
+      responses:
+        "200":
+          description: Team offense pass statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffensePassStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-offense/pass/week:
+    get:
+      operationId: getTeamOffensePassStatsByWeek
+      summary: Get Team Offense Pass Statistics by Week
+      description: >-
+        Retrieves team-level offensive pass statistics for a specified week.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+        - name: teamDefense
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by opposing defensive team ID.
+      responses:
+        "200":
+          description: Team offense pass statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffensePassStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  # ---------------------------------------------------------------------------
+  # Team Offense — Rush
+  # ---------------------------------------------------------------------------
+  /api/secured/stats/team-offense/rush/season:
+    get:
+      operationId: getTeamOffenseRushStatsBySeason
+      summary: Get Team Offense Rush Statistics by Season
+      description: >-
+        Retrieves team-level offensive rush statistics for a specified season.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team offense rush statistics for the specified season.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffenseRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/stats/team-offense/rush/week:
+    get:
+      operationId: getTeamOffenseRushStatsByWeek
+      summary: Get Team Offense Rush Statistics by Week
+      description: >-
+        Retrieves team-level offensive rush statistics for a specified week.
+        Requires NFL Pro Access.
+      parameters:
+        - $ref: "#/components/parameters/Season"
+        - $ref: "#/components/parameters/SeasonTypeParam"
+        - $ref: "#/components/parameters/Week"
+        - $ref: "#/components/parameters/Limit35"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/SortKey"
+        - $ref: "#/components/parameters/SortValue"
+      responses:
+        "200":
+          description: Team offense rush statistics for the specified week.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TeamOffenseRushStatsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+components:
+  parameters:
+    Season:
+      name: season
+      in: query
+      required: true
+      schema:
+        type: integer
+      description: Season year.
+    SeasonTypeParam:
+      name: seasonType
+      in: query
+      required: true
+      schema:
+        $ref: "#/components/schemas/SeasonType"
+      description: Type of season.
+    Week:
+      name: week
+      in: query
+      required: true
+      schema:
+        type: string
+      description: Week identifier slug.
+    Limit35:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 35
+      description: Maximum number of results to return.
+    Limit50:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 50
+      description: Maximum number of results to return.
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+      description: Number of records to skip for pagination.
+    Page:
+      name: page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+      description: Page number for pagination.
+    SortKey:
+      name: sortKey
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Field to sort results by.
+    SortValue:
+      name: sortValue
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/SortOrder"
+      description: Sort direction.
+
+  schemas:
+    SeasonType:
+      type: string
+      enum: ["PRE", "REG", "POST"]
+    SortOrder:
+      type: string
+      enum: ["ASC", "DESC"]
+    WeeklyPassingStatsResponse:
+      type: object
+      description: Player passing statistics for a specific week.
+    PassingStatsResponse:
+      type: object
+      description: Player passing statistics for a season.
+    ReceivingStatsResponse:
+      type: object
+      description: Player receiving statistics.
+    WeeklyRushingStatsResponse:
+      type: object
+      description: Player rushing statistics for a specific week.
+    RushingStatsResponse:
+      type: object
+      description: Player rushing statistics for a season.
+    DefensiveOverviewStatsResponse:
+      type: object
+      description: Defensive player overview statistics.
+    PassRushStatsResponse:
+      type: object
+      description: Defensive pass rush statistics.
+    NearestDefenderStatsResponse:
+      type: object
+      description: Nearest defender statistics.
+    FantasyStatsResponse:
+      type: object
+      description: Fantasy football statistics.
+    TeamDefenseStatsResponse:
+      type: object
+      description: Team-level defensive overview statistics.
+    TeamDefensePassStatsResponse:
+      type: object
+      description: Team-level defensive pass statistics.
+    TeamDefenseRushStatsResponse:
+      type: object
+      description: Team-level defensive rush statistics.
+    TeamOffenseStatsResponse:
+      type: object
+      description: Team-level offensive overview statistics.
+    TeamOffensePassStatsResponse:
+      type: object
+      description: Team-level offensive pass statistics.
+    TeamOffenseRushStatsResponse:
+      type: object
+      description: Team-level offensive rush statistics.
+
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth2 access token from the authentication endpoint.
+
+security:
+  - bearerAuth: []

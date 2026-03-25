@@ -1,0 +1,504 @@
+openapi: "3.1.0"
+info:
+  title: "NFL.com Pro Content API"
+  version: "1.0.0"
+  description: >-
+    Reverse-engineered specification for the NFL.com Pro Content API.
+    This spec was derived from the Griddy SDK implementation and may be
+    incomplete. The NFL.com API is undocumented and subject to change
+    without notice.
+servers:
+  - url: https://pro.nfl.com
+    description: NFL Pro API
+
+paths:
+  /api/content/home-film-cards:
+    get:
+      operationId: getHomeFilmCards
+      summary: Get Home Film Cards
+      description: >-
+        Retrieves featured film room content cards for the home page.
+        Returns weekly playlists and featured player film breakdowns.
+      responses:
+        "200":
+          description: Featured film room content cards.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HomeFilmCardsResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/content/insights/season:
+    get:
+      operationId: getSeasonContentInsights
+      summary: Get Season Content Insights
+      description: >-
+        Retrieves curated editorial insights and analytics content for NFL
+        players during a specified season. Returns expert commentary combining
+        Next Gen Stats data with editorial analysis, including pregame previews,
+        postgame breakdowns, fantasy insights, and evergreen content.
+      parameters:
+        - name: season
+          in: query
+          required: true
+          schema:
+            type: integer
+          description: Season year.
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+          description: Maximum number of insights to return.
+        - name: tags
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Content tags to filter by (supports multiple comma-separated tags).
+        - name: teamId
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by specific team identifier.
+        - name: nflId
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by specific player NFL identifier.
+      responses:
+        "200":
+          description: Curated editorial insights for the specified season.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Insight"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/videos/filmroom/plays:
+    get:
+      operationId: getFilmroomPlays
+      summary: Get Filmroom Plays
+      description: >-
+        Retrieves detailed play-by-play data with extensive filtering
+        capabilities for film study. Returns comprehensive play information
+        including formations, personnel packages, game situations, and detailed
+        play descriptions. Requires NFL Pro Access.
+      parameters:
+        - name: gameId
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific game IDs.
+        - name: weekSlug
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by week identifier.
+        - name: season
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+          description: Filter by season year.
+        - name: seasonType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/SeasonType"
+          description: Filter by season type.
+        - name: nflId
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by player NFL ID.
+        - name: quarter
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+          description: Filter by quarter.
+        - name: down
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+          description: Filter by down.
+        - name: yardsToGoType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by yards to go category.
+        - name: touchdown
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for touchdown plays (1 = yes, 0 = no).
+        - name: rush10PlusYards
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for rushing plays of 10+ yards.
+        - name: fumbleLost
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for plays with fumbles lost.
+        - name: fumble
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for plays with fumbles.
+        - name: qbAlignment
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by quarterback alignment.
+        - name: redzone
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for red zone plays.
+        - name: goalToGo
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for goal-to-go situations.
+        - name: passPlay
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for passing plays.
+        - name: runPlay
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for running plays.
+        - name: playType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by specific play types.
+        - name: attempt
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for passing attempts.
+        - name: completion
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for completed passes.
+        - name: interception
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for interceptions.
+        - name: reception
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for receptions.
+        - name: sack
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for sacks.
+        - name: recMotion
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter by receiver motion.
+        - name: targetLocation
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by target location on field.
+        - name: airYardType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by air yards category.
+        - name: dropbackTimeType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by dropback time.
+        - name: pressure
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter by quarterback pressure.
+        - name: blitz
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter by defensive blitz.
+        - name: playAction
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter by play action usage.
+        - name: rushDirection
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by rush direction.
+        - name: runStuff
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+              enum: ["0", "1"]
+          description: Filter for stuffed runs.
+        - name: receiverAlignment
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by receiver alignment.
+        - name: separationType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by receiver separation.
+        - name: personnel
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by defensive personnel package.
+        - name: defendersInTheBoxType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by defenders in the box.
+        - name: defCoverageType
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter by defensive coverage type.
+      responses:
+        "200":
+          description: Play-by-play data matching the specified filters.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FilmroomPlaysResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /api/secured/videos/coaches:
+    get:
+      operationId: getCoachesFilmVideos
+      summary: Get Coaches Film Videos
+      description: >-
+        Retrieves premium coaches film video content for specified games and
+        plays. Returns multiple camera angles (endzone, sideline, broadcast)
+        for each play. Requires NFL Plus Premium subscription.
+      parameters:
+        - name: gameId
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+              format: uuid
+          description: Game identifiers (UUID format, supports multiple games).
+        - name: playId
+          in: query
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+          description: Play identifiers for specific plays within the games.
+      responses:
+        "200":
+          description: Multi-angle coaches film video content for the specified plays.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CoachesFilmResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+components:
+  schemas:
+    SeasonType:
+      type: string
+      enum: ["PRE", "REG", "POST"]
+    HomeFilmCardsResponse:
+      type: object
+      description: Featured film room content cards for the home page.
+    Insight:
+      type: object
+      description: Curated editorial insight combining NGS data with editorial analysis.
+    FilmroomPlaysResponse:
+      type: object
+      description: Play-by-play data with formation and personnel details.
+    CoachesFilmResponse:
+      type: object
+      description: Multi-angle coaches film video content.
+  responses:
+    Unauthorized:
+      description: Authentication required or token expired.
+    NotFound:
+      description: The requested resource was not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth2 access token from the authentication endpoint.
+
+security:
+  - bearerAuth: []
