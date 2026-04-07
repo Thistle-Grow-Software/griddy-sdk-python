@@ -1,0 +1,19 @@
+name: Notify Docs Site
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "docs/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger docs rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          repository: Thistle-Grow-Software/griddy-docs
+          event-type: docs-updated
+          client-payload: '{"repo": "${{ github.repository }}", "sha": "${{ github.sha }}"}'
